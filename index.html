@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Don't combine bootstrap with jQm -->
+        <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+        <title>Yonmi, nouvelle generation de co-voiturage</title>
+    </head>
+    <body>
+        <!--div class="container-fluid" -->
+
+        <div data-role="page" id="pageone">
+            <div data-role="header">
+                <h1>Yonwi Co-voiturage</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <p>Bienvenu</p>
+                <a href="#pagetwo" class="ui-btn ui-btn-inline ui-btn-b ui-corner-all"  data-transition="flip">Inscrivez-vous</a>
+
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-left">Conducteurs</a>
+
+                <h2>Login</h2>
+                <form role="form">                                                
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="votre email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="votre mot de passe">
+                    </div>
+                    <div>
+                        <label><input type="checkbox">Se rappeler de moi</label>   
+                        <button type="submit" class="ui-btn ui-btn-inline ui-shadow ">Soumettre</button>
+                    </div>
+
+                </form>     
+
+            </div>
+
+            <div data-role="footer">
+                <h1>&copy; <a href="http://www.softensys.com">SoftenSys Ltd</a> 2015</h1>
+            </div>
+        </div> 
+
+        <div data-role="page" data-dialog="true" id="pagetwo">
+            <div data-role="header">
+                <h1>Inscription Yonwi</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                
+                <form role="form" name='loginForm'>
+                    <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" maxlength="25" class="form-control" id="name" placeholder="Prenoms et nom complet">
+                    </div>
+
+                     <div class="form-group">
+                        <label for="name">Telephone:</label>
+                        <input type="tel" maxlength="15" class="form-control" id="tel" placeholder="Numero de telephone">
+                    </div>
+
+                     <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" maxlength="30" class="form-control" id="email" placeholder="votre email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" maxlength="9" class="form-control" id="pwd" placeholder="choisir un mot de passe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" maxlength="9" class="form-control" id="pwd2" placeholder="retapez votre mot de passe">
+                    </div>
+                    <div>
+
+                        <button type="submit" class="ui-btn ui-btn-inline ui-shadow ">Enregistrer</button>
+                    </div>
+
+                </form>     
+
+                <p>Vous pourrait completer votre profile plutard</p><a href="#" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back" data-transition="slide">Retour</a>
+
+            </div>
+
+            <div data-role="footer">
+                <h1>&copy; SoftenSys Ltd 2015</h1>
+            </div>
+        </div> 
+
+
+        <!--/div>   bootstrap container -->
+    </body>
+</html>
+
