@@ -10,7 +10,7 @@ P214 Deep C secrets
 
 void fun(char target[])
 {
-    fprintf(stderr, "The elements of the array arg (@ %X): %c(@ %X) , %c(@ %X)\n", 
+    fprintf(stderr, "The elements of the array arg (@ %x): %c(@ %x) , %c(@ %x)\n", 
 	    &target, target[0], &(target[0]), target[1], &(target[1]));
 
     fprintf(stderr, "The size of the array = %ld - INSIDE fun() !!!\n", sizeof(target));
