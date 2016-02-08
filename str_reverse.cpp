@@ -8,18 +8,41 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <sstream>
+
+#include "malib.h"
 using namespace std;
 
-int main(int argc, char** argv) {
-    cout << "Input the string to reverse: ";
-    string in;
-    // todo: figure out how to escape spaces from the cmd line
-    cin >> in;
-    const char* cstr = in.c_str();
-
-    for(int i = in.size(); i >=0 ; i--)
-        cout << cstr[i];   
+string reverse2(string input) {
+    char* s = strdup(input.c_str());
     
+    int c, i, j;
+    for (i = 0, j = strlen(s)-1;  i < j;  i++, j--) {
+        c = s[i];
+        s[i] = s[j];
+        s[j] = c;
+    }
+    return s;
+}
+
+int main(int argc, char** argv) {
+    string inputStr("string to reverse");
+    const char* cstr = inputStr.c_str();
+    stringstream ss;
+    for (int i = inputStr.size(); i >= 0; i--)
+        ss << cstr[i];
+
+    cout << "With stringstream: " << ss.str();
+    cout << "\nWith the reverse func: " << reverse2(strdup(cstr)) << " \n";
+    
+    if(argc > 1)
+        cout << "\nProcessing all args with spaces gives: ";
+    
+    for(int i=1; i < argc; i++) {
+       cout << reverse2(argv[i]) << " \n";
+    }
+    cout << reverse2("Hello world2") << " ";
     cout << "\n done.\n";
     return 0;
 }

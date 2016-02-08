@@ -120,9 +120,28 @@ void slowprint(const char* string)
     }
 }
 
-
 void w32_wait(void)
 {
     printf("\nPress a key to exit...") ;
     getchar();
+}
+
+char* remove_duplicates(char str[]) {
+    int isDup = 0;
+
+    for(u_int8_t i = 0; i < strlen(str)-1; i++) {
+        
+        for(u_int8_t j = strlen(str)-1; j >= 0; j--) {
+            if(str[i] == str[j]) 
+                isDup++;
+            
+            if(isDup > 1) {
+                printf("Caught duplicate: %c\n", str[j]);               
+              //  p[i] = '0';
+                isDup--;
+            }
+        }
+    }
+   // str[tail] = '\0';
+    return str;
 }

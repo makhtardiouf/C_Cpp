@@ -12,15 +12,19 @@
 #include <iostream>
 
 using namespace std;
-class Iteratorx;
 
-template<class T> class List {
-    friend Iteratorx;
+template<typename T> class List {
+    friend class Iterator;
 
 public:
-    List();
+
+    List() {
+    }
     List(const List<T>& l);
-    ~List();
+
+    ~List() {
+        node = 0;
+    }
 
     List<T>& operator=(const List<T>& l);
 
@@ -39,7 +43,7 @@ public:
 private:
 
     struct Node {
-        T* elem;
+        T elem;
         Node* prev;
         Node* next;
         Node* head; // lect15
@@ -54,6 +58,9 @@ private:
             }
         }
 
+        Node(T data) : elem(data) {
+        }
+
         ~Node() {
             if (prev) {
                 prev->next = next;
@@ -62,52 +69,82 @@ private:
             }
         }
     };
+
+    Node* node;
 };
 
+template<typename T>
+void List<T>::insert_front(const T& elem) {
+    List<T>::Node* n = new List<T>::Node(elem);
+    if (this->node) {
+        n->prev = this->node;
+        this->node->next = n;
+    } else
+        this->node = n;
 
-int main(int argc, char** argv) {
-
-    list<int> lt;
-    for (int i = 0; i < 50; i++)
-        lt.push_back(rand());
-
-    lt.sort();
-    for (list<int>::iterator it; it != lt.end(); it++)
-        std::cout << *it;
-
-    return 0;
 }
-
 // Implemented outside the List to allow multiple iterators to be used at the same time
-template<class T> class Iteratorx {
-    List<T>::Node* first;
-    List<T>::Node* current;
+
+/*
+template<typename T>
+class Iterator {
+private:
+    friend class List<T>;
+    List<T>& list;
+    typename List<T>::Node* first;
+    typename List<T>::Node* current;
 
 public:
 
     Iterator(List<T>& list) {
-      //  first = list.head;
+        //  first = list.head;
         current = first;
     }
 
-    begin() {
+    T* begin() {
         current = first;
         return first->elem;
     }
 
-    end() {
+    T* end() {
         return NULL;
     }
 
-    next() {
-        List<T>::Node* p = current;
+    typename List<T>::Node* next() {
+        typename List<T>::Node* p = current;
         current = current->next;
         return p;
     }
 
-    // overload operator() to access the element of a list
-
+    typedef Iterator<T> iterator;
+    bool operator==(const iterator& i) const {return (i->current == current);}
+    bool operator!=(const iterator& i) const {return (i->current != current);}
+    iterator& operator++();
+    iterator& operator++(int);
+    iterator& operator--();
+    iterator& operator--(int);
+    
+    T& operator* () const;
     T& operator()() {
         return *current->elem;
     }
 };
+ */
+
+int main(int argc, char** argv) {
+
+    std::list<int> lt;
+    for (int i = 0; i < 10; i++)
+        lt.push_back(rand());
+
+    lt.sort();
+    for (std::list<int>::iterator it; it != lt.end(); it++)
+        std::cout << *it;
+
+    List<int> bList;
+
+    bList.insert_front(10);
+    bList.insert_front(19);
+    return 0;
+}
+
