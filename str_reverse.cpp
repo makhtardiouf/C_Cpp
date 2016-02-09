@@ -10,6 +10,8 @@
 #include <string>
 #include <cstring>
 #include <sstream>
+#include <algorithm>
+#include <vector>
 
 #include "malib.h"
 using namespace std;
@@ -42,7 +44,10 @@ int main(int argc, char** argv) {
     for(int i=1; i < argc; i++) {
        cout << reverse2(argv[i]) << " \n";
     }
-    cout << reverse2("Hello world2") << " ";
+    char* str2 = "Hello world2";
+    vector<string> v(str2);
+    std::reverse<string>(v.begin(), v.end());
+    cout << str2 << " ";
     cout << "\n done.\n";
     return 0;
 }

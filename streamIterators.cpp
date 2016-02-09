@@ -1,6 +1,7 @@
 // $Id: streamIterators.cpp 8 2007-04-30 22:25:20Z Makhtar $
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
