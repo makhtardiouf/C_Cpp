@@ -1,10 +1,20 @@
-/* $Id: malib2.cpp 9 2007-07-11 08:22:53Z Makhtar $
-
-Implementation of c++ utility functions */
+/* 
+ * $Id: malib2.cpp 9 2007-07-11 08:22:53Z Makhtar $
+ * Implementation of c++ utility functions 
+ */
 
 #include "malib.h"
 #include <string>
 
+//template<typename T>
+std::ostream& operator<<(std::ostream& ostr, const std::list<std::string>& list)
+{
+    for (auto &i : list) {
+        ostr << " " << i;
+    }
+    ostr << "\n";
+    return ostr;
+}
 
 /* Get the execee's name and arguments then fork it */
 int spawn(const char* cmd[] )

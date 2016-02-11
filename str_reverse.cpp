@@ -6,9 +6,9 @@
  */
 
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include <string>
-#include <cstring>
 #include <sstream>
 #include <algorithm>
 #include <vector>
@@ -38,16 +38,23 @@ int main(int argc, char** argv) {
     cout << "With stringstream: " << ss.str();
     cout << "\nWith the reverse func: " << reverse2(strdup(cstr)) << " \n";
     
-    if(argc > 1)
+    if(argc > 1) {
         cout << "\nProcessing all args with spaces gives: ";
     
     for(int i=1; i < argc; i++) {
        cout << reverse2(argv[i]) << " \n";
     }
-    char* str2 = "Hello world2";
-    vector<string> v(str2);
-    std::reverse<string>(v.begin(), v.end());
-    cout << str2 << " ";
+    }
+    
+    string str2 = "Hello";
+    vector<string> v;
+    v.push_back(str2);
+    v.push_back("world2");
+    std::reverse(v.begin(), v.end());
+    
+    cout << "std::reverse ";
+    for(auto &s : v)
+        cout << s << " ";
     cout << "\n done.\n";
     return 0;
 }

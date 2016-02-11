@@ -104,7 +104,7 @@ SOCKET create_socket(char *hostname, unsigned short port,
 
     hostaddr_in.sin_family = AF_INET;
 
-    hostaddr_in.sin_addr.s_addr = ((struct in_addr *)(hp->h_addr))->s_addr;
+    hostaddr_in.sin_addr.s_addr = ((struct in_addr *)(hp->h_addr_list[0]))->s_addr;
 
     hostaddr_in.sin_port = htons(port);
 

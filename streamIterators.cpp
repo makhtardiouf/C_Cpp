@@ -4,27 +4,41 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include <iterator>
+#include <algorithm>
+#include <cstdlib>
+#include <exception>
 
 int main(void)
 {
   using namespace std;
-
     string from, to;
-    cout << "\nEnter filenames: SOURCE TARGET >> ";
+    cout << __FILE__ << ":" << __LINE__ << "\nEnter filenames SOURCE TARGET: ";
     cin >> from >> to;		// get source and target file names
 
-    ifstream is(from.c_str());	// input stream
-    istream_iterator<string> ii(is);
+    try {
+    ifstream src{from};	// input stream
+    if(!src) {
+        throw runtime_error("Input file could not be read ");
+    }
+    istream_iterator<string> inIt{src};
     istream_iterator<string> eos;
 
-    vector<string> b(ii, eos);
-    sort(b.begin(), b.end());
+    string s;
+    while(src >> s)
+        cout << s << "\n";
+    
+    vector<string> lines(inIt, eos);
+    sort(lines.begin(), lines.end());
 
-    ofstream os(to.c_str());	// output stream
-    ostream_iterator<string> oo(os, "\n");
+    ofstream target{to};	// output stream
+    ostream_iterator<string> oIt(target, "\n");
 
-    unique_copy(b.begin(), b.end(), oo);
+    unique_copy(lines.begin(), lines.end(), oIt);
 
-    return !is.eof() && !os ; 	// return error state
+    return (!src.eof() && !target); 	// return error state
+    } catch(exception ex) {
+        std::cerr << "Error: " << ex.what() << " " <<__FILE__ << ":" << __LINE__;
+        return EXIT_FAILURE;
+    }
 }
