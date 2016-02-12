@@ -1,15 +1,11 @@
 /****************************************************/
-/***  fichier huffman.c                           ***/
-/***  construction de l'arbre de Huffman          ***/
+/*  fichier huffman.c   
+/*  construction du Huffman tree
+ * Makhtar Diouf 2005
+ * $Id$
 /****************************************************/
 
 #include "huffman.h"
-
-struct init
-{
-  char c;
-  double p;
-};
 
 /* declaration des fonctions locales au fichier */
 int comp_proba(struct init *, struct init *);
@@ -23,7 +19,7 @@ int comp_proba(struct init *a, struct init *b)
     return(1);
   if (x == 0)
     return(0);
-  if (x <0)
+  if (x < 0)
     return(-1);
 }
 
@@ -39,6 +35,7 @@ struct init *proba_init(char *fichier, int n)
       fprintf(stderr,"\n Erreur: impossible d'ouvrir le fichier %s\n", fichier);
       return(NULL);
     }
+  
   tab_proba = (struct init*)malloc(n * sizeof(struct init));
   for (i=0; i < n; i++)
     {
@@ -47,20 +44,16 @@ struct init *proba_init(char *fichier, int n)
       c = fgetc(flot);
     }
   fclose(flot);
-
   
   /* on trie tab_proba dans l'ordre decroissant des probas */
   qsort(tab_proba, n, sizeof(struct init), comp_proba);
   return(tab_proba);
 }
-  
-  
-  
 
 
-arbre huffman_arbre(char *fichier, int n)
+tree huffman_arbre(char *fichier, int n)
 {
-  arbre *tab, *new_tab;
+  tree *tab, *new_tab;
   struct init *tab_proba;
   int taille_tab;
   int i;
@@ -68,11 +61,11 @@ arbre huffman_arbre(char *fichier, int n)
   /* on initialise tab_proba */
   tab_proba = proba_init(fichier, n);
   /* on cree n arbres correspondant aux feuilles */
-  tab = (arbre*)malloc(n * sizeof(arbre));
+  tab = (tree*)malloc(n * sizeof(tree));
   for (i=0; i<n; i++)
-    tab[i] = constructeur(tab_proba[i].c, tab_proba[i].p, NULL, NULL);
-  free(tab_proba); 
+    tab[i] = construct(tab_proba[i].c, tab_proba[i].p, NULL, NULL);
   
+  free(tab_proba); 
   
 
   /* on reduit la table autant de fois qu'il faut */
