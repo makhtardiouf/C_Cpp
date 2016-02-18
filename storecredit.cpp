@@ -46,59 +46,54 @@ void SelectProducts(string filename) {
     while (!input.eof()) {
         input >> acase.credit;
         input >> acase.numItems;
-        clog << "Credit: " << acase.credit << "  Items: " << acase.numItems << "\n";
+        clog << "Credit: \t" << acase.credit << "\nItems [" << acase.numItems << "] :\t";
 
         for (int i = 0; i < acase.numItems; i++) {
             input >> item;
             acase.prices.push_back(item);
-            clog << "item: " << item << "\n";
+            clog << item << " ";
         }
 
-        //  std::sort(acase.prices.begin(), acase.prices.end(), std::greater<int>());
+        // std::sort(acase.prices.begin(), acase.prices.end(), std::less<int>());
         bool gotit = getSelection(acase);
-        if (!gotit) {
-            std::sort(acase.prices.begin(), acase.prices.end(), std::less<int>());
-            getSelection(acase);
+        if (gotit == false) {;
+            //    std::sort(acase.prices.begin(), acase.prices.end(), std::greater<int>());
+            //    getSelection(acase);
         }
-        clog << "\n";
     }
 }
 
 bool getSelection(_case acase) {
     list<int> selected;
     bool gotit = false;
+    int a, b = 0;
+    int i, j = 0;
+    for (; i < acase.numItems; i++) {
+        a = acase.prices[i];
 
-    for (int i = 0; i < acase.numItems; i++) {
-        for (int j = i + 1; j < acase.numItems; j++) {
-            if ((acase.prices[i] + acase.prices[j]) == acase.credit) {
-                selected.push_back(acase.prices[i]);
-                selected.push_back(acase.prices[j]);
+        for (j = i + 1; j < acase.numItems; j++) {
+            b = acase.prices[j];
+            if ((a + b) == acase.credit) {
+                selected.push_back(a);
+                selected.push_back(b);
                 gotit = true;
-                break; // only two solution
+                break; // only two solutions
             }
-            if(gotit)
+            if (gotit)
                 break;
         }
     }
 
-    /*   for (int i = 0; i < acase.numItems; i++) {
-
-           if ((total += acase.prices[i]) <= acase.credit)
-               selected.push_back(acase.prices[i]);
-           else //if( (total - prices[i]) > 0)
-               total -= acase.prices[i];
-
-           if (total == acase.credit)
-               break;
-           clog << "\nTotal selected: " << total;
-       } */
     if (gotit) {
-        clog << "\nMatches: ";
-        for (list<int>::iterator it = selected.begin(); it != selected.end(); it++)
+        clog << "\nMatches: \t";
+      //  cout << "Case #" << i << ": "; // to be redirected to the output file
+        for (list<int>::iterator it = selected.begin(); it != selected.end(); it++) {
             clog << *it << " ";
+          //  cout << i << " " << j; // only indexes should be in the output file
+        }
     }
 
-    clog << "\n";
+    clog << "\n\n";
     selected.clear();
     acase.prices.clear();
     return gotit;

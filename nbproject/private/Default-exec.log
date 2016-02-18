@@ -1,0 +1,10 @@
+called: gcc
+	/home/makhtar/Documents/Code/Experimental
+	gcc
+	-ansi
+	-g
+	-Wall
+	-c
+	-D_BSD_SOURCE
+	malib.c
+

@@ -1,0 +1,8 @@
+gcc -ansi -g -Wall -c -D_BSD_SOURCE malib.c
+In file included from malib.c:4:0:
+malib.h:62:1: error: C++ style comments are not allowed in ISO C90
+ //extern int spawn(const char* cmd[]);
+ ^
+malib.h:62:1: error: (this will be reported only once per input file)
+Makefile:10: recipe for target 'libmalib.a' failed
+make: *** [libmalib.a] Error 1
