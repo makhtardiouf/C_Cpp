@@ -25,121 +25,104 @@
         <in>toupper.s</in>
         <in>toupper64.s</in>
       </df>
-      <df name="Strcmp">
-        <df name="Debug">
+      <df name="C">
+        <df name="time_t">
+          <in>main.c</in>
         </df>
-        <df name="Strcmp">
-          <df name="Debug">
-          </df>
-          <in>AssemblyInfo.cpp</in>
-          <in>Strcmp.cpp</in>
-          <in>resource.h</in>
-          <in>stdafx.cpp</in>
-          <in>stdafx.h</in>
-        </df>
+        <in>7bits.c</in>
+        <in>KumamotoU-Programs.c</in>
+        <in>aa_usleep_test.c</in>
+        <in>arraypointer.c</in>
+        <in>binary.c</in>
+        <in>bit_wise.c</in>
+        <in>broadcast.c</in>
+        <in>cache.c</in>
+        <in>cat.c</in>
+        <in>convert_deg_fah.c</in>
+        <in>dico.c</in>
+        <in>dico.h</in>
+        <in>eatmem.c</in>
+        <in>errors.c</in>
+        <in>findhost.c</in>
+        <in>fork_exec.c</in>
+        <in>fork_exec_wait.c</in>
+        <in>fs-versionning.c</in>
+        <in>genbuserror.c</in>
+        <in>getline.c</in>
+        <in>grep.c</in>
+        <in>hashtable.c</in>
+        <in>hello.c</in>
+        <in>huffman.c</in>
+        <in>huffman.h</in>
+        <in>huffman2.c</in>
+        <in>ioccc00.c</in>
+        <in>kruskal.c</in>
+        <in>linkedlist.c</in>
+        <in>listdir_test.c</in>
+        <in>malib.c</in>
+        <in>malib.h</in>
+        <in>matrices.c</in>
+        <in>matrices.h</in>
+        <in>options.c</in>
+        <in>pipes01.c</in>
+        <in>prog_tricks.c</in>
+        <in>pthread_create.c</in>
+        <in>pthread_primes.c</in>
+        <in>pthread_tsd.c</in>
+        <in>reboot.c</in>
+        <in>rotate_dash.c</in>
+        <in>shmem.c</in>
+        <in>sign_int_shift.c</in>
+        <in>sockbind.c</in>
+        <in>socket.c</in>
+        <in>socket.h</in>
+        <in>socket_test.c</in>
+        <in>spawn.c</in>
+        <in>stack.c</in>
+        <in>strindex.c</in>
+        <in>sysid.c</in>
+        <in>syslogging.c</in>
+        <in>tcprcv.c</in>
+        <in>tcpsend.c</in>
+        <in>temp_file.c</in>
+        <in>test.c</in>
+        <in>testHuffman.c</in>
+        <in>testfile.c</in>
+        <in>trackexec.c</in>
+        <in>udprcv.c</in>
+        <in>udpsend.c</in>
+        <in>write.c</in>
+        <in>zSkeleton.c</in>
       </df>
-      <df name="time_t">
-        <in>main.c</in>
-      </df>
-      <df name="time_t-Debug">
-        <df name="debug">
-        </df>
-        <df name="release">
-        </df>
+      <df name="C++">
+        <in>assertit.cpp</in>
+        <in>bitWise.cpp</in>
+        <in>bools.cpp</in>
+        <in>boost-test01.cpp</in>
+        <in>char_code.cpp</in>
+        <in>convert_base.cpp</in>
+        <in>copy_file.cpp</in>
+        <in>fltk_piping.cpp</in>
+        <in>grep.cpp</in>
+        <in>helloFltk.cpp</in>
+        <in>lists.cpp</in>
+        <in>malib.h</in>
+        <in>malib2.cpp</in>
+        <in>ssort.cpp</in>
+        <in>storecredit.cpp</in>
+        <in>str_remove_duplicates.cpp</in>
+        <in>str_reverse.cpp</in>
+        <in>str_reversewords.cpp</in>
+        <in>streamIterators.cpp</in>
+        <in>strings.cpp</in>
+        <in>structUnion.cpp</in>
+        <in>var_arg.cpp</in>
+        <in>vectors.cpp</in>
       </df>
       <df name="tracking">
         <in>parse_msg.c</in>
       </df>
-      <in>7bits.c</in>
-      <in>KumamotoU-Programs.c</in>
-      <in>aa_usleep_test.c</in>
-      <in>arraypointer.c</in>
-      <in>assertit.cpp</in>
-      <in>binary.c</in>
-      <in>bitWise.cpp</in>
-      <in>bit_wise.c</in>
-      <in>bools.cpp</in>
-      <in>boost-test01.cpp</in>
-      <in>broadcast.c</in>
-      <in>cache.c</in>
-      <in>cat.c</in>
-      <in>cat.s</in>
-      <in>cat32.s</in>
-      <in>char_code.cpp</in>
-      <in>convert_base.cpp</in>
-      <in>convert_deg_fah.c</in>
-      <in>copy_file.cpp</in>
-      <in>dico.c</in>
-      <in>dico.h</in>
-      <in>eatmem.c</in>
-      <in>errors.c</in>
-      <in>findhost.c</in>
-      <in>fltk.hpp</in>
-      <in>fltk_piping.cpp</in>
-      <in>fork_exec.c</in>
-      <in>fork_exec_wait.c</in>
-      <in>fs-versionning.c</in>
-      <in>genbuserror.c</in>
-      <in>getline.c</in>
-      <in>grep.c</in>
-      <in>grep.cpp</in>
-      <in>hashtable.c</in>
-      <in>hello.c</in>
-      <in>hello.s</in>
-      <in>helloFltk.cpp</in>
-      <in>huffman.c</in>
-      <in>huffman.h</in>
-      <in>huffman2.c</in>
-      <in>ioccc00.c</in>
-      <in>kruskal.c</in>
-      <in>linkedlist.c</in>
-      <in>listdir_test.c</in>
-      <in>lists.cpp</in>
-      <in>malib.c</in>
       <in>malib.h</in>
-      <in>malib2.cpp</in>
-      <in>matrices.c</in>
-      <in>matrices.h</in>
-      <in>options.c</in>
-      <in>pipes01.c</in>
-      <in>prog_tricks.c</in>
-      <in>pthread_create.c</in>
-      <in>pthread_primes.c</in>
-      <in>pthread_tsd.c</in>
-      <in>reboot.c</in>
-      <in>rotate_dash.c</in>
-      <in>shmem.c</in>
-      <in>sign_int_shift.c</in>
-      <in>sockbind.c</in>
-      <in>socket.c</in>
-      <in>socket.h</in>
-      <in>socket_test.c</in>
-      <in>spawn.c</in>
-      <in>ssort.cpp</in>
-      <in>stack.c</in>
-      <in>storecredit.cpp</in>
-      <in>str_remove_duplicates.cpp</in>
-      <in>str_reverse.cpp</in>
-      <in>str_reversewords.cpp</in>
-      <in>streamIterators.cpp</in>
-      <in>strindex.c</in>
-      <in>strings.cpp</in>
-      <in>structUnion.cpp</in>
-      <in>sysid.c</in>
-      <in>syslogging.c</in>
-      <in>tcprcv.c</in>
-      <in>tcpsend.c</in>
-      <in>temp_file.c</in>
-      <in>test.c</in>
-      <in>testHuffman.c</in>
-      <in>testfile.c</in>
-      <in>trackexec.c</in>
-      <in>udprcv.c</in>
-      <in>udpsend.c</in>
-      <in>var_arg.cpp</in>
-      <in>vectors.cpp</in>
-      <in>write.c</in>
-      <in>zSkeleton.c</in>
     </df>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

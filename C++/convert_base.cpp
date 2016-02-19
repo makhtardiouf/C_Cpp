@@ -1,19 +1,43 @@
 // $Id: convert_base.cpp 5 2007-03-31 15:04:06Z Makhtar $
-// Base conversion
+// Base conversion and output manipulators
 
 #include <iostream>
-
+#include <string>
+#include <exception>
 using namespace std;
 
-int main(void)
+void
+PrintNumerals (int val)
 {
-    // specifying formats with manipulators:
-    cout << "\n Decimal number: "  << dec << 24 << endl ;
-    cout << " value in octal: 0"       << oct << 24 << endl ;
-    cout << " value in hexadecimal: 0x" << hex << 24 << endl ;
+  // specifying formats with manipulators:    
+  cout << "\nDecimal value : " << dec << val << endl;
+  cout << " Octal: " << showbase << oct << val << endl;
+  cout << " Hexadecimal: " << hex << val << endl;
 
-    cout << "\n Floating-point number: " << 3.1355683 << endl ;
-    cout << " non-printing char (escape): " << char(27) << endl << endl ;
+}
 
-    return 0;
+int
+main (void)
+{
+  double d = 1000003.1355683;
+  cout << "\n Floating-point number: " << scientific << d << " = " << fixed << d << endl;
+  cout << " non-printing char (escape): " << char(27) << endl << endl;
+
+  for (int i=0; i<10; i++)
+    {
+      try {
+      cout << "\nInput a number or q to quit: ";
+      // pressing q sends the prog in a continuous loop !
+      int val;
+      cin >> val;
+      if (val == 'q')
+        return 0;
+
+      PrintNumerals (val);
+        } catch (exception e) {
+            cout << "Error: " << e.what();
+          }
+    }
+
+  return 0;
 }
