@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 using namespace std ;
 
@@ -15,5 +16,15 @@ int main(void)
     s1 += " hey " ;        // appending to a string
     cout << s1 + s2 + "!" << endl << endl ;
 
+    // Manipulating c-style string with pointers
+    // p points to s3[0]
+    const char* p = s3.c_str();
+    while(*p != '\0') {
+        // avoid buffering
+        clog << *p;
+        p++;
+        usleep(400000);        
+      }
+    cout << endl;
     return 0;
 }
