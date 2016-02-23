@@ -6,18 +6,18 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
-#include <cstdlib>
 #include <exception>
+#include <cstdlib>
 
 int main(void)
 {
   using namespace std;
     string from, to;
     cout << __FILE__ << ":" << __LINE__ << "\nEnter filenames SOURCE TARGET: ";
-    cin >> from >> to;		// get source and target file names
+    cin >> from >> to;	// get source and target file names
 
     try {
-    ifstream src{from};	// input stream
+    ifstream src{from, ios_base::out};	// input stream
     if(!src) {
         throw runtime_error("Input file could not be read ");
     }
@@ -37,8 +37,8 @@ int main(void)
     unique_copy(lines.begin(), lines.end(), oIt);
 
     return (!src.eof() && !target); 	// return error state
-    } catch(exception ex) {
-        std::cerr << "Error: " << ex.what() << " " <<__FILE__ << ":" << __LINE__;
+    } catch(runtime_error ex) {
+        std::cerr << "Error: " << ex.what() << " " <<__FILE__ << ":" << __LINE__ << "\n";
         return EXIT_FAILURE;
     }
 }

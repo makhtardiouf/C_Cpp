@@ -26,7 +26,7 @@ main (int argc, char* argv[])
       printf ("\tAscii code of \'%c\' ", ch);
       fflush (stdout);
       sprintf (output, "is %d\n", ch);
-      slowprint (output);
+      typewrite (output);
       std::cout << msg;
     }
 

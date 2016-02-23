@@ -20,14 +20,9 @@ main (void)
 
         else {
             cout << "Enter a second value: ";
-            cin >> b;
-            cout << endl << endl;
-
-            cout << "a < b ? is: " << (a < b) << endl;
-
-            cout << endl << endl;
+            cin >> b;           
+            cout << "\na < b ? is: " << (a < b) << "\n";
         }
-
     }
     return 0;
 }

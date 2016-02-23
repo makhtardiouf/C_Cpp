@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     }
 
     fprintf(stderr, "By ");
-    slowprint(name);
+    typewrite(name);
     fprintf(stderr, "\n\n");
     fclose(fp);
     return 0;

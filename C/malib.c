@@ -13,7 +13,6 @@ void rotate_dash(void) {
     int i = 0;
     const char* dash[] = {"|", "/", "*", "\\", " "};
 
-    /*     while (1) */
     for (; i <= 4; i++) {
         fprintf(stderr, "%s", dash[i]);
         pausethis(1);
@@ -101,7 +100,7 @@ int show_menu(char* menu[]) {
     return choice;
 }
 
-void slowprint(const char* string) {
+void typewrite(const char* string) {
     while (*string != '\0') {
         fprintf(stderr, "%c", *string);
         ++string;

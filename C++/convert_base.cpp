@@ -20,6 +20,7 @@ int
 main (void)
 {
   double d = 1000003.1355683;
+  cout << setprecision(5);
   cout << "\n Floating-point number: " << scientific << d << " = " << fixed << d << endl;
   cout << " non-printing char (escape): " << char(27) << endl << endl;
 
