@@ -111,6 +111,7 @@
         <in>lists.cpp</in>
         <in>malib.h</in>
         <in>malib2.cpp</in>
+        <in>parse_asn1.cpp</in>
         <in>ssort.cpp</in>
         <in>storecredit.cpp</in>
         <in>str_remove_duplicates.cpp</in>

@@ -4,6 +4,7 @@
     <df root="." name="0">
       <df name="C++">
         <in>Vector.cpp</in>
+        <in>parse_asn1.cpp</in>
       </df>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -61,6 +62,8 @@
         </preBuild>
       </makefileType>
       <item path="C++/Vector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="C++/parse_asn1.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
