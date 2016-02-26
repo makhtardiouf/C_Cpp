@@ -10,17 +10,20 @@
 #include <string>
 #include <iterator>
 #include <iostream>
+#include <initializer_list>
 
 using namespace std;
 
-template<typename T> class List {
+template<typename T> 
+class List {
+  
     friend class Iterator;
 
 public:
 
     List() {
     }
-    List(const List<T>& l);
+    List(std::initializer_list<T> l);
 
     ~List() {
         node = 0;

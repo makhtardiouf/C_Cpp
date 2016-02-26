@@ -1,8 +1,7 @@
+
 EUTRA-RRC-Definitions DEFINITIONS AUTOMATIC TAGS ::=
 
 BEGIN
-
--- ASN1STOP
 
 BCCH-BCH-Message ::= SEQUENCE {
 	message					BCCH-BCH-MessageType
@@ -10,7 +9,6 @@ BCCH-BCH-Message ::= SEQUENCE {
 
 BCCH-BCH-MessageType ::=						MasterInformationBlock
 
--- ASN1STOP
 
 BCCH-DL-SCH-Message ::= SEQUENCE {
 	message					BCCH-DL-SCH-MessageType
@@ -24,7 +22,6 @@ BCCH-DL-SCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 MCCH-Message ::= 		SEQUENCE {
 	message					MCCH-MessageType
@@ -42,7 +39,6 @@ MCCH-MessageType ::= CHOICE {
 	}
 }
 
--- ASN1STOP
 
 PCCH-Message ::= SEQUENCE {
 	message					PCCH-MessageType
@@ -55,7 +51,6 @@ PCCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 DL-CCCH-Message ::= SEQUENCE {
 	message					DL-CCCH-MessageType
@@ -71,7 +66,6 @@ DL-CCCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 DL-DCCH-Message ::= SEQUENCE {
 	message					DL-DCCH-MessageType
@@ -97,7 +91,6 @@ DL-DCCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 UL-CCCH-Message ::= SEQUENCE {
 	message					UL-CCCH-MessageType
@@ -111,7 +104,6 @@ UL-CCCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 UL-DCCH-Message ::= SEQUENCE {
 	message					UL-DCCH-MessageType
@@ -152,7 +144,6 @@ UL-DCCH-MessageType ::= CHOICE {
 	}
 }
 
--- ASN1STOP
 
 SC-MCCH-Message ::= SEQUENCE {
 	message					SC-MCCH-MessageType
@@ -166,7 +157,6 @@ SC-MCCH-MessageType ::= CHOICE {
 	messageClassExtension	SEQUENCE {}
 }
 
--- ASN1STOP
 
 CounterCheck ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -197,7 +187,6 @@ DRB-CountMSB-Info ::=	SEQUENCE {
 	countMSB-Downlink				INTEGER(0..33554431)
 }
 
--- ASN1STOP
 
 CounterCheckResponse ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -225,7 +214,6 @@ DRB-CountInfo ::=	SEQUENCE {
 	count-Downlink					INTEGER(0..4294967295)
 }
 
--- ASN1STOP
 
 CSFBParametersRequestCDMA2000 ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -243,7 +231,6 @@ CSFBParametersRequestCDMA2000-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 CSFBParametersResponseCDMA2000 ::= SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -264,7 +251,6 @@ CSFBParametersResponseCDMA2000-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 DLInformationTransfer ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -291,7 +277,6 @@ DLInformationTransfer-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 HandoverFromEUTRAPreparationRequest ::= SEQUENCE {
 	rrc-TransactionIdentifier		RRC-TransactionIdentifier,
@@ -328,7 +313,6 @@ HandoverFromEUTRAPreparationRequest-v1020-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}				OPTIONAL
 }
 
--- ASN1STOP
 
 InDeviceCoexIndication-r11 ::=		SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -399,7 +383,6 @@ VictimSystemType-r11 ::= SEQUENCE {
 	bluetooth-r11						ENUMERATED {true}				OPTIONAL
 }
 
--- ASN1STOP
 
 InterFreqRSTDMeasurementIndication-r10 ::=			SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -426,14 +409,12 @@ RSTD-InterFreqInfoList-r10 ::=	SEQUENCE (SIZE(1..maxRSTD-Freq-r10)) OF RSTD-Inte
 
 RSTD-InterFreqInfo-r10 ::=		SEQUENCE {
 	carrierFreq-r10					ARFCN-ValueEUTRA,
-	measPRS-Offset-r10				INTEGER (0..39)
---	,
-----	...,
---	[[	carrierFreq-v1090			ARFCN-ValueEUTRA-v9e0				OPTIONAL
---	]]
+	measPRS-Offset-r10				INTEGER (0..39),
+	...,
+	[[	carrierFreq-v1090			ARFCN-ValueEUTRA-v9e0				OPTIONAL
+	]]
 }
 
--- ASN1STOP
 
 LoggedMeasurementConfiguration-r10 ::=	SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -481,7 +462,6 @@ TargetMBSFN-Area-r12 ::=				SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MasterInformationBlock ::=			SEQUENCE {
 	dl-Bandwidth						ENUMERATED {
@@ -492,7 +472,6 @@ MasterInformationBlock ::=			SEQUENCE {
 }
 
 
--- ASN1STOP
 
 MBMSCountingRequest-r10 ::=		SEQUENCE {
 	countingRequestList-r10			CountingRequestList-r10,
@@ -507,7 +486,6 @@ CountingRequestInfo-r10 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MBMSCountingResponse-r10 ::=			SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -533,7 +511,6 @@ CountingResponseInfo-r10 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MBMSInterestIndication-r11 ::=		SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -557,7 +534,6 @@ MBMSInterestIndication-r13-IEs ::=	SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}						OPTIONAL
 }
 
--- ASN1STOP
 
 MBSFNAreaConfiguration-r9 ::=		SEQUENCE {
 	commonSF-Alloc-r9					CommonSF-AllocPatternList-r9,
@@ -579,7 +555,6 @@ MBSFNAreaConfiguration-v1250-IEs ::= SEQUENCE {
 
 CommonSF-AllocPatternList-r9 ::=	SEQUENCE (SIZE (1..maxMBSFN-Allocations)) OF MBSFN-SubframeConfig
 
--- ASN1STOP
 
 MeasurementReport ::=				SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -603,7 +578,6 @@ MeasurementReport-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 MobilityFromEUTRACommand ::=		SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -695,7 +669,6 @@ E-CSFB-r9 ::=						SEQUENCE {
 	redirectCarrierCDMA2000-HRPD-r9	CarrierFreqCDMA2000	OPTIONAL	-- Cond concRedir
 }
 
--- ASN1STOP
 
 Paging ::=					SEQUENCE {
 	pagingRecordList				PagingRecordList 					OPTIONAL,	-- Need ON
@@ -743,7 +716,6 @@ IMSI ::=							SEQUENCE (SIZE (6..21)) OF IMSI-Digit
 
 IMSI-Digit ::=						INTEGER (0..9)
 
--- ASN1STOP
 
 ProximityIndication-r9 ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -760,7 +732,7 @@ ProximityIndication-r9-IEs ::= SEQUENCE {
 	carrierFreq-r9						CHOICE {
 		eutra-r9							ARFCN-ValueEUTRA,
 		utra-r9								ARFCN-ValueUTRA,
-	--	...,
+		...,
 		eutra2-v9e0							ARFCN-ValueEUTRA-v9e0
 	},
 	nonCriticalExtension				ProximityIndication-v930-IEs							OPTIONAL
@@ -771,7 +743,6 @@ ProximityIndication-v930-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 RNReconfiguration-r10 ::=		SEQUENCE {
 	rrc-TransactionIdentifier		RRC-TransactionIdentifier,
@@ -797,7 +768,6 @@ RN-SystemInfo-r10 ::=			SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 RNReconfigurationComplete-r10 ::=		SEQUENCE {
 	rrc-TransactionIdentifier				RRC-TransactionIdentifier,
@@ -815,7 +785,6 @@ RNReconfigurationComplete-r10-IEs ::=	SEQUENCE {
 	nonCriticalExtension					SEQUENCE {}					OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionReconfiguration ::=	SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -909,14 +878,12 @@ PSCellToAddMod-r12 ::=				SEQUENCE {
 		dl-CarrierFreq-r12					ARFCN-ValueEUTRA-r9
 	}																	OPTIONAL,	-- Cond SCellAdd
 	radioResourceConfigCommonPSCell-r12		RadioResourceConfigCommonPSCell-r12	OPTIONAL,	-- Cond SCellAdd
-	radioResourceConfigDedicatedPSCell-r12	RadioResourceConfigDedicatedPSCell-r12	OPTIONAL, -- Cond SCellAdd2
-----	...,
---	[[	
-        antennaInfoDedicatedPSCell-v1280		AntennaInfoDedicated-v10i0	OPTIONAL, -- Need ON
---	]],
---	[[	
-        sCellIndex-r13					SCellIndex-r13	OPTIONAL		-- Need ON
---	]]
+	radioResourceConfigDedicatedPSCell-r12	RadioResourceConfigDedicatedPSCell-r12	OPTIONAL,	-- Cond SCellAdd2
+	...,
+	[[	antennaInfoDedicatedPSCell-v1280		AntennaInfoDedicated-v10i0	OPTIONAL	-- Need ON
+	]],
+	[[	sCellIndex-r13					SCellIndex-r13	OPTIONAL		-- Need ON
+	]]
 }
 
 PowerCoordinationInfo-r12 ::= SEQUENCE {
@@ -936,15 +903,12 @@ SCellToAddMod-r10 ::=			SEQUENCE {
 		dl-CarrierFreq-r10					ARFCN-ValueEUTRA
 	}																OPTIONAL,	-- Cond SCellAdd
 	radioResourceConfigCommonSCell-r10		RadioResourceConfigCommonSCell-r10	OPTIONAL,	-- Cond SCellAdd
-	radioResourceConfigDedicatedSCell-r10	RadioResourceConfigDedicatedSCell-r10	OPTIONAL--,	
-	-- Cond SCellAdd2
---	...,
---	[[	dl-CarrierFreq-v1090				ARFCN-ValueEUTRA-v9e0	OPTIONAL	
--- Cond EARFCN-max
---	]],
---	[[	antennaInfoDedicatedSCell-v10i0		AntennaInfoDedicated-v10i0	OPTIONAL	
--- Need ON
---	]]
+	radioResourceConfigDedicatedSCell-r10	RadioResourceConfigDedicatedSCell-r10	OPTIONAL,	-- Cond SCellAdd2
+	...,
+	[[	dl-CarrierFreq-v1090				ARFCN-ValueEUTRA-v9e0	OPTIONAL	-- Cond EARFCN-max
+	]],
+	[[	antennaInfoDedicatedSCell-v10i0		AntennaInfoDedicated-v10i0	OPTIONAL	-- Need ON
+	]]
 }
 
 SCellToAddMod-r13 ::=			SEQUENCE {
@@ -978,15 +942,12 @@ SCG-ConfigPartSCG-r12 ::=			SEQUENCE {
 	sCellToReleaseListSCG-r12			SCellToReleaseList-r10		OPTIONAL,	-- Need ON
 	pSCellToAddMod-r12					PSCellToAddMod-r12			OPTIONAL,	-- Need ON
 	sCellToAddModListSCG-r12			SCellToAddModList-r10		OPTIONAL,	-- Need ON
-	mobilityControlInfoSCG-r12			MobilityControlInfoSCG-r12	OPTIONAL --,
-	-- Need ON
---	...,
---	[[
---	sCellToReleaseListSCG-Ext-r13			SCellToReleaseListExt-r13		OPTIONAL,	
--- Need ON
---	sCellToAddModListSCG-Ext-r13				SCellToAddModListExt-r13	OPTIONAL	
--- Need ON
---	]]
+	mobilityControlInfoSCG-r12			MobilityControlInfoSCG-r12	OPTIONAL,	-- Need ON
+	...,
+	[[
+	sCellToReleaseListSCG-Ext-r13			SCellToReleaseListExt-r13		OPTIONAL,	-- Need ON
+	sCellToAddModListSCG-Ext-r13				SCellToAddModListExt-r13	OPTIONAL	-- Need ON
+	]]
 }
 
 SecurityConfigHO ::=				SEQUENCE {
@@ -1005,7 +966,6 @@ SecurityConfigHO ::=				SEQUENCE {
 }
 
 
--- ASN1STOP
 
 RRCConnectionReconfigurationComplete ::= SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1041,7 +1001,6 @@ RRCConnectionReconfigurationComplete-v1250-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}						OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionReestablishment ::=	SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1067,7 +1026,6 @@ RRCConnectionReestablishment-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionReestablishmentComplete ::= SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1107,7 +1065,6 @@ RRCConnectionReestablishmentComplete-v1250-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}						OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionReestablishmentReject ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1126,7 +1083,6 @@ RRCConnectionReestablishmentReject-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionReestablishmentRequest ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1152,7 +1108,6 @@ ReestablishmentCause ::=			ENUMERATED {
 										reconfigurationFailure, handoverFailure,
 										otherFailure, spare1}
 
--- ASN1STOP
 
 RRCConnectionReject ::=				SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1187,7 +1142,6 @@ RRCConnectionReject-v1130-IEs ::=	SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionRelease ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1225,7 +1179,7 @@ RRCConnectionRelease-v920-IEs ::=	SEQUENCE {
 		geran-r9						CellInfoListGERAN-r9,
 		utra-FDD-r9						CellInfoListUTRA-FDD-r9,
 		utra-TDD-r9						CellInfoListUTRA-TDD-r9,
-	--	...,
+		...,
 		utra-TDD-r10					CellInfoListUTRA-TDD-r10
 	}															OPTIONAL,	-- Cond Redirection
 	nonCriticalExtension			RRCConnectionRelease-v1020-IEs		OPTIONAL
@@ -1246,7 +1200,7 @@ RedirectedCarrierInfo ::=			CHOICE {
 	utra-TDD							ARFCN-ValueUTRA,
 	cdma2000-HRPD						CarrierFreqCDMA2000,
 	cdma2000-1xRTT						CarrierFreqCDMA2000,
---	...,
+	...,
 	utra-TDD-r10						CarrierFreqListUTRA-TDD-r10
 }
 
@@ -1265,17 +1219,13 @@ IdleModeMobilityControlInfo ::=		SEQUENCE {
 	bandClassPriorityList1XRTT			BandClassPriorityList1XRTT		OPTIONAL,		-- Need ON
 	t320								ENUMERATED {
 											min5, min10, min20, min30, min60, min120, min180,
-											spare1}						OPTIONAL--,		
-											-- Need OR
---	...,
---	[[	freqPriorityListExtEUTRA-r12		FreqPriorityListExtEUTRA-r12		OPTIONAL		
--- Need ON
---	]],
---	[[	freqPriorityListEUTRA-v13xy			FreqPriorityListEUTRA-v13xy			OPTIONAL,		
--- Need ON
---		freqPriorityListExtEUTRA-v13xy		FreqPriorityListExtEUTRA-v13xy		OPTIONAL		
--- Need ON
---	]]
+											spare1}						OPTIONAL,		-- Need OR
+	...,
+	[[	freqPriorityListExtEUTRA-r12		FreqPriorityListExtEUTRA-r12		OPTIONAL		-- Need ON
+	]],
+	[[	freqPriorityListEUTRA-v13xy			FreqPriorityListEUTRA-v13xy			OPTIONAL,		-- Need ON
+		freqPriorityListExtEUTRA-v13xy		FreqPriorityListExtEUTRA-v13xy		OPTIONAL		-- Need ON
+	]]
 }
 
 IdleModeMobilityControlInfo-v9e0 ::=	SEQUENCE {
@@ -1373,7 +1323,6 @@ CellInfoUTRA-TDD-r10 ::=			SEQUENCE {
 	utra-BCCH-Container-r10				OCTET STRING
 }
 
--- ASN1STOP
 
 RRCConnectionRequest ::=			SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1397,7 +1346,6 @@ EstablishmentCause ::=				ENUMERATED {
 										emergency, highPriorityAccess, mt-Access, mo-Signalling,
 										mo-Data, delayTolerantAccess-v1020, mo-VoiceCall-v1280, spare1}
 
--- ASN1STOP
 
 RRCConnectionSetup ::=				SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1422,7 +1370,6 @@ RRCConnectionSetup-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 RRCConnectionSetupComplete ::=		SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1473,7 +1420,6 @@ RegisteredMME ::=					SEQUENCE {
 	mmec								MMEC
 }
 
--- ASN1STOP
 
 SCGFailureInformation-r12 ::=		SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1495,13 +1441,12 @@ FailureReportSCG-r12 ::= 			SEQUENCE {
 												rlc-MaxNumRetx, scg-ChangeFailure },
 	measResultServFreqList-r12			MeasResultServFreqList-r10		OPTIONAL,
 	measResultNeighCells-r12			MeasResultList2EUTRA-r9			OPTIONAL,
---	...,
---	[[
+	...,
+	[[
 	measResultServFreqListExt-r13			MeasResultServFreqListExt-r13		OPTIONAL
---	]]
+	]]
 }
 
--- ASN1STOP
 
 SCPTMConfiguration-r13 ::=		SEQUENCE {
 	sc-mtch-InfoList-r13			SC-MTCH-InfoList-r13,
@@ -1509,7 +1454,6 @@ SCPTMConfiguration-r13 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SecurityModeCommand ::=				SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1537,7 +1481,6 @@ SecurityConfigSMC ::=					SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SecurityModeComplete ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1556,7 +1499,6 @@ SecurityModeComplete-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 SecurityModeFailure ::=				SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1575,7 +1517,6 @@ SecurityModeFailure-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 SidelinkUEInformation-r12 ::=		SEQUENCE {
 	criticalExtensions				CHOICE {
@@ -1638,7 +1579,6 @@ SL-DestinationInfoListUC-r13 ::=	SL-DestinationInfoList-r12
 
 SL-SysInfoReportList-r13 ::=	SEQUENCE (SIZE (1.. maxSL-DiscSysInfoReportFreq-r13)) OF SL-SysInfoReport-r13
 
--- ASN1STOP
 
 SystemInformation ::=				SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1658,7 +1598,7 @@ SystemInformation-r8-IEs ::=		SEQUENCE {
 		sib9								SystemInformationBlockType9,
 		sib10								SystemInformationBlockType10,
 		sib11								SystemInformationBlockType11,
-	--	...,
+		...,
 		sib12-v920							SystemInformationBlockType12-r9,
 		sib13-v920							SystemInformationBlockType13-r9,
 		sib14-v1130							SystemInformationBlockType14-r11,
@@ -1677,7 +1617,6 @@ SystemInformation-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType1 ::=		SEQUENCE {
 	cellAccessRelatedInfo				SEQUENCE {
@@ -1778,7 +1717,7 @@ SIB-Type ::=						ENUMERATED {
 										sibType11, sibType12-v920, sibType13-v920,
 										sibType14-v1130, sibType15-v1130,
 										sibType16-v1130, sibType17-v1250, sibType18-v1250,
-										..., sibType19-v1250, sibType20-v13xy }
+										..., sibType19-v1250, sibType20-v13xy}
 
 CellSelectionInfo-v920 ::=			SEQUENCE {
 	q-QualMin-r9						Q-QualMin-r9,
@@ -1793,7 +1732,6 @@ CellSelectionInfo-v1250 ::=			SEQUENCE {
 	q-QualMinRSRQ-OnAllSymbols-r12						Q-QualMin-r9
 }
 
--- ASN1STOP
 
 UEAssistanceInformation-r11 ::=				SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -1811,7 +1749,6 @@ UEAssistanceInformation-r11-IEs ::=		SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 UECapabilityEnquiry ::=				SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1849,7 +1786,6 @@ UECapabilityEnquiry-v13xy-IEs ::= SEQUENCE {
 
 UE-CapabilityRequest ::=		SEQUENCE (SIZE (1..maxRAT-Capabilities)) OF RAT-Type
 
--- ASN1STOP
 
 UECapabilityInformation ::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1879,7 +1815,6 @@ UECapabilityInformation-v1250-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 UEInformationRequest-r9		::=				SEQUENCE {
 	rrc-TransactionIdentifier		RRC-TransactionIdentifier,
@@ -1918,7 +1853,6 @@ UEInformationRequest-v1250-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 UEInformationResponse-r9	::=			SEQUENCE {
 	rrc-TransactionIdentifier			RRC-TransactionIdentifier,
@@ -1979,8 +1913,7 @@ RLF-Report-r9 ::= 					SEQUENCE {
 		measResultsCDMA2000-r9				MeasResultList2CDMA2000-r9		OPTIONAL
 	}	OPTIONAL,
 	...,
---	[[	
-	locationInfo-r10				LocationInfo-r10		OPTIONAL,
+	[[	locationInfo-r10				LocationInfo-r10		OPTIONAL,
 		failedPCellId-r10						CHOICE {
 			cellGlobalId-r10						CellGlobalIdEUTRA,
 			pci-arfcn-r10							SEQUENCE {
@@ -1992,16 +1925,12 @@ RLF-Report-r9 ::= 					SEQUENCE {
 		timeConnFailure-r10				INTEGER (0..1023)				OPTIONAL,
 		connectionFailureType-r10		ENUMERATED {rlf, hof}			OPTIONAL,
 		previousPCellId-r10				CellGlobalIdEUTRA				OPTIONAL
---	]]
-	,
---	[[	
-                failedPCellId-v1090				SEQUENCE {
+	]],
+	[[	failedPCellId-v1090				SEQUENCE {
 			carrierFreq-v1090				ARFCN-ValueEUTRA-v9e0
 		}																OPTIONAL
---	]],
-        ,
---	[[
-            basicFields-r11					SEQUENCE {
+	]],
+	[[	basicFields-r11					SEQUENCE {
 			c-RNTI-r11						C-RNTI,
 			rlf-Cause-r11					ENUMERATED {
 												t310-Expiry, randomAccessProblem,
@@ -2023,20 +1952,16 @@ RLF-Report-r9 ::= 					SEQUENCE {
 				tdd-r11							PhysCellIdUTRA-TDD
 			}
 		}																OPTIONAL
---	]]
-,
---	[[\n	
-                failedPCellId-v1250				SEQUENCE {
+	]],
+	[[	failedPCellId-v1250				SEQUENCE {
 			tac-FailedPCell-r12			TrackingAreaCode				
 		}																OPTIONAL,
 		measResultLastServCell-v1250	RSRQ-Range-v1250				OPTIONAL,
 		lastServCellRSRQ-Type-r12		RSRQ-Type-r12					OPTIONAL,
 		measResultListEUTRA-v1250		MeasResultList2EUTRA-v1250		OPTIONAL
---	]]
-,
---	[[
-	droppedQCI-r13					ENUMERATED {qci1}				OPTIONAL
---	]]
+	]],
+	[[	droppedQCI-r13					ENUMERATED {qci1}				OPTIONAL
+	]]
 }
 
 RLF-Report-v9e0 ::= 				SEQUENCE {
@@ -2102,7 +2027,7 @@ LogMeasInfo-r10 ::= 		SEQUENCE {
 		measResultListGERAN-r10				MeasResultList2GERAN-r10	OPTIONAL,
 		measResultListCDMA2000-r10			MeasResultList2CDMA2000-r9	OPTIONAL
 	}	OPTIONAL,
---	...,
+	...,
 	[[	measResultListEUTRA-v1090			MeasResultList2EUTRA-v9e0	OPTIONAL
 	]],
 	[[	measResultListMBSFN-r12				MeasResultListMBSFN-r12	OPTIONAL,
@@ -2165,7 +2090,7 @@ ConnEstFailReport-r11 ::= 				SEQUENCE {
 	maxTxPowerReached-r11				BOOLEAN,
 	timeSinceFailure-r11				TimeSinceFailure-r11,
 	measResultListEUTRA-v1130			MeasResultList2EUTRA-v9e0		OPTIONAL,
---	...,
+	...,
 	[[	measResultFailedCell-v1250		RSRQ-Range-v1250				OPTIONAL,
 		failedCellRSRQ-Type-r12			RSRQ-Type-r12					OPTIONAL,
 		measResultListEUTRA-v1250		MeasResultList2EUTRA-v1250		OPTIONAL
@@ -2178,7 +2103,6 @@ TimeSinceFailure-r11 ::=				INTEGER (0..172800)
 
 MobilityHistoryReport-r12 ::=	VisitedCellInfoList-r12
 
--- ASN1STOP
 
 ULHandoverPreparationTransfer ::=	SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -2202,7 +2126,6 @@ ULHandoverPreparationTransfer-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 ULInformationTransfer ::=			SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -2228,7 +2151,6 @@ ULInformationTransfer-v8a0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType2 ::=		SEQUENCE {
 	ac-BarringInfo						SEQUENCE {
@@ -2246,7 +2168,7 @@ SystemInformationBlockType2 ::=		SEQUENCE {
 	},
 	mbsfn-SubframeConfigList			MBSFN-SubframeConfigList			OPTIONAL, 	-- Need OR
 	timeAlignmentTimerCommon			TimeAlignmentTimer,
---	...,
+	...,
 	lateNonCriticalExtension		OCTET STRING (CONTAINING SystemInformationBlockType2-v8h0-IEs)						OPTIONAL,
 	[[	ssac-BarringForMMTEL-Voice-r9		AC-BarringConfig				OPTIONAL,	-- Need OP
 		ssac-BarringForMMTEL-Video-r9		AC-BarringConfig				OPTIONAL	-- Need OP
@@ -2327,7 +2249,6 @@ BarringPerACDC-Category-r13 ::= SEQUENCE {
 	}										OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType3 ::=		SEQUENCE {
 	cellReselectionInfoCommon			SEQUENCE {
@@ -2359,7 +2280,7 @@ SystemInformationBlockType3 ::=		SEQUENCE {
 		t-ReselectionEUTRA					T-Reselection,
 		t-ReselectionEUTRA-SF				SpeedStateScaleFactors		OPTIONAL		-- Need OP
 	},
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING (CONTAINING SystemInformationBlockType3-v10j0-IEs)	OPTIONAL,
 	[[	s-IntraSearch-v920					SEQUENCE {
 			s-IntraSearchP-r9					ReselectionThreshold,
@@ -2400,13 +2321,12 @@ SystemInformationBlockType3-v10j0-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}					OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType4 ::=		SEQUENCE {
 	intraFreqNeighCellList				IntraFreqNeighCellList		OPTIONAL,	-- Need OR
 	intraFreqBlackCellList				IntraFreqBlackCellList				OPTIONAL,	-- Need OR
 	csg-PhysCellIdRange					PhysCellIdRange				OPTIONAL,	-- Cond CSG
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING				OPTIONAL
 }
 
@@ -2420,11 +2340,10 @@ IntraFreqNeighCellInfo ::=		SEQUENCE {
 
 IntraFreqBlackCellList ::=		SEQUENCE (SIZE (1..maxCellBlack)) OF PhysCellIdRange
 
--- ASN1STOP
 
 SystemInformationBlockType5 ::=		SEQUENCE {
 	interFreqCarrierFreqList			InterFreqCarrierFreqList,
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING	(CONTAINING SystemInformationBlockType5-v8h0-IEs)				OPTIONAL,
 	[[	interFreqCarrierFreqList-v1250	InterFreqCarrierFreqList-v1250		OPTIONAL,	-- Need OR
 		interFreqCarrierFreqListExt-r12	InterFreqCarrierFreqListExt-r12 	OPTIONAL	-- Need OR
@@ -2478,7 +2397,7 @@ InterFreqCarrierFreqInfo ::=	SEQUENCE {
 	q-OffsetFreq						Q-OffsetRange					DEFAULT dB0,
 	interFreqNeighCellList				InterFreqNeighCellList			OPTIONAL, 		-- Need OR
 	interFreqBlackCellList				InterFreqBlackCellList			OPTIONAL, 		-- Need OR
---	...,
+	...,
 	[[	q-QualMin-r9					Q-QualMin-r9					OPTIONAL,		-- Need OP
 		threshX-Q-r9					SEQUENCE {
 			threshX-HighQ-r9				ReselectionThresholdQ-r9,
@@ -2563,14 +2482,13 @@ RedistributionNeighCell-r13 ::=		SEQUENCE {
 
 RedistributionFactor-r13 ::=	INTEGER(1..10)
 
--- ASN1STOP
 
 SystemInformationBlockType6 ::=		SEQUENCE {
 	carrierFreqListUTRA-FDD				CarrierFreqListUTRA-FDD			OPTIONAL, 		-- Need OR
 	carrierFreqListUTRA-TDD				CarrierFreqListUTRA-TDD			OPTIONAL, 		-- Need OR
 	t-ReselectionUTRA					T-Reselection,
 	t-ReselectionUTRA-SF				SpeedStateScaleFactors			OPTIONAL,		-- Need OP
---	...,
+	...,
 	lateNonCriticalExtension			OCTET STRING	(CONTAINING SystemInformationBlockType6-v8h0-IEs)					OPTIONAL,
 	[[	carrierFreqListUTRA-FDD-v1250 SEQUENCE (SIZE (1..maxUTRA-FDD-Carrier)) OF
 										CarrierFreqInfoUTRA-v1250		OPTIONAL,	-- Cond UTRA-FDD
@@ -2601,7 +2519,7 @@ CarrierFreqUTRA-FDD ::=				SEQUENCE {
 	q-RxLevMin							INTEGER (-60..-13),
 	p-MaxUTRA							INTEGER (-50..33),
 	q-QualMin							INTEGER (-24..0),
---	...,
+	...,
 	[[	threshX-Q-r9					SEQUENCE {
 			threshX-HighQ-r9				ReselectionThresholdQ-r9,
 			threshX-LowQ-r9					ReselectionThresholdQ-r9
@@ -2661,13 +2579,12 @@ CarrierFreqUTRA-TDD-r12 ::=	SEQUENCE {
 
 FreqBandIndicator-UTRA-FDD ::=				INTEGER (1..86)
 
--- ASN1STOP
 
 SystemInformationBlockType7 ::=		SEQUENCE {
 	t-ReselectionGERAN					T-Reselection,
 	t-ReselectionGERAN-SF				SpeedStateScaleFactors				OPTIONAL,	-- Need OR
 	carrierFreqsInfoList				CarrierFreqsInfoListGERAN			OPTIONAL,	-- Need OR
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING				OPTIONAL
 }
 
@@ -2686,7 +2603,6 @@ CarrierFreqsInfoGERAN ::=			SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType8 ::=		SEQUENCE {
 	systemTimeInfo						SystemTimeInfoCDMA2000				OPTIONAL,	-- Need OR
@@ -2700,7 +2616,7 @@ SystemInformationBlockType8 ::=		SEQUENCE {
 		longCodeState1XRTT					BIT STRING (SIZE (42))			OPTIONAL,	-- Need OR
 		cellReselectionParameters1XRTT		CellReselectionParametersCDMA2000	OPTIONAL -- Need OR
 	}																		OPTIONAL,	-- Need OR
---	...,
+	...,
 	lateNonCriticalExtension			OCTET STRING						OPTIONAL,
 	[[	csfb-SupportForDualRxUEs-r9			BOOLEAN							OPTIONAL,	-- Need OR
 		cellReselectionParametersHRPD-v920	CellReselectionParametersCDMA2000-v920	OPTIONAL,	-- Cond NCL-HRPD
@@ -2827,26 +2743,23 @@ ParametersCDMA2000-r11 ::=			SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType9 ::=		SEQUENCE {
 	hnb-Name							OCTET STRING (SIZE(1..48))		OPTIONAL,	-- Need OR
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING				OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType10 ::=	SEQUENCE {
 	messageIdentifier					BIT STRING (SIZE (16)),
 	serialNumber						BIT STRING (SIZE (16)),
 	warningType							OCTET STRING (SIZE (2)),
 	dummy								OCTET STRING (SIZE (50))	OPTIONAL,		-- Need OP
---	...,
+	...,
 	lateNonCriticalExtension			OCTET STRING				OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType11 ::=	SEQUENCE {
 	messageIdentifier					BIT STRING (SIZE (16)),
@@ -2855,11 +2768,10 @@ SystemInformationBlockType11 ::=	SEQUENCE {
 	warningMessageSegmentNumber			INTEGER (0..63),
 	warningMessageSegment				OCTET STRING,
 	dataCodingScheme					OCTET STRING (SIZE (1)) 		OPTIONAL, 	-- Cond Segment1
---	...,
+	...,
 	lateNonCriticalExtension				OCTET STRING				OPTIONAL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType12-r9 ::=	SEQUENCE {
 	messageIdentifier-r9				BIT STRING (SIZE (16)),
@@ -2872,7 +2784,6 @@ SystemInformationBlockType12-r9 ::=	SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType13-r9 ::=	SEQUENCE {
 	mbsfn-AreaInfoList-r9				MBSFN-AreaInfoList-r9,
@@ -2881,7 +2792,6 @@ SystemInformationBlockType13-r9 ::=	SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType14-r11 ::=	SEQUENCE {
 	eab-Param-r11							CHOICE {
@@ -2901,13 +2811,12 @@ EAB-Config-r11 ::=					SEQUENCE {
 	eab-BarringBitmap-r11				BIT STRING (SIZE (10))
 }
 
--- ASN1STOP
 
 SystemInformationBlockType15-r11 ::=	SEQUENCE {
 	mbms-SAI-IntraFreq-r11					MBMS-SAI-List-r11				OPTIONAL,	-- Need OR
 	mbms-SAI-InterFreqList-r11				MBMS-SAI-InterFreqList-r11		OPTIONAL,	-- Need OR
 	lateNonCriticalExtension				OCTET STRING					OPTIONAL,
---	...,
+	...,
 	[[	mbms-SAI-InterFreqList-v1140		MBMS-SAI-InterFreqList-v1140	OPTIONAL	-- Cond InterFreq
 	]]
 }
@@ -2930,7 +2839,6 @@ MBMS-SAI-InterFreq-v1140 ::=			SEQUENCE {
 }
 
 
--- ASN1STOP
 
 SystemInformationBlockType16-r11 ::=		SEQUENCE {
 	timeInfo-r11							SEQUENCE {
@@ -2943,7 +2851,6 @@ SystemInformationBlockType16-r11 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType17-r12 ::=	SEQUENCE {
 	wlan-OffloadInfoPerPLMN-List-r12		SEQUENCE (SIZE (1..maxPLMN-r11)) OF
@@ -2967,7 +2874,6 @@ WLAN-Identifiers-r12 ::=			SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SystemInformationBlockType18-r12 ::= SEQUENCE {
 	commConfig-r12						SEQUENCE {
@@ -2977,13 +2883,12 @@ SystemInformationBlockType18-r12 ::= SEQUENCE {
 		commSyncConfig-r12					SL-SyncConfigList-r12		OPTIONAL	-- Need OR
 	}																		OPTIONAL,	-- Need OR
 	lateNonCriticalExtension			OCTET STRING						OPTIONAL,
---	...,
+	...,
 	[[	commTxPoolNormalCommonExt-r13			SL-CommTxPoolListExt-r13	OPTIONAL,	-- Need OR
 		commTxAllowRelayCommon-r13				ENUMERATED {true}			OPTIONAL	-- Need OR
 	]]
 }
 
--- ASN1STOP
 
 SystemInformationBlockType19-r12 ::= SEQUENCE {
 	discConfig-r12						SEQUENCE {
@@ -2994,7 +2899,7 @@ SystemInformationBlockType19-r12 ::= SEQUENCE {
 	}																		OPTIONAL,	-- Need OR
 	discInterFreqList-r12				SL-CarrierFreqInfoList-r12		OPTIONAL,	-- Need OR
 	lateNonCriticalExtension			OCTET STRING						OPTIONAL,
---	...,
+	...,
 	[[	discConfig-v13x0				SEQUENCE {
 			discInterFreqList-v13x0			SL-CarrierFreqInfoList-v13x0	OPTIONAL,	-- Need OR
 			gapRequestsAllowedCommon		ENUMERATED {true}			OPTIONAL	-- Need OR
@@ -3072,7 +2977,6 @@ SL-DiscTxResourcesInterFreq-r13 ::=	CHOICE {
 	noTxOnCarrier-r13				NULL
 }
 
--- ASN1STOP
 
 SystemInformationBlockType20-r13 ::=	SEQUENCE {
 	sc-mcch-RepetionPeriod-r13		ENUMERATED {rf2, rf4, rf8, rf16, rf32, rf64, rf128, rf256},
@@ -3084,7 +2988,6 @@ SystemInformationBlockType20-r13 ::=	SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 AntennaInfoCommon ::=				SEQUENCE {
 	antennaPortsCount					ENUMERATED {an1, an2, an4, spare1}
@@ -3137,7 +3040,6 @@ AntennaInfoDedicated-v1250 ::=		SEQUENCE {
 	alternativeCodebookEnabledFor4TX-r12	BOOLEAN
 }
 
--- ASN1STOP
 
 AntennaInfoUL-r10 ::=		SEQUENCE {
 	transmissionModeUL-r10				ENUMERATED {tm1, tm2, spare6, spare5,
@@ -3145,7 +3047,6 @@ AntennaInfoUL-r10 ::=		SEQUENCE {
 	fourAntennaPortActivated-r10			ENUMERATED {setup}			OPTIONAL		-- Need OR
 }
 
--- ASN1STOP
 
 CQI-ReportConfig ::=				SEQUENCE {
 	cqi-ReportModeAperiodic			CQI-ReportModeAperiodic	OPTIONAL,			-- Need OR
@@ -3288,7 +3189,7 @@ CQI-ReportPeriodicProcExt-r11 ::=		SEQUENCE {
 			ri-ConfigIndex2-r11				INTEGER (0..1023)		OPTIONAL		-- Need OR
 		}
 	}																OPTIONAL,		-- Need ON
---	...,
+	...,
 	[[	cri-ReportConfig-r13			CRI-ReportConfig-r13				OPTIONAL	-- Need ON
 	]]
 }
@@ -3392,11 +3293,9 @@ CRI-ReportConfig-r13 ::=			CHOICE {
 	}
 }
 
--- ASN1STOP
 
 CQI-ReportPeriodicProcExtId-r11 ::=					INTEGER (1..maxCQI-ProcExt-r11)
 
--- ASN1STOP
 
 CrossCarrierSchedulingConfig-r10 ::=		SEQUENCE {
 	schedulingCellInfo-r10				CHOICE {
@@ -3423,7 +3322,6 @@ CrossCarrierSchedulingConfig-r13 ::=		SEQUENCE {
 	}
 }
 
--- ASN1STOP
 
 CSI-IM-Config-r11 ::=		SEQUENCE {
 	csi-IM-ConfigId-r11			CSI-IM-ConfigId-r11,
@@ -3439,13 +3337,11 @@ CSI-IM-ConfigExt-r12 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 CSI-IM-ConfigId-r11 ::=					INTEGER (1..maxCSI-IM-r11)
 CSI-IM-ConfigId-r12 ::=					INTEGER (1..maxCSI-IM-r12)
 CSI-IM-ConfigId-v1250 ::=				INTEGER (maxCSI-IM-r12)
 
--- ASN1STOP
 
 CSI-Process-r11 ::=		SEQUENCE {
 	csi-ProcessId-r11			CSI-ProcessId-r11,
@@ -3455,7 +3351,7 @@ CSI-Process-r11 ::=		SEQUENCE {
 	cqi-ReportBothProc-r11		CQI-ReportBothProc-r11			OPTIONAL,		-- Need OR
 	cqi-ReportPeriodicProcId-r11	INTEGER (0..maxCQI-ProcExt-r11)		OPTIONAL,		-- Need OR
 	cqi-ReportAperiodicProc-r11	CQI-ReportAperiodicProc-r11		OPTIONAL,		-- Need OR
---	...,
+	...,
 	[[	alternativeCodebookEnabledFor4TXProc-r12	ENUMERATED {true}	OPTIONAL,	-- Need ON
 		csi-IM-ConfigIdList-r12		CHOICE {
 			release						NULL,
@@ -3497,11 +3393,9 @@ P-C-AndCBSR-r13 ::=	SEQUENCE {
 
 P-C-AndCBSR-PerResourceConfig-r13 ::=	SEQUENCE (SIZE (1..2)) OF P-C-AndCBSR-r13
 
--- ASN1STOP
 
 CSI-ProcessId-r11 ::=		INTEGER (1..maxCSI-Proc-r11)
 
--- ASN1STOP
 
 CSI-RS-Config-r10 ::=		SEQUENCE {
 	csi-RS-r10					CHOICE {
@@ -3546,7 +3440,6 @@ ZeroTxPowerCSI-RS-r12 ::=	SEQUENCE {
 	zeroTxPowerSubframeConfig-r12			INTEGER (0..154)
 }
 
--- ASN1STOP
 
 CSI-RS-ConfigNZP-r11 ::=		SEQUENCE {
 	csi-RS-ConfigNZPId-r11			CSI-RS-ConfigNZPId-r11,
@@ -3564,7 +3457,7 @@ CSI-RS-ConfigNZP-r11 ::=		SEQUENCE {
 				}
 		}																OPTIONAL	-- Need ON
 	}																	OPTIONAL,	-- Need OR
---	...,
+	...,
 	[[	eMIMO-Info-r13					CHOICE {
 			release						NULL,
 			setup						SEQUENCE {
@@ -3577,11 +3470,9 @@ CSI-RS-ConfigNZP-r11 ::=		SEQUENCE {
 
 ResourceConfig-r13 ::=				INTEGER (0..31)
 
--- ASN1STOP
 
 CSI-RS-ConfigNZPId-r11 ::=					INTEGER (1..maxCSI-RS-NZP-r11)
 
--- ASN1STOP
 
 CSI-RS-ConfigZP-r11 ::=		SEQUENCE {
 	csi-RS-ConfigZPId-r11		CSI-RS-ConfigZPId-r11,
@@ -3590,11 +3481,9 @@ CSI-RS-ConfigZP-r11 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 CSI-RS-ConfigZPId-r11 ::=					INTEGER (1..maxCSI-RS-ZP-r11)
 
--- ASN1STOP
 
 CSI-RS-InfoNonPrecoded-r13 ::=			SEQUENCE {
 	p-C-AndCBSRList-r13						SEQUENCE (SIZE (1..2)) OF P-C-AndCBSR-r13	OPTIONAL,	-- Need OR
@@ -3619,7 +3508,6 @@ CSI-IM-ConfigIdInfo-r13 ::=	SEQUENCE {
 	interferenceMeasRestriction-r13			ENUMERATED {on} 		OPTIONAL	-- Need OR
 }
 
--- ASN1STOP
 
 DMRS-Config-r11 ::=		CHOICE {
 	release						NULL,
@@ -3632,11 +3520,9 @@ DMRS-Config-v13x0 ::=			SEQUENCE {
 		dmrs-tableAlt-r13				ENUMERATED {true}			OPTIONAL	-- Need OR
 }
 
--- ASN1STOP
 
 DRB-Identity ::=					INTEGER (1..32)
 
--- ASN1STOP
 
 EPDCCH-Config-r11 ::=		SEQUENCE{
 	config-r11		CHOICE {
@@ -3669,7 +3555,7 @@ EPDCCH-SetConfig-r11 ::=		SEQUENCE {
 	dmrs-ScramblingSequenceInt-r11	INTEGER (0..503),
 	pucch-ResourceStartOffset-r11	INTEGER (0..2047),
 	re-MappingQCL-ConfigId-r11		PDSCH-RE-MappingQCL-ConfigId-r11	OPTIONAL, -- Need OR
---	...,
+	...,
 	[[	csi-RS-ConfigZPId2-r12				CHOICE {
 			release						NULL,
 			setup						CSI-RS-ConfigZPId-r11
@@ -3679,7 +3565,6 @@ EPDCCH-SetConfig-r11 ::=		SEQUENCE {
 
 EPDCCH-SetConfigId-r11 ::=	INTEGER (0..1)
 
--- ASN1STOP
 EIMTA-MainConfig-r12 ::=	CHOICE {
 	release							NULL,
 	setup							SEQUENCE {
@@ -3703,7 +3588,6 @@ EIMTA-MainConfigServCell-r12 ::=	CHOICE {
 	}
 }
 
--- ASN1STOP
 
 LogicalChannelConfig ::=			SEQUENCE {
 	ul-SpecificParameters				SEQUENCE {
@@ -3718,14 +3602,13 @@ LogicalChannelConfig ::=			SEQUENCE {
 												spare1},
 		logicalChannelGroup					INTEGER (0..3)			OPTIONAL			-- Need OR
 	}		OPTIONAL,																	-- Cond UL
---	...,
+	...,
 	[[	logicalChannelSR-Mask-r9			ENUMERATED {setup}		OPTIONAL		-- Cond SRmask
 	]],
 	[[	logicalChannelSR-Prohibit-r12		BOOLEAN					OPTIONAL		-- Need ON
 	]]
 }
 
--- ASN1STOP
 
 MAC-MainConfig ::=					SEQUENCE {
 	ul-SCH-Config						SEQUENCE {
@@ -3749,7 +3632,7 @@ MAC-MainConfig ::=					SEQUENCE {
 			dl-PathlossChange					ENUMERATED {dB1, dB3, dB6, infinity}
 		}
 	}																OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	sr-ProhibitTimer-r9					INTEGER (0..7)			OPTIONAL	-- Need ON
 	]],
 	[[	mac-MainConfig-v1020				SEQUENCE {
@@ -3873,7 +3756,6 @@ STAG-ToAddMod-r11 ::=		SEQUENCE {
 
 STAG-Id-r11::=				INTEGER (1..maxSTAG-r11)
 
--- ASN1STOP
 
 PDCCH-ConfigSCell-r13 ::=		SEQUENCE {
 	skipMonitoringDCI-format0-1A-r13	ENUMERATED {true}				OPTIONAL,	-- Need OR
@@ -3890,7 +3772,6 @@ PDCCH-CandidateReductions-r13 ::= SEQUENCE {
 	pdcch-candidateReductionAL5		PDCCH-CandidateReductionValue-r13 
 }
 
--- ASN1STOP
 
 PDCP-Config ::=						SEQUENCE {
 	discardTimer						ENUMERATED {
@@ -3921,7 +3802,7 @@ PDCP-Config ::=						SEQUENCE {
 			...
 		}
 	},
---	...,
+	...,
 	[[	rn-IntegrityProtection-r10		ENUMERATED {enabled}	OPTIONAL	-- Cond RN
 	]],
 	[[	pdcp-SN-Size-v1130				ENUMERATED {len15bits}	OPTIONAL	-- Cond Rlc-AM2
@@ -3946,7 +3827,6 @@ PDCP-Config ::=						SEQUENCE {
 
 }
 
--- ASN1STOP
 
 PDSCH-ConfigCommon ::=		SEQUENCE {
 	referenceSignalPower				INTEGER (-60..50),
@@ -3996,18 +3876,15 @@ PDSCH-RE-MappingQCL-Config-r11 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 PDSCH-RE-MappingQCL-ConfigId-r11 ::=		INTEGER (1..maxRE-MapQCL-r11)
 
--- ASN1STOP
 
 PHICH-Config ::=					SEQUENCE {
 	phich-Duration						ENUMERATED {normal, extended},
 	phich-Resource						ENUMERATED {oneSixth, half, one, two}
 }
 
--- ASN1STOP
 
 PhysicalConfigDedicated ::=		SEQUENCE {
 	pdsch-ConfigDedicated				PDSCH-ConfigDedicated			OPTIONAL,		-- Need ON
@@ -4023,7 +3900,7 @@ PhysicalConfigDedicated ::=		SEQUENCE {
 		defaultValue						NULL
 	}		OPTIONAL,																-- Cond AI-r8
 	schedulingRequestConfig				SchedulingRequestConfig		OPTIONAL, 			-- Need ON
---	...,
+	...,
 	[[	cqi-ReportConfig-v920				CQI-ReportConfig-v920		OPTIONAL,		-- Cond CQI-r8
 		antennaInfo-v920					AntennaInfoDedicated-v920	OPTIONAL		-- Cond AI-r8
 	]],
@@ -4112,7 +3989,7 @@ PhysicalConfigDedicatedSCell-r10 ::=		SEQUENCE {
 		soundingRS-UL-ConfigDedicatedAperiodic-r10
 								SoundingRS-UL-ConfigDedicatedAperiodic-r10	OPTIONAL	-- Need ON
 	}																	OPTIONAL,	-- Cond CommonUL
---	...,
+	...,
 	[[	-- DL configuration as well as configuration applicable for DL and UL
 		csi-RS-ConfigNZPToReleaseList-r11	CSI-RS-ConfigNZPToReleaseList-r11	OPTIONAL,	-- Need ON
 		csi-RS-ConfigNZPToAddModList-r11	CSI-RS-ConfigNZPToAddModList-r11	OPTIONAL,	-- Need ON
@@ -4177,11 +4054,9 @@ CSI-RS-ConfigZPToAddModList-r11 ::=	SEQUENCE (SIZE (1..maxCSI-RS-ZP-r11)) OF CSI
 
 CSI-RS-ConfigZPToReleaseList-r11 ::=	SEQUENCE (SIZE (1..maxCSI-RS-ZP-r11)) OF CSI-RS-ConfigZPId-r11
 
--- ASN1STOP
 
 P-Max ::=				INTEGER (-30..33)
 
--- ASN1STOP
 
 PRACH-ConfigSIB ::=				SEQUENCE {
 	rootSequenceIndex					INTEGER (0..837),
@@ -4204,11 +4079,9 @@ PRACH-ConfigInfo ::=				SEQUENCE {
 	prach-FreqOffset					INTEGER (0..94)
 }
 
--- ASN1STOP
 
 PresenceAntennaPort1 ::=				BOOLEAN
 
--- ASN1STOP
 
 PUCCH-ConfigCommon ::=				SEQUENCE {
 	deltaPUCCH-Shift					ENUMERATED {ds1, ds2, ds3},
@@ -4311,7 +4184,6 @@ Format5-resource-r13	::=				SEQUENCE {
 
 N1PUCCH-AN-CS-r10	::= SEQUENCE (SIZE (1..4)) OF INTEGER (0..2047)
 
--- ASN1STOP
 
 PUSCH-ConfigCommon ::=				SEQUENCE {
 	pusch-ConfigBasic					SEQUENCE {
@@ -4400,7 +4272,6 @@ UL-ReferenceSignalsPUSCH ::=		SEQUENCE {
 	cyclicShift							INTEGER (0..7)
 }
 
--- ASN1STOP
 
 RACH-ConfigCommon ::=		SEQUENCE {
 	preambleInfo						SEQUENCE {
@@ -4464,14 +4335,12 @@ PreambleTransMax ::=				ENUMERATED {
 											n3, n4, n5, n6, n7,	n8, n10, n20, n50,
 											n100, n200}
 
--- ASN1STOP
 
 RACH-ConfigDedicated ::=		SEQUENCE {
 	ra-PreambleIndex					INTEGER (0..63),
 	ra-PRACH-MaskIndex					INTEGER (0..15)
 }
 
--- ASN1STOP
 
 RadioResourceConfigCommonSIB ::=	SEQUENCE {
 	rach-ConfigCommon					RACH-ConfigCommon,
@@ -4484,7 +4353,7 @@ RadioResourceConfigCommonSIB ::=	SEQUENCE {
 	soundingRS-UL-ConfigCommon			SoundingRS-UL-ConfigCommon,
 	uplinkPowerControlCommon			UplinkPowerControlCommon,
 	ul-CyclicPrefixLength				UL-CyclicPrefixLength,
---	...,
+	...,
 	[[	uplinkPowerControlCommon-v1020	UplinkPowerControlCommon-v1020		OPTIONAL	-- Need OR
 	]],
 	[[	rach-ConfigCommon-v1250			RACH-ConfigCommon-v1250		OPTIONAL	-- Need OR
@@ -4506,7 +4375,7 @@ RadioResourceConfigCommon ::=		SEQUENCE {
 	p-Max								P-Max								OPTIONAL,	-- Need OP
 	tdd-Config							TDD-Config							OPTIONAL,	-- Cond TDD
 	ul-CyclicPrefixLength				UL-CyclicPrefixLength,
---	...,
+	...,
 	[[	uplinkPowerControlCommon-v1020	UplinkPowerControlCommon-v1020		OPTIONAL	-- Need ON
 	]],
 	[[	tdd-Config-v1130				TDD-Config-v1130				OPTIONAL	-- Cond TDD3
@@ -4522,7 +4391,7 @@ RadioResourceConfigCommonPSCell-r12 ::=	SEQUENCE {
 	pucch-ConfigCommon-r12				PUCCH-ConfigCommon,
 	rach-ConfigCommon-r12				RACH-ConfigCommon,
 	uplinkPowerControlCommonPSCell-r12	UplinkPowerControlCommonPSCell-r12,
---	...,
+	...,
 	[[	uplinkPowerControlCommon-v13xy	UplinkPowerControlCommon-v13xy		OPTIONAL	-- Need ON
 	]]
 }
@@ -4559,7 +4428,7 @@ RadioResourceConfigCommonSCell-r10 ::=	SEQUENCE {
 		prach-ConfigSCell-r10					PRACH-ConfigSCell-r10		OPTIONAL,	-- Cond TDD-OR-NoR11
 		pusch-ConfigCommon-r10				PUSCH-ConfigCommon
 	}																	OPTIONAL,	-- Need OR
---	...,
+	...,
 	[[	ul-CarrierFreq-v1090				ARFCN-ValueEUTRA-v9e0			OPTIONAL	-- Need OP
 	]],
 	[[	rach-ConfigCommonSCell-r11			RACH-ConfigCommonSCell-r11		OPTIONAL,	-- Cond ULSCell
@@ -4589,7 +4458,6 @@ PCCH-Config ::=						SEQUENCE {
 
 UL-CyclicPrefixLength ::=			ENUMERATED {len1, len2}
 
--- ASN1STOP
 
 RadioResourceConfigDedicated ::=		SEQUENCE {
 	srb-ToAddModList					SRB-ToAddModList			OPTIONAL, 		-- Cond HO-Conn
@@ -4601,7 +4469,7 @@ RadioResourceConfigDedicated ::=		SEQUENCE {
 	}		OPTIONAL,																-- Cond HO-toEUTRA2
 	sps-Config							SPS-Config 					OPTIONAL,		-- Need ON
 	physicalConfigDedicated				PhysicalConfigDedicated		OPTIONAL,		-- Need ON
---	...,
+	...,
 	[[	rlf-TimersAndConstants-r9		RLF-TimersAndConstants-r9			OPTIONAL	-- Need ON
 	]],
 	[[	measSubframePatternPCell-r10	MeasSubframePatternPCell-r10		OPTIONAL	-- Need ON
@@ -4619,7 +4487,7 @@ RadioResourceConfigDedicatedPSCell-r12 ::=		SEQUENCE {
 	physicalConfigDedicatedPSCell-r12		PhysicalConfigDedicated		OPTIONAL,	-- Need ON
 	sps-Config-r12							SPS-Config					OPTIONAL,	-- Need ON
 	naics-Info-r12							NAICS-AssistanceInfo-r12	OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	neighCellsCRS-InfoPSCell-r13		NeighCellsCRS-Info-r13		OPTIONAL	-- Need ON
 	]]
 }
@@ -4634,7 +4502,7 @@ RadioResourceConfigDedicatedSCG-r12 ::=		SEQUENCE {
 RadioResourceConfigDedicatedSCell-r10 ::=	SEQUENCE {
 	-- UE specific configuration extensions applicable for an SCell
 	physicalConfigDedicatedSCell-r10		PhysicalConfigDedicatedSCell-r10	OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	mac-MainConfigSCell-r11			MAC-MainConfigSCell-r11			OPTIONAL	-- Cond SCellAdd
 	]],
 	[[	naics-Info-r12				NAICS-AssistanceInfo-r12		OPTIONAL	-- Need ON
@@ -4670,7 +4538,7 @@ DRB-ToAddMod ::=	SEQUENCE {
 	rlc-Config							RLC-Config				OPTIONAL,		-- Cond SetupM
 	logicalChannelIdentity				INTEGER (3..10)			OPTIONAL,		-- Cond DRB-SetupM
 	logicalChannelConfig				LogicalChannelConfig	OPTIONAL,		-- Cond SetupM
---	...,
+	...,
 	[[	drb-TypeChange-r12						ENUMERATED {toMCG}	OPTIONAL,		-- Need OP
 		rlc-Config-v1250					RLC-Config-v1250		OPTIONAL		-- Need ON
 	]],
@@ -4755,7 +4623,6 @@ NeighCellsInfo-r12	::=		SEQUENCE {
 P-a ::= ENUMERATED {	dB-6, dB-4dot77, dB-3, dB-1dot77,
 									dB0, dB1, dB2, dB3}
 
--- ASN1STOP
 
 RLC-Config ::=				CHOICE {
 	am									SEQUENCE {
@@ -4854,7 +4721,6 @@ T-StatusProhibit ::=				ENUMERATED {
 										spare6, spare5, spare4, spare3, spare2,
 										spare1}
 
--- ASN1STOP
 
 RLF-TimersAndConstants-r9 ::=			CHOICE {
 	release									NULL,
@@ -4888,7 +4754,6 @@ RLF-TimersAndConstantsSCG-r12 ::=			CHOICE {
 	}
 }
 
--- ASN1STOP
 
 RN-SubframeConfig-r10 ::=		SEQUENCE {
 	subframeConfigPattern-r10			CHOICE {
@@ -4942,7 +4807,6 @@ RN-SubframeConfig-r10 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 SchedulingRequestConfig ::=		CHOICE {
 	release								NULL,
@@ -4958,7 +4822,6 @@ SchedulingRequestConfig-v1020 ::=	SEQUENCE {
 	sr-PUCCH-ResourceIndexP1-r10		INTEGER (0..2047)			OPTIONAL		-- Need OR
 }
 
--- ASN1STOP
 
 SoundingRS-UL-ConfigCommon ::=		CHOICE {
 	release								NULL,
@@ -5089,7 +4952,6 @@ SRS-ConfigAp-r13 ::= SEQUENCE {
 
 SRS-AntennaPort ::=					ENUMERATED {an1, an2, an4, spare1}
 
--- ASN1STOP
 
 SPS-Config ::=	SEQUENCE {
 	semiPersistSchedC-RNTI			C-RNTI					OPTIONAL,			-- Need OR
@@ -5107,7 +4969,7 @@ SPS-ConfigDL ::=	CHOICE{
 												spare1},
 		numberOfConfSPS-Processes			INTEGER (1..8),
 		n1PUCCH-AN-PersistentList			N1PUCCH-AN-PersistentList,
-	--	...,
+		...,
 		[[	twoAntennaPortActivated-r10		CHOICE {
 				release							NULL,
 				setup							SEQUENCE {
@@ -5132,7 +4994,7 @@ SPS-ConfigUL ::=	CHOICE {
 			p0-UE-PUSCH-Persistent				INTEGER (-8..7)
 		}		OPTIONAL,												-- Need OP
 		twoIntervalsConfig					ENUMERATED {true}			OPTIONAL,	-- Cond TDD
-	--	...,
+		...,
 		[[	p0-PersistentSubframeSet2-r12		CHOICE {
 				release								NULL,
 				setup								SEQUENCE {
@@ -5146,7 +5008,6 @@ SPS-ConfigUL ::=	CHOICE {
 
 N1PUCCH-AN-PersistentList ::=		SEQUENCE (SIZE (1..4)) OF INTEGER (0..2047)
 
--- ASN1STOP
 
 TDD-Config ::=						SEQUENCE {
 	subframeAssignment					ENUMERATED {
@@ -5165,12 +5026,10 @@ TDD-ConfigSL-r12 ::=		SEQUENCE {
 											none, sa0, sa1, sa2, sa3, sa4, sa5, sa6}
 }
 
--- ASN1STOP
 
 TimeAlignmentTimer ::=					ENUMERATED {
 												sf500, sf750, sf1280, sf1920, sf2560, sf5120,
 												sf10240, infinity}
--- ASN1STOP
 
 TPC-PDCCH-Config ::=					CHOICE {
 	release								NULL,
@@ -5192,7 +5051,6 @@ TPC-Index ::=							CHOICE {
 	indexOfFormat3A							INTEGER (1..31)
 }
 
--- ASN1STOP
 
 UplinkPowerControlCommon ::=		SEQUENCE {
 	p0-NominalPUSCH						INTEGER (-126..24),
@@ -5301,11 +5159,9 @@ DeltaTxD-OffsetListPUCCH-r10 ::=	SEQUENCE {
 DeltaTxD-OffsetListPUCCH-v1130 ::=	SEQUENCE {
 	deltaTxD-OffsetPUCCH-Format1bCS-r11		ENUMERATED {dB0, dB-1}
 }
--- ASN1STOP
 
 NextHopChainingCount ::=					INTEGER (0..7)
 
--- ASN1STOP
 
 SecurityAlgorithmConfig ::=			SEQUENCE {
 	cipheringAlgorithm					CipheringAlgorithm-r12,
@@ -5318,19 +5174,15 @@ CipheringAlgorithm-r12 ::=				ENUMERATED {
 											eea0, eea1, eea2, eea3-v1130, spare4, spare3,
 											spare2, spare1, ...}
 
--- ASN1STOP
 
 ShortMAC-I ::=						BIT STRING (SIZE (16))
 
--- ASN1STOP
 
 AdditionalSpectrumEmission ::=		INTEGER (1..32)
 
--- ASN1STOP
 
 ARFCN-ValueCDMA2000 ::=			INTEGER (0..2047)
 
--- ASN1STOP
 
 ARFCN-ValueEUTRA ::=				INTEGER (0..maxEARFCN)
 
@@ -5338,15 +5190,12 @@ ARFCN-ValueEUTRA-v9e0 ::=			INTEGER (maxEARFCN-Plus1..maxEARFCN2)
 
 ARFCN-ValueEUTRA-r9 ::=				INTEGER (0..maxEARFCN2)
 
--- ASN1STOP
 
 ARFCN-ValueGERAN ::=			INTEGER (0..1023)
 
--- ASN1STOP
 
 ARFCN-ValueUTRA ::=					INTEGER (0..16383)
 
--- ASN1STOP
 
 BandclassCDMA2000 ::=					ENUMERATED {
 											bc0, bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8,
@@ -5355,25 +5204,21 @@ BandclassCDMA2000 ::=					ENUMERATED {
 											spare10, spare9, spare8, spare7, spare6, spare5, spare4,
 											spare3, spare2, spare1, ...}
 
--- ASN1STOP
 
 BandIndicatorGERAN ::=			ENUMERATED {dcs1800, pcs1900}
 
--- ASN1STOP
 
 CarrierFreqCDMA2000 ::=			SEQUENCE {
 	bandClass							BandclassCDMA2000,
 	arfcn							ARFCN-ValueCDMA2000
 }
 
--- ASN1STOP
 
 CarrierFreqGERAN ::=			SEQUENCE {
 	arfcn							ARFCN-ValueGERAN,
 	bandIndicator					BandIndicatorGERAN
 }
 
--- ASN1STOP
 
 CarrierFreqsGERAN ::=			SEQUENCE {
 	startingARFCN						ARFCN-ValueGERAN,
@@ -5390,33 +5235,26 @@ CarrierFreqsGERAN ::=			SEQUENCE {
 
 ExplicitListOfARFCNs ::=			SEQUENCE (SIZE (0..31)) OF ARFCN-ValueGERAN
 
--- ASN1STOP
 
 CarrierFreqListMBMS-r11 ::=		SEQUENCE (SIZE (1..maxFreqMBMS-r11)) OF ARFCN-ValueEUTRA-r9
 
--- ASN1STOP
 
 CDMA2000-Type ::=					ENUMERATED {type1XRTT, typeHRPD}
 
--- ASN1STOP
 
 CellIdentity ::=					BIT STRING (SIZE (28))
 
--- ASN1STOP
 
 CellIndexList ::=						SEQUENCE (SIZE (1..maxCellMeas)) OF CellIndex
 
 CellIndex ::=							INTEGER (1..maxCellMeas)
 
--- ASN1STOP
 
 CellReselectionPriority ::=				INTEGER (0..7)
 
--- ASN1STOP
 
 CellReselectionSubPriority-r13 ::=			ENUMERATED {oDot2, oDot4, oDot6, oDot8}
 
--- ASN1STOP
 
 CSFB-RegistrationParam1XRTT ::=		SEQUENCE {
 	sid									BIT STRING (SIZE (15)),
@@ -5438,21 +5276,18 @@ CSFB-RegistrationParam1XRTT-v920 ::=	SEQUENCE {
 	powerDownReg-r9						ENUMERATED {true}
 }
 
--- ASN1STOP
 
 CellGlobalIdEUTRA ::=					SEQUENCE {
 	plmn-Identity							PLMN-Identity,
 	cellIdentity							CellIdentity
 }
 
--- ASN1STOP
 
 CellGlobalIdUTRA ::=					SEQUENCE {
 	plmn-Identity							PLMN-Identity,
 	cellIdentity							BIT STRING (SIZE (28))
 }
 
--- ASN1STOP
 
 CellGlobalIdGERAN ::=					SEQUENCE {
 	plmn-Identity							PLMN-Identity,
@@ -5460,18 +5295,15 @@ CellGlobalIdGERAN ::=					SEQUENCE {
 	cellIdentity						BIT STRING (SIZE (16))
 }
 
--- ASN1STOP
 
 CellGlobalIdCDMA2000 ::=				CHOICE {
 	cellGlobalId1XRTT						BIT STRING (SIZE (47)),
 	cellGlobalIdHRPD						BIT STRING (SIZE (128))
 }
 
--- ASN1STOP
 
 CSG-Identity ::=					BIT STRING (SIZE (27))
 
--- ASN1STOP
 
 FreqBandIndicator ::=					INTEGER (1..maxFBI)
 
@@ -5479,7 +5311,6 @@ FreqBandIndicator-v9e0 ::=				INTEGER (maxFBI-Plus1..maxFBI2)
 
 FreqBandIndicator-r11 ::=				INTEGER (1..maxFBI2)
 
--- ASN1STOP
 
 MobilityControlInfo ::=		SEQUENCE {
 	targetPhysCellId					PhysCellId,
@@ -5492,7 +5323,7 @@ MobilityControlInfo ::=		SEQUENCE {
 	newUE-Identity						C-RNTI,
 	radioResourceConfigCommon			RadioResourceConfigCommon,
 	rach-ConfigDedicated				RACH-ConfigDedicated				OPTIONAL,	-- Need OP
---	...,
+	...,
 	[[	carrierFreq-v9e0				CarrierFreqEUTRA-v9e0				OPTIONAL	-- Need ON
 	]],
 	[[	drb-ContinueROHC-r11			ENUMERATED {true}					OPTIONAL	-- Cond HO
@@ -5530,11 +5361,9 @@ CarrierFreqEUTRA-v9e0 ::=			SEQUENCE {
 	ul-CarrierFreq-v9e0					ARFCN-ValueEUTRA-r9			OPTIONAL	-- Cond FDD
 }
 
--- ASN1STOP
 
 MobilityParametersCDMA2000 ::=			OCTET STRING
 
--- ASN1STOP
 
 MobilityStateParameters ::=			SEQUENCE {
 	t-Evaluation						ENUMERATED {
@@ -5545,7 +5374,6 @@ MobilityStateParameters ::=			SEQUENCE {
 	n-CellChangeHigh					INTEGER (1..16)
 }
 
--- ASN1STOP
 
 MultiBandInfoList ::=	SEQUENCE (SIZE (1..maxMultiBands)) OF FreqBandIndicator
 
@@ -5559,7 +5387,6 @@ MultiBandInfo-v9e0 ::=		SEQUENCE {
 	freqBandIndicator-v9e0				FreqBandIndicator-v9e0		OPTIONAL	-- Need OP
 }
 
--- ASN1STOP
 
 NS-PmaxList-r10 ::=				SEQUENCE (SIZE (1..maxNS-Pmax-r10)) OF NS-PmaxValue-r10
 
@@ -5568,11 +5395,9 @@ NS-PmaxValue-r10 ::=			SEQUENCE {
 	additionalSpectrumEmission			AdditionalSpectrumEmission
 }
 
--- ASN1STOP
 
 PhysCellId ::=						INTEGER (0..503)
 
--- ASN1STOP
 
 PhysCellIdRange ::=				SEQUENCE {
 	start							PhysCellId,
@@ -5582,7 +5407,6 @@ PhysCellIdRange ::=				SEQUENCE {
 										spare1} 					OPTIONAL	-- Need OP
 }
 
--- ASN1STOP
 
 PhysCellIdRangeUTRA-FDDList-r9::=		SEQUENCE (SIZE (1..maxPhysCellIdRange-r9)) OF PhysCellIdRangeUTRA-FDD-r9
 
@@ -5591,26 +5415,21 @@ PhysCellIdRangeUTRA-FDD-r9 ::=			SEQUENCE {
 		range-r9							INTEGER (2..512)				OPTIONAL	-- Need OP
 }
 
--- ASN1STOP
 
 PhysCellIdCDMA2000 ::=			INTEGER (0..maxPNOffset)
 
--- ASN1STOP
 
 PhysCellIdGERAN ::=				SEQUENCE {
 	networkColourCode					BIT STRING (SIZE (3)),
 	baseStationColourCode				BIT STRING (SIZE (3))
 }
 
--- ASN1STOP
 
 PhysCellIdUTRA-FDD ::=				INTEGER (0..511)
 
--- ASN1STOP
 
 PhysCellIdUTRA-TDD ::=				INTEGER (0..127)
 
--- ASN1STOP
 
 PLMN-Identity ::=					SEQUENCE {
 	mcc									MCC					OPTIONAL,					-- Cond MCC
@@ -5626,11 +5445,9 @@ MNC ::=								SEQUENCE (SIZE (2..3)) OF
 MCC-MNC-Digit ::=					INTEGER (0..9)
 
 
--- ASN1STOP
 
 PLMN-IdentityList3-r11 ::=				SEQUENCE (SIZE (1..16)) OF PLMN-Identity
 
--- ASN1STOP
 
 PreRegistrationInfoHRPD ::=			SEQUENCE {
 	preRegistrationAllowed				BOOLEAN,
@@ -5642,15 +5459,12 @@ SecondaryPreRegistrationZoneIdListHRPD ::=	SEQUENCE (SIZE (1..2)) OF PreRegistra
 
 PreRegistrationZoneIdHRPD ::=			INTEGER (0..255)
 
--- ASN1STOP
 
 Q-QualMin-r9 ::=					INTEGER (-34..-3)
 
--- ASN1STOP
 
 Q-RxLevMin ::=						INTEGER (-70..-22)
 
--- ASN1STOP
 
 Q-OffsetRange ::=						ENUMERATED {
 												dB-24, dB-22, dB-20, dB-18, dB-16, dB-14,
@@ -5659,42 +5473,34 @@ Q-OffsetRange ::=						ENUMERATED {
 												dB6, dB8, dB10, dB12, dB14, dB16, dB18,
 												dB20, dB22, dB24}
 
--- ASN1STOP
 
 Q-OffsetRangeInterRAT ::=					INTEGER (-15..15)
 
--- ASN1STOP
 
 ReselectionThreshold ::=				INTEGER (0..31)
 
--- ASN1STOP
 
 ReselectionThresholdQ-r9 ::=			INTEGER (0..31)
 
--- ASN1STOP
 
 SCellIndex-r10 ::=						INTEGER (1..7)
 SCellIndex-v13xy ::=					INTEGER (8..31)
 SCellIndex-r13 ::=						INTEGER (1..31)
 
--- ASN1STOP
 
 ServCellIndex-r10 ::=					INTEGER (0..7)
 ServCellIndex-v13xy ::=					INTEGER (8..31)
 ServCellIndexFull-r13 ::=				INTEGER (0..31)
 
--- ASN1STOP
 
 SpeedStateScaleFactors ::=			SEQUENCE {
 	sf-Medium							ENUMERATED {oDot25, oDot5, oDot75, lDot0},
 	sf-High								ENUMERATED {oDot25, oDot5, oDot75, lDot0}
 }
--- ASN1STOP
 
 SystemInfoListGERAN ::=				SEQUENCE (SIZE (1..maxGERAN-SI)) OF
 										OCTET STRING (SIZE (1..23))
 
--- ASN1STOP
 
 SystemTimeInfoCDMA2000 ::=			SEQUENCE {
 	cdma-EUTRA-Synchronisation			BOOLEAN,
@@ -5704,33 +5510,27 @@ SystemTimeInfoCDMA2000 ::=			SEQUENCE {
 	}
 }
 
--- ASN1STOP
 
 TrackingAreaCode ::=				BIT STRING (SIZE (16))
 
--- ASN1STOP
 
 T-Reselection ::=					INTEGER (0..7)
 
--- ASN1STOP
 
 AllowedMeasBandwidth ::=				ENUMERATED {mbw6, mbw15, mbw25, mbw50, mbw75, mbw100}
 
--- ASN1STOP
 
 CSI-RSRP-Range-r12 ::=						INTEGER(0..97)
 
--- ASN1STOP
 
 Hysteresis ::=							INTEGER (0..30)
 
--- ASN1STOP
 
 LocationInfo-r10 ::=	SEQUENCE {
 	locationCoordinates-r10					CHOICE {
 		ellipsoid-Point-r10						OCTET STRING,
 		ellipsoidPointWithAltitude-r10			OCTET STRING,
---	...,
+	...,
 		ellipsoidPointWithUncertaintyCircle-r11					OCTET STRING,
 		ellipsoidPointWithUncertaintyEllipse-r11				OCTET STRING,
 		ellipsoidPointWithAltitudeAndUncertaintyEllipsoid-r11	OCTET STRING,
@@ -5742,10 +5542,8 @@ LocationInfo-r10 ::=	SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MBSFN-RSRQ-Range-r12 ::=				INTEGER(0..31)
--- ASN1STOP
 
 MeasConfig ::=						SEQUENCE {
 	-- Measurement objects
@@ -5769,7 +5567,7 @@ MeasConfig ::=						SEQUENCE {
 			timeToTrigger-SF					SpeedStateScaleFactors
 		}
 	}																		OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	measObjectToAddModList-v9e0			MeasObjectToAddModList-v9e0		OPTIONAL	-- Need ON
 	]],
 	[[	allowInterruptions-r11				BOOLEAN							OPTIONAL	-- Need ON
@@ -5794,7 +5592,6 @@ MeasObjectToRemoveList ::=			SEQUENCE (SIZE (1..maxObjectId)) OF MeasObjectId
 
 ReportConfigToRemoveList ::=		SEQUENCE (SIZE (1..maxReportConfigId)) OF ReportConfigId
 
--- ASN1STOP
 
 MeasDS-Config-r12 ::=			CHOICE {
 	release							NULL,
@@ -5831,7 +5628,6 @@ MeasCSI-RS-Config-r12 ::=		SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MeasGapConfig ::=					CHOICE {
 	release								NULL,
@@ -5844,13 +5640,11 @@ MeasGapConfig ::=					CHOICE {
 	}
 }
 
--- ASN1STOP
 
 MeasId ::=							INTEGER (1..maxMeasId)
 
 MeasId-v1250 ::=					INTEGER (maxMeasId-Plus1..maxMeasId-r12)
 
--- ASN1STOP
 
 MeasIdToAddModList ::=				SEQUENCE (SIZE (1..maxMeasId)) OF MeasIdToAddMod
 
@@ -5868,7 +5662,6 @@ MeasIdToAddModExt-r12 ::=	SEQUENCE {
 	reportConfigId-r12					ReportConfigId
 }
 
--- ASN1STOP
 
 MeasObjectCDMA2000 ::=				SEQUENCE {
 	cdma2000-Type						CDMA2000-Type,
@@ -5888,7 +5681,6 @@ CellsToAddModCDMA2000 ::=	SEQUENCE {
 	physCellId							PhysCellIdCDMA2000
 }
 
--- ASN1STOP
 
 MeasObjectEUTRA ::=					SEQUENCE {
 	carrierFreq							ARFCN-ValueEUTRA,
@@ -5903,7 +5695,7 @@ MeasObjectEUTRA ::=					SEQUENCE {
 	blackCellsToRemoveList				CellIndexList				OPTIONAL,		-- Need ON
 	blackCellsToAddModList				BlackCellsToAddModList		OPTIONAL,		-- Need ON
 	cellForWhichToReportCGI				PhysCellId					OPTIONAL,		-- Need ON
---	...,
+	...,
 	[[measCycleSCell-r10				MeasCycleSCell-r10		OPTIONAL,		-- Need ON
 		measSubframePatternConfigNeigh-r10	MeasSubframePatternConfigNeigh-r10	OPTIONAL							-- Need ON
 	]],
@@ -5981,7 +5773,6 @@ MeasRSSI-Config-r13 ::=	CHOICE {
 	}
 }
 
--- ASN1STOP
 
 MeasObjectGERAN ::=					SEQUENCE {
 	carrierFreqs						CarrierFreqsGERAN,
@@ -5991,11 +5782,9 @@ MeasObjectGERAN ::=					SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MeasObjectId ::=					INTEGER (1..maxObjectId)
 
--- ASN1STOP
 
 MeasObjectToAddModList ::=			SEQUENCE (SIZE (1..maxObjectId)) OF MeasObjectToAddMod
 
@@ -6016,7 +5805,6 @@ MeasObjectToAddMod-v9e0 ::=	SEQUENCE {
 	measObjectEUTRA-v9e0				MeasObjectEUTRA-v9e0		OPTIONAL	-- Cond eutra
 }
 
--- ASN1STOP
 
 MeasObjectUTRA ::=					SEQUENCE {
 	carrierFreq							ARFCN-ValueUTRA,
@@ -6030,7 +5818,7 @@ MeasObjectUTRA ::=					SEQUENCE {
 		utra-FDD							PhysCellIdUTRA-FDD,
 		utra-TDD							PhysCellIdUTRA-TDD
 	}																OPTIONAL, 	-- Need ON
---	...,
+	...,
 	[[	csg-allowedReportingCells-v930			CSG-AllowedReportingCells-r9	OPTIONAL		-- Need ON
 	]],
 	[[	reducedMeasPerformance-r12				BOOLEAN 			OPTIONAL	 	-- Need ON
@@ -6054,7 +5842,6 @@ CellsToAddModUTRA-TDD ::=	SEQUENCE {
 CSG-AllowedReportingCells-r9 ::=		SEQUENCE {
 	physCellIdRangeUTRA-FDDList-r9			PhysCellIdRangeUTRA-FDDList-r9	OPTIONAL	-- Need OR
 }
--- ASN1STOP
 
 MeasResults ::=						SEQUENCE {
 	measId								MeasId,
@@ -6069,7 +5856,7 @@ MeasResults ::=						SEQUENCE {
 		measResultsCDMA2000					MeasResultsCDMA2000,
 		...
 	}																		OPTIONAL,
---	...,
+	...,
 	[[	measResultForECID-r9				MeasResultForECID-r9			OPTIONAL
 	]],
 	[[	locationInfo-r10					LocationInfo-r10				OPTIONAL,
@@ -6102,7 +5889,7 @@ MeasResultEUTRA ::=	SEQUENCE {
 	measResult							SEQUENCE {
 		rsrpResult							RSRP-Range						OPTIONAL,
 		rsrqResult							RSRQ-Range						OPTIONAL,
-	--	...,
+		...,
 		[[	additionalSI-Info-r9				AdditionalSI-Info-r9				OPTIONAL
 		]],
 		[[	primaryPLMN-Suitable-r12			ENUMERATED {true}			OPTIONAL,
@@ -6128,7 +5915,7 @@ MeasResultServFreq-r10 ::=			SEQUENCE {
 		rsrpResultNCell-r10					RSRP-Range,
 		rsrqResultNCell-r10					RSRQ-Range
 	}															OPTIONAL,
---	...,
+	...,
 	[[	measResultSCell-v1250				RSRQ-Range-v1250	OPTIONAL,
 		measResultBestNeighCell-v1250		RSRQ-Range-v1250	OPTIONAL
 	]],
@@ -6181,7 +5968,7 @@ MeasResultUTRA ::=	SEQUENCE {
 	measResult							SEQUENCE {
 		utra-RSCP							INTEGER (-5..91)				OPTIONAL,
 		utra-EcN0							INTEGER (0..49)					OPTIONAL,
-	--	...,
+		...,
 		[[	additionalSI-Info-r9				AdditionalSI-Info-r9				OPTIONAL
 		]],
 		[[	primaryPLMN-Suitable-r12			ENUMERATED {true}			OPTIONAL
@@ -6245,7 +6032,6 @@ UL-PDCP-DelayResult-r13 ::=			SEQUENCE {
 	excessDelay-r13						INTEGER (0..31) 
 }
 
--- ASN1STOP
 
 MeasResultSSTD-r13 ::=						SEQUENCE {
 	sfn-OffsetResult-r13						INTEGER (0..1023),
@@ -6253,18 +6039,16 @@ MeasResultSSTD-r13 ::=						SEQUENCE {
 	subframeBoundaryOffsetResult-r13			INTEGER (0..63)
 }
 
--- ASN1STOP
 
 MeasScaleFactor-r12 ::=			ENUMERATED {sf-EUTRA-cf1, sf-EUTRA-cf2}
 
--- ASN1STOP
 
 QuantityConfig ::=					SEQUENCE {
 	quantityConfigEUTRA					QuantityConfigEUTRA					OPTIONAL,	-- Need ON
 	quantityConfigUTRA					QuantityConfigUTRA					OPTIONAL,	-- Need ON
 	quantityConfigGERAN					QuantityConfigGERAN					OPTIONAL,	-- Need ON
 	quantityConfigCDMA2000				QuantityConfigCDMA2000				OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	quantityConfigUTRA-v1020		QuantityConfigUTRA-v1020			OPTIONAL	-- Need ON
 	]],
 	[[	quantityConfigEUTRA-v1250		QuantityConfigEUTRA-v1250			OPTIONAL	-- Need ON
@@ -6305,7 +6089,6 @@ QuantityConfigCDMA2000 ::=			SEQUENCE {
 	measQuantityCDMA2000				ENUMERATED {pilotStrength, pilotPnPhaseAndPilotStrength}
 }
 
--- ASN1STOP
 
 ReportConfigEUTRA ::=				SEQUENCE {
 	triggerType							CHOICE {
@@ -6328,7 +6111,7 @@ ReportConfigEUTRA ::=				SEQUENCE {
 					a5-Threshold1						ThresholdEUTRA,
 					a5-Threshold2						ThresholdEUTRA
 				},
-			--	...,
+				...,
 				eventA6-r10							SEQUENCE {
 					a6-Offset-r10						INTEGER (-30..30),
 					a6-ReportOnLeave-r10				BOOLEAN
@@ -6356,7 +6139,7 @@ ReportConfigEUTRA ::=				SEQUENCE {
 	maxReportCells						INTEGER (1..maxCellReport),
 	reportInterval						ReportInterval,
 	reportAmount						ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
---	...,
+	...,
 	[[	si-RequestForHO-r9					ENUMERATED {setup}		OPTIONAL,	-- Cond reportCGI
 		ue-RxTxTimeDiffPeriodical-r9		ENUMERATED {setup}		OPTIONAL	-- Need OR
 	]],
@@ -6414,11 +6197,9 @@ MeasRSSI-ReportConfig-r13 ::=	SEQUENCE {
 	channelOccupancyThreshold-r13			RSSI-Range-r13
 }
 
--- ASN1STOP
 
 ReportConfigId ::=					INTEGER (1..maxReportConfigId)
 
--- ASN1STOP
 
 ReportConfigInterRAT ::=			SEQUENCE {
 	triggerType							CHOICE {
@@ -6454,7 +6235,7 @@ ReportConfigInterRAT ::=			SEQUENCE {
 	maxReportCells						INTEGER (1..maxCellReport),
 	reportInterval						ReportInterval,	
 	reportAmount						ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
---	...,
+	...,
 	[[	si-RequestForHO-r9					ENUMERATED {setup}		OPTIONAL	-- Cond reportCGI
 	]],
 	[[	reportQuantityUTRA-FDD-r10			ENUMERATED {both}		OPTIONAL	-- Need OR
@@ -6477,7 +6258,6 @@ ThresholdGERAN ::= 				INTEGER (0..63)
 
 ThresholdCDMA2000 ::= 			INTEGER (0..63)
 
--- ASN1STOP
 
 ReportConfigToAddModList ::=		SEQUENCE (SIZE (1..maxReportConfigId)) OF ReportConfigToAddMod
 
@@ -6490,13 +6270,11 @@ ReportConfigToAddMod ::=	SEQUENCE {
 }
 
 
--- ASN1STOP
 
 ReportInterval ::=					ENUMERATED {
 										ms120, ms240, ms480, ms640, ms1024, ms2048, ms5120, ms10240,
 										min1, min6, min12, min30, min60, spare3, spare2, spare1}
 
--- ASN1STOP
 
 RSRP-Range ::=						INTEGER(0..97)
 
@@ -6506,7 +6284,6 @@ RSRP-RangeSL2-r12 ::=				INTEGER(0..7)
 
 RSRP-RangeSL3-r12 ::=				INTEGER(0..11)
 
--- ASN1STOP
 
 RSRQ-Range ::=						INTEGER(0..34)
 
@@ -6514,29 +6291,24 @@ RSRQ-Range-v1250 ::=				INTEGER(-30..46)
 
 RSRQ-Range-v13xx ::=				INTEGER(-30..46)
 
--- ASN1STOP
 
 RSRQ-Type-r12 ::=					SEQUENCE {
 	allSymbols-r12							BOOLEAN,
 	wideBand-r12							BOOLEAN
 }
 
--- ASN1STOP
 
 RS-SINR-Range-r13 ::=						INTEGER(0..127)
 
--- ASN1STOP
 
 RSSI-Range-r13 ::=						INTEGER(0..76)
 
--- ASN1STOP
 
 TimeToTrigger ::=					ENUMERATED {
 										ms0, ms40, ms64, ms80, ms100, ms128, ms160, ms256,
 										ms320, ms480, ms512, ms640, ms1024, ms1280, ms2560,
 										ms5120}
 
--- ASN1STOP
 
 UL-DelayConfig-r13 ::=					CHOICE {
 		release								NULL,
@@ -6549,11 +6321,9 @@ UL-DelayConfig-r13 ::=					CHOICE {
 		}
 }
 
--- ASN1STOP
 
 AbsoluteTimeInfo-r10 ::=				BIT STRING (SIZE (48))
 
--- ASN1STOP
 
 AreaConfiguration-r10 ::=	CHOICE {
 	cellGlobalIdList-r10			CellGlobalIdList-r10,
@@ -6572,37 +6342,30 @@ TrackingAreaCodeList-v1130 ::=	SEQUENCE {
 	plmn-Identity-perTAC-List-r11			SEQUENCE (SIZE (1..8)) OF PLMN-Identity
 }
 
--- ASN1STOP
 
 C-RNTI ::=							BIT STRING (SIZE (16))
 
--- ASN1STOP
 
 DedicatedInfoCDMA2000 ::=				OCTET STRING
 
--- ASN1STOP
 
 DedicatedInfoNAS ::=		OCTET STRING
 
--- ASN1STOP
 
 FilterCoefficient ::=					ENUMERATED {
 											fc0, fc1, fc2, fc3, fc4, fc5,
 											fc6, fc7, fc8, fc9, fc11, fc13, 
 											fc15, fc17, fc19, spare1, ...}
 
--- ASN1STOP
 
 LoggingDuration-r10 ::=			ENUMERATED {
 									min10, min20, min40, min60, min90, min120, spare2, spare1}
 
--- ASN1STOP
 
 LoggingInterval-r10 ::=			ENUMERATED {
 									ms1280, ms2560, ms5120, ms10240, ms20480,
 									ms30720, ms40960, ms61440}
 
--- ASN1STOP
 
 MeasSubframePattern-r10 ::= CHOICE {
 	subframePatternFDD-r10				BIT STRING (SIZE (40)),
@@ -6615,19 +6378,16 @@ MeasSubframePattern-r10 ::= CHOICE {
 	...
 }
 
--- ASN1STOP
 
 MMEC ::=							BIT STRING (SIZE (8))
 
--- ASN1STOP
 
 NeighCellConfig ::=			BIT STRING (SIZE (2))
 
--- ASN1STOP
 
 OtherConfig-r9 ::= SEQUENCE	{
 	reportProximityConfig-r9			ReportProximityConfig-r9		OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	idc-Config-r11					IDC-Config-r11					OPTIONAL,	-- Need ON
 		powerPrefIndicationConfig-r11	PowerPrefIndicationConfig-r11	OPTIONAL,	-- Need ON
 		obtainLocationConfig-r11		ObtainLocationConfig-r11		OPTIONAL	-- Need ON
@@ -6643,7 +6403,7 @@ IDC-Config-r11 ::= 				SEQUENCE {
 														sf200, sf500, sf1000, sf2000, 
 														spare4, spare3, spare2, spare1}
 	}		OPTIONAL, 		-- Need OR
---	...,
+	...,
 	[[	idc-Indication-UL-CA-r11		ENUMERATED {setup}		OPTIONAL		-- Cond idc-Ind
 	]]
 }
@@ -6666,35 +6426,29 @@ ReportProximityConfig-r9 ::= SEQUENCE {
 	proximityIndicationUTRA-r9		ENUMERATED {enabled}			OPTIONAL		-- Need OR
 }
 
--- ASN1STOP
 
 RAND-CDMA2000 ::=						BIT STRING (SIZE (32))
 
--- ASN1STOP
 
 RAT-Type ::=						ENUMERATED {
 										eutra, utra, geran-cs, geran-ps, cdma2000-1XRTT,
 										spare3, spare2, spare1, ...}
 
--- ASN1STOP
 
 RRC-TransactionIdentifier ::=		INTEGER (0..3)
 
--- ASN1STOP
 
 S-TMSI ::=							SEQUENCE {
 	mmec								MMEC,
 	m-TMSI								BIT STRING (SIZE (32))
 }
 
--- ASN1STOP
 
 TraceReference-r10 ::=			SEQUENCE {
 	plmn-Identity-r10				PLMN-Identity,
 	traceId-r10						OCTET STRING (SIZE (3))
 }
 
--- ASN1STOP
 
 UE-CapabilityRAT-ContainerList ::=SEQUENCE (SIZE (0..maxRAT-Capabilities)) OF UE-CapabilityRAT-Container
 
@@ -6703,7 +6457,6 @@ UE-CapabilityRAT-Container ::= SEQUENCE {
 	ueCapabilityRAT-Container			OCTET STRING
 }
 
--- ASN1STOP
 
 UE-EUTRA-Capability ::=			SEQUENCE {
 	accessStratumRelease				AccessStratumRelease,
@@ -6924,7 +6677,7 @@ UE-EUTRA-CapabilityAddXDD-Mode-v1060 ::=	SEQUENCE {
 	featureGroupIndRel10-v1060			BIT STRING (SIZE (32))				OPTIONAL,
 	interRAT-ParametersCDMA2000-v1060	IRAT-ParametersCDMA2000-1XRTT-v1020	OPTIONAL,
 	interRAT-ParametersUTRA-TDD-v1060	IRAT-ParametersUTRA-TDD-v1020		OPTIONAL,
---	...,
+	...,
 	[[	otdoa-PositioningCapabilities-r10	OTDOA-PositioningCapabilities-r10	OPTIONAL
 	]]
 }
@@ -7608,14 +7361,12 @@ SupportedBandInfo-r12 ::=			SEQUENCE {
 
 FreqBandIndicatorListEUTRA-r12 ::=		SEQUENCE (SIZE (1..maxBands)) OF FreqBandIndicator-r11
 
--- ASN1STOP
 
 UE-RadioPagingInfo-r12 ::=				SEQUENCE {
 	ue-Category-v1250					INTEGER (0)			OPTIONAL,
 	...
 }
 
--- ASN1STOP
 
 UE-TimersAndConstants ::=			SEQUENCE {
 	t300								ENUMERATED {
@@ -7636,7 +7387,6 @@ UE-TimersAndConstants ::=			SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 VisitedCellInfoList-r12 ::=	SEQUENCE (SIZE (1..maxCellHistory-r12)) OF VisitedCellInfo-r12
 
@@ -7652,7 +7402,6 @@ VisitedCellInfo-r12 ::=				SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 WLAN-OffloadConfig-r12 ::= 				SEQUENCE {
 	thresholdRSRP-r12						SEQUENCE {
@@ -7702,7 +7451,6 @@ WLAN-backhaulRate-r12 ::=					ENUMERATED
 										 r16777216, r33554432, r67108864, r134217728, r268435456,
 										 r536870912, r1073741824, r2147483648, r4294967296}
 
--- ASN1STOP
 
 MBMS-NotificationConfig-r9 ::=				SEQUENCE {
 	notificationRepetitionCoeff-r9		ENUMERATED {n2, n4},
@@ -7710,7 +7458,6 @@ MBMS-NotificationConfig-r9 ::=				SEQUENCE {
 	notificationSF-Index-r9				INTEGER (1..6)
 }
 
--- ASN1STOP
 
 MBMSServiceList-r13 ::=			SEQUENCE (SIZE (0..maxMBMSServiceListPerUE-r13)) OF MBMSServiceInfo-r13
 
@@ -7718,11 +7465,9 @@ MBMSServiceInfo-r13 ::= 				SEQUENCE	{
 	tmgi-r13							TMGI-r9
 }
 
--- ASN1STOP
 
 MBSFN-AreaId-r12 ::=					INTEGER (0..255)
 
--- ASN1STOP
 
 MBSFN-AreaInfoList-r9 ::=			SEQUENCE (SIZE(1..maxMBSFN-Area)) OF MBSFN-AreaInfo-r9
 
@@ -7740,7 +7485,6 @@ MBSFN-AreaInfo-r9 ::=				SEQUENCE {
 	...
 }
 
--- ASN1STOP
 
 MBSFN-SubframeConfig ::=			SEQUENCE {
 	radioframeAllocationPeriod			ENUMERATED {n1, n2, n4, n8, n16, n32},
@@ -7750,7 +7494,6 @@ MBSFN-SubframeConfig ::=			SEQUENCE {
 		fourFrames							BIT STRING (SIZE(24))
 	}
 }
--- ASN1STOP
 
 PMCH-InfoList-r9 ::=				SEQUENCE (SIZE (0..maxPMCH-PerMBSFN)) OF PMCH-Info-r9
 
@@ -7805,7 +7548,6 @@ TMGI-r9 ::=						SEQUENCE {
 }
 
 
--- ASN1STOP
 
 SC-MTCH-InfoList-r13 ::=			SEQUENCE (SIZE (0..maxSC-MTCH-r13)) OF SC-MTCH-Info-r13
 
@@ -7852,11 +7594,9 @@ SC-MTCH-SchedulingInfo-r13::=		SEQUENCE	{
 	...
 }
 
--- ASN1STOP
 
 SCPTMNeighbourCellList-r13 ::=		SEQUENCE (SIZE (1..maxNeighCellSCPTM-r13)) OF CellIdentity
 
--- ASN1STOP
 
 SL-CommConfig-r12 ::= 				SEQUENCE	{
 	commTxResources-r12					CHOICE {
@@ -7877,7 +7617,7 @@ SL-CommConfig-r12 ::= 				SEQUENCE	{
 			}
 		}
 	}																		OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	scheduled-r13x0						CHOICE {
 			release								NULL,
 			setup								SEQUENCE {
@@ -7915,7 +7655,6 @@ MAC-MainConfigSL-r12 ::= 		SEQUENCE	{
 	retx-BSR-TimerSL						RetxBSR-Timer-r12
 }
 
--- ASN1STOP
 
 SL-CommTxPoolList-r12 ::=		SEQUENCE (SIZE (1..maxSL-TxPool-r12)) OF SL-CommResourcePool-r12
 
@@ -7941,7 +7680,7 @@ SL-CommResourcePool-r12 ::=		SEQUENCE {
 		sc-TxParameters-r12				SL-TxParameters-r12,
 		dataTxParameters-r12			SL-TxParameters-r12
 	} 																OPTIONAL, 	-- Cond Tx
---	...,
+	...,
 	[[	priorityList-r13				SL-PriorityList-r13			OPTIONAL 	-- Cond Tx
 	]]
 
@@ -7949,11 +7688,9 @@ SL-CommResourcePool-r12 ::=		SEQUENCE {
 
 SL-TRPT-Subset-r12 ::=			BIT STRING (SIZE (3..5))
 
--- ASN1STOP
 
 SL-CP-Len-r12 ::=				ENUMERATED {normal, extended}
 
--- ASN1STOP
 
 SL-DiscConfig-r12 ::=					SEQUENCE {
 	discTxResources-r12						CHOICE {
@@ -7973,7 +7710,7 @@ SL-DiscConfig-r12 ::=					SEQUENCE {
 			}
 		}
 	}																OPTIONAL,	-- Need ON
---	...,
+	...,
 	[[	discTF-IndexList-v1260				CHOICE {
 			release								NULL,
 			setup								SEQUENCE {
@@ -8084,7 +7821,6 @@ SL-DiscTxRefCarrierDedicated-r13 ::=	CHOICE {
 	sCell								SCellIndex-r10
 }
 
--- ASN1STOP
 
 SL-DiscTxPoolList-r12 ::=		SEQUENCE (SIZE (1..maxSL-TxPool-r12)) OF SL-DiscResourcePool-r12
 
@@ -8111,7 +7847,7 @@ SL-DiscResourcePool-r12 ::=		SEQUENCE	{
 		tdd-Config-r12					TDD-Config					OPTIONAL, 	-- Need OR
 		syncConfigIndex-r12			INTEGER (0..15)
 	}																OPTIONAL, 	-- Need OR
---	...,
+	...,
 	[[	discPeriod-v13x0				CHOICE {
 			release								NULL,
 			setup								ENUMERATED {rf4, rf7, rf8, rf14, rf28,
@@ -8144,7 +7880,6 @@ SL-PoolSelectionConfig-r12 ::=		SEQUENCE {
 	threshHigh-r12							RSRP-RangeSL2-r12
 }
 
--- ASN1STOP
 
 SL-DiscTxPowerInfoList-r12 ::= 	SEQUENCE (SIZE (maxSL-DiscPowerClass-r12)) OF SL-DiscTxPowerInfo-r12
 
@@ -8153,7 +7888,6 @@ SL-DiscTxPowerInfo-r12 ::= 				SEQUENCE	{
 	...
 }
 
--- ASN1STOP
 
 SL-GapConfig-r13 ::=				SEQUENCE {
 	gapPatternList-r13				SL-GapPatternList-r13
@@ -8168,7 +7902,6 @@ SL-GapPattern-r13 ::=				SEQUENCE {
 	gapSubframeBitmap-r13 				BIT STRING (SIZE (1..10240))
 }
 
--- ASN1STOP
 
 SL-GapRequest-r13 ::=				SEQUENCE (SIZE (1..maxFreq)) OF SL-GapFreqInfo-r13
 
@@ -8177,7 +7910,6 @@ SL-GapFreqInfo-r13 ::=				SEQUENCE {
 	gapPatternList-r13				SL-GapPatternList-r13
 }
 
--- ASN1STOP
 
 SL-HoppingConfigComm-r12 ::=		SEQUENCE	{
 	hoppingParameter-r12				INTEGER (0..504),
@@ -8191,7 +7923,6 @@ SL-HoppingConfigDisc-r12 ::=	SEQUENCE	{
 	c-r12									ENUMERATED {n1, n5}
 }
 
--- ASN1STOP
 
 SL-OffsetIndicator-r12 ::=			CHOICE {
 	small-r12								INTEGER (0..319),
@@ -8200,23 +7931,19 @@ SL-OffsetIndicator-r12 ::=			CHOICE {
 
 SL-OffsetIndicatorSync-r12 ::=			INTEGER (0..39)
 
--- ASN1STOP
 
 SL-PeriodComm-r12 ::=					ENUMERATED {sf40, sf60, sf70, sf80, sf120, sf140,
 												 sf160, sf240, sf280, sf320, spare6, spare5,
 												 spare4, spare3, spare2, spare}
 
--- ASN1STOP
 
 SL-PriorityList-r13 ::=		SEQUENCE (SIZE (1..maxSL-Prio-r13)) OF SL-Priority-r13
 
 SL-Priority-r13 ::=			INTEGER (1..8)
 
--- ASN1STOP
 
 SLSSID-r12 ::=					INTEGER (0..167)
 
--- ASN1STOP
 
 SL-SyncConfigList-r12 ::=		SEQUENCE (SIZE (1..maxSL-SyncConfig-r12)) OF SL-SyncConfig-r12
 
@@ -8233,7 +7960,7 @@ SL-SyncConfig-r12 ::=					SEQUENCE {
 		physCellId-r12							PhysCellId,
 		discSyncWindow-r12				ENUMERATED {w1, w2}
 	}																	OPTIONAL, 	-- Need OR
---	...,
+	...,
 	[[	syncTxPeriodic-r13					ENUMERATED {true}			OPTIONAL	-- Need OR
 	]]
 }
@@ -8257,7 +7984,6 @@ SL-SyncConfigNFreq-r13 ::=			SEQUENCE {
 	}																	OPTIONAL, 	-- Need OR
 	...
 }
--- ASN1STOP
 
 SL-SysInfoReport-r13 ::=			SEQUENCE {
 	plmn-IdentityList-r13				PLMN-IdentityList			OPTIONAL,
@@ -8300,7 +8026,6 @@ SL-SysInfoReport-r13 ::=			SEQUENCE {
 	referenceSignalPower-r13		INTEGER (-60..50)	OPTIONAL
 }
 
--- ASN1STOP
 
 SL-TF-ResourceConfig-r12 ::=		SEQUENCE	{
 	prb-Num-r12							INTEGER (1..100),
@@ -8320,7 +8045,6 @@ SubframeBitmapSL-r12 ::=		CHOICE {
 	bs42-r12								BIT STRING (SIZE (42))
 }
 
--- ASN1STOP
 
 SL-TxParameters-r12 ::=				SEQUENCE	{
 	alpha-r12								Alpha-r12,
@@ -8329,7 +8053,6 @@ SL-TxParameters-r12 ::=				SEQUENCE	{
 
 P0-SL-r12 ::=							INTEGER (-126..31)
 
--- ASN1STOP
 
 SL-TxPoolIdentity-r12 ::=			INTEGER (1.. maxSL-TxPool-r12)
 
@@ -8337,13 +8060,11 @@ SL-CommTxPoolIdentity-v13x0 ::=		INTEGER (maxSL-CommTxPool-r12Plus1-r13.. maxSL-
 
 SL-CommTxPoolIdentity-r13 ::=		INTEGER (1.. maxSL-CommTxPool-r13)
 
--- ASN1STOP
 
 SL-TxPoolToReleaseList-r12 ::=	SEQUENCE (SIZE (1..maxSL-TxPool-r12)) OF SL-TxPoolIdentity-r12
 
 SL-TxPoolToReleaseListExt-r13 ::=	SEQUENCE (SIZE (1..maxSL-CommTxPool-v13x0)) OF SL-CommTxPoolIdentity-v13x0
 
--- ASN1STOP
 maxACDC-Cat-r13				INTEGER ::=	16	-- Maximum number of ACDC categories (per PLMN)
 maxBandComb-r10				INTEGER ::=	128	-- Maximum number of band combinations.
 maxBandComb-r11				INTEGER ::=	256	-- Maximum number of additional band combinations.
@@ -8497,11 +8218,9 @@ maxUTRA-FDD-Carrier			INTEGER ::= 16	-- Maximum number of UTRA FDD carrier frequ
 maxUTRA-TDD-Carrier			INTEGER ::= 16	-- Maximum number of UTRA TDD carrier frequencies
 maxWLAN-Id-r12				INTEGER ::=	16	-- Maximum number of WLAN identifiers
 
--- ASN1STOP
 
 END
 
--- ASN1STOP
 
 PC5-RRC-Definitions DEFINITIONS AUTOMATIC TAGS ::=
 
@@ -8511,7 +8230,6 @@ IMPORTS
 	TDD-ConfigSL-r12
 FROM EUTRA-RRC-Definitions;
 
--- ASN1STOP
 
 SBCCH-SL-BCH-Message ::= SEQUENCE {
 	message					SBCCH-SL-BCH-MessageType
@@ -8519,7 +8237,6 @@ SBCCH-SL-BCH-Message ::= SEQUENCE {
 
 SBCCH-SL-BCH-MessageType ::=						MasterInformationBlock-SL
 
--- ASN1STOP
 
 MasterInformationBlock-SL ::=		SEQUENCE {
 	sl-Bandwidth-r12					ENUMERATED {
@@ -8532,11 +8249,9 @@ MasterInformationBlock-SL ::=		SEQUENCE {
 }
 
 
--- ASN1STOP
 
 END
 
--- ASN1STOP
 
 EUTRA-UE-Variables DEFINITIONS AUTOMATIC TAGS ::=
 
@@ -8584,14 +8299,12 @@ IMPORTS
 	UL-DelayConfig-r13
 FROM EUTRA-RRC-Definitions;
 
--- ASN1STOP
 
 VarConnEstFailReport-r11 ::=		SEQUENCE {
 	connEstFailReport-r11				ConnEstFailReport-r11,
 	plmn-Identity-r11					PLMN-Identity
 }
 
--- ASN1STOP
 
 VarLogMeasConfig-r10 ::=				SEQUENCE {
 	areaConfiguration-r10			AreaConfiguration-r10		OPTIONAL,
@@ -8614,7 +8327,6 @@ VarLogMeasConfig-r12 ::=		SEQUENCE {
 	targetMBSFN-AreaList-r12		TargetMBSFN-AreaList-r12	OPTIONAL
 }
 
--- ASN1STOP
 
 VarLogMeasReport-r10 ::=				SEQUENCE {
 	traceReference-r10					TraceReference-r10,
@@ -8636,7 +8348,6 @@ VarLogMeasReport-r11 ::=			SEQUENCE {
 
 LogMeasInfoList2-r10 ::=				SEQUENCE (SIZE (1..maxLogMeas-r10)) OF LogMeasInfo-r10
 
--- ASN1STOP
 
 VarMeasConfig ::=					SEQUENCE {
 	-- Measurement identities
@@ -8661,7 +8372,6 @@ VarMeasConfig ::=					SEQUENCE {
 	allowInterruptions-r11			BOOLEAN								OPTIONAL
 }
 
--- ASN1STOP
 
 VarMeasReportList ::=				SEQUENCE (SIZE (1..maxMeasId)) OF VarMeasReport
 VarMeasReportList-r12 ::=			SEQUENCE (SIZE (1..maxMeasId-r12)) OF VarMeasReport
@@ -8690,10 +8400,8 @@ CellsTriggeredList ::=				SEQUENCE (SIZE (1..maxCellMeas)) OF CHOICE {
 
 CSI-RS-TriggeredList-r12 ::=		SEQUENCE (SIZE (1..maxCSI-RS-Meas-r12)) OF MeasCSI-RS-Id-r12
 
--- ASN1STOP
 VarMobilityHistoryReport-r12 ::=	VisitedCellInfoList-r12
 
--- ASN1STOP
 
 VarRLF-Report-r10 ::=				SEQUENCE {
 	rlf-Report-r10							RLF-Report-r9,
@@ -8705,23 +8413,19 @@ VarRLF-Report-r11 ::=				SEQUENCE {
 	plmn-IdentityList-r11				PLMN-IdentityList3-r11
 }
 
--- ASN1STOP
 
 VarShortMAC-Input ::=					SEQUENCE {
 	cellIdentity							CellIdentity,
 	physCellId								PhysCellId,
 	c-RNTI									C-RNTI
 }
--- ASN1STOP
 
 maxLogMeas-r10				INTEGER ::= 4060-- Maximum number of logged measurement entries
 											--  that can be stored by the UE
 
--- ASN1STOP
 
 END
 
--- ASN1STOP
 
 EUTRA-Sidelink-Preconf DEFINITIONS AUTOMATIC TAGS ::=
 
@@ -8750,13 +8454,12 @@ IMPORTS
 	TDD-ConfigSL-r12
 FROM EUTRA-RRC-Definitions;
 
--- ASN1STOP
 
 SL-Preconfiguration-r12 ::=		SEQUENCE {
 	preconfigGeneral-r12				SL-PreconfigGeneral-r12,
 	preconfigSync-r12					SL-PreconfigSync-r12,
 	preconfigComm-r12					SL-PreconfigCommPoolList4-r12,
---	...,
+	...,
 	[[	preconfigComm-v13x0				SEQUENCE {
 			commRxPoolListExt-r13			SL-PreconfigCommRxPoolListExt-r13,
 			commTxPoolListExt-r13			SL-PreconfigCommTxPoolListExt-r13		OPTIONAL
@@ -8800,7 +8503,7 @@ SL-PreconfigSync-r12 ::=	SEQUENCE {
 	filterCoefficient-r12				FilterCoefficient,
 	syncRefMinHyst-r12					ENUMERATED {dB0, dB3, dB6, dB9, dB12},
 	syncRefDiffHyst-r12					ENUMERATED {dB0, dB3, dB6, dB9, dB12, dBinf},
---	...,
+	...,
 	[[	syncTxPeriodic-r13					ENUMERATED {true}			OPTIONAL	-- Need OR
 	]]
 }
@@ -8822,7 +8525,7 @@ SL-PreconfigCommPool-r12 ::=		SEQUENCE {
 	dataHoppingConfig-r12				SL-HoppingConfigComm-r12,
 	dataTxParameters-r12				P0-SL-r12,
 	trpt-Subset-r12						SL-TRPT-Subset-r12,
---	...,
+	...,
 	[[	priorityList-r13				SL-PriorityList-r13			OPTIONAL	-- For Tx
 	]]
 }
@@ -8853,7 +8556,6 @@ SL-PreconfigRelay-r13 ::=	SEQUENCE {
 
 END
 
--- ASN1STOP
 
 EUTRA-InterNodeDefinitions DEFINITIONS AUTOMATIC TAGS ::=
 
@@ -8919,7 +8621,6 @@ IMPORTS
 	WLAN-OffloadConfig-r12
 FROM EUTRA-RRC-Definitions;
 
--- ASN1STOP
 
 HandoverCommand ::=					SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -8938,7 +8639,6 @@ HandoverCommand-r8-IEs ::=			SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 HandoverPreparationInformation ::=	SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -9002,7 +8702,6 @@ HandoverPreparationInformation-v1250-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}						OPTIONAL
 }
 
--- ASN1STOP
 
 SCG-Config-r12 ::=					SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -9021,7 +8720,6 @@ SCG-Config-r12-IEs ::=				SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 SCG-ConfigInfo-r12 ::=					SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -9085,7 +8783,7 @@ Cell-ToAddMod-r12 ::=				SEQUENCE {
 		rsrpResult-r12						RSRP-Range,
 		rsrqResult-r12						RSRQ-Range
 	}																OPTIONAL,	-- Cond SCellAdd2
---	...,
+	...,
 	[[		sCellIndex-r13					SCellIndex-r13				OPTIONAL,
 		measResultCellToAdd-v13xy			SEQUENCE {
 			rs-sinrResult-r13					RS-SINR-Range-r13
@@ -9103,7 +8801,7 @@ MeasResultServCellSCG-r12 ::=			SEQUENCE {
 		rsrpResultSCell-r12					RSRP-Range,
 		rsrqResultSCell-r12					RSRQ-Range
 	},
---	...,
+	...,
 	[[		servCellId-r13						ServCellIndexFull-r13		OPTIONAL,
 		measResultSCell-v13xy				SEQUENCE {
 			rs-sinrResultSCell-r13				RS-SINR-Range-r13
@@ -9116,7 +8814,6 @@ SCG-ConfigRestrictInfo-r12 ::=		SEQUENCE {
 	maxSCH-TB-BitsUL-r12				INTEGER (1..100)
 }
 
--- ASN1STOP
 
 UERadioAccessCapabilityInformation ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -9136,7 +8833,6 @@ UERadioAccessCapabilityInformation-r8-IEs ::= SEQUENCE {
 	nonCriticalExtension				SEQUENCE {}							OPTIONAL
 }
 
--- ASN1STOP
 
 UERadioPagingInformation ::= SEQUENCE {
 	criticalExtensions					CHOICE {
@@ -9161,7 +8857,6 @@ UERadioPagingInformation-v13xy-IEs ::= SEQUENCE {
 
 }
 
--- ASN1STOP
 
 AS-Config ::=				SEQUENCE {
 	sourceMeasConfig					MeasConfig,
@@ -9174,7 +8869,7 @@ AS-Config ::=				SEQUENCE {
 	sourceSystemInformationBlockType2	SystemInformationBlockType2,
 	antennaInfoCommon					AntennaInfoCommon,
 	sourceDl-CarrierFreq				ARFCN-ValueEUTRA,
---	...,
+	...,
 	[[	sourceSystemInformationBlockType1Ext	OCTET STRING (CONTAINING
 												SystemInformationBlockType1-v890-IEs)	OPTIONAL,
 		sourceOtherConfig-r9				OtherConfig-r9
@@ -9202,7 +8897,6 @@ AS-Config-v1250 ::=				SEQUENCE {
 	sourceSL-DiscConfig-r12				SL-DiscConfig-r12					OPTIONAL
 }
 
--- ASN1STOP
 
 AS-Context ::=							SEQUENCE {
 	reestablishmentInfo						ReestablishmentInfo			OPTIONAL	-- Cond HO
@@ -9215,13 +8909,12 @@ AS-Context-v1130 ::=					SEQUENCE {
 											MBMSInterestIndication-r11)	OPTIONAL,	-- Cond HO2
 	powerPrefIndication-r11					OCTET STRING (CONTAINING
 											UEAssistanceInformation-r11)	OPTIONAL,	-- Cond HO2
---	...,
+	...,
 	[[	sidelinkUEInformation-r12				OCTET STRING (CONTAINING
 												SidelinkUEInformation-r12)	OPTIONAL	-- Cond HO2
 	]]
 }
 
--- ASN1STOP
 
 ReestablishmentInfo ::=				SEQUENCE {
 	sourcePhysCellId					PhysCellId,
@@ -9240,7 +8933,6 @@ AdditionalReestabInfo ::=	SEQUENCE{
 
 Key-eNodeB-Star ::=					BIT STRING (SIZE (256))
 
--- ASN1STOP
 
 RRM-Config ::=				SEQUENCE {
 	ue-InactiveTime				ENUMERATED {
@@ -9253,7 +8945,7 @@ RRM-Config ::=				SEQUENCE {
 									hr8, hr10, hr13, hr16, hr20, day1, day1hr12, day2,
 									day2hr12, day3, day4, day5, day7, day10, day14, day19,
 									day24, day30, dayMoreThan30}		OPTIONAL,
---	...,
+	...,
 	[[	candidateCellInfoList-r10	CandidateCellInfoList-r10		OPTIONAL
 	]]
 }
@@ -9267,7 +8959,7 @@ CandidateCellInfo-r10 ::=		SEQUENCE {
 	-- available measurement results
 	rsrpResult-r10					RSRP-Range			OPTIONAL,
 	rsrqResult-r10					RSRQ-Range			OPTIONAL,
---	...,
+	...,
 	[[	dl-CarrierFreq-v1090			ARFCN-ValueEUTRA-v9e0		OPTIONAL
 	]],
 	[[	rsrqResult-v1250				RSRQ-Range-v1250			OPTIONAL
@@ -9276,13 +8968,9 @@ CandidateCellInfo-r10 ::=		SEQUENCE {
 	]]
 }
 
--- ASN1STOP
 
 maxReestabInfo				INTEGER ::= 32	-- Maximum number of KeNB* and shortMAC-I forwarded
 											-- at handover for re-establishment preparation
 
--- ASN1STOP
 
 END
-
--- ASN1STOP

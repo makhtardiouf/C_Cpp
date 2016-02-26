@@ -1,6 +1,8 @@
 /* 
  * Author: Makhtar Diouf
  * $Id$
+ * Extract Abstract Syntax Notation code from 3GPP RRC specs
+ * See the sample EUTRA-RRC36331.txt  (ASN.1)
  * February 24, 2016, 10:16 PM
  * g++ -std=c++11 -g -Wall -o parse_asn1 parse_asn1.cpp
  */
@@ -9,15 +11,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
-#include <iterator>
-
 
 using namespace std;
 
-/*
- * 
- */
 int main(int argc, char** argv) {
 
     string from, to;
@@ -45,13 +41,13 @@ int main(int argc, char** argv) {
             // Skip until we reach ASN code
             if (s == "-- ASN1START") {
                 while (!src.eof()) {
-                    std::getline(src, s);
-                    target << s << "\n";
+                    std::getline(src, s);                    
                     clog << s << "\n";
                     // Stop writing to target asn file
                     if (s == "-- ASN1STOP") {
                         break;
                     }
+                    target << s << "\n";
                 }
             }
 
@@ -59,6 +55,7 @@ int main(int argc, char** argv) {
      //   target << "\nEND\n";
         clog << " done.\n";
         return (!src.eof() && !target); // return error state
+        
     } catch (runtime_error ex) {
         std::cerr << "Error: " << ex.what() << " " << __FILE__ << ":" << __LINE__ << "\n";
         return EXIT_FAILURE;
