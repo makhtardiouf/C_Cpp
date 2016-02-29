@@ -11,7 +11,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <ctype.h>
-#include "emdutils.h"
+#include "malib.h"
 #include "socket.h"
 
 enum {

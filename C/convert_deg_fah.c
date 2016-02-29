@@ -3,7 +3,7 @@ $Id: convert_deg_fah.c 6 2007-04-16 15:12:25Z Makhtar $
 Print conversion table Celcius/Fahrenheit degrees
 */
 
-#include "emdutils.h"
+#include "malib.h"
 
 #define HEADER "Celcius\t  Fahrenheit"
 #define FOOTER_LEN strlen(HEADER)

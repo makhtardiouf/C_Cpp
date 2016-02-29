@@ -2,6 +2,7 @@
  * File:   lists.cpp
  * Author: makhtar
  * Custom implementation of lists, and mix with the stdlib list
+ * g++ -g -std=c++11 -Wall lists.cpp -o lists
  * Created on February 7, 2016, 3:21 PM
  */
 
@@ -14,140 +15,147 @@
 
 using namespace std;
 
-template<typename T> 
-class List {
-  
-    friend class Iterator;
+template<typename T>
+struct Node {
+    T elem;
+    Node* prev;
+    Node* next;
 
+    Node(Node* p = NULL) : prev(nullptr), next(nullptr) {
+        if (p) {
+            prev = p;
+            next = p->next;
+            p->next = this;
+            next->prev = this;
+        }
+    }
+
+    Node(T data) : elem(data) {
+    }
+
+    ~Node() {
+        if (prev) {
+            prev->next = next;
+            if (next)
+                next->prev = prev;
+        }
+    }
+};
+
+template<typename T>
+class List {
 public:
+    class iterator;
 
     List() {
     }
     List(std::initializer_list<T> l);
 
     ~List() {
-        node = 0;
+        if (elem)
+            delete elem;
     }
 
     List<T>& operator=(const List<T>& l);
 
-    void insert_front(const T& elem);
-    T* remove_front();
+    void push_front(const T& val);
 
-    void insert_back(const T& elem);
-    T* remove_back();
-
-    void insert_nth(int n, const T& elem);
-    T* remove_nth(int n);
+    void push_back(const T& val);
+    T* pop_back();
 
     void reverse();
     void merge(const List<T>* l);
 
+    inline int size() {
+        return sz;
+    }
+
+    iterator begin() {
+        return curr->head;
+    }
+
+    iterator end() {
+        return elem;
+    }
+    
 private:
-
-    struct Node {
-        T elem;
-        Node* prev;
-        Node* next;
-        Node* head; // lect15
-        // ...
-
-        Node(Node* p = NULL) : prev(NULL), next(NULL) {
-            if (p) {
-                prev = p;
-                next = p->next;
-                p->next = this;
-                next->prev = this;
-            }
-        }
-
-        Node(T data) : elem(data) {
-        }
-
-        ~Node() {
-            if (prev) {
-                prev->next = next;
-                if (next)
-                    next->prev = prev;
-            }
-        }
-    };
-
-    Node* node;
+    Node<T>* head;
+    Node<T>* elem;
+    int sz = 0;
 };
 
 template<typename T>
-void List<T>::insert_front(const T& elem) {
-    List<T>::Node* n = new List<T>::Node(elem);
-    if (this->node) {
-        n->prev = this->node;
-        this->node->next = n;
+void List<T>::push_back(const T& val) {
+    Node<T>* n = new Node<T>(val);
+    if (this->elem) {
+        n->prev = this->elem;
+        this->elem->next = n;
     } else
-        this->node = n;
+        this->elem = n;
 
+    this->sz++;
 }
 // Implemented outside the List to allow multiple iterators to be used at the same time
 
-/*
 template<typename T>
-class Iterator {
+class List<T>::iterator {
 private:
-    friend class List<T>;
-    List<T>& list;
-    typename List<T>::Node* first;
-    typename List<T>::Node* current;
+    List<T>* curr;
 
 public:
 
-    Iterator(List<T>& list) {
-        //  first = list.head;
-        current = first;
+    iterator(List<T>& p) {
+        this->curr = p;
     }
 
-    T* begin() {
-        current = first;
-        return first->elem;
+    bool operator==(const iterator& i) const {
+        return (i->curr == curr);
     }
 
-    T* end() {
-        return NULL;
+    bool operator!=(const iterator& i) const {
+        return (i->curr != curr);
     }
 
-    typename List<T>::Node* next() {
-        typename List<T>::Node* p = current;
-        current = current->next;
-        return p;
+    iterator& operator++() {
+        curr = curr->next;
+        return *this;
     }
 
-    typedef Iterator<T> iterator;
-    bool operator==(const iterator& i) const {return (i->current == current);}
-    bool operator!=(const iterator& i) const {return (i->current != current);}
-    iterator& operator++();
-    iterator& operator++(int);
-    iterator& operator--();
-    iterator& operator--(int);
-    
-    T& operator* () const;
+    iterator& operator--() {
+        curr = curr->prev;
+        return *this;
+    }
+
+    T& operator*() const {
+        return curr->elem;
+    }
+
     T& operator()() {
-        return *current->elem;
+        return elem;
     }
 };
- */
+
 
 int main(int argc, char** argv) {
 
     std::list<int> lt;
+    lt.push_back(100);
     for (int i = 0; i < 10; i++)
         lt.push_back(rand());
 
     lt.sort();
-    for (std::list<int>::iterator it; it != lt.end(); it++)
-        std::cout << *it;
+    std::list<int>::iterator it;
+    for (it = lt.begin(); it != lt.end(); ++it)
+        std::clog << *it << " ";
 
-    List<int> bList;
+    cout << endl;
+    List<int> bl;
 
-    bList.insert_front(10);
-    bList.insert_front(19);
+    bl.push_back(10);
+    bl.push_back(19);
+    for (it = bl.begin(); it != bl.end(); ++it)
+        std::clog << *it << " ";
+
     return 0;
 }
 

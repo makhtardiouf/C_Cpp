@@ -8,7 +8,7 @@ we compile separately and link at the end...
 #include <unistd.h>
 #include <errno.h>
 #include <time.h>
-#include "emdutils.h"
+#include "malib.h"
 
 static char id[] = "$Id: bit_wise.c 8 2007-04-30 22:25:20Z Makhtar $";
 

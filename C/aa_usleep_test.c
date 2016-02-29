@@ -3,7 +3,7 @@
 */
 
 #include <aalib.h>
-#include "emdutils.h"
+#include "malib.h"
 
 aa_context* context;
 

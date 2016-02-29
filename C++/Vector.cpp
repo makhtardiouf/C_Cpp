@@ -16,15 +16,15 @@
 using namespace std;
 
 template <typename T>
-class Vector {
-  
+class Vector
+{
 public:
 
-//    Vector() {
-//        // elem = new T;
-//    }
+    //    Vector() {
+    //        // elem = new T;
+    //    }
 
-    Vector(int s)
+    explicit Vector(int s)
     : sz(s), elem{
         new T[s]
     }
@@ -36,30 +36,59 @@ public:
     Vector(std::initializer_list<T> l)
     : sz(l.size()), elem{new T[l.size()]}
     {
-        std::copy(l.begin(), l.end(), elem);         
+        std::copy(l.begin(), l.end(), elem);
         clog << "Initialized vector of " << sz << " elements \n";
     };
 
     // Copy constructor
+
     Vector(const Vector& v)
     {
-        T* p = new T[v.sz];       
+        T* p = new T[v.sz];
         std::copy(v.elem, v.elem + v.sz, p);
-       // delete[] elem;
+        // delete[] elem;
         elem = p;
-        sz = v.sz;      
+        sz = v.sz;
     }
 
-    ~Vector() {
+    Vector& operator=(Vector&& a) // move a to this vector 
+    {
+        delete[] elem; // deallocate old space 
+        elem = a.elem; // copy a’s elem and sz 
+        sz = a.sz;
+        a.elem = nullptr;
+        a.sz = 0;
+        return *this; // return a self-reference
+    }
+
+    T& operator[](int i)
+    {
+        return elem[i];
+    }
+
+    ~Vector()
+    {
         delete[] elem;
         clog << "~Vector called\n";
     }
 
-    //   const_iterator begin() {return &elem[0];}
-    //   const_iterator end() {return &elem[sz+1];}
+    T& begin()
+    {
+        return &elem[0];
+    }
 
-    void
-    add(T i) {
+    T& end()
+    {
+        return &elem[sz];
+    }
+
+    inline int size()
+    {
+        return sz;
+    }
+
+    void add(T i)
+    {
         cout << "Adding 1 element: " << i << endl;
         T* p = new T[sz + 1];
         // Move elements to the newly allocated space 
@@ -69,26 +98,20 @@ public:
         sz++;
         elem = p;
     }
+
     void remove(T elem);
 
-    int
-    size() {
-        return sz;
-    }
-
-    T& operator[](int i) {
-        return elem[i];
-    };
 
 private:
     T* elem = nullptr;
     int sz = 0;
- 
+
 };
 
-int
-main(int argc, char** argv) {
-    try {
+int main(int argc, char** argv)
+{
+    try
+    {
         Vector<int> v{5, 10, 15};
         v.add(20);
         v.add(rand() % 2);
@@ -99,12 +122,17 @@ main(int argc, char** argv) {
 
         Vector<string> s{"Hello", "container", "world"};
         s.add("The way it is...");
-        
+
         for (int i = 0; i < s.size(); i++)
             cout << s[i] << " ";
         cout << "\n";
+
+        cout << v[1];
+        // Vector<int> v2 = 10;  // error, no implicit conversion
         return 0;
-    } catch (exception e) {
+    }
+    catch (exception e)
+    {
         clog << "Fatal error: " << e.what() << endl;
         return -1;
     }

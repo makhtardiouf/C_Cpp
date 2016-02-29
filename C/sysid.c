@@ -4,7 +4,7 @@ Find information about the host and print the environment variables
 */
 
 #define _GNU_SOURCE
-#include "emdutils.h"
+#include "malib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

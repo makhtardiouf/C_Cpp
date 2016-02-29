@@ -3,7 +3,6 @@ $Id: parse_msg.c 18 2008-07-06 09:18:48Z Makhtar $
 Module de traitement des donnees envoyees par l'appareil de geo-localisation
 
 COMPILATION: gcc -Wall -g parse_msg.c  -L/usr/lib/mysql -lmysqlclient -o parse_msg
-(C) 2007 GSIE Technology
 */
 #define _GNU_SOURCE  /* asprintf() */
 #include <stdio.h>
@@ -62,8 +61,10 @@ int main(int argc, char* argv[])
     const int num_champs = sizeof(champs) / sizeof(champs[0]);
     char* val_champs;
     char* msg;
-    /* Le numero de tel n'est pour l'instant pas inclu dans le message.
-    Ceci est le numero de test utilise dans la BDD */
+    /* 
+     * Le numero de tel n'est pour l'instant pas inclu dans le message.
+     * Ceci est le numero de test utilise dans la BD 
+     */
     static const char* tel = "1234";
 
     char query[1024];
@@ -219,10 +220,10 @@ MYSQL* MySqlConnect(void)
         if (mysql_real_connect(sqlHd, sqlHost, sqlUser, sqlPass, sqlDb, 0,
                                NULL, 0) != NULL) {
 
-            syslog(LOG_INFO, "Connection a la BDD %s... OK", sqlDb);
+            syslog(LOG_INFO, "Connection a la BD %s... OK", sqlDb);
             return sqlHd;
         } else {
-            syslog(LOG_ERR, "Echec de la connection a la BDD %s - %s",
+            syslog(LOG_ERR, "Echec de la connection a la BD %s - %s",
                    sqlDb, mysql_error(sqlHd));
             exit(EXIT_FAILURE);
         }

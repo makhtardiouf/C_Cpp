@@ -7,7 +7,7 @@ Show lines of a file on wich a string pattern appears.
 #include <stdio_ext.h>
 #include <string.h>
 #include <errno.h>
-#include "emdutils.h"
+#include "malib.h"
 
 int number = 0;
 int printhits(int , char* );

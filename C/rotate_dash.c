@@ -3,7 +3,7 @@
   Display a rotating dash
 */
 
-#include "emdutils.h"
+#include "malib.h"
 /* #include <stdio.h> */
 
 void test(void);		/* for testing stack size...etc */

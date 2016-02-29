@@ -26,7 +26,7 @@ void reversevect(vector<string> v) {
 }
 
 int main(int argc, char** argv) {
-    cout << "Reading input file...\n";
+    clog << "Reading input file...\n";
     if(argc < 2)
         terminate("Usage: ./str_reversewords filename");
     

@@ -6,7 +6,7 @@ Experiment with threads
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "emdutils.h"
+#include "malib.h"
 
 
 void* printxs(void* unused)

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "emdutils.h"
+#include "malib.h"
 
 
 int main(int argc,char **argv)
