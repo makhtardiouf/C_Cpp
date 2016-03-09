@@ -4,9 +4,10 @@
     <df root="." name="0">
       <df name="C++">
         <df name="data">
-          <df name="cojam-univ-cn2014">
-            <df name="roundA">
-              <in>A-mesudoku.cpp</in>
+          <df name="cojam-2013">
+            <df name="qualif">
+              <in>B-lawnmower.cpp</in>
+              <in>testQualif.txt</in>
             </df>
           </df>
         </df>
@@ -67,9 +68,14 @@
       </makefileType>
       <item path="C++/Vector.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="C++/data/cojam-univ-cn2014/roundA/A-mesudoku.cpp"
+      <item path="C++/data/cojam-2013/qualif/B-lawnmower.cpp"
             ex="false"
             tool="1"
+            flavor2="0">
+      </item>
+      <item path="C++/data/cojam-2013/qualif/testQualif.txt"
+            ex="false"
+            tool="3"
             flavor2="0">
       </item>
       <item path="C++/palindrome.cpp" ex="false" tool="1" flavor2="0">

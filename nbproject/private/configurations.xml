@@ -26,6 +26,21 @@
         <in>toupper64.s</in>
       </df>
       <df name="C">
+        <df name="gametuts">
+          <in>circ1.c</in>
+          <in>circ10.c</in>
+          <in>circ11.c</in>
+          <in>circ12.c</in>
+          <in>circ2.c</in>
+          <in>circ3.c</in>
+          <in>circ4.c</in>
+          <in>circ5.c</in>
+          <in>circ6.c</in>
+          <in>circ7.c</in>
+          <in>circ8.c</in>
+          <in>circ9.c</in>
+          <in>display.c</in>
+        </df>
         <df name="time_t">
           <in>main.c</in>
         </df>
@@ -97,13 +112,29 @@
       </df>
       <df name="C++">
         <df name="data">
-          <df name="cojam-univ-cn2014">
-            <df name="roundA">
+          <df name="cojam-2013">
+            <df name="qualif">
+              <in>B-lawnmower.cpp</in>
+              <in>testQualif.txt</in>
+              <in>tictac.cpp</in>
+              <in>tictac2.cpp</in>
+            </df>
+            <df name="round1">
+            </df>
+          </df>
+          <df name="cojam-2014cn">
+            <df name="roundB">
               <in>A-mesudoku.cpp</in>
               <in>A.cpp</in>
             </df>
           </df>
-          <df name="cojam-univ2016">
+          <df name="cojam-2015">
+            <df name="qualif">
+              <in>Asol-Genadi.cpp</in>
+              <in>sol.cpp</in>
+            </df>
+          </df>
+          <df name="cojam-2016univ">
             <df name="roundA">
               <in>A-dtyfc.cpp</in>
               <in>A-me.cpp</in>
@@ -119,11 +150,19 @@
             </df>
           </df>
         </df>
-        <df name="Google">
-          <in>a.cpp</in>
-          <in>b.cpp</in>
-          <in>c.cpp</in>
-          <in>d.cpp</in>
+        <df name="Google20160301">
+          <df name="Task1">
+            <in>task1.cpp</in>
+          </df>
+          <df name="Task2">
+            <in>task2.cpp</in>
+          </df>
+          <df name="Task3">
+            <in>task3.cpp</in>
+          </df>
+          <df name="Template">
+            <in>a.cpp</in>
+          </df>
         </df>
         <in>Vector.cpp</in>
         <in>assertit.cpp</in>
