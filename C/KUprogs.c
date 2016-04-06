@@ -1,20 +1,19 @@
-
-
-/* e2550 ::: 20040617 ::: B2exercise2004 0604 ::: ˆÈ‰ºCŒÜ‚Â‚Ìƒ\[ƒXƒvƒƒOƒ‰ƒ€‚ğ‚Ü‚Æ‚ß‚Ü‚µ‚½B
- keyboard ‚©‚ç•Ï”‚Ì’l‚ğ“ü—Í‚·‚é‚æ‚èC’¼Úƒ\[ƒXƒvƒƒOƒ‰ƒ€’†‚Éˆê’è‚Ì’l‚ğİ’è‚µ‚Ü‚µ‚½B*/
-
-/* Name> Elh.M.Diouf ::: studNo>021T3550 ::: prg>‘g‚İ‡‚í‚¹‚Ì” nCr >myZenka.c */
-/* à–¾F                   */
+/* 
+ e2550 ::: 20040617 ::: B2exercise2004 0604 ::: ä»¥ä¸‹ï¼Œäº”ã¤ã®ã‚½ãƒ¼ã‚¹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ã¾ã¨ã‚,
+ keyboard ã‹ã‚‰å¤‰æ•°ã®å€¤ã‚’å…¥åŠ›ã™ã‚‹ã‚ˆã‚Šï¼Œç›´æ¥ã‚½ãƒ¼ã‚¹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä¸­ã«ä¸€å®šã®å€¤ã‚’è¨­å®šã—ã¾ã—ãŸ
+ Makhtar Diouf 
+ ----- çµ„ã¿åˆã‚ã›ã®æ•° nCr 
+*/
 
 #include <stdio.h>
 
 int combine(int n ,int r)
 {
   int i;
-  int x = 1;                    /* 0Ÿ‚Ì’l  */
+  int x = 1;                    /* 0æ¬¡ã®å€¤  */
 
   for(i=1;i<=r;i++)
-    x = x*(n-i+1)/i;            /* ‘Q‰»® */
+    x = x*(n-i+1)/i;            /* æ¼¸åŒ–å¼ */
   return x;
 }
 
@@ -34,11 +33,11 @@ int main(void)
 
 }
 
-/* Às—á    */
+/* å®Ÿè¡Œä¾‹    */
 
 
 
-/* ŒŸ“¢“™    */
+/* æ¤œè¨ç­‰    */
 
 
 
@@ -46,9 +45,7 @@ int main(void)
 
 
 
-/* Name> Elh.M. Diouf ::: StudNo>021T3550 ::: Prg>Horner‚Ì•û–@> myHorner.c */
-/* à–¾F          */
-
+/*---------------------- Elh.M. Diouf Hornerã®æ–¹æ³• */
 #include <stdio.h>
 
 int fn(int x, int a[], int n)
@@ -78,19 +75,7 @@ int main(void)
 
 }
 
-/* Às—á    */
-
-
-
-/* ŒŸ“¢“™    */
-
-
-
----------------------------------------------------------------------
-
- /* Name> Elh. M. Diouf ::: StudNo> 021T3550 ::: Prg>Å‘åŒö–ñ”(Œ¸Z–@)> kouyakusu1.c     */
-/* à–¾F                   */
-
+ /*--------------------- Elh. M. Diouf ::: StudNo> 021T3550 ::: Prg>æœ€å¤§å…¬ç´„æ•°(æ¸›ç®—æ³•)> kouyakusu1.c     */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -117,19 +102,7 @@ int main(void)
       return 0;
 }
 
-/* Às—á    */
-
-
-
-/* ŒŸ“¢“™    */
-
-
---------------------------------------------------------------
-
-
-   /*  Name> Elh. M. Diouf ::: StudNo> 021T3550 :::  Prg>Å‘åŒö–ñ”(œZ–@)> kouyakusu2.c */
-/* à–¾F                   */
-
+/*------- Elh. M. Diouf : æœ€å¤§å…¬ç´„æ•°(é™¤ç®—æ³•) kouyakusu2.c */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -155,21 +128,7 @@ int main(void)
       return 0;
 }
 
-
-/* Às—á    */
-
-
-
-/* ŒŸ“¢“™    */
-
-
-
--------------------------------------------------------------------
-
-       /*  Name> Elh M. Diouf ::: StudNo> 021T3550 ::: Prg>Newton –@> myNewton.c */
-/* à–¾F                   */
-
-
+/*---------------  Name> Elh M. Diouf ::: StudNo> 021T3550 ::: Prg>Newton æ³•> myNewton.c */
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -207,11 +166,3 @@ int calc( float x)
   }
 
 }
-
-/* Às—á    */
-
-
-
-/* ŒŸ“¢“™    */
-
-
