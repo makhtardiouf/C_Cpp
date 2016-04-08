@@ -14,7 +14,7 @@ def solve(t, n, m):
 
 #### main
 try:
-    file = "c-test.in" #"C-small-practice.in"
+    file = "d-test.in" #"D-small-practice.in"
     inp = open(file)
     outp = open(inp.name + ".out", mode='w')
 
