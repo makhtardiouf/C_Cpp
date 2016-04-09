@@ -5,6 +5,15 @@
 
 import sys
 
+def flip(s):
+    for i in len(s):
+        if s[i] == '+':
+            s[i] = '-'
+        else:
+            s[i] = '+'
+    return s.reverse()
+
+
 # If cols and rows size are the same, t[y][x] can check cols
 def solve(t, n, m):
     print("hello")

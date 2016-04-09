@@ -27,12 +27,10 @@ def solve(n):
         i += 1
     print(i, last)
 
-    #print(digits)
-
 
 #### main
 try:
-    file = "a-test.in" #"A-small-practice.in"
+    file = "A-large.in" #"a-test.in" #
     inp = open(file)
     outp = open(inp.name + ".out", mode='w')
     nCases = int(inp.readline().strip())
