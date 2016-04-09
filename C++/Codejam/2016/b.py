@@ -10,7 +10,8 @@ class Cake:
         # min number of time to maneuver
         self.y = 0
         self.S = list(chars)
-        self.top = int(len(self.S))
+        self.top = 0
+        self.checktop()
         # 1st iteration
         self.it1 = True
 
@@ -18,12 +19,14 @@ class Cake:
         # Determine the top first = 1st - after +
         hit = False
         sz = len(self.S)
-        for i in range(sz):
-            self.top = i
-            if (self.S[i] == '-'):
-                if (i < sz-1) and (self.S[i+1] == '+'):
+        try:
+            for i in range(sz):
+                self.top = i
+                if (self.S[i] == '-') and (self.S[i+1] == '+'):
                     break
                     hit = True
+        except IndexError:
+            pass
 
         if self.top < 1:
             self.top = 1
@@ -38,7 +41,7 @@ class Cake:
                 self.S[i] = '+'
                 flipped = True
 
-            elif self.it1:
+            else:
                 self.S[i] = '-'
                 flipped = True
 
