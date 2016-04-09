@@ -1,15 +1,33 @@
 #!/usr/bin/env python3
 # Codejam 20160408
 # $Id$
-#
+# Problem A: counting sheep
 
 import sys
+import math
 
-# If cols and rows size are the same, t[y][x] can check cols
-def solve(t, n, m):
-    print("hello")
-    pass
+target = set()
+for i in range(10):
+    target.add(i)
 
+def solve(n):
+    if n == 0:
+        return "INSOMNIA"
+
+    digits = set()
+    i = 1
+    last = 0
+    while True:
+        last = i * n
+        for j in str(last):
+            digits.add(int(j))
+
+        if(digits == target):
+            return last
+        i += 1
+    print(i, last)
+
+    #print(digits)
 
 
 #### main
@@ -17,21 +35,14 @@ try:
     file = "a-test.in" #"A-small-practice.in"
     inp = open(file)
     outp = open(inp.name + ".out", mode='w')
-
     nCases = int(inp.readline().strip())
     print(nCases, " test cases")
 
     for k in range(1, nCases + 1):
-        n, m = [int(x) for x in inp.readline().split(sep=' ')]
-        print("n, m:", n, m)
+        n = int(inp.readline().strip())
+        print("n:", n)
 
-        t = []  # [[0] * n for j in range(m)]
-        # Read the rows
-        for i in range(n):
-            row = [int(x) for x in inp.readline().split(sep=' ')]
-            t.append(row)
-
-        line = "Case #{}{}{}\n".format(k, ': ', solve(t, n, m))
+        line = "Case #{}{}{}\n".format(k, ': ', solve(n))
         sys.stdout.write(line)
         outp.write(line)
 
