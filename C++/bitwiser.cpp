@@ -2,7 +2,6 @@
  * $Id: bitWise.cpp 5 2007-03-31 15:04:06Z Makhtar $
  * compile with: g++ -o bitWise bitWise.cpp -L. -lmalib
  */
-
 #include <iostream>
 #include <bitset>
 #include "malib.h"
