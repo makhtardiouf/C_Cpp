@@ -1,135 +1,153 @@
 /**
-   Competitive programming library constructs: 
- * Segment tree  stored like a heap array, used for
-   Static Range Minimum/Maximum/Sum queries.
+   Competitive programming library constructs:
+   * Segment tree  stored like a heap array, used for
+   Static Range Minimum/Maximum/Sum queries. P80
    Makhtar diouf
    $Id$
    g++ -g -Wall -std=c++11 segment_tree.cpp -o segment_tree
- */
+*/
 #include "malib.h"
 #include <cmath>
-#include <iostream>
-#include <vector>
 using namespace std;
 
+bool dbg = true;
 enum Range
-{
+  {
     SUM = 0,
     MIN,
     MAX
-};
+  };
 
 class SegmentTree
 {
 private:
-    vector<int> segTree;
-    vector<int> A;
-    int opt, node = 1;
-    int b, e = 0;
-    bool isInited = false;
+  vector<int> segTree;
+  vector<int> A;
+  // Range operation
+  int opt = 1; //, p = 1; //, parent node
+  int b, e = 0;
+
+  bool isInited = false;
+  inline int left (int p) { return p << 1; }     // = 2*p
+  inline int right(int p) { return (p << 1) + 1; } // = 2*p +1
 
 public:
+  SegmentTree(vector<int> &A)
+  {
+    int N = A.size();
+    this->A = A;
+    // required tree length: 2*2^(floor(log2(N)) + 1)
+    int length = (int) (2 * pow(2.0, floor((log((double) N) / log(2.0)) + 1)));
+    this->segTree.resize(length);
+  }
 
-    SegmentTree(vector<int> &A)
-    {
-        int N = A.size();
-        this->A = A;
-        // required array length: 2*2^(floor(log2(N)) + 1)
-        int length = (int) (2 * pow(2.0, floor((log((double) N) / log(2.0)) + 1)));
-        this->segTree.resize(length);
-    }
-
-    /**
+  /**
+     Populates the tree
      * @param opt: Sum, Min, Max
-       @param b: begin
-       @param e: end
+     @param b: begin
+     @param e: end
      * Complexity  O(n * log n)
      */
-    void buildSegTree(int opt, int node, int b, int e)
-    {
-        this->opt = opt;
-        this->node = node;
-        if (!isInited)
-        {
-            this->b = b;
-            this->e = e;
-            isInited = true;
-        }
+  void build(int opt, int p, int b, int e)
+  {
+    this->opt = opt;
+    if (!isInited)
+      {
+        this->b = b;
+        this->e = e;
+        isInited = true;
+      }
 
-        // Leaf
-        if (b == e)
-        {
-            if (opt == Range::SUM)
-                this->segTree[node] = this->A[b]; // store value
-                // MIN/MAX, store index
-            else
-                this->segTree[node] = b;
-            // No subtrees from leafs
-            return;
-        }
-
-        // Recursively compute the values in the Left and Right subtrees
-        int lIdx = 2 * node;
-        int rIdx = lIdx + 1;
-        buildSegTree(opt, lIdx, b, (b + e) / 2);
-        buildSegTree(opt, rIdx, (b + e) / 2 + 1, e);
-
-        int lVal = this->segTree[lIdx];
-        int rVal = this->segTree[rIdx];
-        switch (opt)
-        {
-        case Range::SUM:
-            this->segTree[node] = lVal + rVal;
-            break;
-        case Range::MAX:
-            this->segTree[node] = (this->A[lVal] >= this->A[rVal]) ? lVal : rVal;
-            break;
-        default:
-            // MIN
-            this->segTree[node] = (this->A[lVal] <= this->A[rVal]) ? lVal : rVal;
-        }
-    }
-
-    /**
-     *  Complexity  O(log n)
-     * 
-     */
-    int query(int opt, int i, int j, int b = -1, int e = -1)
-    {
-        b = (b == -1 ? this->b : b);
-        e = (e == -1 ? this->e : e);
-
-        // Early sanity checks
-        if (i > e || j < b)
-            return -1;
-            // inside query interval
-        else if (b >= i && e <= j)
-            return this->segTree[this->node];
-
-        // compute the minimum position on the Left/Right
-        int p1 = query(opt, i, j, b, (b + e) / 2);
-        int p2 = query(opt, i, j, (b + e) / 2 + 1, e);
-
-        // position where the overall minimum is
-        if (p1 == -1) return p2; // segment outside query
-        if (p2 == -1) return p1;
-
+    // Leaf
+    if (b == e)
+      {
         if (opt == Range::SUM)
-            return p1 + p2;
-        else if (opt == Range::MIN)
-            return (this->A[p1] <= this->A[p2]) ? p1 : p2;
-        else // max
-            return (this->A[p1] >= this->A[p2]) ? p1 : p2;
-    }
+          // store value
+          this->segTree[p] = this->A[b];
+        // MIN/MAX, store index
+        else
+          this->segTree[p] = b;
+        // No subtrees from leafs
+        return;
+      }
+
+    // Recursively compute the values in the Left and Right subtrees
+    build(opt, left(p), b, (b + e) / 2);
+    build(opt, right(p), (b + e) / 2 + 1, e);
+
+    int lVal = this->segTree[left(p)];
+    int rVal = this->segTree[right(p)];
+    //if(dbg) clog << "lVal, rVal: " << lVal << ", " << rVal << endl;
+    switch (opt)
+      {
+      case Range::SUM:
+        this->segTree[p] = lVal + rVal;
+        break;
+      case Range::MAX:
+        this->segTree[p] = (A[lVal] >= A[rVal]) ? lVal : rVal;
+        break;
+      default:
+        // MIN
+        this->segTree[p] = (A[lVal] <= A[rVal]) ? lVal : rVal;
+      }
+  }
+
+  int rmq(int opt, int i, int j) {
+    if(dbg) clog << "RMQ: " << i << ", " << j << ": \n";
+    return query(opt, 1, i, j);
+  }
+
+private:
+  /**
+   *  Complexity  O(log n)
+   *
+   */
+  int query(int opt, int p, int i, int j, int b = 0, int e = 6)
+  {
+    if(dbg) clog << "b, e " << b << ", " << e << endl;
+    // Early sanity checks
+    if (i > e || j < b)
+      return -1;
+    // inside query interval, return root node
+    else if (b >= i && e <= j)
+      return this->segTree[p]; //!!! issue point here
+
+    // compute the minimum position on the Left/Right
+    int p1 = query(opt, left(p), i, j, b, (b + e) / 2);
+    int p2 = query(opt, right(p), i, j, (b + e) / 2 + 1, e);
+    if(dbg) clog << "p1, p2: " << p1 << ", " << p2 << endl;
+
+    // position where the overall minimum is
+    if (p1 == -1) return p2; // segment outside query
+    if (p2 == -1) return p1;
+
+    if (opt == Range::SUM)
+      return p1 + p2;
+    else if (opt == Range::MIN)
+      return (A[p1] <= A[p2]) ? p1 : p2;
+    else // max
+      return (A[p1] >= A[p2]) ? p1 : p2;
+  }
 };
 
 int main()
 {
-    vector<int> A = {8, 7, 3, 9, 5, 1, 10};
-    auto t = new SegmentTree(A);
-    t->buildSegTree(Range::MIN, 1, 0, 6);
+  vector<int> A = {8, 7, 3, 9, 5, 1, 10};
+  auto t = new SegmentTree(A);
 
-    // Determine the index of minimum value in the sequence
-    cout << t->query(Range::MIN, 1, 3) << endl; // -> 2
-    return 0;
+  cout << "Range:\t";
+  for(auto x : A)
+    cout << x << " ";
+  cout << endl << "Idx:\t";
+  for(auto i=0; i < A.size(); i++)
+    cout << i << " ";
+  cout << endl;
+
+  // Starts from the root index 1
+  t->build(Range::MIN, 1, 0, A.size() -1);
+
+  // Determine the index of minimum value in the sequence
+  cout << "Range (1,3) min: " << t->rmq(Range::MIN, 1, 3) << endl; // -> 2
+  cout << "Range (1,3) max: " << t->rmq(Range::MAX, 1, 3) << endl;
+  return 0;
 }
