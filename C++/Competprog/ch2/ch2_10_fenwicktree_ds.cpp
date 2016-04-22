@@ -1,6 +1,6 @@
 /**
    Fenwick Tree—also known as Binary Indexed Tree (BIT)—
-   used ofr dynamic cumulative frequency tables, and RSQ
+   used ofr dynamic cumulative frequency tables, and RSQ. P84
    g++ -std=c++11 ch2_10_fenwicktree_ds.cpp -o fenwicktree
 */
 #include <cstdio>
@@ -53,6 +53,7 @@ public:
 int main()                // idx   0 1 2 3 4 5 6 7  8 9 10, no index 0!
 {
   FenwickTree ft(10);     // ft = {-,0,0,0,0,0,0,0, 0,0,0}
+  // Number of times each number appears in the sequence
   ft.adjust(2, 1);        // ft = {-,0,1,0,1,0,0,0, 1,0,0}, idx 2,4,8 => +1
   ft.adjust(4, 1);        // ft = {-,0,1,0,2,0,0,0, 2,0,0}, idx 4,8 => +1
   ft.adjust(5, 2);        // ft = {-,0,1,0,2,2,2,0, 4,0,0}, idx 5,6,8 => +2
@@ -65,6 +66,7 @@ int main()                // idx   0 1 2 3 4 5 6 7  8 9 10, no index 0!
     fprintf(stderr, "%d ", e);
   fprintf(stderr, "\n");
 
+  // here rsq(b) = cf[1..b]
   printf("%d\n", ft.rsq(1, 1));  // 0 => ft[1] = 0
   printf("%d\n", ft.rsq(1, 2));  // 1 => ft[2] = 1
   printf("%d\n", ft.rsq(1, 6));  // 7 => ft[6] + ft[4] = 5 + 2 = 7
