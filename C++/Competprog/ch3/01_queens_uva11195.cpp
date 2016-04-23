@@ -1,6 +1,6 @@
 /* Another n-Queen Chess Problem, solved with backtracking
  * UVA 11195, ICPC
- *
+ * will be TLE, needs optimization with bitmasks
  * g++ -lm -lcrypt -O2 -pipe 01_queens_uva11195.cpp
  * Or -Og to enable optimizations that do not interfere with debugging
  */
@@ -34,7 +34,7 @@ int backtrack(int c, int n)
           rows[r] = ld[r - c + n - 1] = rd[r + c] = true;
 
           // flag off
-           backtrack(c + 1, n);
+          ans += backtrack(c + 1, n);
           // restore
           rows[r] = ld[r - c + n - 1] = rd[r + c] = false;
         }
@@ -51,11 +51,13 @@ int main()
       if (n == 0)
         return 0;
 
+      //char bch vector< vector<int> >(n, n);
       char ch;
       for(int i =0; i < n; i++) {
         for(int j =0; j < n; j++){
           cin >> ch;
           board[i][j] = ch;
+          bch[i][j] = ch;
           clog << ch;
         }
         clog << endl;

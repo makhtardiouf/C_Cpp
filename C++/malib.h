@@ -46,8 +46,8 @@ extern "C"
 #endif
 
   /** Number of elements of an array */
-#define LENGTH(array) (sizeof(array) / sizeof(array[0])
-
+#define getArrLength(array) (sizeof(array) / sizeof(array[0]))
+  
   void terminate(const char* s);
 
   /** Clear the console */
@@ -80,6 +80,7 @@ extern "C"
   char* remove_duplicates(char str[]);
 
 #ifdef __cplusplus
+
 }
 #endif
 
