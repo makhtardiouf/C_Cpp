@@ -6,6 +6,9 @@
 #include "malib.h"
 #include <string>
 
+// use the following to speed up iostream
+// ios_base::sync_with_stdio(false);
+
 //template<typename T>
 std::ostream& operator<<(std::ostream& ostr, const std::list<std::string>& list)
 {

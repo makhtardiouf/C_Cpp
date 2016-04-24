@@ -6,55 +6,82 @@
 */
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 
 template <typename T>
 class Tree
 {
-    // A Tree of trees
+    // A Tree of trees/nodes
 private:
-    typedef struct tree {
-        T item; // data
-        struct tree *parent;
-        struct tree *left;
-        struct tree *right;
-    } tree;
+    typedef struct node {
+        T value; // data
+        struct node *parent;
+        struct node *left;
+        struct node *right;
+    } node;
 
-    tree* root = nullptr;
+    node* root = nullptr;
 
 public:
     Tree(T a)
     {
-        tree n;
-        n.item = a;
+        node n;
+        n.value = a;
     };
     Tree(vector<T> v)
     {
-      //root = new tree;
-        //  t->item = v[0];
+        //root = new node;
+        //  t->value = v[0];
         // insert root
-      std::sort(v.begin(), v.end());
+        // std::sort(v.begin(), v.end());
         insert(nullptr, v[0], nullptr);
         for( int i = 1; i < v.size(); i++)
             insert(&root, v[i], root);
-        traverse(root);
+        //traverse(&root);
+        printPostorder(root);
         cout << endl;
     }
 
-    tree* search(tree *l, T x)
+    void insert(node **l, T x, node *parent)
+    {
+        node *p;
+        if ((root == nullptr) || (*l == nullptr)) {
+            p = new node; /* allocate new node */
+            p->value = x;
+            p->left = p->right = nullptr;
+            p->parent = parent;
+
+            // 1st node to be added to the node
+            if(root == nullptr) {
+                root = p;
+            } else
+                // link into parent’s record
+                *l = p;
+
+            return;
+        }
+
+        if (x < (*l)->value)
+            insert(&((*l)->left), x, *l);
+        else
+            insert(&((*l)->right), x, *l);
+    }
+
+    node* search(node *l, T x)
     {
         if (l == nullptr) return(nullptr);
-        if (l->item == x) return(l);
+        if (l->value == x) return(l);
 
-        if (x < l->item)
+        if (x < l->value)
             return( search(l->left, x) );
         else
             return( search(l->right, x) );
     }
 
-    tree* getMin(tree *t)
+    node* getMin(node *t)
     {
-        tree *min;
+        node *min;
         // pointer to minimum
         if (t == nullptr) return(nullptr);
         min = t;
@@ -64,47 +91,47 @@ public:
         return(min);
     }
 
-    void traverse(tree *l)
+    void traverse(node **l)
     {
-        if (!l)
+        if (*l == nullptr)
             return;
-        cout << l->item << "\n\t / \n\t";
-        traverse(l->left);
-        //processitem(l->item);
-        cout << l->item << "\n\t \\ \n\t";
-        traverse(l->right);
+        cout << (*l)->value  << "\n\t / \n\t";
+        traverse(&(*l)->left);
+        //processvalue(l->value);
+        cout << (*l)->value << "\n\t \\ \n\t";
+        traverse(&(*l)->right);
+
     }
 
-    void insert(tree **l, T x, tree *parent)
+    // Pretty-printing
+    void printPostorder(node* p, int indent=0)
     {
-        tree *p;
-        if ((root == nullptr) || (*l == nullptr)) {
-            p = new tree; /* allocate new node */
-            p->item = x;
-            p->left = p->right = nullptr;
-            p->parent = parent;
-            //*l = new tree;
-            // 1st node to be added to the tree
-            if(root == nullptr) {
-              root = p;
-            
-            } else
-              ;//l = &p;
-            /* link into parent’s record */
+        if(p == nullptr) {
+            cout << "No nodes detected at this position\n";
             return;
         }
+        std::cout<< p->value << "\n ";
+        if(p->right) {
+            std::cout<<" \\\n" << ' ';
+            printPostorder(p->right, indent+4);
+        }
+        if (indent) {
+            ;// std::cout << std::setw(indent) << ' ';
+        }
+        // if (p->right) std::cout<<" /\n" << std::setw(indent) << ' ';
+        // std::cout<< p->value << "\n ";
 
-        if (x < (*l)->item)
-          insert(&((*l)->left), x, *l);
-        else
-          insert(&((*l)->right), x, *l);
+        if(p->left) {
+            std::cout <<" /\n";
+            printPostorder(p->left, indent+4);
+        }
     }
 
 };
 
 int main()
 {
-    vector<int> v {40, 2, 5, 3, 10};
+    vector<int> v {4, 40, 2, 5, 3, 1, 10};
     auto t = new Tree<int>(v);
     return 0;
 }
