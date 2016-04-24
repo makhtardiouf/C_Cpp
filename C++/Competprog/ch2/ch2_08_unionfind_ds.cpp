@@ -6,10 +6,10 @@ typedef vector<int> vi;
 
 // Union-Find Disjoint Sets Library written in OOP manner,
 // using both path compression and union by rank heuristics
-class UnionFind  
+class UnionFind
 {
 private:
-    vi p, rank, setSize; 
+    vi p, rank, setSize;
     int numSets;
 
 public:
@@ -31,24 +31,20 @@ public:
     }
     void unionSet(int i, int j)
     {
-        if (!isSameSet(i, j))
-            {
-                numSets--;
-                int x = findSet(i);
-                int y = findSet(j);
-                // rank is used to keep the tree short
-                if (rank[x] > rank[y])
-                    {
-                        p[y] = x;
-                        setSize[x] += setSize[y];
-                    }
-                else
-                    {
-                        p[x] = y;
-                        setSize[y] += setSize[x];
-                        if (rank[x] == rank[y]) rank[y]++;
-                    }
+        if (!isSameSet(i, j)) {
+            numSets--;
+            int x = findSet(i);
+            int y = findSet(j);
+            // rank is used to keep the tree short
+            if (rank[x] > rank[y]) {
+                p[y] = x;
+                setSize[x] += setSize[y];
+            } else {
+                p[x] = y;
+                setSize[y] += setSize[x];
+                if (rank[x] == rank[y]) rank[y]++;
             }
+        }
     }
     int numDisjointSets()
     {
@@ -79,7 +75,7 @@ int main()
 
     UF.unionSet(0, 3);
     printf("%d\n", UF.numDisjointSets()); // 1
-    
+
     for (int i = 0; i < 5; i++) // findSet will return 3 for {0, 1, 2, 3, 4}
         printf("findSet(%d) = %d, sizeOfSet(%d) = %d\n", i, UF.findSet(i), i, UF.sizeOfSet(i));
     return 0;

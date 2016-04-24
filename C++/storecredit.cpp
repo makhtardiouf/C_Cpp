@@ -27,7 +27,7 @@ bool getSelection(_case c);
 
 int main(int argc, char** argv) {
     if (argc < 2)
-        terminate("Usage: ./str_reversewords filename");
+        terminate("Usage: ./storecredit filename");
 
     string s{argv[1]};
     SelectProducts(s);

@@ -23,13 +23,12 @@ private:
     {
         if (L == R)                            // as L == R, either one is fine
             st[p] = L;                                         // store the index
-        else                                  // recursively compute the values
-            {
-                build(left(p) , L              , (L + R) / 2);
-                build(right(p), (L + R) / 2 + 1, R          );
-                int p1 = st[left(p)], p2 = st[right(p)];
-                st[p] = (A[p1] <= A[p2]) ? p1 : p2;
-            }
+        else {                                // recursively compute the values
+            build(left(p) , L              , (L + R) / 2);
+            build(right(p), (L + R) / 2 + 1, R          );
+            int p1 = st[left(p)], p2 = st[right(p)];
+            st[p] = (A[p1] <= A[p2]) ? p1 : p2;
+        }
     }
 
     int rmq(int p, int L, int R, int i, int j)                    // O(log n)
@@ -59,11 +58,10 @@ private:
 
         // if the current interval is included in the update range,
         // update that st[node]
-        if (L == i && R == j)
-            {
-                A[i] = new_value; // update the underlying array
-                return st[p] = L; // this index
-            }
+        if (L == i && R == j) {
+            A[i] = new_value; // update the underlying array
+            return st[p] = L; // this index
+        }
 
         // compute the minimum pition in the
         // left and right part of the interval

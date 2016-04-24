@@ -4,8 +4,7 @@
 #include <vector>
 using namespace std;
 
-typedef struct
-{
+typedef struct {
     int id;
     int solved;
     int penalty;

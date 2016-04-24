@@ -26,22 +26,20 @@ int main()
 
     printf("%d\n", q.empty());             // currently q is empty, true (1)
     printf("==================\n");
-    while (!s.empty())                     // stack s still has 2 more items
-        {
-            q.push(s.top());                          // enqueue 'b', and then 'a'
-            s.pop();
-        }
+    while (!s.empty()) {                   // stack s still has 2 more items
+        q.push(s.top());                          // enqueue 'b', and then 'a'
+        s.pop();
+    }
     q.push('z');                                        // add one more item
     printf("%c\n", q.front());                                  // prints 'b'
     printf("%c\n", q.back());                                   // prints 'z'
 
     // output 'b', 'a', then 'z' (until queue is empty), according to the insertion order above
     printf("==================\n");
-    while (!q.empty())
-        {
-            printf("%c\n", q.front());                      // take the front first
-            q.pop();                             // before popping (dequeue-ing) it
-        }
+    while (!q.empty()) {
+        printf("%c\n", q.front());                      // take the front first
+        q.pop();                             // before popping (dequeue-ing) it
+    }
 
     printf("==================\n");
     d.push_back('a');
