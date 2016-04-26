@@ -26,21 +26,20 @@ int tsp(int pos, int bitmask)   // bitmask stores the visited coordinates
 int main()
 {
     scanf("%d", &TC);
-    while (TC--)
-        {
-            scanf("%d %d", &xsize, &ysize); // these two values are not used
-            scanf("%d %d", &x[0], &y[0]);
-            scanf("%d", &n);
-            for (i = 1; i <= n; i++) // karel's position is at index 0
-                scanf("%d %d", &x[i], &y[i]);
+    while (TC--) {
+        scanf("%d %d", &xsize, &ysize); // these two values are not used
+        scanf("%d %d", &x[0], &y[0]);
+        scanf("%d", &n);
+        for (i = 1; i <= n; i++) // karel's position is at index 0
+            scanf("%d %d", &x[i], &y[i]);
 
-            for (i = 0; i <= n; i++) // build distance table
-                for (j = 0; j <= n; j++)
-                    dist[i][j] = abs(x[i] - x[j]) + abs(y[i] - y[j]); // Manhattan distance
+        for (i = 0; i <= n; i++) // build distance table
+            for (j = 0; j <= n; j++)
+                dist[i][j] = abs(x[i] - x[j]) + abs(y[i] - y[j]); // Manhattan distance
 
-            memset(memo, -1, sizeof memo);
-            printf("The shortest path has length %d\n", tsp(0, 1)); // DP-TSP
-        }
+        memset(memo, -1, sizeof memo);
+        printf("The shortest path has length %d\n", tsp(0, 1)); // DP-TSP
+    }
 
     return 0;
 }

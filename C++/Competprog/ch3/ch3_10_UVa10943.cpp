@@ -49,11 +49,10 @@ int main()
 
     for (j = 1; j < 100; j++) // these three nested loops form the correct topological order
         for (i = 0; i <= 100; i++)
-            for (split = 0; split <= 100 - i; split++)
-                {
-                    dp[i + split][j + 1] += dp[i][j];
-                    dp[i + split][j + 1] %= 1000000;
-                }
+            for (split = 0; split <= 100 - i; split++) {
+                dp[i + split][j + 1] += dp[i][j];
+                dp[i + split][j + 1] %= 1000000;
+            }
 
     while (scanf("%d %d", &N, &K), (N || K))
         printf("%d\n", dp[N][K]);

@@ -21,16 +21,15 @@ int cut(int left, int right)
 
 int main()
 {
-    while (scanf("%d", &l), l)
-        {
-            A[0] = 0;
-            scanf("%d", &n);
-            for (int i = 1; i <= n; i++) scanf("%d", &A[i]);
-            A[n + 1] = l;
+    while (scanf("%d", &l), l) {
+        A[0] = 0;
+        scanf("%d", &n);
+        for (int i = 1; i <= n; i++) scanf("%d", &A[i]);
+        A[n + 1] = l;
 
-            memset(memo, -1, sizeof memo);
-            printf("The minimum cutting is %d.\n", cut(0, n + 1)); // start with left = 0 and right = n + 1
-        }
+        memset(memo, -1, sizeof memo);
+        printf("The minimum cutting is %d.\n", cut(0, n + 1)); // start with left = 0 and right = n + 1
+    }
 
     return 0;
 }

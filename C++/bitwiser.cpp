@@ -1,17 +1,18 @@
 /*
  * $Id: bitWise.cpp 5 2007-03-31 15:04:06Z Makhtar $
- * compile with: g++ -o bitWise bitWise.cpp -L. -lmalib
+ * compile with: g++ -std=c++11 -o bitwiser bitwiser.cpp -L. -lmalib -I/usr/local/include/fxt/ -lfxt
  */
 #include <iostream>
 #include <bitset>
+#include <bits/bitrotate.h> // for bitset rotation
+#include <bits/bitcombcolex.h> // combinations
 #include "malib.h"
 using namespace std;
 
 extern void printBinary(const unsigned char val);
 
 int main(void) {
-    unsigned int getval;
-    unsigned char a, b;
+    unsigned int a, b;
 
     std::bitset<4> b1("1110");
     std::bitset<4> b2("0001");
@@ -19,16 +20,10 @@ int main(void) {
     std::cout << "b1 | b2: " << (b1 | b2) << '\n';
     std::cout << "b1 ^ b2: " << (b1 ^ b2) << '\n';
 
-    cout << "Enter a number(a) between 0 and 255: ";
-    cin >> getval;
-    a = getval;
+    cout << "Enter 2 numbers(a, b) between 0 and 255: ";
+    cin >> a; cin >> b;
 
-    cout << "Enter a number(b) between 0 and 255: ";
-    cin >> getval;
-    b = getval;
-
-    cout << "\na in binary: \t";
-    printBinary(a);
+    cout << "\na in binary: \t" << printBinary(a);
     cout << endl;
 
     cout << "\nb in binary: \t";
@@ -55,5 +50,20 @@ int main(void) {
     printBinary(a & 0x5A);
     cout << endl;
 
+    // using the FXT library
+    cout << b1 << " (b1) rotated left: ";
+    const ulong sz = b1.size();
+
+    // ulong nb1 = bit_rotate_left(b1.to_ulong(), sz);
+    // Rotation
+    ulong x = b1.to_ulong();
+    auto rb1 = bitset<sz>( (x<<sz) | (x>>(64-sz)) );
+    cout << rb1 << endl;
+
+    bitset<10>b3(1e6);
+      x = last_comb(1e6);
+    cout << "\nCombination for 1M (" << b3 << ") is: " << x;
+
+    cout << endl;
     return 0;
 }

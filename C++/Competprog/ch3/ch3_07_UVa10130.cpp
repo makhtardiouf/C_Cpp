@@ -23,24 +23,22 @@ int value(int id, int w)
 int main()
 {
     scanf("%d", &T);
-    while (T--)
-        {
-            memset(memo, -1, sizeof memo);
+    while (T--) {
+        memset(memo, -1, sizeof memo);
 
-            scanf("%d", &N);
-            for (i = 0; i < N; i++)
-                scanf("%d %d", &V[i], &W[i]);
+        scanf("%d", &N);
+        for (i = 0; i < N; i++)
+            scanf("%d %d", &V[i], &W[i]);
 
-            ans = 0;
-            scanf("%d", &G);
-            while (G--)
-                {
-                    scanf("%d", &MW);
-                    ans += value(0, MW);
-                }
-
-            printf("%d\n", ans);
+        ans = 0;
+        scanf("%d", &G);
+        while (G--) {
+            scanf("%d", &MW);
+            ans += value(0, MW);
         }
+
+        printf("%d\n", ans);
+    }
 
     return 0;
 }

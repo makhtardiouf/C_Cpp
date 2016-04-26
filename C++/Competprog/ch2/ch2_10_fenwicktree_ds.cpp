@@ -1,6 +1,6 @@
 /**
-   Fenwick Tree—also known as Binary Indexed Tree (BIT)—
-   used ofr dynamic cumulative frequency tables, and RSQ. P84
+   Fenwick Tree, aka Binary Indexed Tree (BIT)
+   used for dynamic cumulative frequency tables, and RSQ. P84
    g++ -std=c++11 ch2_10_fenwicktree_ds.cpp -o fenwicktree
 */
 #include <cstdio>

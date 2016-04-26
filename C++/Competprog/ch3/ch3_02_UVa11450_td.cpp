@@ -48,17 +48,15 @@ int main()              // easy to code if you are already familiar with it
     int i, j, TC, score;
 
     scanf("%d", &TC);
-    while (TC--)
-        {
-            scanf("%d %d", &M, &C);
-            for (i = 0; i < C; i++)
-                {
-                    scanf("%d", &price[i][0]);                  // store K in price[i][0]
-                    for (j = 1; j <= price[i][0]; j++) scanf("%d", &price[i][j]);
-                }
-            memset(memo, -1, sizeof memo);    // TOP-DOWN: initialize DP memo table
-            score = shop(M, 0);                            // start the top-down DP
-            if (score < 0) printf("no solution\n");
-            else           printf("%d\n", score);
+    while (TC--) {
+        scanf("%d %d", &M, &C);
+        for (i = 0; i < C; i++) {
+            scanf("%d", &price[i][0]);                  // store K in price[i][0]
+            for (j = 1; j <= price[i][0]; j++) scanf("%d", &price[i][j]);
         }
+        memset(memo, -1, sizeof memo);    // TOP-DOWN: initialize DP memo table
+        score = shop(M, 0);                            // start the top-down DP
+        if (score < 0) printf("no solution\n");
+        else           printf("%d\n", score);
+    }
 } // return 0;

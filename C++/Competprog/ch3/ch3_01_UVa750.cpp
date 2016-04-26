@@ -19,56 +19,54 @@ int lineCounter;
 */
 bool cellOk(int r, int c)
 {
-  for (int prev = 0; prev < c; prev++) {
+    for (int prev = 0; prev < c; prev++) {
 
-    // clash on same row or diagonal -> infeasible
-    if (rows[prev] == r || (abs(rows[prev] - r) == abs(prev - c)))
-      return false;
-  }
-  return true;
+        // clash on same row or diagonal -> infeasible
+        if (rows[prev] == r || (abs(rows[prev] - r) == abs(prev - c)))
+            return false;
+    }
+    return true;
 }
 
 void backtrack(int c, int a, int b)
 {
-  // candidate sol, (a, b) has 1 queen
-  if (c == 8 && rows[b] == a)
-    {
-      printf("%2d      %d", ++lineCounter, rows[0] + 1);
-      for (int j = 1; j < 8; j++)
-        printf(" %d", rows[j] + 1);
-      printf("\n");
+    // candidate sol, (a, b) has 1 queen
+    if (c == 8 && rows[b] == a) {
+        printf("%2d      %d", ++lineCounter, rows[0] + 1);
+        for (int j = 1; j < 8; j++)
+            printf(" %d", rows[j] + 1);
+        printf("\n");
     }
 
-  // all possible rows
-  for (int r = 0; r < 8; r++)
-    if (cellOk(r, c))
-      {
-        // put queen here and recurse
-        rows[c] = r;
-        backtrack(c + 1, a, b);
-      }
+    // all possible rows
+    for (int r = 0; r < 8; r++)
+        if (cellOk(r, c)) {
+            // put queen here and recurse
+            rows[c] = r;
+            backtrack(c + 1, a, b);
+        }
 }
 
 int main()
 {
-  int nCases = 0;
-  cin >> nCases;
-  while (nCases--)
-    {
-      int a, b = 0;
-      cin >> a >> b;
-      // switch to 0-based indexing
-      a--; b--;
-      rows.assign(rows.size(), 0);
-      lineCounter = 0;
+    int nCases = 0;
+    cin >> nCases;
+    while (nCases--) {
+        int a, b = 0;
+        cin >> a >> b;
+        // switch to 0-based indexing
+        a--;
+        b--;
+        rows.assign(rows.size(), 0);
+        lineCounter = 0;
 
-      cout << "SOLN\t   COLUMN\n";
-      cout << " #\t1 2 3 4 5 6 7 8\n\n";
+        cout << "SOLN\t   COLUMN\n";
+        cout << " #\t1 2 3 4 5 6 7 8\n\n";
 
-      // all possible 8! candidate solutions
-      backtrack(0, a, b);
-      if (nCases)
-        cout << endl;
+        // all possible 8! candidate solutions
+        backtrack(0, a, b);
+        if (nCases)
+            cout << endl;
     }
-  return 0;
+    return 0;
 }
