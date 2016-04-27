@@ -1,7 +1,6 @@
 #include <fstream>
 
-int main(void)
-{
+int main(void) {
   std::ifstream input("input.txt");
   std::ofstream output("output.txt"), output2("output2.txt");
 
@@ -9,4 +8,3 @@ int main(void)
   output2 << input.rdbuf();
   return 0;
 }
-

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   lists.cpp
  * Author: makhtar
  * Custom implementation of lists, and mix with the stdlib list
@@ -7,155 +7,131 @@
  */
 
 #include <cstdlib>
+#include <initializer_list>
+#include <iostream>
+#include <iterator>
 #include <list>
 #include <string>
-#include <iterator>
-#include <iostream>
-#include <initializer_list>
 
 using namespace std;
 
-template<typename T>
-struct Node {
-    T elem;
-    Node* prev;
-    Node* next;
+template <typename T> struct Node {
+  T elem;
+  Node *prev;
+  Node *next;
 
-    Node(Node* p = NULL) : prev(nullptr), next(nullptr) {
-        if (p) {
-            prev = p;
-            next = p->next;
-            p->next = this;
-            next->prev = this;
-        }
+  Node(Node *p = NULL) : prev(nullptr), next(nullptr) {
+    if (p) {
+      prev = p;
+      next = p->next;
+      p->next = this;
+      next->prev = this;
     }
+  }
 
-    Node(T data) : elem(data) {
-    }
+  Node(T data) : elem(data) {}
 
-    ~Node() {
-        if (prev) {
-            prev->next = next;
-            if (next)
-                next->prev = prev;
-        }
+  ~Node() {
+    if (prev) {
+      prev->next = next;
+      if (next)
+        next->prev = prev;
     }
+  }
 };
 
-template<typename T>
-class List {
+template <typename T> class List {
 public:
-    class iterator;
+  class iterator;
 
-    List() {
-    }
-    List(std::initializer_list<T> l);
+  List() {}
+  List(std::initializer_list<T> l);
 
-    ~List() {
-        if (elem)
-            delete elem;
-    }
+  ~List() {
+    if (elem)
+      delete elem;
+  }
 
-    List<T>& operator=(const List<T>& l);
+  List<T> &operator=(const List<T> &l);
 
-    void push_front(const T& val);
+  void push_front(const T &val);
 
-    void push_back(const T& val);
-    T* pop_back();
+  void push_back(const T &val);
+  T *pop_back();
 
-    void reverse();
-    void merge(const List<T>* l);
+  void reverse();
+  void merge(const List<T> *l);
 
-    inline int size() {
-        return sz;
-    }
+  inline int size() { return sz; }
 
-    iterator begin() {
-        return curr->head;
-    }
+  iterator begin() { return curr->head; }
 
-    iterator end() {
-        return elem;
-    }
-    
+  iterator end() { return elem; }
+
 private:
-    Node<T>* head;
-    Node<T>* elem;
-    int sz = 0;
+  Node<T> *head;
+  Node<T> *elem;
+  int sz = 0;
 };
 
-template<typename T>
-void List<T>::push_back(const T& val) {
-    Node<T>* n = new Node<T>(val);
-    if (this->elem) {
-        n->prev = this->elem;
-        this->elem->next = n;
-    } else
-        this->elem = n;
+template <typename T> void List<T>::push_back(const T &val) {
+  Node<T> *n = new Node<T>(val);
+  if (this->elem) {
+    n->prev = this->elem;
+    this->elem->next = n;
+  } else
+    this->elem = n;
 
-    this->sz++;
+  this->sz++;
 }
-// Implemented outside the List to allow multiple iterators to be used at the same time
+// Implemented outside the List to allow multiple iterators to be used at the
+// same time
 
-template<typename T>
-class List<T>::iterator {
+template <typename T> class List<T>::iterator {
 private:
-    List<T>* curr;
+  List<T> *curr;
 
 public:
+  iterator(List<T> &p) { this->curr = p; }
 
-    iterator(List<T>& p) {
-        this->curr = p;
-    }
+  bool operator==(const iterator &i) const { return (i->curr == curr); }
 
-    bool operator==(const iterator& i) const {
-        return (i->curr == curr);
-    }
+  bool operator!=(const iterator &i) const { return (i->curr != curr); }
 
-    bool operator!=(const iterator& i) const {
-        return (i->curr != curr);
-    }
+  iterator &operator++() {
+    curr = curr->next;
+    return *this;
+  }
 
-    iterator& operator++() {
-        curr = curr->next;
-        return *this;
-    }
+  iterator &operator--() {
+    curr = curr->prev;
+    return *this;
+  }
 
-    iterator& operator--() {
-        curr = curr->prev;
-        return *this;
-    }
+  T &operator*() const { return curr->elem; }
 
-    T& operator*() const {
-        return curr->elem;
-    }
-
-    T& operator()() {
-        return elem;
-    }
+  T &operator()() { return elem; }
 };
 
+int main(int argc, char **argv) {
 
-int main(int argc, char** argv) {
+  std::list<int> lt;
+  lt.push_back(100);
+  for (int i = 0; i < 10; i++)
+    lt.push_back(rand());
 
-    std::list<int> lt;
-    lt.push_back(100);
-    for (int i = 0; i < 10; i++)
-        lt.push_back(rand());
+  lt.sort();
+  std::list<int>::iterator it;
+  for (it = lt.begin(); it != lt.end(); ++it)
+    std::clog << *it << " ";
 
-    lt.sort();
-    std::list<int>::iterator it;
-    for (it = lt.begin(); it != lt.end(); ++it)
-        std::clog << *it << " ";
+  cout << endl;
+  List<int> bl;
 
-    cout << endl;
-    List<int> bl;
+  bl.push_back(10);
+  bl.push_back(19);
+  for (it = bl.begin(); it != bl.end(); ++it)
+    std::clog << *it << " ";
 
-    bl.push_back(10);
-    bl.push_back(19);
-    for (it = bl.begin(); it != bl.end(); ++it)
-        std::clog << *it << " ";
-
-    return 0;
+  return 0;
 }
-

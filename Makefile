@@ -1,11 +1,11 @@
 
 # $Id: Makefile 18 2008-07-06 09:18:48Z Makhtar $
 
-CC=gcc -std=c11 -g -Wall -c
-CXX=g++ -std=c++11 -g -Wall -c
+CC=cc -std=c11 -g -Wall -c
+CXX=c++ -std=c++11 -g -Wall -o $@ 
 OBJS=malib.o malib2.o socket.o
-LINK=gcc -o $@ $@.o -L. -lmalib
-LINK2=g++ -o $@ $@.o -L. -lmalib
+LINK=cc -o $@ $@.o -L. -lmalib
+LINK2=c++ -o $@ $@.o malib2.cpp -L. -lmalib
 
 libmalib.a: malib.c malib2.cpp malib.h socket.h socket.c
 	$(CC) -D_BSD_SOURCE malib.c
@@ -18,7 +18,5 @@ libmalib.a: malib.c malib2.cpp malib.h socket.h socket.c
 	$(LINK)
 	rm $@.o
 
-.cpp: libmalib.a malib.h
-	$(CXX) $<
-	$(LINK2)
-	rm $@.o
+.cpp: malib2.cpp malib.h libmalib.a
+	$(CXX) $<  malib2.cpp 

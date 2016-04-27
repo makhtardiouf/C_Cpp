@@ -5,16 +5,15 @@ Generate a bus error? on SPARC only?
 */
 #include <stdio.h>
 
-    union {
-	char a[10];
-	int i;
-    } u;
+union {
+  char a[10];
+  int i;
+} u;
 
-int main(void)
-{
-    int *p = (int*) &(u.a[1]);
-    *p = 17;
+int main(void) {
+  int *p = (int *)&(u.a[1]);
+  *p = 17;
 
-    printf("p points at: %d\n", *p);
-    return 0;
+  printf("p points at: %d\n", *p);
+  return 0;
 }

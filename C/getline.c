@@ -4,17 +4,16 @@ Get line into aString, return length.
 */
 #include <stdio.h>
 
-int getline(char aString[], int LineLength)
-{
-    int c, i;
+int getline(char aString[], int LineLength) {
+  int c, i;
 
-    i = 0;
-    while ( --LineLength > 0 && (c==getchar()) != EOF && c!='\n')
-        aString[i++] = c;
+  i = 0;
+  while (--LineLength > 0 && (c == getchar()) != EOF && c != '\n')
+    aString[i++] = c;
 
-    if ( c == '\n' )
-        aString[i++] = c;
-    aString[i] = '\0';
+  if (c == '\n')
+    aString[i++] = c;
+  aString[i] = '\0';
 
-    return i;
+  return i;
 }

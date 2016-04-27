@@ -4,7 +4,7 @@
 int main(void) {
   int i;
   int j = 5;
-  void* heapitem = malloc(4);
+  void *heapitem = malloc(4);
   double bigarr[2000];
   bigarr[0] = 15.34;
 

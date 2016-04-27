@@ -1,4 +1,4 @@
-/* 
+/*
  * Author: Makhtar Diouf
  * $Id$
  * Extract Abstract Syntax Notation code from 3GPP RRC specs
@@ -8,57 +8,56 @@
  */
 
 #include <cstdlib>
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
 
 using namespace std;
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
 
-    string from, to;
-    if (argc < 2) {
-        cout << "\nEnter txt SOURCE filename: ";
-        cin >> from;
-    } else {
-        from = argv[1];
+  string from, to;
+  if (argc < 2) {
+    cout << "\nEnter txt SOURCE filename: ";
+    cin >> from;
+  } else {
+    from = argv[1];
+  }
+  to = from + ".asn";
+
+  try {
+    ifstream src{from};
+    if (!src) {
+      throw runtime_error("Input file could not be read ");
     }
-    to = from + ".asn";
 
-    try {
-        ifstream src{from};
-        if (!src) {
-            throw runtime_error("Input file could not be read ");
-        }
-
-        clog << "Parsing ASN.1 code from " + from + " to " + to + "\n";       
-        ofstream target{to};
-      //  target << "EUTRA-RRC-Definitions DEFINITIONS AUTOMATIC TAGS ::=\n";
-      //  target << "\nBEGIN\n";
-        string s;
+    clog << "Parsing ASN.1 code from " + from + " to " + to + "\n";
+    ofstream target{to};
+    //  target << "EUTRA-RRC-Definitions DEFINITIONS AUTOMATIC TAGS ::=\n";
+    //  target << "\nBEGIN\n";
+    string s;
+    while (!src.eof()) {
+      std::getline(src, s);
+      // Skip until we reach ASN code
+      if (s == "-- ASN1START") {
         while (!src.eof()) {
           std::getline(src, s);
-            // Skip until we reach ASN code
-            if (s == "-- ASN1START") {
-                while (!src.eof()) {
-                    std::getline(src, s);                    
-                    clog << s << "\n";
-                    // Stop writing to target asn file
-                    if (s == "-- ASN1STOP") {
-                        break;
-                    }
-                    target << s << "\n";
-                }
-            }
-
+          clog << s << "\n";
+          // Stop writing to target asn file
+          if (s == "-- ASN1STOP") {
+            break;
+          }
+          target << s << "\n";
         }
-     //   target << "\nEND\n";
-        clog << " done.\n";
-        return (!src.eof() && !target); // return error state
-        
-    } catch (runtime_error ex) {
-        std::cerr << "Error: " << ex.what() << " " << __FILE__ << ":" << __LINE__ << "\n";
-        return EXIT_FAILURE;
+      }
     }
-}
+    //   target << "\nEND\n";
+    clog << " done.\n";
+    return (!src.eof() && !target); // return error state
 
+  } catch (runtime_error ex) {
+    std::cerr << "Error: " << ex.what() << " " << __FILE__ << ":" << __LINE__
+              << "\n";
+    return EXIT_FAILURE;
+  }
+}

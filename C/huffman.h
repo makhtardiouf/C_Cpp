@@ -1,26 +1,25 @@
-/* 
+/*
  * $Id$
- * Makhtar Diouf  2005  
+ * Makhtar Diouf  2005
  */
 #ifndef _HUFFMAN_H
 #define _HUFFMAN_H
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 typedef struct arbre {
-    double p;
-    char c;
-    struct arbre *fg;  // left leaf
-    struct arbre *fd;  // right leaf
+  double p;
+  char c;
+  struct arbre *fg; // left leaf
+  struct arbre *fd; // right leaf
 } tree;
 
-struct init
-{
+struct init {
   char c;
   double p;
 };

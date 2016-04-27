@@ -8,14 +8,16 @@ Test with: time ./cache
 
 #include <string.h>
 
-#define DUMBCOPY for (i = 0; i < 65536; i++) dest[i] = src[i]
+#define DUMBCOPY                                                               \
+  for (i = 0; i < 65536; i++)                                                  \
+  dest[i] = src[i]
 #define SMARTCOPY memcpy(dest, src, 65536)
 
 int main(void) {
-    char src[65536], dest[65536];
-    int i,j;
-    for(j =0; j < 100; j++)
-	COPY;			
+  char src[65536], dest[65536];
+  int i, j;
+  for (j = 0; j < 100; j++)
+    COPY;
 
-    return 0;
+  return 0;
 }

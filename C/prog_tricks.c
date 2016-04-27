@@ -3,11 +3,10 @@ Program for testing various tricks stated in The practice of programming book
  */
 #include <stdio.h>
 
-int main(void)
-{
-/* Order of evaluation */
-int n = 1;
-printf("%d %d", n++, n++);
+int main(void) {
+  /* Order of evaluation */
+  int n = 1;
+  printf("%d %d", n++, n++);
 
-return 0;
+  return 0;
 }
