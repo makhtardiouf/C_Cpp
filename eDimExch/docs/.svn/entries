@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2007-02-05T09:14:36.050753Z"
+   url="file:///home/makhtar/public_html/repos/eDimExch/trunk/docs"
+   last-author="elmakdi"
+   kind="dir"
+   uuid="0fb1aeed-b628-0410-aff0-8ac8ad68ff1a"
+   revision="1"/>
+<entry
+   committed-rev="7"
+   name="RoadMap.txt"
+   text-time="2007-05-13T10:28:22.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="4c4ea999b3eb6cd21a2cd5b4b9a22d63"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="libsshapi.html"
+   text-time="2007-02-05T09:15:08.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="c87c306d03a645a7499edbb3ab5c12ac"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="ThesisReadme.txt"
+   text-time="2007-05-22T15:03:46.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="27ea828e33688ce0fe82ce7b207b70fe"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   name="img"
+   kind="dir"/>
+</wc-entries>

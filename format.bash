@@ -1,4 +1,5 @@
 #!/bin/bash
-astyle --style=linux $@
-rm *.orig
+clang-format -i $@
 
+# astyle --style=linux $@
+# rm *.orig

@@ -49,6 +49,7 @@ void filecopy(FILE *ifp, FILE *ofp) {
   /* Check that the input file stream is readable
   and the output file stream is writable */
   /*     if( fopen(ifp, "r") && fopen(ofp, "w") != NULL) */
+  
   while ((c = getc(ifp)) != EOF)
     putc(c, ofp);
 

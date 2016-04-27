@@ -1,0 +1,10 @@
+3c7895ccf98cf397c186b0bea48ff2a203202e53  lib/libssh.a
+dd4f5a837b69be19fc03ef0f632224b6dfcd829a  lib/libssh.dll.a
+234f11c62c5cd2e1d54b61750fd067f394102dc8  include/libssh/callbacks.h
+e1467ca32ad9c2fa9b6039a842921d43706cc631  include/libssh/legacy.h
+eba87990eb36042358552c03228fa4b1ccebdd6c  include/libssh/libssh.h
+e028e208c35f33c3ee5a4d049ab3eabc140771f2  include/libssh/server.h
+5bf746a85a3286384f4226c74c56b45ab2187466  include/libssh/sftp.h
+637621b214295f1743220fcbce1786d284ed2f6a  include/libssh/ssh2.h
+manifest/libssh-x86-mingw4-0.5.2-1-lib.mft
+manifest/libssh-x86-mingw4-0.5.2-1-lib.ver

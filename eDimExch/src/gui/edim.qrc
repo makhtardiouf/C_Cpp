@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>img/edimLogo01-1.jpg</file>
+    </qresource>
+</RCC>

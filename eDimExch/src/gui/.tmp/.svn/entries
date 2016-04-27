@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2007-02-05T09:14:36.050753Z"
+   url="file:///home/makhtar/public_html/repos/eDimExch/trunk/src/gui/.tmp"
+   last-author="elmakdi"
+   kind="dir"
+   uuid="0fb1aeed-b628-0410-aff0-8ac8ad68ff1a"
+   revision="1"/>
+<entry
+   committed-rev="7"
+   name="moc_GuiSftp.cpp"
+   text-time="2007-05-22T14:26:16.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="aca888db061ad1f2be5776218291e816"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-04-27T22:50:08.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="moc_GuiTermEmu.cpp"
+   text-time="2007-05-22T14:26:29.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="37e86c749f3698c775d7f9dc6ab01961"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-04-27T22:50:08.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="moc_gui.cpp"
+   text-time="2007-05-22T14:26:04.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="7962d412fb3425a90c020f51bcf0214a"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-04-27T22:50:08.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="moc_GuiMenu.cpp"
+   text-time="2007-05-22T14:18:35.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="a017d5f697a76874688a6446fdeaef23"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-04-27T22:50:08.000000Z"
+   revision="7"/>
+</wc-entries>

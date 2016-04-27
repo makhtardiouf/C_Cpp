@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2007-02-05T09:14:36.050753Z"
+   url="file:///home/makhtar/public_html/repos/eDimExch/trunk/src/base"
+   last-author="elmakdi"
+   kind="dir"
+   uuid="0fb1aeed-b628-0410-aff0-8ac8ad68ff1a"
+   revision="1"/>
+<entry
+   committed-rev="7"
+   name="edimutils.cpp"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="aa5bb1f181ad30f2bf3e206cee191c62"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   name="edimutils.c"
+   kind="file"
+   deleted="true"
+   revision="6"/>
+<entry
+   name="projutils.h"
+   kind="file"
+   deleted="true"
+   revision="5"/>
+<entry
+   name="edimutils2.cpp"
+   kind="file"
+   deleted="true"
+   revision="6"/>
+<entry
+   committed-rev="7"
+   name="main.cpp"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="c64837ec1d18f972126fa8c596456af3"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="edimutils.h"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="f254f462ab034d7df7351141003014b3"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="cli.cpp"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="8f0d7c2eab2e63880136aa29b9c3d67d"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   committed-rev="7"
+   name="edimexch.h"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-05-22T15:03:42.306393Z"
+   checksum="452b582fda6a1ad773e08997fcef80e6"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="7"/>
+<entry
+   name="projutils.c"
+   kind="file"
+   deleted="true"
+   revision="5"/>
+<entry
+   committed-rev="4"
+   name="cli.hpp"
+   text-time="2007-05-22T15:05:59.000000Z"
+   committed-date="2007-04-27T21:57:55.786935Z"
+   checksum="b212816dacf2d581b02700518605aef1"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-05-22T15:05:58.000000Z"
+   revision="4"/>
+<entry
+   name="projutils2.cpp"
+   kind="file"
+   deleted="true"
+   revision="5"/>
+</wc-entries>

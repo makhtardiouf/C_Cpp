@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1"
+   name=""
+   committed-date="2007-02-05T09:14:36.050753Z"
+   url="file:///home/makhtar/public_html/repos/eDimExch/trunk/src/tui/proto"
+   last-author="elmakdi"
+   kind="dir"
+   uuid="0fb1aeed-b628-0410-aff0-8ac8ad68ff1a"
+   revision="1"/>
+<entry
+   committed-rev="3"
+   name="log"
+   text-time="2007-04-27T21:47:04.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="bb13e9d20610150031de8165ca8c27fa"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:06.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="proto.pro"
+   text-time="2007-04-27T21:44:09.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="422766b0622d76b092cdf6725d50077e"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:06.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="cache"
+   text-time="2007-04-27T21:43:52.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="de42bd47abe7955f1aa22866c7d3621f"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:06.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="proto"
+   text-time="2007-04-27T21:44:10.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="649c64f9c084d93c7520bd001b998534"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:07.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="1"
+   name="proto.exe"
+   text-time="2007-02-05T09:15:07.000000Z"
+   committed-date="2007-02-05T09:14:36.050753Z"
+   checksum="3b1a857f769b3c95e51eca050e0af004"
+   last-author="elmakdi"
+   kind="file"
+   prop-time="2007-02-05T09:15:07.000000Z"/>
+<entry
+   committed-rev="3"
+   name="proto.c"
+   text-time="2007-04-27T21:54:34.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="d72139c50efca79262723bc7480abd88"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:16:38.000000Z"
+   revision="3"/>
+<entry
+   committed-rev="3"
+   name="genprojfile.unix"
+   text-time="2007-04-27T21:47:30.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="d7c9444f811b5fd89e3c7997fd5453e1"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:07.000000Z"
+   revision="3"/>
+<entry
+   name="tui.c.backup"
+   kind="file"
+   deleted="true"
+   revision="4"/>
+<entry
+   committed-rev="3"
+   name="Makefile"
+   text-time="2007-04-27T21:44:09.000000Z"
+   committed-date="2007-04-27T21:54:32.746178Z"
+   checksum="e2ac66b8d3a49766f1e65c8732428488"
+   last-author="makhtar"
+   kind="file"
+   prop-time="2007-02-05T09:15:07.000000Z"
+   revision="3"/>
+</wc-entries>
