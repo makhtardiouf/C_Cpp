@@ -1,0 +1,99 @@
+
+Google New Grad Online Quiz
+
+Search this site
+手順（日本語）
+INSTRUCTIONS (ENGLISH)
+TASK 1
+TASK 2
+TASK 3
+Task 3
+Telephone Keypad
+
+
+選考に関する情報はすべて機密情報です。ウェブサイトや掲示板への書き込みなどを含め、他者への漏洩は固く禁止いたします。問題漏洩やカンニング、他の候補者と共同して取り組むなどの不正行為が明らかになった場合は、選考の対象外となります。
+All information provided during the recruiting process is confidential. Any unauthorized use, disclosure or distribution of information is prohibited, including, but not limited to, discussion with others and/or posting on websites or public message boards.
+
+
+Task 3 の入力データは以下のリンクからダウンロードできます。
+You can download the input data for Task 3 from the link below.
+
+入力データ / Input data (task3_test_data.input.txt)
+
+この入力データから得られた出力を、下の回答フォームより提出してください。
+Submit your output in the submission form below.
+
+回答フォーム / Answer submission form
+
+Problem description
+
+Telephone keypads are commonly used to input alphabetic characters into an electronic device, typically a phone. They have 8 buttons and each button has three to four alphabetic characters assigned as follows:
+
+Button 1: ABC
+Button 2: DEF
+Button 3: GHI
+Button 4: JKL
+Button 5: MNO
+Button 6: PQRS
+Button 7: TUV
+Button 8: WXYZ
+
+When you push a button N times very quickly, the N-th character associated with the button is input. For example, to input GOOGLE, you should push button 3 (G) once, button 5 three times (O), button 5 three times again (O), button 3 once (G), button 4 three times (L), and button 2 twice (E).
+Note: you can input consecutive characters that share a single button (e.g. S and P) by pausing for a short time between button pushes.
+
+You are given one word. Your task is to calculate how many button pushes are required to input the given word.
+
+Input
+
+Test cases will be provided in the following multiline text format, using only ASCII characters. The first line contains one integer, C, which is the number of test cases that will follow. From the second line onwards, one test case is provided per line and each test case has one word.
+
+Limits
+All words in the input contain only capital letters (A-Z).
+Number of test cases: 1 <= C <= 50.
+Number of characters in a word: 1 <= Length(word) <= 100.
+A word can be any sequence of capital letters, and need not be in English.
+Output
+
+For each test case, output the result in the following format:
+
+Case #k: N
+
+where k is the index of the test case, starting from 1, and N is the number of button pushes required to input the word.
+
+Sample input (task3_small_sample.input.txt)
+9
+P
+S
+SP
+GOOGLE
+ALPHABET
+AAAAA
+ADGJMPTW
+CFILOSVZ
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Output for sample input (task3_small_sample.output.txt)
+Case #1: 1
+Case #2: 4
+Case #3: 5
+Case #4: 13
+Case #5: 13
+Case #6: 5
+Case #7: 8
+Case #8: 26
+Case #9: 56
+
+Extra sample input/output files
+以下のファイルにはより多くのテストケースが含まれています。入力は提出に用いるものとほぼ同じ方法で作られています。コードが正しく動作しているか確認する際にご利用ください。
+重要：以下の入力ファイルは、実際に提出していただく入出力とは異なります。提出用の出力データを生成するための入力ファイル（task3_test_data.input.txt）は、ページ上部のリンクから別途ダウンロードしてください。
+
+Below are the input and output files with more test cases. The input is generated in a similar manner as the one used for submission. Feel free to use them to make sure your code is running correctly.
+Important: The input file here is different from the actual input file (task3_test_data.input.txt) you will need to use to generate the output when submitting the form. Download the actual file from the link at the top of page.
+
+Input: task3_large_sample.input.txt
+Output: task3_large_sample.output.txt
+
+
+回答の提出方法はこのページの上部に記載されています。
+Follow the description at the top of the page to submit your answer.
+Sign in|Recent Site Activity|Report Abuse|Print Page|Powered By Google Sites

@@ -1,0 +1,14 @@
+
+/* $Id: TuiFtpTab.cpp 9 2006-10-20 18:49:38Z elmakdi $
+
+Implementation of the `_FtpTab' object.
+This file will be directly included in "Tui.cpp". */
+
+#include "TuiFtpTab.hpp"
+
+_FtpTab::_FtpTab()
+    : NCursesPanel()
+{
+
+}
+

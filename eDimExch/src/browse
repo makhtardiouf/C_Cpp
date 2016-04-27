@@ -1,0 +1,318 @@
+[ebrowse-hs "ebrowse 5.0" " -x" () ()][ebrowse-ts [ebrowse-cs "QMenuBar" () 0() () 0() ]
+([ebrowse-ts [ebrowse-cs "AbstractMenu" () 0"gui/GuiMenu.hpp" "class AbstractMenu :" 717"gui/GuiMenu.cpp" ]
+()([ebrowse-ms "Bookmark" () 0 () "    QMenu* Bookmark;" 1134 2  () () 0]
+[ebrowse-ms "Control" () 0 () "    QMenu* Control;" 904 2  () () 0]
+[ebrowse-ms "File" () 0 () "    QMenu* File;" 814 2  () () 0]
+[ebrowse-ms "Help" () 0 () "    QMenu* Help;" 1401 2  () () 0]
+[ebrowse-ms "Settings" () 0 () "    QMenu* Settings;" 1327 2  () () 0]
+[ebrowse-ms "Tools" () 0 () "    QMenu* Tools;" 1252 2  () () 0]
+[ebrowse-ms "View" () 0 () "    QMenu* View;" 1054 2  () () 0]
+[ebrowse-ms "bmarkAdd" () 0 () "    QAction* bmarkAdd;" 1157 2  () () 0]
+[ebrowse-ms "bmarkEdit" () 0 () "    QAction* bmarkEdit;" 1181 2  () () 0]
+[ebrowse-ms "bmarkExport" () 0 () "    QAction* bmarkExport;" 1233 2  () () 0]
+[ebrowse-ms "bmarkImport" () 0 () "    QAction* bmarkImport;" 1207 2  () () 0]
+[ebrowse-ms "ctrlCancel" () 0 () "    QAction* ctrlCancel;" 1007 2  () () 0]
+[ebrowse-ms "ctrlConnect" () 0 () "    QAction* ctrlConnect;" 930 2  () () 0]
+[ebrowse-ms "ctrlDisconnect" () 0 () "    QAction* ctrlDisconnect;" 1036 2  () () 0]
+[ebrowse-ms "ctrlDownload" () 0 () "    QAction* ctrlDownload;" 957 2  () () 0]
+[ebrowse-ms "ctrlUpload" () 0 () "    QAction* ctrlUpload;" 982 2  () () 0]
+[ebrowse-ms "fileOpen" () 0 () "    QAction* fileOpen;" 837 2  () () 0]
+[ebrowse-ms "fileQuit" () 0 () "    QAction* fileQuit;" 883 2  () () 0]
+[ebrowse-ms "fileSave" () 0 () "    QAction* fileSave;" 860 2  () () 0]
+[ebrowse-ms "hlpAbout" () 0 () "    QAction* hlpAbout;" 1424 2  () () 0]
+[ebrowse-ms "hlpBWReport" () 0 () "    QAction* hlpBWReport;" 1478 2  () () 0]
+[ebrowse-ms "hlpUserManual" () 0 () "    QAction* hlpUserManual;" 1452 2  () () 0]
+[ebrowse-ms "settingAppear" () 0 () "    QAction* settingAppear;" 1383 2  () () 0]
+[ebrowse-ms "settingConfig" () 0 () "    QAction* settingConfig;" 1355 2  () () 0]
+[ebrowse-ms "toolMonitor" () 0 () "    QAction* toolMonitor;" 1305 2  () () 0]
+[ebrowse-ms "toolTerminal" () 0 () "    QAction* toolTerminal;" 1279 2  () () 0]
+[ebrowse-ms "vwShowHidden" () 0 () "    QAction* vwShowHidden;" 1112 2  () () 0]
+[ebrowse-ms "vwToggleViewMode" () 0 () "    QAction* vwToggleViewMode;" 1085 2  () () 0]
+)
+([ebrowse-ms "AbstractMenu" () 0 () "    AbstractMenu(QWidget* parent = 0);" 782 2  () "        :" 699]
+)
+()
+()
+()
+()
+()()
+])()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "QDialog" () 0() () 0() ]
+([ebrowse-ts [ebrowse-cs "AbstractDetailsWin" () 0"gui/GuiSftp.hpp" "class AbstractDetailsWin :" 783"gui/GuiSftp.cpp" ]
+()([ebrowse-ms "cancelBt" () 0 () "    QPushButton* cancelBt;" 1158 0  () () 0]
+[ebrowse-ms "connBox" () 0 () "    QGroupBox* connBox;" 935 0  () () 0]
+[ebrowse-ms "connectBt" () 0 () "    QPushButton* connectBt;" 1131 0  () () 0]
+[ebrowse-ms "kbdIntMeth" () 0 () "    QCheckBox* kbdIntMeth;" 1051 0  () () 0]
+[ebrowse-ms "keyFile" () 0 () "    QComboBox* keyFile;" 1102 0  () () 0]
+[ebrowse-ms "passMeth" () 0 () "    QCheckBox* passMeth;" 1024 0  () () 0]
+[ebrowse-ms "passw" () 0 () "    QLineEdit* passw;" 998 0  () () 0]
+[ebrowse-ms "port" () 0 () "    QSpinBox* port;" 955 0  () () 0]
+[ebrowse-ms "pubKeyMeth" () 0 () "    QCheckBox* pubKeyMeth;" 1078 0  () () 0]
+[ebrowse-ms "user" () 0 () "    QLineEdit* user;" 976 0  () () 0]
+)
+([ebrowse-ms "AbstractDetailsWin" () 0 () "    AbstractDetailsWin(QWidget* papa = 0);" 853 2  () "        :" 7516]
+[ebrowse-ms "SelectKey" () 0 () "    void SelectKey()" 901 2  () "AbstractDetailsWin::SelectKey()" 10596]
+)
+()
+()
+()
+()
+()()
+])()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "std" () 0() () 0() ]
+()()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "Cli" () 0"base/cli.hpp" "class Cli
+{" 682"base/cli.cpp" ]
+()([ebrowse-ms "guiEnabled" () 0 () "    bool guiEnabled;" 1137 2  () () 0]
+[ebrowse-ms "tuiEnabled" () 0 () "    bool tuiEnabled;" 1158 2  () () 0]
+)
+([ebrowse-ms "Cli" () 0 () "    {" 700 0  "base/cli.hpp" "    {" 700]
+[ebrowse-ms "EnableGui" () 0 () "    bool EnableGui()" 1044 0  "base/cli.hpp" "    bool EnableGui()" 1044]
+[ebrowse-ms "Initialize" () 0 () "    const char* Initialize(int" 813 0  () "Cli::Initialize(int" 803]
+[ebrowse-ms "LaunchTui" () 0 () "    void LaunchTui()" 1105 0  () "Cli::LaunchTui()" 4165]
+[ebrowse-ms "Present" () 0 () "    void Present()" 911 0  () "Cli::Present()" 3965]
+[ebrowse-ms "Usage" () 0 () "    int Usage(char" 984 0  () "Cli::Usage(char" 3172]
+)
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "QWidget" () 0() () 0() ]
+([ebrowse-ts [ebrowse-cs "AbstractSftp" () 0"gui/GuiSftp.hpp" "class AbstractSftp :" 1206"gui/GuiSftp.cpp" ]
+()([ebrowse-ms "cdUpLocBt" () 0 () "    QPushButton* cdUpLocBt;" 1904 2  () () 0]
+[ebrowse-ms "cdUpRemBt" () 0 () "    QPushButton* cdUpRemBt;" 2094 2  () () 0]
+[ebrowse-ms "contextMenu" () 0 () "    QMenu* contextMenu;" 2204 2  () () 0]
+[ebrowse-ms "dblClickSpy" () 0 () "    QSignalSpy* dblClickSpy;" 1709 2  () () 0]
+[ebrowse-ms "decryptFile" () 0 () "    QAction* decryptFile;" 2308 2  () () 0]
+[ebrowse-ms "detailsBt" () 0 () "    QPushButton* detailsBt;" 1849 2  () () 0]
+[ebrowse-ms "detailsWin" () 0 () "    AbstractDetailsWin* detailsWin;" 1797 2  () () 0]
+[ebrowse-ms "downloadBt" () 0 () "    QPushButton* downloadBt;" 2038 2  () () 0]
+[ebrowse-ms "downloadFile" () 0 () "    QAction* downloadFile;" 2256 2  () () 0]
+[ebrowse-ms "encryptFile" () 0 () "    QAction* encryptFile;" 2282 2  () () 0]
+[ebrowse-ms "host" () 0 () "    QLineEdit* host;" 1761 2  () () 0]
+[ebrowse-ms "jobs" () 0 () "    QTableView* jobs;" 2179 2  () () 0]
+[ebrowse-ms "jobsModel" () 0 () "    QStandardItemModel* jobsModel;" 2157 2  () () 0]
+[ebrowse-ms "keyFile" () 0 () "    QComboBox* keyFile;" 1821 2  () () 0]
+[ebrowse-ms "localPath" () 0 () "    QComboBox* localPath;" 1876 2  () () 0]
+[ebrowse-ms "localfs" () 0 () "    QTreeView* localfs;" 1981 2  () () 0]
+[ebrowse-ms "localfsModel" () 0 () "    QDirModel* localfsModel;" 1957 2  () () 0]
+[ebrowse-ms "remotePath" () 0 () "    QComboBox* remotePath;" 2066 2  () () 0]
+[ebrowse-ms "remotefs" () 0 () "    QListWidget* remotefs;" 2121 2  () () 0]
+[ebrowse-ms "selectionSpy" () 0 () "    QSignalSpy* selectionSpy;" 1739 2  () () 0]
+[ebrowse-ms "uploadBt" () 0 () "    QPushButton* uploadBt;" 2009 2  () () 0]
+[ebrowse-ms "uploadFile" () 0 () "    QAction* uploadFile;" 2229 2  () () 0]
+)
+([ebrowse-ms "AbstractSftp" () 0 () "    AbstractSftp(QWidget* papa = 0);" 1293 0  () "        :" 691]
+[ebrowse-ms "EnableDetailsBt" () 0 () "    void EnableDetailsBt()" 1669 0  () "AbstractSftp::EnableDetailsBt()" 7369]
+[ebrowse-ms "ListLocalFiles" () 0 () "    void ListLocalFiles()" 1574 0  () "AbstractSftp::ListLocalFiles()" 7205]
+[ebrowse-ms "RedispTest" () 0 () "    void RedispTest()" 1342 0  "gui/GuiSftp.hpp" "    void RedispTest()" 1342]
+[ebrowse-ms "UpdateLocalFs" () 0 () "    void UpdateLocalFs()" 1500 0  () "AbstractSftp::UpdateLocalFs()" 6986]
+[ebrowse-ms "UpdateLocalFs" () 0 () "    void UpdateLocalFs(QListWidgetItem" 1540 0  () "AbstractSftp::UpdateLocalFs(QListWidgetItem" 6863]
+)
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "AbstractTermEmu" () 0"gui/GuiTermEmu.hpp" "class AbstractTermEmu :" 763"gui/GuiTermEmu.cpp" ]
+()([ebrowse-ms "buffer" () 0 () "    char* buffer;" 880 2  () () 0]
+[ebrowse-ms "command" () 0 () "    char* command;" 862 2  () () 0]
+[ebrowse-ms "display" () 0 () "    QTextEdit* display;" 995 2  () () 0]
+[ebrowse-ms "inout" () 0 () "    QStackedWidget* inout;" 1022 2  () () 0]
+[ebrowse-ms "input" () 0 () "    QLineEdit* input;" 971 2  () () 0]
+[ebrowse-ms "process" () 0 () "    FILE* process;" 899 2  () () 0]
+[ebrowse-ms "prompt" () 0 () "    QString prompt;" 920 2  () () 0]
+[ebrowse-ms "shellInput" () 0 () "    QTextStream* shellInput;" 949 2  () () 0]
+)
+([ebrowse-ms "AbstractTermEmu" () 0 () "    AbstractTermEmu(QWidget* papa = 0);" 830 2  () "        :" 744]
+[ebrowse-ms "Activate" () 0 () "    void Activate()" 1129 2  () "void AbstractTermEmu::Activate()" 1932]
+[ebrowse-ms "ColorizeTermEmu" () 0 () "    QPalette ColorizeTermEmu()" 1068 2  () "QPalette AbstractTermEmu::ColorizeTermEmu()" 2172]
+[ebrowse-ms "GetInput" () 0 () "    void GetInput()" 1108 2  () "void AbstractTermEmu::GetInput()" 1864]
+[ebrowse-ms "RunCmd" () 0 () "    void RunCmd()" 1087 2  () "void AbstractTermEmu::RunCmd()" 1447]
+)
+()
+()
+()
+()
+()()
+])()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "QMainWindow" () 0() () 0() ]
+([ebrowse-ts [ebrowse-cs "Gui" () 0"gui/gui.hpp" "class Gui :" 810"gui/gui.cpp" ]
+()([ebrowse-ms "Menu" () 0 () "    AbstractMenu* Menu;" 2926 2  () () 0]
+[ebrowse-ms "Sftp" () 0 () "    AbstractSftp* Sftp;" 2977 2  () () 0]
+[ebrowse-ms "SftpIndex" () 0 () "    int SftpIndex;" 2996 2  () () 0]
+[ebrowse-ms "TabGroup" () 0 () "    QTabWidget* TabGroup;" 2953 2  () () 0]
+[ebrowse-ms "TermEmu" () 0 () "    AbstractTermEmu* TermEmu;" 3026 2  () () 0]
+[ebrowse-ms "TermEmuIndex" () 0 () "    int TermEmuIndex;" 3048 2  () () 0]
+[ebrowse-ms "cancelBt" () 0 () "    QPushButton* cancelBt;" 3104 2  () () 0]
+[ebrowse-ms "concancBt" () 0 () "    QStackedWidget* concancBt;" 3135 2  () () 0]
+[ebrowse-ms "connectBt" () 0 () "    QPushButton* connectBt;" 3077 2  () () 0]
+[ebrowse-ms "disconnectBt" () 0 () "    QPushButton* disconnectBt;" 3166 2  () () 0]
+[ebrowse-ms "info" () 0 () "    QStackedWidget* info;" 3269 2  () () 0]
+[ebrowse-ms "isDir" () 0 () "    QHash<QString, bool> isDir;" 3323 2  () () 0]
+[ebrowse-ms "loginMethod" () 0 () "    int loginMethod;" 3291 2  () () 0]
+[ebrowse-ms "msgField" () 0 () "    QTextEdit* msgField;" 3217 2  () () 0]
+[ebrowse-ms "pgress" () 0 () "    QProgressBar* pgress;" 3243 2  () () 0]
+[ebrowse-ms "quitBt" () 0 () "    QPushButton* quitBt;" 3191 2  () () 0]
+[ebrowse-ms "sftpAttribs" () 0 () "    SFTP_ATTRIBUTES* sftpAttribs;" 3471 2  () () 0]
+[ebrowse-ms "sftpSession" () 0 () "    SFTP_SESSION* sftpSession;" 3437 2  () () 0]
+[ebrowse-ms "socket" () 0 () "    QTcpSocket* socket;" 3347 2  () () 0]
+[ebrowse-ms "sshOptions" () 0 () "    SSH_OPTIONS* sshOptions;" 3406 2  () () 0]
+[ebrowse-ms "sshSession" () 0 () "    SSH_SESSION* sshSession;" 3377 2  () () 0]
+)
+([ebrowse-ms "About" () 0 () "    void About()" 1150 2  "gui/GuiSlots.cpp" "Gui::About()" 1332]
+[ebrowse-ms "AddToList" () 0 () "    void AddToList(QString" 1180 2  "gui/GuiSlots.cpp" "Gui::AddToList(QString" 837]
+[ebrowse-ms "Cancel" () 0 () "    void Cancel()" 1206 2  "gui/GuiSlots.cpp" "Gui::Cancel()" 1633]
+[ebrowse-ms "CdUpLocal" () 2 () "    inline void CdUpLocal()" 1236 2  "gui/gui.hpp" "    inline void CdUpLocal()" 1236]
+[ebrowse-ms "CdUpRemote" () 0 () "    void CdUpRemote()" 1317 2  "gui/gui.hpp" "    void CdUpRemote()" 1317]
+[ebrowse-ms "Download" () 0 () "    void Download()" 1346 2  "gui/GuiSlots.cpp" "Gui::Download()" 1658]
+[ebrowse-ms "EnableConnectBt" () 2 () "    inline void EnableConnectBt()" 1382 2  "gui/gui.hpp" "    inline void EnableConnectBt()" 1382]
+[ebrowse-ms "ExecLoginMethod" () 0 () "    void ExecLoginMethod()" 1507 2  "gui/SftpSlots.cpp" "Gui::ExecLoginMethod()" 148]
+[ebrowse-ms "GetLoginMethod" () 4 () "    int GetLoginMethod()" 1534 2  "gui/GuiSlots.cpp" "Gui::GetLoginMethod()" 3125]
+[ebrowse-ms "Gui" () 0 () "    Gui(QWidget* papa = 0);" 869 2  () "        :" 706]
+[ebrowse-ms "Host" () 6 () "    inline const char* Host()" 1572 2  "gui/gui.hpp" "    inline const char* Host()" 1572]
+[ebrowse-ms "InteractLogin" () 0 () "    int InteractLogin()" 1672 2  "gui/SftpSlots.cpp" "Gui::InteractLogin()" 575]
+[ebrowse-ms "ListRemoteFs" () 0 () "    int ListRemoteFs()" 1697 2  "gui/SftpSlots.cpp" "Gui::ListRemoteFs()" 1651]
+[ebrowse-ms "Login" () 0 () "    void Login()" 1716 2  "gui/SftpSlots.cpp" "Gui::Login()" 2575]
+[ebrowse-ms "Logout" () 0 () "    void Logout()" 1736 2  "gui/GuiSlots.cpp" "Gui::Logout()" 3431]
+[ebrowse-ms "Pass" () 6 () "    inline char* Pass()" 1762 2  "gui/gui.hpp" "    inline char* Pass()" 1762]
+[ebrowse-ms "PasswLogin" () 2 () "    inline int PasswLogin()" 1910 2  "gui/gui.hpp" "    inline int PasswLogin()" 1910]
+[ebrowse-ms "Port" () 6 () "    inline int Port()" 2056 2  "gui/gui.hpp" "    inline int Port()" 2056]
+[ebrowse-ms "Progress" () 0 () "    void Progress(int" 2179 2  "gui/GuiSlots.cpp" "Gui::Progress(int" 4193]
+[ebrowse-ms "Progress" () 0 () "    void Progress(int" 2145 2  "gui/GuiSlots.cpp" "Gui::Progress(int" 3961]
+[ebrowse-ms "PubKeyLogin" () 0 () "    int PubKeyLogin()" 2225 2  "gui/SftpSlots.cpp" "Gui::PubKeyLogin()" 4004]
+[ebrowse-ms "Retry" () 0 () "    void Retry()" 2271 2  "gui/GuiSlots.cpp" "Gui::Retry()" 4610]
+[ebrowse-ms "SetAesthetics" () 0 () "    void SetAesthetics()" 2354 2  "gui/GuiSlots.cpp" "Gui::SetAesthetics()" 4952]
+[ebrowse-ms "SetCallbacks" () 0 () "    void SetCallbacks()" 2416 2  "gui/GuiSlots.cpp" "Gui::SetCallbacks()" 5446]
+[ebrowse-ms "SetHostname" () 2 () "    inline void SetHostname(const" 1051 2  "gui/gui.hpp" "    inline void SetHostname(const" 1051]
+[ebrowse-ms "SetTitle" () 0 () "    void SetTitle(std" 2485 2  "gui/GuiSlots.cpp" "Gui::SetTitle(std" 6728]
+[ebrowse-ms "SftpError" () 2 () "    inline QString SftpError()" 2682 2  "gui/gui.hpp" "    inline QString SftpError()" 2682]
+[ebrowse-ms "ShowMsg" () 0 () "    void ShowMsg(QString" 2534 2  "gui/GuiSlots.cpp" "Gui::ShowMsg(QString" 7097]
+[ebrowse-ms "SysError" () 2 () "    inline void SysError(const" 2572 2  "gui/gui.hpp" "    inline void SysError(const" 2572]
+[ebrowse-ms "UpdateLocalFs" () 0 () "    void UpdateLocalFs()" 2252 2  "gui/GuiSlots.cpp" "Gui::UpdateLocalFs()" 4305]
+[ebrowse-ms "Upload" () 0 () "    void Upload()" 2764 2  "gui/gui.hpp" "    void Upload()" 2764]
+[ebrowse-ms "User" () 6 () "    inline char* User()" 2797 2  "gui/gui.hpp" "    inline char* User()" 2797]
+)
+()
+()
+()
+()
+()()
+])()
+()
+()
+()
+()
+()
+()()
+][ebrowse-ts [ebrowse-cs "*Globals*" () 0() () 0"base/cli.hpp" ]
+()()
+([ebrowse-ms "clearconsole" () 0 "base/edimutils.cpp" "clearconsole(void" 812 0  "base/edimutils.cpp" "clearconsole(void" 812]
+[ebrowse-ms "handle_signal" () 0 "base/edimutils.cpp" "handle_signal(int" 1088 0  "base/edimutils.cpp" "handle_signal(int" 1088]
+[ebrowse-ms "main" () 0 "base/main.cpp" "main(int" 810 0  "base/main.cpp" "main(int" 810]
+[ebrowse-ms "pausethis" () 0 "base/edimutils.cpp" "pausethis(int" 1316 0  "base/edimutils.cpp" "pausethis(int" 1316]
+[ebrowse-ms "printBinary" () 0 "base/edimutils.cpp" "printBinary(const" 1385 0  "base/edimutils.cpp" "printBinary(const" 1385]
+[ebrowse-ms "reverse" () 0 "base/edimutils.cpp" "reverse(char" 1562 0  "base/edimutils.cpp" "reverse(char" 1562]
+[ebrowse-ms "show_menu" () 0 "base/edimutils.cpp" "show_menu(char" 1741 0  "base/edimutils.cpp" "show_menu(char" 1741]
+[ebrowse-ms "slowcout" () 0 "base/edimutils.cpp" "slowcout(const" 2379 0  "base/edimutils.cpp" "slowcout(const" 2379]
+[ebrowse-ms "spawn" () 0 "base/edimutils.cpp" "int spawn(const" 2664 0  "base/edimutils.cpp" "int spawn(const" 2664]
+[ebrowse-ms "w32_wait" () 0 "base/edimutils.cpp" "w32_wait(void" 2586 0  "base/edimutils.cpp" "w32_wait(void" 2586]
+)
+()
+()
+([ebrowse-ms "APP_DEFINITION" () 512 () () 0 0  "base/edimexch.h" "#define APP_DEFINITION " 786]
+[ebrowse-ms "APP_NAME" () 512 () () 0 0  "base/edimexch.h" "#define APP_NAME " 723]
+[ebrowse-ms "APP_VERSION" () 512 () () 0 0  "base/edimexch.h" "#define APP_VERSION " 755]
+[ebrowse-ms "AUTHOR" () 512 () () 0 0  "base/edimexch.h" "#define AUTHOR " 829]
+[ebrowse-ms "CLI_HPP" () 512 () () 0 0  () "#define CLI_HPP
+" 670]
+[ebrowse-ms "EDIMEXCH_H" () 512 () () 0 0  "base/edimexch.h" "#define EDIMEXCH_H
+" 682]
+[ebrowse-ms "EDIMGUI_HPP" () 512 () () 0 0  "gui/gui.hpp" "#define EDIMGUI_HPP
+" 668]
+[ebrowse-ms "GUIMENU_HPP" () 512 () () 0 0  "gui/GuiMenu.hpp" "#define GUIMENU_HPP
+" 677]
+[ebrowse-ms "GUISFTP_HPP" () 512 () () 0 0  "gui/GuiSftp.hpp" "#define GUISFTP_HPP
+" 652]
+[ebrowse-ms "GUITERMEMU_HPP" () 512 () () 0 0  "gui/GuiTermEmu.hpp" "#define GUITERMEMU_HPP
+" 697]
+[ebrowse-ms "LIBSSH_HPP" () 512 () () 0 0  "base/LibSsh.hpp" "#define LIBSSH_HPP
+" 210]
+[ebrowse-ms "PROJUTILS_H" () 512 () () 0 0  "base/edimutils.h" "#define PROJUTILS_H
+" 705]
+[ebrowse-ms "QT_HPP" () 512 () () 0 0  "gui/qt.hpp" "#define QT_HPP
+" 31]
+[ebrowse-ms "SSH_AGAIN" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AGAIN
+" 1112]
+[ebrowse-ms "SSH_AUTH_DENIED" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AUTH_DENIED " 642]
+[ebrowse-ms "SSH_AUTH_ERROR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AUTH_ERROR " 747]
+[ebrowse-ms "SSH_AUTH_INFO" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AUTH_INFO " 714]
+[ebrowse-ms "SSH_AUTH_PARTIAL" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AUTH_PARTIAL " 679]
+[ebrowse-ms "SSH_AUTH_SUCCESS" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_AUTH_SUCCESS " 605]
+[ebrowse-ms "SSH_CLOSED" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_CLOSED
+" 778]
+[ebrowse-ms "SSH_CLOSED_ERROR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_CLOSED_ERROR
+" 828]
+[ebrowse-ms "SSH_EINTR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_EINTR
+" 1060]
+[ebrowse-ms "SSH_ERROR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_ERROR
+" 1094]
+[ebrowse-ms "SSH_FATAL" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_FATAL
+" 1042]
+[ebrowse-ms "SSH_NO_ERROR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_NO_ERROR
+" 997]
+[ebrowse-ms "SSH_OK" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_OK
+" 1076]
+[ebrowse-ms "SSH_READ_PENDING" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_READ_PENDING
+" 803]
+[ebrowse-ms "SSH_REQUEST_DENIED" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_REQUEST_DENIED
+" 1024]
+[ebrowse-ms "SSH_SERVER_ERROR" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_SERVER_ERROR
+" 854]
+[ebrowse-ms "SSH_SERVER_FOUND_OTHER" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_SERVER_FOUND_OTHER
+" 975]
+[ebrowse-ms "SSH_SERVER_KNOWN_CHANGED" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_SERVER_KNOWN_CHANGED
+" 944]
+[ebrowse-ms "SSH_SERVER_KNOWN_OK" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_SERVER_KNOWN_OK
+" 911]
+[ebrowse-ms "SSH_SERVER_NOT_KNOWN" () 512 () () 0 0  "base/LibSsh.hpp" "#define SSH_SERVER_NOT_KNOWN
+" 883]
+[ebrowse-ms "_BSD_SOURCE" () 512 () () 0 0  "gui/GuiSlots.cpp" "#define _BSD_SOURCE
+" 680]
+)
+([ebrowse-ms "Buffer" () 0 () () 0 0  "base/LibSsh.hpp" "typedef BUFFER Buffer;" 412]
+[ebrowse-ms "Channel" () 0 () () 0 0  "base/LibSsh.hpp" "typedef CHANNEL Channel;" 522]
+[ebrowse-ms "Kbdint" () 0 () () 0 0  "base/LibSsh.hpp" "typedef SSH_KBDINT Kbdint;" 578]
+[ebrowse-ms "Options" () 0 () () 0 0  "base/LibSsh.hpp" "typedef SSH_OPTIONS Options;" 497]
+[ebrowse-ms "Privkey" () 0 () () 0 0  "base/LibSsh.hpp" "typedef PRIVATE_KEY Privkey;" 468]
+[ebrowse-ms "Pubkey" () 0 () () 0 0  "base/LibSsh.hpp" "typedef PUBLIC_KEY Pubkey;" 439]
+[ebrowse-ms "Session" () 0 () () 0 0  "base/LibSsh.hpp" "typedef SSH_SESSION Session;" 551]
+[ebrowse-ms "String" () 0 () () 0 0  "base/LibSsh.hpp" "typedef STRING String;" 389]
+)
+()()
+]
