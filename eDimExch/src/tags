@@ -1,153 +1,0 @@
-
-base/cli.cpp,93
-Cli::Initialize(25,784
-Cli::Usage(100,3157
-Cli::Present(127,3951
-Cli::LaunchTui(138,4149
-
-base/cli.hpp,108
-#define CLI_HPP18,654
-class Cli20,671
-    Cli(Cli::Cli23,691
-    bool EnableGui(Cli::EnableGui35,1024
-
-base/edimexch.h,133
-#define EDIMEXCH_H16,663
-#define APP_NAME 19,706
-#define APP_VERSION 20,735
-#define APP_DEFINITION 21,763
-#define AUTHOR 22,814
-
-base/edimutils.cpp,205
-#define _BSD_SOURCE16,709
-clearconsole(22,795
-handle_signal(39,1071
-pausethis(51,1303
-printBinary(57,1368
-reverse(68,1550
-show_menu(80,1727
-slowcout(109,2365
-w32_wait(121,2573
-int spawn(127,2649
-
-base/edimutils.h,27
-#define PROJUTILS_H16,685
-
-base/LibSsh.hpp,1034
-#define LIBSSH_HPP10,191
-namespace Ssh20,305
-typedef STRING String;Ssh::String24,367
-typedef BUFFER Buffer;Ssh::Buffer25,390
-typedef PUBLIC_KEY Pubkey;Ssh::Pubkey26,413
-typedef PRIVATE_KEY Privkey;Ssh::Privkey27,440
-typedef SSH_OPTIONS Options;Ssh::Options28,469
-typedef CHANNEL Channel;Ssh::Channel29,498
-typedef SSH_SESSION Session;Ssh::Session30,523
-typedef SSH_KBDINT Kbdint;Ssh::Kbdint31,552
-#define SSH_AUTH_SUCCESS 33,580
-#define SSH_AUTH_DENIED 34,618
-#define SSH_AUTH_PARTIAL 35,654
-#define SSH_AUTH_INFO 36,692
-#define SSH_AUTH_ERROR 37,724
-#define SSH_CLOSED39,759
-#define SSH_READ_PENDING40,778
-#define SSH_CLOSED_ERROR41,803
-#define SSH_SERVER_ERROR43,829
-#define SSH_SERVER_NOT_KNOWN44,854
-#define SSH_SERVER_KNOWN_OK45,883
-#define SSH_SERVER_KNOWN_CHANGED46,911
-#define SSH_SERVER_FOUND_OTHER47,944
-#define SSH_NO_ERROR49,976
-#define SSH_REQUEST_DENIED50,997
-#define SSH_FATAL51,1024
-#define SSH_EINTR52,1042
-#define SSH_OK54,1061
-#define SSH_ERROR55,1076
-#define SSH_AGAIN56,1094
-
-base/main.cpp,13
-main(25,802
-
-gui/gui.cpp,17
-Gui::Gui(18,690
-
-gui/gui.hpp,811
-#define EDIMGUI_HPP16,648
-class Gui 25,799
-        PASSW,Gui::PASSW34,898
-        KBDINTERACT,Gui::KBDINTERACT35,913
-        PUBKEY,Gui::PUBKEY36,934
-        MAXCHARS Gui::MAXCHARS37,950
-        MAXHEIGHT Gui::MAXHEIGHT38,973
-    inline void SetHostname(Gui::SetHostname42,1018
-    inline void CdUpLocal(Gui::CdUpLocal54,1209
-    void CdUpRemote(Gui::CdUpRemote60,1296
-    inline void EnableConnectBt(Gui::EnableConnectBt65,1349
-    inline const char* Host(Gui::Host75,1543
-    inline char* Pass(Gui::Pass88,1739
-    inline int PasswLogin(Gui::PasswLogin94,1883
-    inline int Port(Gui::Port100,2035
-    inline void SysError(Gui::SysError126,2542
-    inline QString SftpError(Gui::SftpError131,2652
-    void Upload(Gui::Upload136,2747
-    inline char* User(Gui::User139,2774
-
-gui/GuiMenu.cpp,35
-AbstractMenu::AbstractMenu(17,665
-
-gui/GuiMenu.hpp,54
-#define GUIMENU_HPP17,657
-class AbstractMenu 21,697
-
-gui/GuiSftp.cpp,280
-AbstractSftp::AbstractSftp(19,657
-AbstractSftp::UpdateLocalFs(193,6820
-AbstractSftp::UpdateLocalFs(199,6957
-AbstractSftp::ListLocalFiles(207,7175
-AbstractSftp::EnableDetailsBt(215,7338
-AbstractDetailsWin::AbstractDetailsWin(224,7470
-AbstractDetailsWin::SelectKey(321,10565
-
-gui/GuiSftp.hpp,142
-#define GUISFTP_HPP16,632
-class AbstractDetailsWin 23,757
-class AbstractSftp 50,1186
-    void RedispTest(AbstractSftp::RedispTest60,1321
-
-gui/GuiSlots.cpp,368
-#define _BSD_SOURCE15,660
-Gui::AddToList(24,815
-Gui::About(42,1320
-Gui::Cancel(55,1620
-Gui::Download(59,1643
-Gui::GetLoginMethod(103,3104
-Gui::Logout(117,3418
-Gui::Progress(140,3944
-Gui::Progress(153,4176
-Gui::UpdateLocalFs(160,4285
-Gui::Retry(172,4598
-Gui::SetAesthetics(185,4932
-Gui::SetCallbacks(207,5427
-Gui::SetTitle(245,6711
-Gui::ShowMsg(261,7077
-
-gui/GuiTermEmu.cpp,210
-AbstractTermEmu::AbstractTermEmu(20,704
-void AbstractTermEmu::RunCmd(45,1417
-void AbstractTermEmu::GetInput(63,1832
-void AbstractTermEmu::Activate(69,1900
-QPalette AbstractTermEmu::ColorizeTermEmu(80,2129
-
-gui/GuiTermEmu.hpp,60
-#define GUITERMEMU_HPP18,674
-class AbstractTermEmu 24,740
-
-gui/qt.hpp,20
-#define QT_HPP3,16
-
-gui/SftpSlots.cpp,129
-Gui::ExecLoginMethod(5,126
-Gui::InteractLogin(30,555
-Gui::ListRemoteFs(65,1632
-Gui::Login(98,2563
-Gui::PubKeyLogin(146,3986

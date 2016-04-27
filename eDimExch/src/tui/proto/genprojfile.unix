@@ -1,7 +1,0 @@
-qmake -project
-"CONFIG -= qt" 
-"TARGET = proto" 
-"LIBS += -lmenu -lpanel -lform -lncurses" ;
-qmake ; make
-
-

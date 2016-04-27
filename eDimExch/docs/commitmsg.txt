@@ -1,2 +1,0 @@
-* Upgraded to libssh-0.2
-* Added scripts for building, indenting...etc
