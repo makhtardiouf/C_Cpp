@@ -77,9 +77,12 @@ std::ostream &operator<<(std::ostream &ostr, const std::list<T> &list);
 typedef std::pair<int, int> ii;
 typedef std::vector<ii> vii;
 typedef std::vector< std::vector<int> > vvi;
+typedef unsigned long long ull;
 
+extern ull rangeMaxSum(std::vector<ull> &a, ull M);
 // Maximum sum of subsets of an array/vector
 int maxSum(vvi &v);
+enum Range { SUM = 0, MIN, MAX };
 
 // UFDS: Union-Find Disjoint Sets
 class Ufds {

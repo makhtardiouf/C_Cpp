@@ -1,6 +1,7 @@
 /*
 $Id: grep.c 5 2007-03-31 15:04:06Z Makhtar $
-Show lines of a file on wich a string pattern appears.
+Unix 'grep' command clone:
+shows lines of a file on which a string pattern appears.
 */
 #define _GNU_SOURCE
 #include "malib.h"
@@ -16,13 +17,9 @@ int printhits(int, char *);
 int main(int argc, char *argv[])
 {
     size_t len = 0;
-    char* lineptr;
     FILE *fp;
-    int lineno = 0;
-    int c, except = 0, found = 0;
-    char* source;
-    char* target;
-
+    int lineno = 0, c, except = 0, found = 0;
+    char* lineptr; char* source; char* target;
     if (argc < 3) {
         printf("\nUsage: %s [-x -n] PATTERN FILENAME\n\n", argv[0]);
         return -1;
@@ -55,7 +52,6 @@ int main(int argc, char *argv[])
     fprintf(stderr, "Searching for: %s\n", target);
 
     while (getline(&lineptr, &len, fp) != -1) {
-
         lineno++;
         if (except) {
           /* Ignore cases */

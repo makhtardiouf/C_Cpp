@@ -2,11 +2,12 @@
 * $Id: malib2.cpp 9 2007-07-11 08:22:53Z Makhtar $
 * Implementation of c++ utility functions
 */
-
 #include "malib.h"
 #include <algorithm>
+#include <numeric>
 #include <string>
 
+using namespace std;
 // use the following to speed up iostream
 // ios_base::sync_with_stdio(false);
 
@@ -20,18 +21,38 @@ std::ostream &operator<<(std::ostream &ostr,
   return ostr;
 }
 
+ull rangeMaxSum(std::vector<ull> &a, ull M) {
+  ull ans = numeric_limits<ull>::min();
+
+  ull mn = 0, s = 0;
+  for (ull i = 0; i < a.size(); ++i) {
+    s += a[i];
+    if (a[i] <= 2)
+      mn = s % M;
+    else {
+      ans = max(ans, (s - mn) % M);
+      mn = min(mn, s) % M;
+    }
+  }
+
+  if (ans == numeric_limits<ull>::min() % M)
+    return 0;
+  else
+    return ans;
+}
+
 // Maximum sum of subsets of an array/vector
-int maxSum(vvi &v) {
-  int n = v.size();
+template <typename T> T maxSum(vvi &v) {
+  T n = v.size();
 
   // lowest possible value
-  int maxSubRect = -127 * n * v[0].size();
+  T maxSubRect = -127 * n * v[0].size();
 
-  for (int l = 0; l < n; l++)
-    for (int r = l; r < n; r++) {
-      int subRect = 0;
+  for (T l = 0; l < n; l++)
+    for (T r = l; r < n; r++) {
+      T subRect = 0;
 
-      for (int row = 0; row < n; row++) {
+      for (T row = 0; row < n; row++) {
         // Max 1D Range Sum on columns of this row i
         if (l > 0)
           subRect += v[row][r] - v[row][l - 1];
