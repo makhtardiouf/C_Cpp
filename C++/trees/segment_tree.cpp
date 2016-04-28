@@ -6,7 +6,7 @@
    $Id$
    c++ -g -Wall -std=c++11 segment_tree.cpp -o segment_tree
 */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <cmath>
 using namespace std;
 

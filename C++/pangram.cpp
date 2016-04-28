@@ -1,3 +1,7 @@
+// c++ -g pangram.cpp -o pangram
+// Pangrams are sentences constructed by using every letter of the alphabet at least once.
+// Makhtar Diouf
+
 #include <string>
 #include <cctype>
 #include <set>
@@ -5,8 +9,6 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-// c++ -g pangram.cpp -o pangram
-// Pangrams are sentences constructed by using every letter of the alphabet at least once.
 
 int main() {
      std::set<char> alpha;
@@ -14,7 +16,7 @@ int main() {
          alpha.insert(ch);
          clog<< ch << " ";
      }
-     clog << endl;
+     clog << endl << "Input a line: ";
      string s;
      std::set<char> alphabet;
     
@@ -23,7 +25,7 @@ int main() {
          char ch;
          for(int i=0; i < s.size(); i++) {
              ch = tolower(s[i]);
-             clog<< ch << " ";
+            // clog<< ch << " ";
              if(isalpha(ch)) {
                 alphabet.erase(ch);              
              }
@@ -33,10 +35,6 @@ int main() {
             cout << "pangram\n";
           else
             cout << "not pangram\n";
-            
-         /*for(auto it = alphabet.begin(); it != alphabet.end(); it++ )
-            clog<< *it << " ";
-         clog << endl;*/
      }
     return 0;
 }

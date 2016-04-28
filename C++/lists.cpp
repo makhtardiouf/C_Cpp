@@ -2,7 +2,7 @@
  * File:   lists.cpp
  * Author: makhtar
  * Custom implementation of lists, and mix with the stdlib list
- * g++ -g -std=c++11 -Wall lists.cpp -o lists
+ * c++ -g -std=c++11 -Wall lists.cpp -o lists
  * Created on February 7, 2016, 3:21 PM
  */
 

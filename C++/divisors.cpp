@@ -3,9 +3,9 @@
    Lists first few divisors of a number
    Makhtar Diouf
    $Id$
-   g++ -g divisors.cpp -o divisors  -I/usr/local/include/fxt/ -lfxt
+   c++ -g -std=c++11 divisors.cpp -o divisors  -I/usr/local/include/fxt/ -lfxt
 */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <bits/tinyfactors.h>
 #include <bitset>
 

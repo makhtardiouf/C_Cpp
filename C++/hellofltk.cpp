@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 /*
 compile, link with
 
-g++ -o fltk_hello fltk_hello.cpp -I/usr/X11R6/include -O2 -march=i586\
+c++ -o fltk_hello fltk_hello.cpp -I/usr/X11R6/include -O2 -march=i586\
  -mcpu=i686 -fmessage-length=0 -Wall -I/usr/X11R6/include\
  -L/usr/X11R6/lib -Wl,-rpath,/usr/X11R6/lib\
  -lfltk -lm -lXext -lX11 -lsupc++

@@ -1,7 +1,7 @@
 /*
  * Custom vector implementation demo
  * Author: makhtar
- * g++ -g -std=c++11 -Wall Vector.cpp  -o Vector
+ * c++ -g -std=c++11 -Wall Vector.cpp  -o Vector
  * February 23, 2016, 8:46 AM
  */
 

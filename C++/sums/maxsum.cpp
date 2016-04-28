@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 //#ifdef DEBUG
-#include "malib.h"
+#include "malib/malib.hpp"
 #include "segtree.h"
 //#endif
 using namespace std;

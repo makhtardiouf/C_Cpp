@@ -3,7 +3,7 @@
    g++ -std=c++11 sort_select.cpp -I/usr/local/include/fxt/ -lfxt
    $Id$
 */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <cstring>
 #include <iostream>
 #include <sort/bsearch.h>

@@ -6,7 +6,7 @@ Shell sort (stroustrup P169) with pointer to functions
 #include <cstdarg>
 #include <cstring>
 #include <iostream>
-//#include "malib.h"
+//#include "malib/malib.hpp"
 
 using namespace std;
 

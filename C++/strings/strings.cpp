@@ -1,6 +1,6 @@
 // $Id: strings.cpp 5 2007-03-31 15:04:06Z Makhtar $
 
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>

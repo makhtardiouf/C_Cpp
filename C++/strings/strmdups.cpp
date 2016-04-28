@@ -4,7 +4,7 @@
  * $Id$
  * Created on February 8, 2016, 2:02 PM
  */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <cstdlib>
 #include <iostream>
 

@@ -3,9 +3,9 @@
  * Author: makhtar
  * $Id$
  * Created on February 8, 2016, 8:53 PM
- * c++ -g -std=c++11 vectors.cpp malib2.cpp -o vectors
+ * c++ -g -std=c++11 vectors.cpp -Lmalib/ -lmalib -o vectors
  */
-#include "malib.h"
+#include "malib/malib.hpp"
 
 using namespace std;
 

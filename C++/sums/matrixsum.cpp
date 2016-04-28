@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include "malib.h"
+#include "malib/malib.hpp"
 
 using namespace std;
 typedef vector< vector<int> > vvi;

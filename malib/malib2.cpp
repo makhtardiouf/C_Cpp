@@ -1,8 +1,8 @@
 /*
 * $Id: malib2.cpp 9 2007-07-11 08:22:53Z Makhtar $
-* Implementation of c++ utility functions
+* Implementation of c++ routines
 */
-#include "malib.h"
+#include "malib.hpp"
 #include <algorithm>
 #include <numeric>
 #include <string>
@@ -42,11 +42,13 @@ ull rangeMaxSum(std::vector<ull> &a, ull M) {
 }
 
 // Maximum sum of subsets of an array/vector
-template <typename T> T maxSum(vvi &v) {
+int maxSum(vvi &v) {
+ // typedef long long T;
+ typedef int T;
   T n = v.size();
 
   // lowest possible value
-  T maxSubRect = -127 * n * v[0].size();
+  T maxSubRect = -1; //numeric_limits<T>::min();
 
   for (T l = 0; l < n; l++)
     for (T r = l; r < n; r++) {

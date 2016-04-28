@@ -1,8 +1,8 @@
 /**
    Return the (N+1)th permutation of a string
    https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=882
-   g++ -std=c++11 nth_permutation941.cpp -o nth_permutation
-   ./nth_permutation < n1th-test.in
+   c++ -std=c++11 nth_perm941.cpp -o nth_perm
+   ./nth_perm < n1th-test.in
    Makhtar Diouf $Id$
 */
 

@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 
-#include "../malib.h"
+#include "../malib/malib.hpp"
 using namespace std;
 
 string reverse2(string input) {

@@ -7,7 +7,7 @@
  * This is a "maximum sum" problem on subsets
  */
 
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>

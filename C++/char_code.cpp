@@ -4,7 +4,7 @@
  * Mixing C and C++ at will
  */
 
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <ctype.h>
 #include <string>
 

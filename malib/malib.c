@@ -5,10 +5,10 @@ Implementation of C utility functions */
 #include <unistd.h>
 
 double clockit() {
-  static bool isInit = true;
-  if (isInit) {
-    clock_t t0 = clock(), t1 = 0;
-    isInit = false;
+  static int isInit = 1;
+   clock_t t0 = clock(), t1 = 0;
+  if (isInit) {   
+    isInit = -1;
     return 0.0;
   }
 

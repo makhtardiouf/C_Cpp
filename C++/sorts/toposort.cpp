@@ -5,7 +5,7 @@ See UVA #10305 "Ordering Tasks"
 UVA #124 "Following Orders" 
 UVA #200 "Rare Order"
 */
-#include "../malib.h"
+#include "../malib/malib.hpp"
 using namespace std;
 
 class TopoSorter {

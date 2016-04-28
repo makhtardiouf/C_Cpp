@@ -2,13 +2,13 @@
    Complete Direct graphes demo using the FXT lib
    Makhtar Diouf
    $Id$
-   g++ digraph.cpp -o digraph -I/usr/local/include/fxt/ -lfxt
+   c++ digraph.cpp -o digraph -I/usr/local/include/fxt/ -lfxt
 */
 
 #include <fxttypes.h>
 #include <graph/digraph.h>
 //#include <bits/bitsperlong.h>
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <iostream>
 
 using namespace std;

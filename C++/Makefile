@@ -1,1 +1,1 @@
-../C/Makefile
+../Makefile

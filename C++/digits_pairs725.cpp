@@ -4,12 +4,12 @@
   the second is
   equal to an integer N, where 2 ≤ N ≤ 79. P96
 
-  g++ -std=c++11 digits_pairs725.cpp -o digits_pairs
+  c++ -std=c++11 digits_pairs725.cpp -o digits_pairs
   ./digits_pairs
   num1 = abcde, num2 = fghij
   Makhtar Diouf $Id$
 */
-//#include "malib.h"
+//#include "malib/malib.hpp"
 #include <cstdio>
 #include <iostream>
 #include <vector>

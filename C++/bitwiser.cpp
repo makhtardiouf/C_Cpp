@@ -1,9 +1,9 @@
 /*
  * $Id: bitWise.cpp 5 2007-03-31 15:04:06Z Makhtar $
- * compile with: g++ -std=c++11 -o bitwiser bitwiser.cpp -L. -lmalib
+ * compile with: c++ -std=c++11 -o bitwiser bitwiser.cpp -L. -lmalib
  * -I/usr/local/include/fxt/ -lfxt
  */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <bits/bitcombcolex.h> // combinations
 #include <bits/bitrotate.h>    // for bitset rotation
 #include <bitset>

@@ -2,14 +2,12 @@
 $Id: grep.cpp 5 2007-03-31 15:04:06Z Makhtar $
 Show lines of a file on wich a string pattern appears.
 */
-#include "malib.h"
+#include "malib/malib/malib.hpppp"
 #include <errno.h>
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
 #include <stdio_ext.h>
-#include <string.h>
-#include <string>
 
 using namespace std;
 int number = 0;

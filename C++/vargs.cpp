@@ -3,7 +3,7 @@ $Id: var_arg.cpp 5 2007-03-31 15:04:06Z Makhtar $
 Exemple of a function reporting errors,  with a variable argument list.
 */
 
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <cstdarg>
 #include <iostream>
 

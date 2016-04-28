@@ -2,11 +2,11 @@
 /*
  * $Id$
  * Makhtar Diouf
- * compile with: g++ -std=c++11 -o bitwiser bitwiser.cpp -L. -lmalib
+ * compile with: c++ -std=c++11 -o bitwiser bitwiser.cpp -L. -lmalib
  -I/usr/local/include/fxt/ -lfxt
  parenword2str() in FXT lib
  */
-#include "malib.h"
+#include "malib/malib.hpp"
 #include <bitset>
 #include <cstring>
 using namespace std;

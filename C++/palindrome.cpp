@@ -2,7 +2,7 @@
  * Author: Makhtar Diouf
  * Check if a string is a palindrome, e.g anna, petep, reversing it gives the
  * same words
- * g++ -g -std=c++11 -Wall palindrome.cpp -o palindrome
+ * c++ -g -std=c++11 -Wall palindrome.cpp -o palindrome
  * February 27, 2016, 2:22 PM
  */
 

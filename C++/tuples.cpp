@@ -3,7 +3,7 @@
    a generalization of std::pair
    Makhtar Diouf
    $Id$
-   g++ -g -std=c++11 tuples.cpp -o tuples
+   c++ -g -std=c++11 tuples.cpp -o tuples
    Ref: http://en.cppreference.com/w/cpp/utility/tuple
 */
 #include <iostream>
