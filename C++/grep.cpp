@@ -12,31 +12,22 @@ Show lines of a file on wich a string pattern appears.
 #include <string>
 
 using namespace std;
-
 int number = 0;
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 int printhits(int, char *);
-
-#ifdef __cplusplus
-}
-#endif
 
 int main(int argc, char *argv[]) {
   char *lineptr = new char[256];
   int lineno = 0;
-  int c, except = 0, found = 0;
-  char *target = argv[argc - 2];
-  ifstream file(argv[argc - 1], ios::in);
-
+  int c, except = 0, found = 0;  
+  
   if (argc < 3) {
     printf("\nUsage: %s [-x -n] PATTERN "
            "FILENAME\n\n",
            argv[0]);
-    return 1;
+    return -1;
   }
+  char *target = argv[argc - 2];
+  ifstream file(argv[argc - 1], ios::in);
 
   while (--argc > 0 && (*++argv)[0] == '-')
     for (; (c = *(++argv[0]));)

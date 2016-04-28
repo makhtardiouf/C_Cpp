@@ -1,12 +1,12 @@
 /**
  * $Id$
  * Author: Makhtar Diouf
- * Compilation g++ -std=c++11 -g -Wall str_reversewords.cpp malib2.cpp -o
- * str_reversewords
- * Google codejam:  run with ./str_reversewords B-small-practice.in
+ * Compilation g++ -std=c++11 -g -Wall strevwords.cpp malib2.cpp -o
+ * strevwords 
+ * Google codejam:  run with ./strevwords B-small-practice.in
  * https://code.google.com/codejam/contest/351101/dashboard#s=p1
  */
-#include "malib.h"
+#include "../malib.h"
 #include <algorithm>
 #include <cstring>
 #include <fstream>
@@ -29,7 +29,7 @@ void reversevect(vector<string> v) {
 int main(int argc, char **argv) {
   clog << "Reading input file...\n";
   if (argc < 2)
-    terminate("Usage: ./str_reversewords filename");
+    terminate("Usage: ./strevwords filename");
 
   string s{argv[1]};
   std::ifstream input{s}; // input stream
@@ -63,4 +63,5 @@ int main(int argc, char **argv) {
       l.clear();
     }
   }
+  return 0;
 }

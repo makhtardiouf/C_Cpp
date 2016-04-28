@@ -1,5 +1,4 @@
 /*
- * File:   str_reverse.cpp
  * Author: makhtar
  * Reverse a string in place
  * Created on February 7, 2016, 1:15 PM
@@ -14,7 +13,7 @@
 #include <string>
 #include <vector>
 
-#include "malib.h"
+#include "../malib.h"
 using namespace std;
 
 string reverse2(string input) {

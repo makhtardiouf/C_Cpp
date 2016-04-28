@@ -4,6 +4,20 @@ Implementation of C utility functions */
 #include "malib.h"
 #include <unistd.h>
 
+double clockit() {
+  static bool isInit = true;
+  if (isInit) {
+    clock_t t0 = clock(), t1 = 0;
+    isInit = false;
+    return 0.0;
+  }
+
+  t1 = clock();
+  double diff = (t1 - t0) / (double)CLOCKS_PER_SEC;
+  printf("\nRuntime = %.4f s\n", diff);
+  return diff;
+}
+
 void terminate(const char *s) {
   fprintf(stderr, "%s\n", s);
   exit(EXIT_FAILURE);
