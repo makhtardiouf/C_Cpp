@@ -2,7 +2,7 @@
  * $Id$
  * maximum value of (Sum of Subarray ) %M
  * Author: makhtar
- * This version is slow on large N
+ * 2 ≤ N ≤ 10^5, 1 ≤ M ≤ 10^14
  * c++ -g -std=c++11 maxsum.cpp -o maxsum -DDEBUG=1  -I../malib/ -L../malib -lmalib
  * Ref: https://www.hackerrank.com/challenges/maximise-sum
  */

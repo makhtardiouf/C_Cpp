@@ -1,7 +1,9 @@
 /**
- Times out on large N
- c++ -std=c++11 -g -Wall -o twoscomplement  twoscomplement.cpp
- Add one to each number and count the number of bits set to 1
+ Makhtar Diouf
+ c++ -std=c++11 -g -Wall -o twoscompl twoscompl.cpp
+ Count the number of set bits, after determining the 2's complements of integer range
+ −2^31 ≤ A ≤ B ≤ 2^31−1
+ Times out on large segments
 */
 #include <bitset>
 #include <cmath>
@@ -24,13 +26,14 @@ int solve(int A, int B) {
   bitset<32> a(0);
 
   for (int i = A; i <= B; i++) {
-   // a = bitset<32>(i);
+   a = bitset<32>(i);
    if (i < 0) {   
-     a = ~a; // one's complement
-     a ^= bitset<32>(1);
+     a = (~a); // one's complement
+     a = ~a;
     }
     
-    num1Bits += a.count(); //countSetBits(a.to_ulong());
+   // if(i != 0)
+    num1Bits += a.count(); // 32 * 2^(31); //
   }
 
   return num1Bits;
