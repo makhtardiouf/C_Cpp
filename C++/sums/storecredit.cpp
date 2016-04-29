@@ -7,7 +7,7 @@
  * This is a "maximum sum" problem on subsets
  */
 
-#include "malib/malib.hpp"
+#include "../malib/malib.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
@@ -70,6 +70,7 @@ void SelectProducts(string filename) {
 
 // Naive complete search
 bool getSelection(_case acase) {
+clog << "inside \n";
   list<int> selected;
   bool gotit = false;
   int a, b = 0;
@@ -77,7 +78,7 @@ bool getSelection(_case acase) {
   for (; i < acase.numItems; i++) {
     a = acase.prices[i];
 
-    for (j = i + 1; j < acase.numItems; j++) {
+    for (j = i + 1; j <= acase.numItems -1; j++) {
       b = acase.prices[j];
       if ((a + b) == acase.credit) {
         selected.push_back(a);
@@ -85,12 +86,14 @@ bool getSelection(_case acase) {
         gotit = true;
         break; // only two solutions
       }
-      if (gotit)
-        break;
+     printf("a+b: %d ", a+b);
+   //i = 0;
     }
+    if(gotit)
+	break;
   }
 
-  if (gotit) {
+ // if (gotit) {
     clog << "\nMatches: \t";
     //  cout << "Case #" << i << ": "; // to be redirected to the output file
     for (list<int>::iterator it = selected.begin(); 
@@ -98,7 +101,7 @@ bool getSelection(_case acase) {
       clog << *it << " ";
       //  cout << i << " " << j; // only indexes should be in the output file
     }
-  }
+//  }
 
   clog << "\n\n";
   //selected.clear();

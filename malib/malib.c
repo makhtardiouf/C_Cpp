@@ -1,5 +1,5 @@
 /* $Id: malib.c 9 2007-07-11 08:22:53Z Makhtar $
-Implementation of C utility functions */
+Implementation of C routines */
 
 #include "malib.h"
 #include <unistd.h>

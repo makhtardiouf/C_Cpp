@@ -3,7 +3,7 @@
    
    Makhtar diouf
    $Id$
-   c++ -g -Wall -std=c++11 searchbin.cpp -o searchbin
+   c++ -std=c++11 -g -Wall -o searchbin searchbin.cpp -Lmalib/ -lmalib
 */
 #include "malib/malib.hpp"
 

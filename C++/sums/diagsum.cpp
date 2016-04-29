@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
+// Sum of diagonals
 
 using namespace std;
 
@@ -15,7 +16,7 @@ int main()
     while (cin >> n) {
         int totD1 = 0;
         int totD2 = 0;
-        std::vector<std::vector<int>> a(n, std::vector<int>(n));
+        std::vector< std::vector<int> > a(n, std::vector<int>(n));
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
