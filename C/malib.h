@@ -1,1 +1,1 @@
-../malib.h
+../malib/malib.h

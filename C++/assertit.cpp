@@ -2,10 +2,9 @@
 
 #include <cassert>
 
-int main(void)
-{
-    int number=230;
-    assert(number not_eq 230);  // fails
+int main(void) {
+  int number = 230;
+  assert(number not_eq 230); // fails
 
-    return 0 ;
+  return 0;
 }

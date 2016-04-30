@@ -1,0 +1,48 @@
+circ1.c: In function ‘draw_circle’:
+circ1.c:32:9: warning: implicit declaration of function ‘putpixel’ [-Wimplicit-function-declaration]
+         putpixel (screen,
+         ^
+circ1.c:32:19: error: ‘screen’ undeclared (first use in this function)
+         putpixel (screen,
+                   ^
+circ1.c:32:19: note: each undeclared identifier is reported only once for each function it appears in
+circ1.c:33:17: error: ‘SCREEN_W’ undeclared (first use in this function)
+             x + SCREEN_W / 2, y + SCREEN_H / 2,
+                 ^
+circ1.c:33:35: error: ‘SCREEN_H’ undeclared (first use in this function)
+             x + SCREEN_W / 2, y + SCREEN_H / 2,
+                                   ^
+circ1.c:34:13: warning: implicit declaration of function ‘makecol’ [-Wimplicit-function-declaration]
+             makecol (255, 255, 255));
+             ^
+circ1.c: In function ‘main’:
+circ1.c:42:9: warning: implicit declaration of function ‘allegro_init’ [-Wimplicit-function-declaration]
+     if (allegro_init () < 0)
+         ^
+circ1.c:44:9: warning: implicit declaration of function ‘allegro_message’ [-Wimplicit-function-declaration]
+         allegro_message ("Error: Could not initialize Allegro");
+         ^
+circ1.c:48:9: warning: implicit declaration of function ‘set_gfx_mode’ [-Wimplicit-function-declaration]
+     if (set_gfx_mode (GFX_AUTODETECT, 320, 200, 0, 0) < 0)
+         ^
+circ1.c:48:23: error: ‘GFX_AUTODETECT’ undeclared (first use in this function)
+     if (set_gfx_mode (GFX_AUTODETECT, 320, 200, 0, 0) < 0)
+                       ^
+circ1.c:54:5: warning: implicit declaration of function ‘install_keyboard’ [-Wimplicit-function-declaration]
+     install_keyboard ();
+     ^
+circ1.c:55:5: warning: implicit declaration of function ‘clear_keybuf’ [-Wimplicit-function-declaration]
+     clear_keybuf ();
+     ^
+circ1.c:61:5: warning: implicit declaration of function ‘readkey’ [-Wimplicit-function-declaration]
+     readkey ();
+     ^
+circ1.c:64:5: warning: implicit declaration of function ‘allegro_exit’ [-Wimplicit-function-declaration]
+     allegro_exit ();
+     ^
+circ1.c: At top level:
+circ1.c:68:3: warning: data definition has no type or storage class
+ } END_OF_MAIN ();
+   ^
+circ1.c:68:3: warning: type defaults to ‘int’ in declaration of ‘END_OF_MAIN’ [-Wimplicit-int]
+make: *** [circ1] Error 1

@@ -4,11 +4,11 @@
 
 #ifndef DICO_H
 #define DICO_H
-#include <stdio.h>
-#include <stdlib.h>
-#include "type_arbre.h"
 #include "arbre.h"
 #include "huffman.h"
+#include "type_arbre.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 extern char **dico(char *, int);
 
