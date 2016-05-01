@@ -25,7 +25,8 @@ private:
 
 public:
   int numVertexes = 0;
-  int numEdges = 0;
+  int numEdges = 0; // = M
+
   Ugraph() {}
 
   Ugraph(int numVertexes) {
@@ -48,7 +49,6 @@ public:
     if (i >= 0 && i < numVertexes && j > 0 && j < numVertexes) {
       adjMat[i][j] = true;
       adjMat[j][i] = true;
-      numEdges++;
     }
   }
 
@@ -62,57 +62,61 @@ public:
 
 int main() {
   int P = 3, Q = 2;
-  ////  cin >> P >> Q;
-  int m = 0;
+  cin >> P >> Q;
 
-  int n = 18;  
-  int numV = (P * 3) - 2; //Q;
+  int n = P * 3;
+  int numV = n - 2; // Q;
   auto graph = Ugraph(n);
   vector<int> v(n);
 
-  for (int i = 0; i < n; i++) {
-    v[i] = i + 1;
+  for (int i = 1; i <= n; i++) {
+    v[i] = i;
   }
 
   int trip = 0, numNodes = 0;
   int j = 0, k = 0;
-  for (int i = 0; i < n; i++) {
+  for (int i = 1; i <= n; i++) {
     if (trip == P)
       break;
 
-    numNodes++;
-    graph.addEdge(i, i + 1);
+    for (int j = i + 1; j <= n; j++) {
+      graph.addEdge(i, j);
 
-    //j = i + Q;
-     for (int j = i + 1; j < n ; j++)
-    if (abs(v[i] - v[j]) == Q) {
- // k = j + Q;
-      for (int k = j + 1; k < n ; k++)    
-      if (abs(v[j] - v[k]) == Q) {
-        trip++;
-        //  graph.addEdge(j, k);
-        fprintf(stderr, "\nmatch: (%d, %d, %d)\n", v[i], v[j], v[k]);
-        break;
+      if (abs(v[i] - v[j]) == Q) {
+        for (int k = j + 1; k <= n; k++) {
+          numNodes++;
+          graph.addEdge(j, k);
+          graph.numEdges++;
+
+          if (abs(v[j] - v[k]) == Q) {
+            trip++;
+            //  graph.addEdge(j, k);
+            fprintf(stderr, "\nmatch: (%d, %d, %d)\n", v[i], v[j], v[k]);
+            break;
+          }
+          // break;
+        }
       }
-      // break;
     }
   }
   // close graphe
   graph.addEdge(numV - 1, 1);
   graph.addEdge(1, numV);
+  graph.numEdges++;
+  numNodes++;
 
   // Num nodes, and edges
   printf("%d %d\n", numNodes, graph.numEdges);
-  for (int i = 1; i <= graph.numEdges; i++) {
+  for (int i = 1; i <= n; i++) {
     if (graph.isEdge(i, i + 1))
       printf("%d %d\n", i, i + 1);
   }
   // for (int i = graph.numEdges; i > 0; i--) {
- // if (graph.isEdge(numV - 1, 1))
-    printf("%d %d\n", graph.numEdges - 1, 1);
+  if (graph.isEdge(numV - 1, 1))
+    printf("%d %d\n", numV - 1, 1);
 
-//  if (graph.isEdge(1, numV))
-    printf("%d %d\n", 1, graph.numEdges);
+  if (graph.isEdge(1, numV))
+    printf("%d %d\n", 1, numV);
   // }
   return 0;
 }

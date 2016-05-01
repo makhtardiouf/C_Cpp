@@ -14,7 +14,7 @@ The second line contains NN space-separated integers, where the ithith integer i
 
 Constraints
 
-1≤N≤101≤N≤10
+1 ≤ N ≤ 10
 Output Format
 
 Print the minimum number of moves Gena must make to restore the tower to its initial, ordered state on the first rod.
