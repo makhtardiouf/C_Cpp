@@ -14,11 +14,11 @@ Ref: https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&
 #include <vector>
 using namespace std;
 
-// price[g (<= 20)][model (<= 20)]
+// price[g <= 20][model <= 20]
 int M, C, price[25][25];
 
-// TOP-DOWN: dp table memo
-// [money (<= 200)][g (<= 20)]
+// TOP-DOWN: DP memo table
+// [money <= 200][g <= 20]
 int memo[210][25];
 
 int shop(int money, int g) {
@@ -29,30 +29,32 @@ int shop(int money, int g) {
   if (g == C)
     return M - money;
 
-  /* we have bought last garment, done
+  /* 
+    Last garment was bought, done
     if this is skipped, top-down DP will become backtracking!!
+    TOP-DOWN: memoization
     */
-  int memg = memo[money][g];
-  if (memg != -1)
-    return memg; // TOP-DOWN: memoization
+  int &ans = memo[money][g];
+  if (ans != -1)
+    return ans;
 
-  // Compute un-chached values; start with a -ve number as all prices are non
-  // negative
-  int ans = -1;
+  // Compute un-chached values; start with a -ve number
+  // as all prices are nonnegative
   for (int model = 1; model <= price[g][0]; model++)
     ans = std::max(ans, shop(money - price[g][model], g + 1));
 
-  // TOP-DOWN: memoize ans and return it
-  return (memo[money][g] = ans);
+  return ans; // memo[money][g] will be auto updated
 }
 
 int main() {
+  
   int i, j, TC, score;
   scanf("%d", &TC);
 
   while (TC--) {
     scanf("%d %d", &M, &C);
     for (i = 0; i < C; i++) {
+      
       // store K in price[i][0]
       scanf("%d", &price[i][0]);
 
@@ -63,7 +65,7 @@ int main() {
     // TOP-DOWN: initialize DP memo table
     memset(memo, -1, sizeof memo);
 
-    // start the top-down DP
+    // start DP
     score = shop(M, 0);
 
     if (score < 0)

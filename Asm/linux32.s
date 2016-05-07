@@ -1,6 +1,5 @@
-	#Common Linux Definitions
-
-	#System Call Numbers
+	# System Call Numbers on Linux
+	# 32bit 
 	.equ SYS_EXIT, 1
 	.equ SYS_READ, 3
 	.equ SYS_WRITE, 4

@@ -1,74 +1,39 @@
 /**
-Classic coin change problem, using Dynamic Programming
+Classic coin change problem,
+Use Dynamic Programming to cache computed data in a memo table
 Makhtar Diouf
 
-Hrank number of ways we could make the change
+Hrank: output number of ways we could make the change
 https://www.hackerrank.com/challenges/coin-change
 c++ -g -std=c++11 coinschange.cpp -o coinschange
 */
-#include <cmath>
 #include <cstdio>
-#include <cstring>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+#include <vector>
 using namespace std;
 
 typedef long long ll;
-typedef vector< vector<ll> > vvi;
 
-vector<ll> coins;
-//vvi memo;
-ll N = 0, mem = 0;
+int main() {
+  ll N =0, M = 0;
+  cin >> N >> M;
+  
+  ll val = 0;
+  vector<ll> coins;
+  for (ll i = 0; i < M; i++) {
+    cin >> val;
+    coins.push_back(val);
+  }
 
-ll ways(ll c, ll amount, vvi& memo)
-{
-    // mem = 0;
-    mem = memo[c][amount];
-    clog << "\nc, mem: " << coins[c] << " " << mem << endl;
+vector<ll> memo(M + 1);
+  memo[0] = 1;
+  
+  for (ll i = 1; i <= N ; i++)
+    for (ll j = 1; j <= M ; j++)
+      if (j >= coins[i - 1])
+        memo[j] += memo[j - coins[i - 1]];
 
-    if (amount == 0)
-        return 1;
-    else if (amount < 0 || c < 0)
-        return 0;
-    else if (memo[c][amount] != -1)
-        clog << "\nmem hit\n"; //return memo[c][amount];
+  printf("%lld\n", memo[memo.size() -1]);
 
-    if(amount % coins[c] == 0) {
-        mem++;       
-    }
-
-    for(ll i=0; i < coins.size(); i++) {
-        if((coins[c] + coins[i]) == amount) {
-            mem++;
-            fprintf(stderr, "\nSum hit: %lld %lld\n", c, i);
-        }
-    }
-    // avoid reusing this coin
-    //coins[c] = 0;
-    clog << "\nc, mem: " << coins[c] << " " << mem << endl;
-    if(c < coins.size()-1)
-        return memo[c][amount] = mem + ways(coins[c + 1], amount - coins[c], memo);
-    return mem;
-}
-
-int  main()
-{
-    ll M = 0;
-    cin >> N >> M;
-    vvi memo(N+1, vector<ll>(M+1));
-    // memo = mtmp;
-
-    for(auto m: memo)
-        m.assign(M*M, -1);
-    // memset((void*)m, -1, sizeof m);
-
-    int val = 0;
-    for(ll i=0; i < M; i++) {
-        cin >> val;
-        coins.push_back(val);
-    }
-
-    printf("%lld\n", ways(0, N, memo));
-    return 0;
+  return 0;
 }
