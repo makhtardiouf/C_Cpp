@@ -5,16 +5,17 @@ Implementation of C routines */
 #include <unistd.h>
 
 double clockit() {
-  static int isInit = 1;
-   clock_t t0 = clock(), t1 = 0;
-  if (isInit) {   
-    isInit = -1;
+  static int isInit = 0;
+  static clock_t t0 = 0;
+  if (isInit == 0) {
+    t0 = clock();
+    isInit = 1;
     return 0.0;
   }
 
-  t1 = clock();
+  clock_t t1 = clock();
   double diff = (t1 - t0) / (double)CLOCKS_PER_SEC;
-  printf("\nRuntime = %.4f s\n", diff);
+  fprintf(stderr, "\nRuntime: %.4f s\n", diff);
   return diff;
 }
 

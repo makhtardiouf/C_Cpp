@@ -1,5 +1,8 @@
 /**
-   Quick sort
+   Quick sort, from the "Algo desing manual"
+   Makhtar Diouf
+   
+   Note:  the worst case for quicksort is worse than heapsort or mergesort
 Separates the n − 1 other items into two piles:
 a low pile containing all the elements that appear before p in sorted order and
 a high pile containing all the elements that appear after p in sorted order.
@@ -36,14 +39,24 @@ int main() {
   int maxIdx = mm.second - v.begin();
   printf("\nMinMax: %d(%d) %d(%d)\n\n", *mm.first, minIdx, *mm.second, maxIdx);
 
+  clockit();
   quicksort<int>(v, 0, v.size()-1);
+  clockit();
+  
+  string s("QUICKSORT");
+  vector<char> vs;
+  for (auto x: s)
+    vs.push_back(x); 
+    
+  quicksort<char>(vs, 0, vs.size()-1);
+  clockit();
   return 0;
 }
 
 template <typename T> int partition(vector<T> &v, int l, int h) {
   // pivot element index
   int p = h;
-  // divider position for pivot element
+  // divider position for pivot
   int firsthigh = l;
 
   for (int i = l; i < h; i++)
