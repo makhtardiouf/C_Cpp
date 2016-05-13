@@ -1,10 +1,9 @@
 /*
  * Custom vector implementation demo
  * Author: makhtar
- * c++ -g -std=c++11 -Wall Vector.cpp  -o Vector
+ * make Vector
  * February 23, 2016, 8:46 AM
  */
-
 #include <algorithm>
 #include <cstdlib>
 #include <initializer_list>
@@ -16,23 +15,24 @@
 using namespace std;
 
 template <typename T> class Vector {
+  
+private:
+  T *elem = nullptr;
+  int sz = 0;
+  
 public:
-  //    Vector() {
-  //        // elem = new T;
-  //    }
-
   explicit Vector(int s) : sz(s), elem{new T[s]} {
     std::copy(elem, elem + sz, 0);
   }
 
   // Initialize with {}
-  Vector(std::initializer_list<T> l) : sz(l.size()), elem{new T[l.size()]} {
+  Vector(std::initializer_list<T> l) : elem{new T[l.size()]} {
     std::copy(l.begin(), l.end(), elem);
+    sz = l.size();
     clog << "Initialized vector of " << sz << " elements \n";
   };
 
   // Copy constructor
-
   Vector(const Vector &v) {
     T *p = new T[v.sz];
     std::copy(v.elem, v.elem + v.sz, p);
@@ -41,7 +41,8 @@ public:
     sz = v.sz;
   }
 
-  Vector &operator=(Vector &&a) // move a to this vector
+ // move a to this vector
+  Vector &operator=(Vector &&a)
   {
     delete[] elem; // deallocate old space
     elem = a.elem; // copy a’s elem and sz
@@ -55,7 +56,7 @@ public:
 
   ~Vector() {
     delete[] elem;
-    clog << "~Vector called\n";
+    clog << "\n~Vector called\n";
   }
 
   T &begin() { return &elem[0]; }
@@ -65,7 +66,7 @@ public:
   inline int size() { return sz; }
 
   void add(T i) {
-    cout << "Adding 1 element: " << i << endl;
+    clog << "\nAdding 1 element: " << i << endl;
     T *p = new T[sz + 1];
     // Move elements to the newly allocated space
     std::move(elem, elem + sz, p);
@@ -76,15 +77,11 @@ public:
   }
 
   void remove(T elem);
-
-private:
-  T *elem = nullptr;
-  int sz = 0;
 };
 
 int main(int argc, char **argv) {
   try {
-    Vector<int> v{5, 10, 15};
+    Vector<int> v = {5, 10, 15};
     v.add(20);
     v.add(rand() % 2);
 

@@ -2,9 +2,10 @@
 
   Print the ASCII code of some characters
  * Mixing C and C++ at will
+  make char_code
  */
 
-#include "malib/malib.hpp"
+#include "malib.hpp"
 #include <ctype.h>
 #include <string>
 
@@ -32,10 +33,10 @@ int main(int argc, char *argv[]) {
 
   // C++11 initializations for implicit conversions warnings
   double x{2.7}; // OK
-  int y{x};      // error: double -> int might narrow
+  //int y{x};      // error: double -> int might narrow
   int a{1000};   // OK
-  char b{a};     // error: int -> char might narrow
-  std::cout << y << " " << a << " " << b;
+  //char b{a};     // error: int -> char might narrow
+  std::cout << x << " " << a ;
 
   pausethis(1);
   return EXIT_SUCCESS;

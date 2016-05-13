@@ -31,12 +31,8 @@ int main(int argc, char **argv) {
     terminate("Usage: ./storecredit filename");
 
   string s{argv[1]};
-  SelectProducts(s);
-  return EXIT_SUCCESS;
-}
 
-void SelectProducts(string filename) {
-  std::ifstream input{filename}; // input stream
+  std::ifstream input{s}; // input stream
   int n;
   input >> n; // first num = N test cases
   clog << n << " test cases\n";
@@ -57,15 +53,13 @@ void SelectProducts(string filename) {
     }
 
 // Dont's sort coz the indexes on the initial vect are needed, 
-// @todo: do a binary search or lower/upper_bound queries
+// @todo: do a binary search
 
-    // std::sort(acase.prices.begin(), acase.prices.end(), std::less<int>());
     bool gotit = getSelection(acase);
-    if (gotit == false) {
-      ;
-      //    getSelection(acase);
-    }
+   
   }
+    
+  return EXIT_SUCCESS;
 }
 
 // Naive complete search

@@ -9,7 +9,7 @@
 using namespace std;
   
 template <typename T> 
-T binSearch(vector<T> s, T key, int low, int high);
+long binSearch(vector<T> s, T key, int low, int high);
 
 int main() {
   clockit();
@@ -34,7 +34,7 @@ int main() {
 }
 
 template <typename T> 
-T binSearch(vector<T> s, T key, int low, int high) {
+long binSearch(vector<T> s, T key, int low, int high) {
     
   int mid = 0; // idx
   

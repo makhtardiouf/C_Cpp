@@ -7,7 +7,7 @@ Separates the n − 1 other items into two piles:
 a low pile containing all the elements that appear before p in sorted order and
 a high pile containing all the elements that appear after p in sorted order.
 
-c++ -g -std=c++11 quicksort.cpp -o quicksort -I../malib/ -L../malib/ -lmalib
+make -f ../Makefile quicksort
 $Id$
 */
 #include "malib.hpp"

@@ -1,10 +1,11 @@
 /*
 $Id: var_arg.cpp 5 2007-03-31 15:04:06Z Makhtar $
-Exemple of a function reporting errors,  with a variable argument list.
+Sample function that reports errors,  with a variable argument list.
 */
 
-#include "malib/malib.hpp"
+#include "malib.hpp"
 #include <cstdarg>
+#include <cstring>
 #include <iostream>
 
 using namespace std;
@@ -20,8 +21,9 @@ int main(int argc, char *argv[]) {
     error(0, argv[0], argv[1], NULL);
     break;
   default:
-    char buffer[8];
-    error(1, argv[0], "with", itoa((argc - 1), buffer), "arguments", NULL);
+    char buf[8];
+    sprintf(buf, "%d", argc - 1);
+    error(1, argv[0], "with", buf, "arguments", NULL);
   }
   return 0;
 }

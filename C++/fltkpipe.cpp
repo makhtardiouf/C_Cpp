@@ -8,13 +8,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+// c++ `fltk-config --cxxflags` fltkpipe.cpp -std=c++11  -lfltk -lXext -lX11 -lm
 
-//
 // fltk-ttys - Open several processes, display their output in fltk widgets
 // Greg Ercolano 02/21/2005 1.00
-//
 
-// Globals
 Fl_Text_Display *G_disp[3]; // one display per child
 Fl_Text_Buffer *G_buff[3];  // one buffer per child
 int G_outfd[3];             // read pipe for child's stderr, one per child
@@ -30,15 +28,19 @@ void start_child(int t) {
     close(out[1]);
     perror("fork()");
     exit(1);
+    
   case 0: // Child
     close(out[0]);
     dup2(out[1], 2);
     close(out[1]);
+    
     switch (t) {
+      
     case 0:
       execlp("/bin/sh", "sh", "-c", "ps auxww 1>&2", 0);
       perror("execlp(ps)");
       exit(1);
+      
     case 1:
       execlp("/bin/sh", "sh", "-c",
              "perl -e 'for($t=0; sleep(1); $t++)"
@@ -46,50 +48,63 @@ void start_child(int t) {
              0);
       perror("execlp(perl)");
       exit(1);
+      
     case 2:
       execlp("/bin/sh", "sh", "-c", "(who; ping -c 8 localhost) 1>&2", 0);
       perror("execlp(ls/ping)");
       exit(1);
     default:
       exit(1);
-    }      // switch
+    }  
+    
   default: // Parent
     G_outfd[t] = out[0];
     close(out[1]);
     return;
-  } // switch
+  }
 }
 
 // Data ready interrupt
 void data_ready(int fd, void *data) {
-  int t = (int)data;
+  
+  auto t = reinterpret_cast<intptr_t>(data);
   char s[4096];
   int bytes = read(fd, s, 4096 - 1);
   // fprintf(stderr, "Data ready for %d) pid=%ld fd=%d bytes=%d\n", t,
   // (long)G_pids[t], fd, bytes);
+  
   if (bytes == -1) { // ERROR
     perror("read()");
+    
   } else if (bytes == 0) { // EOF
+  
     G_buff[t]->append("\n\n*** EOF ***\n");
     int status;
     if (waitpid(G_pids[t], &status, WNOHANG) < 0) {
       sprintf(s, "waitpid(): %s\n", strerror(errno));
+      
     } else {
+      
       if (WIFEXITED(status)) {
+        
         sprintf(s, "Exit=%d\n", WEXITSTATUS(status));
         close(fd);
         Fl::remove_fd(fd);
         G_pids[t] = -1;
+        
       } else if (WIFSIGNALED(status)) {
         sprintf(s, "Killed with %d\n", WTERMSIG(status));
         close(fd);
         Fl::remove_fd(fd);
         G_pids[t] = -1;
+        
       } else if (WIFSTOPPED(status)) {
         sprintf(s, "Stopped with %d\n", WSTOPSIG(status));
       }
-    } // else
+    } 
+    
     G_buff[t]->append(s);
+    
   } else { // DATA
     s[bytes] = 0;
     G_buff[t]->append(s);
@@ -98,6 +113,7 @@ void data_ready(int fd, void *data) {
 
 // Clean up if someone closes the window
 void close_cb(Fl_Widget *, void *) {
+  
   printf("Killing child processes..\n");
   for (int t = 0; t < 3; t++) {
     if (G_pids[t] == -1)
@@ -111,6 +127,7 @@ void close_cb(Fl_Widget *, void *) {
 int main() {
   Fl_Double_Window win(620, 520);
   win.callback(close_cb); // kill children if window closed
+  
   // Start children, one tty for each
   for (int t = 0; t < 3; t++) {
     start_child(t);

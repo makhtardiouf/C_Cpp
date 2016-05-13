@@ -8,7 +8,7 @@
 #include <string>
 
 using namespace std;
-// use the following to speed up iostream
+// To speed up iostream, use:
 // ios_base::sync_with_stdio(false);
 
 // template<typename T>

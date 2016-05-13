@@ -3,6 +3,7 @@
 
 #include <exception>
 #include <iostream>
+#include <iomanip>  // setprecision
 #include <string>
 using namespace std;
 
