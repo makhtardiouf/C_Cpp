@@ -5,7 +5,7 @@
    Note:  the worst case for quicksort is worse than heapsort or mergesort
 Separates the n − 1 other items into two piles:
 a low pile containing all the elements that appear before p in sorted order and
-a high pile containing all the elements that appear after p in sorted order.
+a high pile for the elements that appear after p in sorted order.
 
 make -f ../Makefile quicksort
 $Id$

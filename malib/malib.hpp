@@ -1,3 +1,7 @@
+/** $Id$
+  Collection of C++ routines for libmalib
+  (C) Mahtar Diouf 2016
+*/
 #ifndef MALIB_HPP
 #define MALIB_HPP
 
@@ -7,8 +11,6 @@
 #include <list>
 #include <string>
 #include <vector>
-
-// C++ routines for libmalib, Mahtar Diouf
 
 template <typename T>
 std::ostream &operator<<(std::ostream &ostr, const std::list<T> &list);
@@ -21,11 +23,13 @@ typedef unsigned long long ull;
 
 // Maximum sum of subsets of an array/vectors
 
+int maxSum(vvi &v);
+enum Range { SUM = 0, MIN, MAX };
 extern ull rangeMaxSum(std::vector<ull> &a, ull M);
 
-int maxSum(vvi &v);
-
-enum Range { SUM = 0, MIN, MAX };
+// Binary search  
+template <typename T> 
+long binSearch(std::vector<T> s, T key, int low, int high);
 
 // Run subprocess
 int spawn(const char *cmd[]);
