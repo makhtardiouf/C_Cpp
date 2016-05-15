@@ -60,7 +60,7 @@ bool solve(_case &acase) {
 
   long a = 0, b = 0;
   int i, j = 0, k = 0;
-  vector<long> p{acase.prices};
+  auto p = acase.prices;
 
   // Binary search works when items are sorted
   // std::sort(p.begin(), p.end());

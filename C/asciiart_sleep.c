@@ -1,7 +1,7 @@
 /* $Id: aa_usleep_test.c 8 2007-04-30 22:25:20Z Makhtar $
-
+Using the ascii art library
+apt install libaa1-dev
 */
-
 #include "malib.h"
 #include <aalib.h>
 
