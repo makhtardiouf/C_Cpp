@@ -1,6 +1,6 @@
 /**
-Go basics
-https://tour.golang.org/flowcontrol/7
+Golang trivia
+https://tour.golang.org/
 */
 package main
 import ("fmt"; "math"; "time"; "runtime")
@@ -21,7 +21,7 @@ func salut() {
 	switch {
 	case t.Hour() < 12:
 		fmt.Println("Good morning!")
-	case t.Hour() < 17:
+	case t.Hour() < 18:
 		fmt.Println("Good afternoon.")
 	default:
 		fmt.Println("Good evening.")

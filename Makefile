@@ -18,6 +18,9 @@ malib/libmalib.a:
 	cd malib; make; cd ..
 # if [ ! -d "malib" ] then cd .. fi
 
+strings:
+	$(CXX) $< strings.cpp  malib/libmalib.a -lasprintf
+	
 divisors:
 	$(CXX) $< divisors.cpp -I/usr/local/include/fxt -lfxt
 	mv $@ bin/
@@ -31,7 +34,7 @@ hellofltk:
 lists:
 	echo # pass
 
-.cpp: malib/libmalib.so bin 
+.cpp: malib/libmalib.a bin 
 	if [ ! -d "bin" ]; then \
 		make all; fi
 
