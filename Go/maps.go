@@ -31,7 +31,7 @@ func main() {
 	var name string
 	for i := 0; i < 5; i++ {
 		name = fmt.Sprintf("Loc %v", i)
-		m[name] = Vertex{i + m.Len(), rand.Float64(), rand.Float64()}		
+		m[name] = Vertex{i + m.Len(), rand.Float64(), rand.Float64()}
 	}
 	delete(m, "test")
 	sort.Sort(m)
@@ -44,7 +44,6 @@ func main() {
 
 	v, ok := m["Dakar"]
 	fmt.Println("\nDakar:", v, "Present?", ok)
-
 }
 
 // Make this type "printable" using the Stringer interface
@@ -59,13 +58,12 @@ type mv interface {
 	Swap(i, j int)
 }
 
-// A method for the type above
+// Methods for sort.Interface
+
 func (m mvertex) Len() int {
 	return len(m)
 }
 
-// For sort.Interface ...Less method
-//type mvertex interface {
 func (m mvertex) Less(i, j int) bool {
 	return i < j
 }
