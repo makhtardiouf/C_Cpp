@@ -11,7 +11,7 @@
 using namespace std;
 
 bool dbg = true;
-enum Range { SUM = 0, MIN, MAX };
+//enum Range { SUM = 0, MIN, MAX };
 
 class SegmentTree {
 private:

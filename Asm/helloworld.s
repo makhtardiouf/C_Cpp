@@ -1,6 +1,6 @@
 
-/* $Id: helloworld.s 18 2008-07-06 09:18:48Z Makhtar $
-Print "Hello, World" */
+/* $Id: helloworld.s 18 2008-07-06 09:18:48Z Makhtar $ 
+	build with: make helloworld */
 
 .section .data
 result:

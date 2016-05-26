@@ -8,8 +8,30 @@
 #include <string>
 
 using namespace std;
-// use the following to speed up iostream
+// To speed up iostream, use:
 // ios_base::sync_with_stdio(false);
+
+// Binary search
+template <typename T> 
+long binSearch(vector<T> s, T key, int low, int high) {
+    
+  int mid = 0; // idx
+  
+  // key not found
+  if (low > high)
+    return (-1);
+    
+    mid = (low + high) / 2;
+
+  if (s[mid] == key)
+    return (mid);
+    
+  if (s[mid] > key)
+    return (binSearch(s, key, low, mid - 1));
+  else
+    return (binSearch(s, key, mid + 1, high));
+}
+
 
 // template<typename T>
 std::ostream &operator<<(std::ostream &ostr,
@@ -70,6 +92,7 @@ int maxSum(vvi &v) {
     }
   return maxSubRect;
 }
+
 
 /* Get the execee's name and arguments then fork it */
 int spawn(const char *cmd[]) {

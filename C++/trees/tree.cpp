@@ -1,9 +1,10 @@
 /**
- Algo design manual
+ Algo design manual, classic Tree data structure
  Makhtar Diouf
  $Id$
- g++ -g -std=c++11 tree.cpp -o tree
+ Build: make tree
 */
+#include "malib.hpp"
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
@@ -11,31 +12,31 @@ using namespace std;
 
 template <typename T> class Tree {
   // A Tree of trees/nodes
+  
 private:
   typedef struct node {
     T value; // data
     struct node *parent;
     struct node *left;
     struct node *right;
-  } node;
-
-  node *root = nullptr;
+  } node;  
 
 public:
+  node *root;
+  
   Tree(T a) {
     node n;
     n.value = a;
   };
+  
   Tree(vector<T> v) {
-    // root = new node;
-    //  t->value = v[0];
     // insert root
-    // std::sort(v.begin(), v.end());
     insert(nullptr, v[0], nullptr);
+    
     for (int i = 1; i < v.size(); i++)
       insert(&root, v[i], root);
-    // traverse(&root);
-    printPostorder(root);
+    
+    // traverse(&root);    
     cout << endl;
   }
 
@@ -123,6 +124,9 @@ public:
 
 int main() {
   vector<int> v{4, 40, 2, 5, 3, 1, 10};
+  printV(v);
+  
   auto t = new Tree<int>(v);
+  t->printPostorder(t->root);
   return 0;
 }

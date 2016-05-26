@@ -5,9 +5,11 @@
  * Created on February 12, 2016, 3:32 PM
  * ONLY 2 items' prices should be == to the Total credit
  * This is a "maximum sum" problem on subsets
- */
 
-#include "../malib/malib.hpp"
+ make storecredit
+ build/storecredit A-small-storecredit.in > storecredit.out
+ */
+#include "malib/malib.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
@@ -17,94 +19,73 @@
 using namespace std;
 
 struct _case {
-  int credit;
+  long credit;
   int numItems;
-  vector<int> prices;
+  vector<long> prices;
 };
 
-void SelectProducts(string filename);
-
-bool getSelection(_case c);
+bool solve(_case &c);
 
 int main(int argc, char **argv) {
   if (argc < 2)
     terminate("Usage: ./storecredit filename");
 
   string s{argv[1]};
-  SelectProducts(s);
-  return EXIT_SUCCESS;
-}
-
-void SelectProducts(string filename) {
-  std::ifstream input{filename}; // input stream
+  std::ifstream input{s};
   int n;
-  input >> n; // first num = N test cases
+  input >> n;
   clog << n << " test cases\n";
 
-  _case acase;
-  int item;
-
-  while (!input.eof()) {
+  long item;
+  for (int nCase = 1; nCase <= n; nCase++) { // n
+    _case acase;
     input >> acase.credit;
     input >> acase.numItems;
     clog << "Credit: \t" << acase.credit << "\nItems [" << acase.numItems
          << "] :\t";
 
-    for (int i = 0; i < acase.numItems; i++) {
+    for (long i = 0; i < acase.numItems; i++) {
       input >> item;
       acase.prices.push_back(item);
-      clog << item << " ";
+     // clog << item << " ";
     }
 
-// Dont's sort coz the indexes on the initial vect are needed, 
-// @todo: do a binary search or lower/upper_bound queries
-
-    // std::sort(acase.prices.begin(), acase.prices.end(), std::less<int>());
-    bool gotit = getSelection(acase);
-    if (gotit == false) {
-      ;
-      //    getSelection(acase);
-    }
+    printf("Case #%d: ", nCase);
+    solve(acase);
   }
+  return EXIT_SUCCESS;
 }
 
-// Naive complete search
-bool getSelection(_case acase) {
-clog << "inside \n";
-  list<int> selected;
-  bool gotit = false;
-  int a, b = 0;
-  int i, j = 0;
-  for (; i < acase.numItems; i++) {
-    a = acase.prices[i];
+bool solve(_case &acase) {
 
-    for (j = i + 1; j <= acase.numItems -1; j++) {
-      b = acase.prices[j];
-      if ((a + b) == acase.credit) {
-        selected.push_back(a);
-        selected.push_back(b);
-        gotit = true;
-        break; // only two solutions
-      }
-     printf("a+b: %d ", a+b);
-   //i = 0;
+  long a = 0, b = 0;
+  int i, j = 0, k = 0;
+  auto p = acase.prices;
+
+  // Binary search works when items are sorted
+  // std::sort(p.begin(), p.end());
+  // j = binSearch<long>(p, acase.credit - a, 0, acase.numItems - 1);
+
+  for (i = 0; i < acase.numItems; i++) {
+    a = p[i];
+    if (a > acase.credit)
+      continue;
+
+    // Naive O(n^2) runtime works for small input
+    for (j = i + 1; j < acase.numItems; j++) {
+      auto it = std::find(acase.prices.begin() + i + 1, acase.prices.end(),
+                          acase.credit - a);
+      b = *it;
+      // fprintf(stderr, "\ni j, a, b: %d %d, %ld %ld", i, j, a, b);
+
+      if ((a + b) != acase.credit)
+        continue;
+
+      // Index of selected prices in the initial sequence, start with 1
+      k = it - acase.prices.begin() + 1;
+      cout << i + 1 << " " << k << endl;
+      return true;
     }
-    if(gotit)
-	break;
   }
-
- // if (gotit) {
-    clog << "\nMatches: \t";
-    //  cout << "Case #" << i << ": "; // to be redirected to the output file
-    for (list<int>::iterator it = selected.begin(); 
-	    it != selected.end(); it++) {
-      clog << *it << " ";
-      //  cout << i << " " << j; // only indexes should be in the output file
-    }
-//  }
-
-  clog << "\n\n";
-  //selected.clear();
-  //acase.prices.clear();
-  return gotit;
+  return false;
 }

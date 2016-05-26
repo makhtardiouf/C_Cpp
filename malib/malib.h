@@ -1,7 +1,6 @@
 /* $Id: malib.h,v 71f8a7269804 1434171018.0-32400 makhtar $
-*   Collection of routines
-*   Note: include it before standard library headers
-*   Makhtar Diouf 2007-2016
+*   Collection of C routines for libmalib
+*  (C) Makhtar Diouf 2007-2016
 */
 #ifndef MALIB_H
 #define MALIB_H

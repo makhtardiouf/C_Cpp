@@ -5,7 +5,6 @@
  * c++ -g -std=c++11 -Wall lists.cpp -o lists
  * Created on February 7, 2016, 3:21 PM
  */
-
 #include <cstdlib>
 #include <initializer_list>
 #include <iostream>

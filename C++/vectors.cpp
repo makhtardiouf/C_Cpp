@@ -3,10 +3,9 @@
  * Author: makhtar
  * $Id$
  * Created on February 8, 2016, 8:53 PM
- * c++ -g -std=c++11 vectors.cpp -Lmalib/ -lmalib -o vectors
+ * make vectors
  */
-#include "malib/malib.hpp"
-
+#include "malib.hpp"
 using namespace std;
 
 long long calcSum(const std::vector<std::vector<int>> &a, int x = 0,
@@ -26,14 +25,13 @@ long long calcSum(const std::vector<std::vector<int>> &a, int x = 0,
 
 int main(int argc, char **argv) {
   clock_t t0 = clock();
-
   vector<int> v;
   v.assign(4, 15);
 
   for (uint8_t i = 0; i < 5; i++)
     v.push_back(i);
   v.push_back(2);
-  v.push_back(2.0); // test with double
+  v.push_back(2.0);     // test with double
 
   // Std lib sort algo with comparison function
   std::sort(v.begin(), v.end(), std::less<int>());
@@ -58,10 +56,11 @@ int main(int argc, char **argv) {
   // 2D vector, often used in competitive programming board games
   int n = 6;
   int m = 6;
-  std::vector<std::vector<int>> a(n, std::vector<int>(m));
+  vvi a(n); //, std::vector<int>(m));
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      a[i][j] = i * j;
+      //a[i][j] = i * j;
+      a[i].push_back(i * j);
       cout << a[i][j] << " ";
     }
     cout << endl;

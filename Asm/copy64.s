@@ -1,9 +1,8 @@
 /*
 $Id: toupper.s 10 2007-12-06 13:45:15Z Makhtar $
-copy the contents a file to another file
+ASM demo: copy the contents a file to another file
 
-./copy64 test1.txt test2.txt
-
+Usage: ./copy64 test1.txt test2.txt
 */
 
     .include "linux64.s"

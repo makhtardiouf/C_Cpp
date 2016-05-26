@@ -1,10 +1,10 @@
 /* $Id: char_code.c 9 2007-07-11 08:22:53Z Makhtar $
 
   Print the ASCII code of some characters
- * Mixing C and C++ at will
+  Mixing C and C++ at will
+  make char_code
  */
-
-#include "malib/malib.hpp"
+#include "malib.hpp"
 #include <ctype.h>
 #include <string>
 
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     if (!isalnum(ch))
       continue;
 
-    /* Discard the new line char if using printf above */
+    // Discard the new line char if using printf above 
     // getchar ();
     printf("\tAscii code of \'%c\' ", ch);
     fflush(stdout);
@@ -31,12 +31,11 @@ int main(int argc, char *argv[]) {
   printf("\nCharacter corresponding to %d: '%c' \n", c, c);
 
   // C++11 initializations for implicit conversions warnings
-  double x{2.7}; // OK
-  int y{x};      // error: double -> int might narrow
-  int a{1000};   // OK
-  char b{a};     // error: int -> char might narrow
-  std::cout << y << " " << a << " " << b;
-
+  double x{2.7};    // OK
+  //int y{x};       // error: double -> int might narrow
+  int a{1000};      // OK
+  //char b{a};     // error: int -> char might narrow
+  std::cout << x << " " << a ;
   pausethis(1);
   return EXIT_SUCCESS;
 }

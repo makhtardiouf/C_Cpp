@@ -1,22 +1,43 @@
-
 # $Id: Makefile 18 2008-07-06 09:18:48Z Makhtar $
+# For C++ folder
 
-CC=cc -std=c11 -g -Wall -c
-CXX=c++ -std=c++11 -g -Wall -o $@ 
+FLAGS=-Imalib/ -Lmalib/ -lmalib
+CXX=c++ -std=c++11 -g -Wall -fPIC $(FLAGS) -o $@ 
+
 OBJS=malib.o malib2.o socket.o
-LINK=cc -o $@ $@.o -L. -lmalib
-LINK2=c++ -o $@ $@.o malib2.cpp -L. -lmalib
+LINK=ld -o $@ $@.o $(FLAGS) malib/libmalib.a 
+#LINKPP=c++ -o $@ $@.o $(FLAGS)
 
-libmalib.a: malib.c malib2.cpp malib.h socket.h socket.c
-	$(CC) -D_BSD_SOURCE malib.c
-	$(CC) socket.c
-	$(CXX) malib2.cpp
-	ar -rcs $@ $(OBJS)
+all: bin 
+	make malib/libmalib.a
 
-.c: libmalib.a
-	$(CC) $<
-	$(LINK)
-	rm $@.o
+bin :
+	@mkdir -p bin        
 
-.cpp: malib2.cpp malib.h libmalib.a
-	$(CXX) $<  malib2.cpp 
+malib/libmalib.a:
+	cd malib; make; cd ..
+# if [ ! -d "malib" ] then cd .. fi
+
+strings:
+	$(CXX) $< strings.cpp  malib/libmalib.a -lasprintf
+	
+divisors:
+	$(CXX) $< divisors.cpp -I/usr/local/include/fxt -lfxt
+	mv $@ bin/
+
+fltkpipe:
+	$(CXX) $< `fltk-config --cxxflags` fltkpipe.cpp -lfltk -lXext -lX11 -lm
+
+hellofltk:
+	$(CXX) $< `fltk-config --cxxflags` hellofltk.cpp -lfltk -lXext -lX11 -lm
+
+lists:
+	echo # pass
+
+.cpp: malib/libmalib.a bin 
+	if [ ! -d "bin" ]; then \
+		make all; fi
+
+	$(CXX) $<  malib/libmalib.a 
+	@mv $@ bin/
+	@echo bin/$@ ":\t\tOK"
