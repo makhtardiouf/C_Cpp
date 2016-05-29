@@ -25,6 +25,7 @@ struct _case {
 };
 
 bool solve(_case &c);
+bool debugOn = true;
 
 int main(int argc, char **argv) {
   if (argc < 2)
@@ -34,20 +35,23 @@ int main(int argc, char **argv) {
   std::ifstream input{s};
   int n;
   input >> n;
-  clog << n << " test cases\n";
+  if (debugOn)
+    clog << n << " test cases\n";
 
   long item;
-  for (int nCase = 1; nCase <= n; nCase++) { // n
+  for (int nCase = 1; nCase <= n; nCase++) {
     _case acase;
     input >> acase.credit;
     input >> acase.numItems;
-    clog << "Credit: \t" << acase.credit << "\nItems [" << acase.numItems
-         << "] :\t";
+    if (debugOn)
+      clog << "Credit: \t" << acase.credit << "\nItems [" << acase.numItems
+           << "] :\t";
 
     for (long i = 0; i < acase.numItems; i++) {
       input >> item;
       acase.prices.push_back(item);
-     // clog << item << " ";
+      if (debugOn)
+        clog << item << " ";
     }
 
     printf("Case #%d: ", nCase);
@@ -76,10 +80,12 @@ bool solve(_case &acase) {
       auto it = std::find(acase.prices.begin() + i + 1, acase.prices.end(),
                           acase.credit - a);
       b = *it;
-      // fprintf(stderr, "\ni j, a, b: %d %d, %ld %ld", i, j, a, b);
+      if (debugOn)
+        fprintf(stderr, "\ni j, a, b: %d %d, %ld %ld\n", i, j, a, b);
 
+      // Not present in the rest of the sequence
       if ((a + b) != acase.credit)
-        continue;
+        break; // continue;
 
       // Index of selected prices in the initial sequence, start with 1
       k = it - acase.prices.begin() + 1;

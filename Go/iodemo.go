@@ -1,9 +1,12 @@
-// Go trivia: read from the cmd line
+// Go trivia: io with cmd line
+// Makhtar Diouf
+
 package main
 
 import (
+	"fmt"
 	"bufio"
-	//"fmt"
+	"log"
 	"os"
 )
 
@@ -13,14 +16,33 @@ func main() {
 	in := bufio.NewScanner(os.Stdin)
     //_, err := fmt.Scanf("%s\n", &in)
     print(msg);
-    // advances the Scanner to the next token
+	
+    // While advancing the Scanner to the next token
 	for in.Scan() {
 		line := in.Text()			
 		println("Got: ", line)
         
 		if line == "q" {
-			return
+			break
 		} 
         print(msg);
 	}
+	
+	// Display a file content
+	print("Enter a filename to read: ")
+	in.Scan()
+	fname := in.Text()
+	fp, err := os.Open(fname)
+	if err != nil {
+		log.Fatal("Error ", err)
+		return
+	}
+	in = bufio.NewScanner(fp)
+	log.Println("Listing content of ", fname)
+	for i := 1; in.Scan(); i++ {
+		println(i, ":", in.Text())	
+	}
+	
+	msg = "Diouf"
+	fmt.Printf("By %s %X\n", msg, msg)
 }

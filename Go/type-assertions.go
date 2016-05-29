@@ -1,4 +1,4 @@
-// +build no-run OMIT
+// +build no-run OMIT  Go lang tour
 // Check the underlying data type with an Interface var
 package main
 

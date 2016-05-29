@@ -1,4 +1,4 @@
-// Mimic Unix cat command
+// Go trivia: Mimic Unix cat command
 // Makhtar Diouf
 
 package main
@@ -21,7 +21,7 @@ func main() {
 		fname = in.Text()
 		fp, err = os.Open(fname)
 	} else {
-        // should not be a go file
+        // If interpreted with "go run", arg1 should not be a go file
 		fname := os.Args[1]
 		fp, err = os.Open(fname)
 	}
@@ -30,6 +30,7 @@ func main() {
 		log.Fatal("Error ", err)
 	}
 	in = bufio.NewScanner(fp)
+    defer fp.Close()
 
 	log.Println("Listing content of ", fname)
 	for i := 1; in.Scan(); i++ {

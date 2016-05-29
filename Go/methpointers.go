@@ -1,5 +1,5 @@
-// +build OMIT
-// methods with pointer receivers take either a value or 
+// +build OMIT Golang tour
+// Methods with pointer receivers take either a value or 
 // a pointer as the receiver when they are called.
 // In general, all methods on a given type should have either 
 // value or pointer receivers, but not a mixture of both.
@@ -27,12 +27,12 @@ func main() {
 	fmt.Println(Abs(v))
 }
 
-
+// Classic function
 func Abs(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
-
+// Member method of the Vertex type
 func (v *Vertex) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
