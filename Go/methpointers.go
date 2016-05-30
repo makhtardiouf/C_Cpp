@@ -32,7 +32,10 @@ func Abs(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
-// Member method of the Vertex type
+// Methods can be defined for any named type 
+// (except a pointer or an interface); the receiver does not have to be a struct.
+
+// Member method binded to the Vertex type
 func (v *Vertex) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f

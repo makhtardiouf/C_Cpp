@@ -12,8 +12,8 @@ import (
 )
 
 func init() {
-	idx int
-	
+	idx := 0
+	_ = idx
 }
 
 type Vertex struct {
@@ -56,6 +56,7 @@ func main() {
 }
 
 // Methods for sort.Interface
+// a type implements the iface just by implementing the iface's methods
 
 func (m mvertex) Len() int {
 	// Could populate the indexes(i) here
@@ -73,7 +74,6 @@ func (m mvertex) Swap(i, j int) {
 
 // Make this type "printable" using the Stringer interface
 func (m mvertex) String() string {
- 	return fmt.Sprintf("%+v", string(m)) //m["Dakar"].Lat, m["Dakar"].Long)
+ 	return fmt.Sprintf("%+v", m) //m["Dakar"].Lat, m["Dakar"].Long)
 }
-
 

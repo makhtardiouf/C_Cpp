@@ -25,10 +25,8 @@ func main() {
 	y := []int{40, 12, 6}
 	v = append(v, y...)
 
-	sort.Ints(v)
-	for i := 0; i < len(v); i++ {
-		print(v[i], " ")
-	}
+	sort.Ints(v)	
+    fmt.Println(v)
 	println("\nSorted vector of length:", len(v), "\nIndexes: ")
 
 	// range form of the for loop
