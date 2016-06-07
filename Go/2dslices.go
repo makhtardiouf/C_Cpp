@@ -22,7 +22,7 @@ func main() {
 
 		// Set random values
 		var el *int
-        fmt.Printf("%2d:", i)
+		fmt.Printf("%2d:", i)
 		for j := range v[i] {
 			el = &v[i][j]
 			*el = rand.Intn(200)

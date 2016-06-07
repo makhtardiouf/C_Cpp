@@ -20,7 +20,7 @@ func main() {
 
 	// Functions don't have to be declared before main()
 	manip(&v)
-	
+
 	// Annotated printed of struct fields
 	fmt.Printf("%v\n", v)
 	fmt.Printf("%+v\n", v)

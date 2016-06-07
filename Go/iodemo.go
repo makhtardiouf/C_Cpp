@@ -11,10 +11,13 @@ import (
 )
 
 func main() {
-	msg := "Enter anything or q to quit: "
+	num := 0
+	print("Enter a number: ")
+	fmt.Scan(&num)
+	fmt.Printf("You entered: %d, type: %T \n", num, num)
 
 	in := bufio.NewScanner(os.Stdin)
-	//_, err := fmt.Scanf("%s\n", &in)
+	msg := "Enter anything or q to quit: "
 	print(msg)
 
 	// While advancing the Scanner to the next token
@@ -33,21 +36,20 @@ func main() {
 	in.Scan()
 	fname := in.Text()
 	if _, err := os.Stat(fname); err != nil {
-		log.Fatal("Cannot access file ", fname, err, "\n")
-		
-	} else {
+		log.Fatal("Cannot access file ", err, "\n")
+	}
 
-		fp, err := os.Open(fname)
-		if err != nil {
-			log.Fatal("Error ", err)
-			return
-		}
-		in = bufio.NewScanner(fp)
-		log.Println("Listing content of ", fname)
-		for i := 1; in.Scan(); i++ {
-			println(i, ":", in.Text())
-		}
-		fp.Close()
+	fp, err := os.Open(fname)
+	if err != nil {
+		log.Fatal("Error ", err)
+		return
+	}
+	defer fp.Close()
+
+	in = bufio.NewScanner(fp)
+	log.Println("Listing content of ", fname)
+	for i := 1; in.Scan(); i++ {
+		println(i, ":", in.Text())
 	}
 
 	msg = "Diouf"

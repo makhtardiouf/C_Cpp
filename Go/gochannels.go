@@ -1,5 +1,5 @@
 // +build OMIT
-// Channels are a typed conduit through which you can 
+// Channels are a typed conduit through which you can
 // send and receive values with the channel operator, <-.
 // Feels like a Pipe
 
@@ -22,7 +22,7 @@ func main() {
 	c := make(chan int)
 	go sum(s[:len(s)/2], c)
 	go sum(s[len(s)/2:], c)
-	
+
 	x, y := <-c, <-c // receive from c
 	fmt.Println("Sum of:", x, y, " = ", x+y)
 }

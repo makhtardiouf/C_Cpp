@@ -4,28 +4,38 @@
 package main
 
 import (
-    "flag"
-    "html/template"
-    "log"
-    "net/http"
+	"flag"
+	"html/template"
+	"log"
+	"net/http"
+	"time"
 )
 
 var addr = flag.String("addr", ":9000", "http service address") // Q=17, R=18
 
 var templ = template.Must(template.New("qr").Parse(templateStr))
+var numRequests = 0
+var curTime = time.Now().String()
 
 func main() {
-    flag.Parse()
-    http.Handle("/", http.HandlerFunc(QR))
-    err := http.ListenAndServe(*addr, nil)
-    if err != nil {
-        log.Fatal("ListenAndServe:", err)
-    }
+	flag.Parse()
+	http.Handle("/", http.HandlerFunc(QR))
+	err := http.ListenAndServe(*addr, nil)
+	if err != nil {
+		log.Fatal("ListenAndServe:", err)
+	}
+	_ = time.Now()
+
+	log.Println("Open the link http://localhost:9000")
+
 }
 
 func QR(w http.ResponseWriter, req *http.Request) {
-    log.Println("Received request from", req.UserAgent())
-    templ.Execute(w, req.FormValue("str"))
+	log.Printf("Received request %d from %s\n", numRequests, req.UserAgent())
+	templ.Execute(w, req.FormValue("str"))
+
+	numRequests++
+	curTime = time.Now().String()
 }
 
 const templateStr = `
@@ -60,6 +70,9 @@ const templateStr = `
 {{end}}
 
 </div>
+{{.numRequests}} requests received.<br>
+{{.curTime}}
+
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /**
-Go trivia: display system info
+Go trivia:  display system info
 Makhtar Diouf
 */
 package main
@@ -9,7 +9,7 @@ import (
 	"log"
 	"os"
 	"runtime"
-    // Profiler
+	// Profiler
 	"runtime/pprof"
 )
 
@@ -21,12 +21,12 @@ func main() {
 	pprof.StartCPUProfile(profile)
 	defer pprof.StopCPUProfile()
 
-	log.Println("Runtime info of this system:")
+	log.Println("Runtime info of this system: ")
 
-	fmt.Printf("OS:%s \nArch:%s\n", runtime.GOOS, runtime.GOARCH)
-	println("Num CPUs:", runtime.NumCPU())
-	println("Go version:", runtime.Version())
-    
-var user = os.Getenv("USER")
-println("Goodbye", user)
+	fmt.Printf("OS: %s \nArch: %s\n", runtime.GOOS, runtime.GOARCH)
+	println("Num CPUs: ", runtime.NumCPU())
+	println("Go version: ", runtime.Version())
+
+	var user = os.Getenv("USER")
+	println("Goodbye", user)
 }

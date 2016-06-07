@@ -5,7 +5,6 @@ Makhtar Diouf
 package main
 
 import (
-
 	"fmt"
 	"index/suffixarray"
 )
