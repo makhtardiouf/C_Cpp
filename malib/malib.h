@@ -18,7 +18,7 @@
 
 #ifdef __cplusplus
 /*
-* Functions written in C must be protected from being mangled
+* Protect C functions from being mangled
 * by the linker when called from a C++ program
 */
 extern "C" {
@@ -27,6 +27,7 @@ extern "C" {
 /** Number of elements of an array */
 #define getArrLength(array) (sizeof(array) / sizeof(array[0]))
 
+/** Time program execution */
 double clockit();
 
 void terminate(const char *s);
@@ -43,10 +44,10 @@ void pausethis(int sec);
 /** Print the binary representation of a number */
 void printBinary(const unsigned char val);
 
-/** Produce a reversed string */
+/** Reverse a string */
 char *reverse(char s[]);
 
-/** Output an animated dash  */
+/** Print animated dash  */
 void rotate_dash(void);
 
 /** Presents a console menu to the user */

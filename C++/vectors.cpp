@@ -1,5 +1,5 @@
 /*
- * Trivial operations on vector
+ * Trivial operations on vectors
  * Author: makhtar
  * $Id$
  * Created on February 8, 2016, 8:53 PM
@@ -8,19 +8,19 @@
 #include "malib.hpp"
 using namespace std;
 
-long long calcSum(const std::vector<std::vector<int>> &a, int x = 0,
+long long calcSum(const std::vector<std::vector<int>> &v, int x = 0,
                   int y = 0) {
-  long long value = 0;
-  int n = a.size();
-  int m = a[0].size();
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      value += a[i][j];
-    }
-    cout << "\ta[" << i << "]:" << value << endl;
-    value = 0;
+  int i = 0;
+  long long tot = 0;
+  for (auto rows : v) {
+    for (auto el : rows)
+      tot += el;
+
+    printf("\tv[%d]: %3lld\n", i, tot);
+    tot = 0;
+    i++;
   }
-  return value;
+  return tot;
 }
 
 int main(int argc, char **argv) {
@@ -28,26 +28,26 @@ int main(int argc, char **argv) {
   vector<int> v;
   v.assign(4, 15);
 
-  for (uint8_t i = 0; i < 5; i++)
-    v.push_back(i);
+  for (int i = -3; i < 3; i++)
+    v.push_back(i * 2);
   v.push_back(2);
-  v.push_back(2.0);     // test with double
+  v.push_back(2.0); // test with double
 
   // Std lib sort algo with comparison function
   std::sort(v.begin(), v.end(), std::less<int>());
-  cout << "Sort vector of size: " << v.size() << " \n";
+  printf("Sorted vector of size: %d \n", v.size());
   printV(v);
 
   // remove one of the '2'
-  cout << "\nUnique: \n";
+  printf("\nUnique: \n");
   auto last = std::unique(v.begin(), v.end(), std::equal_to<int>());
   v.erase(last, v.end());
   printV(v);
 
-  cout << "\nReverse:\n";
+  printf("\nReverse:\n");
   std::reverse(v.begin(), v.end());
   printV(v);
-  cout << "\nLast element of v: " << v[v.size() - 1] << "\n";
+  printf("\nLast element of v: %d\n\n", v[v.size() - 1]);
 
   std::vector<char> txt;
   txt.assign(5, 'a');
@@ -57,25 +57,27 @@ int main(int argc, char **argv) {
   int n = 6;
   int m = 6;
   vvi a(n); //, std::vector<int>(m));
+  printf("\n2D vectors playground:\n");
+
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      //a[i][j] = i * j;
       a[i].push_back(i * j);
-      cout << a[i][j] << " ";
+      printf("%3d ", a[i][j]);
     }
-    cout << endl;
+    printf("\n");
   }
 
-  cout << "Row sums of 2D vect: \n";
+  printf("\nRow sums: \n");
   calcSum(a);
 
   a[3][2] = 100;
+  //a[4][1] = 120;
+  printf("Updated vector's a[3]: ");
   printV(a[3]);
 
-  cout << "Maximum sum of the vect a's subsets: " << maxSum(a) << endl;
+  printf("\nMaximum sum of the vector: %d", maxSum(a));
 
   clock_t t1 = clock();
   printf("\nRuntime = %.4f s\n", (t1 - t0) / (double)CLOCKS_PER_SEC);
-
   return EXIT_SUCCESS;
 }

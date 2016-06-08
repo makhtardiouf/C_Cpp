@@ -12,26 +12,23 @@ using namespace std;
 // ios_base::sync_with_stdio(false);
 
 // Binary search
-template <typename T> 
-long binSearch(vector<T> s, T key, int low, int high) {
-    
+template <typename T> long binSearch(vector<T> s, T key, int low, int high) {
+
   int mid = 0; // idx
-  
+
   // key not found
   if (low > high)
-    return (-1);
-    
-    mid = (low + high) / 2;
+    return -1;
+
+  mid = (low + high) / 2;
 
   if (s[mid] == key)
-    return (mid);
-    
-  if (s[mid] > key)
+    return mid;
+  else if (s[mid] > key)
     return (binSearch(s, key, low, mid - 1));
-  else
-    return (binSearch(s, key, mid + 1, high));
-}
 
+  return (binSearch(s, key, mid + 1, high));
+}
 
 // template<typename T>
 std::ostream &operator<<(std::ostream &ostr,
@@ -44,7 +41,7 @@ std::ostream &operator<<(std::ostream &ostr,
 }
 
 ull rangeMaxSum(std::vector<ull> &a, ull M) {
-  ull ans = numeric_limits<ull>::min();
+  ull ans = std::numeric_limits<ull>::min();
 
   ull mn = 0, s = 0;
   for (ull i = 0; i < a.size(); ++i) {
@@ -52,25 +49,25 @@ ull rangeMaxSum(std::vector<ull> &a, ull M) {
     if (a[i] <= 2)
       mn = s % M;
     else {
-      ans = max(ans, (s - mn) % M);
-      mn = min(mn, s) % M;
+      ans = std::max(ans, (s - mn) % M);
+      mn = std::min(mn, s) % M;
     }
   }
 
-  if (ans == numeric_limits<ull>::min() % M)
+  if (ans == std::numeric_limits<ull>::min() % M)
     return 0;
   else
     return ans;
 }
 
-// Maximum sum of subsets of an array/vector
+// Maximum sum of subsets of a 2D vector
 int maxSum(vvi &v) {
- // typedef long long T;
- typedef int T;
+  // typedef long long T;
+  typedef int T;
   T n = v.size();
 
   // lowest possible value
-  T maxSubRect = -1; //numeric_limits<T>::min();
+  T maxSubRect = -1; // numeric_limits<T>::min();
 
   for (T l = 0; l < n; l++)
     for (T r = l; r < n; r++) {
@@ -92,7 +89,6 @@ int maxSum(vvi &v) {
     }
   return maxSubRect;
 }
-
 
 /* Get the execee's name and arguments then fork it */
 int spawn(const char *cmd[]) {
