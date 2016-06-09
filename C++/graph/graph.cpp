@@ -3,22 +3,21 @@
 Algo design manual P165
 
 Graph using Adjacency Lists
- Directed edge (x, y) is represented by an node y in x’s adjacency list
+Directed edge (x, y) is represented by a node-y in node-x’s adjacency list
 */
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-
 using namespace std;
 
 // Max number of vertices
 #define MAXV 1000
 
-typedef struct node{
+typedef struct node {
   int y;                 // adjacency info
   int weight;            // edge weight, if any
-  node *next; // next edge in list
-}  ;
+  node *next;       // next edge in list
+};
 
 typedef struct {
   node *edges[MAXV + 1]; // adjacency info
@@ -26,7 +25,7 @@ typedef struct {
   int nvertices;
   int nedges;
 
-  //  identify whether we need to insert
+  // identify whether we need to insert
   // two copies of each edge or only one
   bool directed;
 } graph;
@@ -48,14 +47,13 @@ void initGraph(graph *g, bool directed) {
 
 void insertEdge(graph *g, int x, int y, bool directed) {
   // temp pointer
-  node *p;
-  p = (node *)malloc(sizeof(node));
+  node* p = (node*) malloc(sizeof(node));
   p->weight = 0;
   p->y = y;
   p->next = g->edges[x];
   g->edges[x] = p;
 
-  /* insert at head of list */
+  // insert at head of list
   g->degree[x]++;
 
   if (directed == false)
@@ -67,9 +65,9 @@ void insertEdge(graph *g, int x, int y, bool directed) {
 
 // Building the graph for a file's content
 void readGraph(graph *g, bool directed) {
-  int i;    /* counter */
-  int m;    /* number of edges */
-  int x, y; /* vertices in edge (x,y) */
+  int i;    // counter
+  int m;    // number of edges
+  int x, y; // vertices in edge (x,y)
 
   initGraph(g, directed);
   scanf("%d %d", &(g->nvertices), &m);

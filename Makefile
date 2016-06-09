@@ -34,7 +34,7 @@ hellofltk:
 lists:
 	echo # pass
 
-.cpp: malib/libmalib.a bin 
+.cpp: malib/libmalib.a
 	if [ ! -d "bin" ]; then \
 		make all; fi
 

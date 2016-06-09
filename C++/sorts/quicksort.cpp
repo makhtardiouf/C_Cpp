@@ -57,14 +57,14 @@ template <typename T> int partition(vector<T> &v, int l, int h) {
   // pivot element index
   int p = h;
   // divider position for pivot
-  int firsthigh = l;
+  int divpos = l;
 
   for (int i = l; i < h; i++)
     if (v[i] < v[p]) {
-      std::swap(v[i], v[firsthigh]);
-      firsthigh++;
+      std::swap(v[i], v[divpos]);
+      divpos++;
     }
 
-  std::swap(v[p], v[firsthigh]);
-  return (firsthigh);
+  std::swap(v[p], v[divpos]);
+  return divpos;
 }
