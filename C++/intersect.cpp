@@ -6,7 +6,7 @@
 #include <cstdlib>
 
 int checkInsection(int arrA[], int arrB[]) {
-
+ // Wrong when an array is a func parameter
   int aLength = sizeof(*arrA) / sizeof(arrA[0]);
   int istPoint = -1;
   int i = 0, j = 0;

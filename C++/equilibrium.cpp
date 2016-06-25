@@ -1,5 +1,5 @@
 /**
- * Determine the point of equiplibrium where
+ * Determine the point of equilibrium where
  * sum (v[:i-1]) == sum(v[i+1:])
    A[0] + A[1] + ... + A[P−1] = A[P+1] + ... + A[N−2] + A[N−1].
  * Makhtar Diouf
@@ -10,8 +10,8 @@
 using namespace std;
 
 // Watch out in case of int v[]
-// Incorrect size, as an array passed as function paramenter is a pointer: int
-// *v
+// Incorrect size, as an array passed as function paramenter is 
+// a pointer: int *v
 // sizeof v / sizeof v[0];
 
 long getEquil(vector<long> &v) {
