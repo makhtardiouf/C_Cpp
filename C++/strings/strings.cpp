@@ -15,7 +15,7 @@ int main(void) {
   
   string s1, s2;
   string s3 = "\nHello, yow!\nGuess who's around";
-  s2 = "Hope you're having a great day";
+  s2 = "Hope you're "  " having a great day"; // + not necessary
   s1 = s2 + " " + s3;
   s1 += " hey "; // append
   cout << s1 + s2 + "!\n\n" ;
@@ -26,7 +26,7 @@ int main(void) {
   for (; *p != '\0'; p++) {
     // avoid buffering
     clog << *p;
-    usleep(400000);
+    usleep(2e5);
   }
   cout << endl;
 
@@ -35,6 +35,6 @@ int main(void) {
   cout << "Got: " << s1;
 
   auto t1 = clock();
-  cout << autosprintf ("\nAll input: %s %s.\n Runtime: %f\n", p, s1.c_str(), (t1 - t0) / (double)CLOCKS_PER_SEC);
+  cout << autosprintf ("\n%s %s.\n Runtime: %fs\n", p, s1.c_str(), (t1 - t0) / (double)CLOCKS_PER_SEC);
   return 0;
 }

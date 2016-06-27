@@ -21,14 +21,13 @@ typedef std::vector<ii> vii;
 typedef std::vector< std::vector<int> > vvi;
 typedef unsigned long long ull;
 
-// Maximum sum of subsets of an array/vectors
-
+// Maximum sum of 2D vector subsets
 int maxSum(vvi &v);
 enum Range { SUM = 0, MIN, MAX };
 extern ull rangeMaxSum(std::vector<ull> &a, ull M);
 
-// Binary search  
-template <typename T> 
+// Binary search
+template <typename T>
 long binSearch(std::vector<T> s, T key, int low, int high);
 
 // Run subprocess
@@ -40,7 +39,6 @@ template <typename T> void printV(std::vector<T> v) {
     std::cout << "\t" << x << " ";
   std::cout << "\n";
 }
-
 
 // UFDS: Union-Find Disjoint Sets
 class Ufds {

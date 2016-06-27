@@ -36,6 +36,7 @@ int main()
         //  clog << "a, b: " << a << " " << b << endl;
         cout << V[a][b] << endl;
     }
-
+    
+// delete[] V;
     return 0;
 }

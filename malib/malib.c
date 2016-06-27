@@ -39,10 +39,8 @@ int clearconsole(void) {
   /* #define _BSD_SOURCE */
   FILE *process;
 #ifdef __unix__
-
   process = popen("clear", "w");
 #elif defined __WIN32__
-
   process = popen("cls", "w");
 #endif
 
@@ -101,7 +99,7 @@ int show_menu(char *menu[]) {
 
     printf("\nEnter your choice: ");
     scanf("%d", &choice);
-    getchar(); /* get the garbage */
+    getchar();
 
     /*  if ( isdigit(choice) && (choice >= 0) && (choice <= i-1) ) */
     if ((choice >= 0) && (choice <= i - 1))
@@ -128,10 +126,10 @@ void w32_wait(void) {
 
 char *remove_duplicates(char str[]) {
   int isDup = 0;
+  int len = strlen(str);
+  for (u_int8_t i = 0; i < len - 1; i++) {
 
-  for (u_int8_t i = 0; i < strlen(str) - 1; i++) {
-
-    for (u_int8_t j = strlen(str) - 1; j >= 0; j--) {
+    for (u_int8_t j = len - 1; j >= 0; j--) {
       if (str[i] == str[j])
         isDup++;
 

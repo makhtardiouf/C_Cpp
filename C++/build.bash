@@ -18,5 +18,5 @@ done
 # Reset colors
 tput sgr0
 echo "Binaries: "
-ls build/
+ls bin/
 exit

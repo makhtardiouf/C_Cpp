@@ -3,7 +3,13 @@ Golang trivia
 https://tour.golang.org/
 */
 package main
-import ("fmt"; "math"; "time"; "runtime")
+
+import (
+	"fmt"
+	"math"
+	"runtime"
+	"time"
+)
 
 func pow(x, n, lim float64) float64 {
 	// If with a short statement
@@ -31,14 +37,14 @@ func salut() {
 func checkOs() {
 	fmt.Print("We're running on ")
 	switch os := runtime.GOOS; os {
-		case "darwin":
-			fmt.Println("OS X.")
-		case "linux":
-			fmt.Println("Linux.")
-		default:
-			// freebsd, openbsd,
-			// plan9, windows...
-			fmt.Printf("%s\n", os)
+	case "darwin":
+		fmt.Println("OS X.")
+	case "linux":
+		fmt.Println("Linux.")
+	default:
+		// freebsd, openbsd,
+		// plan9, windows...
+		fmt.Printf("%s\n", os)
 	}
 }
 
@@ -47,8 +53,8 @@ func main() {
 		pow(3, 2, 10),
 		pow(3, 3, 20),
 	)
-	
+
 	salut()
 	checkOs()
-	
+
 }

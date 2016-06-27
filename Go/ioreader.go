@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io"
 	"strings"
+	// Test unused import
+	_ "bufio"
 )
 
 func main() {
@@ -15,8 +17,8 @@ func main() {
 	// == while
 	for {
 		n, err := r.Read(b)
-		fmt.Printf("read %v bytes, b[:n] = %q\n", n, b[:n])
-	
+		fmt.Printf("read %v bytes, b[:n] = %q\n", n, string(b[:n]))
+
 		if err == io.EOF {
 			break
 		}

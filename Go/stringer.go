@@ -1,5 +1,5 @@
 // +build OMIT
-// A Stringer (interface) is a type that can describe itself as a string. 
+// A Stringer (interface) is a type that can describe itself as a string.
 
 package main
 

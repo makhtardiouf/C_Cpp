@@ -1,7 +1,7 @@
 /**
- Go basics
- https://tour.golang.org/flowcontrol/1
- */
+Go basics
+https://tour.golang.org/flowcontrol/1
+*/
 
 package main
 
@@ -14,13 +14,12 @@ func main() {
 		println(i, sum)
 	}
 	fmt.Println("Sum:", sum)
-    
-    // Equivalence of 'while'
-    sum = 1
+
+	// Equivalence of 'while'
+	sum = 1
 	for sum < 1e6 {
 		sum++
 	}
-	fmt.Println("Sum2:",sum)
-    
-}
+	fmt.Println("Sum2:", sum)
 
+}

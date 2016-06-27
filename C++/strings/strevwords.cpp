@@ -3,7 +3,7 @@
  * Author: Makhtar Diouf
  * Compilation g++ -std=c++11 -g -Wall strevwords.cpp malib2.cpp -o
  * strevwords 
- * Google codejam:  run with ./strevwords B-small-practice.in
+ * Google codejam:  run with ./strevwords B-small-streverse.in
  * https://code.google.com/codejam/contest/351101/dashboard#s=p1
  */
 #include "../malib/malib.hpp"
@@ -57,9 +57,12 @@ int main(int argc, char **argv) {
       s = "";
       reversevect(v);
       v.clear();
-      // with list, using malib2.cpp << overload
+      
       l.reverse();
-      cout << "[<list>] " << l;
+      cout << "[<list>] ";
+      for(auto it: l)
+        cout << it << " ";
+      cout << endl;
       l.clear();
     }
   }
