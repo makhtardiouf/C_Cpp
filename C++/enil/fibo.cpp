@@ -1,15 +1,15 @@
 /**
- *
+ * Fibonnaci, in a different way
  * Makhtar Diouf
 */
-#include <iostream>
+#include <cstdio>
 
-long long fn(long long n) {
+long long fibo(long long n) {
 
   if ((n == 0) || (n == 1))
     return n;
 
-  // return fn(n - 1) + fn(n - 2);
+  // return fibo(n - 1) + fibo(n - 2);
   long long t1 = 0, t2 = 1;
   long long tot = t1 + t2;
 
@@ -22,6 +22,6 @@ long long fn(long long n) {
 }
 
 int main() {
-  std::cout << "fn(8181) = " << fn(8181) << std::endl;
+  printf("fibo(10) = %lld\n", fibo(8181));
   return 0;
 }
