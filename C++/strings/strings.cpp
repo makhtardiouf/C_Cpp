@@ -1,5 +1,5 @@
 // $Id: strings.cpp 5 2007-03-31 15:04:06Z Makhtar $
-// make -f ../Makefile strings
+// make  strings
 #include "malib.hpp"
 #include <fstream>
 #include <iostream>
@@ -14,9 +14,9 @@ int main(void) {
   auto t0 = clock();
   
   string s1, s2;
-  string s3 = "\nHello, yow!\nGuess who's around";
-  s2 = "Hope you're "  " having a great day"; // + not necessary
-  s1 = s2 + " " + s3;
+  string s3 = "\nHello! \nGuess who's around";
+  s2 = "Hope you're "  "having a great day"; // + not necessary
+  s1 = s2 + " " + s3.replace(s3.begin()+7, s3.end(), "Makhtar");
   s1 += " hey "; // append
   cout << s1 + s2 + "!\n\n" ;
 
@@ -35,6 +35,6 @@ int main(void) {
   cout << "Got: " << s1;
 
   auto t1 = clock();
-  cout << autosprintf ("\n%s %s.\n Runtime: %fs\n", p, s1.c_str(), (t1 - t0) / (double)CLOCKS_PER_SEC);
+  cout << autosprintf ("\n%s.\n Runtime: %fs\n", p,  (t1 - t0) / (double)CLOCKS_PER_SEC);
   return 0;
 }

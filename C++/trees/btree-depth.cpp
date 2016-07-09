@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// 二分木のノード
+// Tree of nodes
 class Tree {
 private:
   struct node {
@@ -109,7 +109,7 @@ int main() {
   vector<int> v{20, 8, 2, 3, 5, 6, 9, 10};
 
   auto t = new Tree(v);
-  // 同じ深さのノードを接続
+  // Link nodes with the same depth
   t->Linknodes();
   t->Print();
   return 0;
