@@ -1,0 +1,7 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/makhtar/.nuget/packages"
+    ]
+  }
+}
