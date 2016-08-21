@@ -13,8 +13,8 @@
 using namespace std;
 
 bool isPalindrome(string s) {
+  // Iterate here in both directions
   for (u_int32_t i = 0, j = s.length() - 1; i < s.length(); i++, j--) {
-
     if (s[i] != s[j])
       return false;
     cout << "\nchar '" << s[i] << "' and '" << s[j] << "' match";

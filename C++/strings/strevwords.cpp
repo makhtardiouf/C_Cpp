@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void reversevect(vector<string> v) {
+void reverseVect(vector<string> v) {
   static int i = 1;
   std::reverse(v.begin(), v.end());
   cout << "Case #" << i << ": ";
@@ -36,11 +36,11 @@ int main(int argc, char **argv) {
   char dust[10];
   input.getline(dust, 10); // skip first num
 
-  s = "";
-  char c;
   // Save words both in a Vector and a List to try different reverse utilities
   vector<string> v;
   list<string> l;
+  s = "";
+  char c;
 
   while (!input.eof()) {
     c = input.get();
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
 
     if (c == '\n') {
       s = "";
-      reversevect(v);
+      reverseVect(v);
       v.clear();
       
       l.reverse();
