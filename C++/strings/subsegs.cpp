@@ -12,6 +12,7 @@
 #include <cmath>
 #include <cstring>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <unordered_map>
 #include <vector>
@@ -52,40 +53,42 @@ int main() {
   }
 
   long x = 0, y = 0;
-  long segLen = 200000;
+  int segLen = 200000;
   bool allWfound = false;
-  vector<int> segs;
-
+  unordered_map<long, long> segments;
+  numWords = 0;
   s = "";
 
   for (size_t i = 0; i < parag.size(); i++) {
     if (isalpha(parag[i]))
-      s += tolower(parag[i]); // !watch out
+      s += tolower(parag[i]);
     else {
       for (auto w : words) {
-        long pos = s.find(w);
-        fprintf(stderr, "\nChecking %s in %s, ret:%ld\n", w.c_str(), s.c_str(),
-                pos);
 
         if (w == s) {
+          if (numWords == 0)
+            x = i - s.size();
+          numWords++;
           m.insert({w, m[w]++});
+          
           allWfound = true;
-
           for (auto tgt : m) {
             if (tgt.second == 0) {
               allWfound = false;
               break;
             }
           }
-
-          x++;
-          y = i - s.size();
+          y = i;
           fprintf(stderr, "%s found @ %ld\n", w.c_str(), y);
+
           // new segment completed
-          if (allWfound)
-            segLen = std::min(segLen, y - x);
-          if (segLen < 1)
-            segLen = 0;
+          if ((numWords >= words.size()) && allWfound) {
+            segLen = std::min(segLen, numWords);
+            segments.insert({x, y});
+            // For next segment
+            numWords = 0;
+            m.clear();
+          }
           break;
         }
       }
@@ -93,18 +96,22 @@ int main() {
     }
   }
 
-  clog << "x, y, minSegLen:" << x << " " << y << " " << segLen << endl;
+  clog << "x, y, minSegLen:" << x << " " << y << " " << segLen << " words" << endl;
 
   if (!allWfound) {
-    cout << "NO SUBSEGMENT FOUND";
+    cout << "NO SUBSEGMENT FOUND\n";
   } else {
-    for (long i = x /* y -segLen*/; i <= y; i++)
-      cout << parag[i];
+    for (auto s : segments) {
+      fprintf(stderr, "\n\n------Results\nSegment [%ld:%ld] :\n", s.first,
+              s.second);
 
-    fprintf(stderr, "\nm.size:%d, segLen: %ld\n", m.size(), segLen);
-    for (auto el : m)
-      clog << el.first << " " << el.second << endl;
+      for (long i = s.first; i <= s.second; i++) {
+        char c = parag[i];
+        if (isalpha(c) || isspace(c))
+          cout << c;
+      }
+      cout << endl;
+    }
   }
-  cout << endl;
   return 0;
 }
