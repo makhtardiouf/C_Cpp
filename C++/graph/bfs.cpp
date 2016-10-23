@@ -50,9 +50,6 @@ void Graph::Bfs(int s)
     visited[s] = true;
     q.push(s);
 
-    // 'it' will be used to get all adjacent vertices of a vertex
-    list<int>::iterator it;
-
     while (!q.empty())
     {
         // Dequeue a vertex from queue and print it
@@ -63,7 +60,7 @@ void Graph::Bfs(int s)
         // Get all adjacent vertices of the dequeued vertex s
         // If a adjacent has not been visited, then mark it visited
         // and enqueue it
-        for (it = adj[s].begin(); it != adj[s].end(); ++it)
+        for (auto it = adj[s].begin(); it != adj[s].end(); ++it)
         {
             if (!visited[*it])
             {
