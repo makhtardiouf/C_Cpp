@@ -2,7 +2,7 @@
 # For C++ folder
 
 FLAGS=-Imalib/ -Lmalib/ -lmalib
-CXX=c++ -std=c++11 -g -Wall -fPIC $(FLAGS) -o $@ 
+CXX=clang++-4.0 -std=c++11 -g -Wall -fPIC $(FLAGS) -o $@ 
 
 OBJS=malib.o malib2.o socket.o
 LINK=ld -o $@ $@.o $(FLAGS) malib/libmalib.a 
