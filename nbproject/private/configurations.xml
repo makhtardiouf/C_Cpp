@@ -2,12 +2,14 @@
 <configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name=".vscode">
+      </df>
       <df name="Asm">
-        <in>ReadAchar.s</in>
         <in>asm_driver.c</in>
         <in>copy64.s</in>
         <in>exit.asm</in>
         <in>exit.s</in>
+        <in>exit2.s</in>
         <in>factorial64.s</in>
         <in>helloworld.asm</in>
         <in>helloworld.c</in>
@@ -19,6 +21,7 @@
         <in>maximum64.s</in>
         <in>minimum.s</in>
         <in>power.s</in>
+        <in>readchar.s</in>
         <in>template.asm</in>
         <in>template.s</in>
         <in>toupper.c</in>
@@ -26,6 +29,8 @@
         <in>toupper64.s</in>
       </df>
       <df name="C">
+        <df name="bin">
+        </df>
         <df name="gametuts">
           <in>circ1.c</in>
           <in>circ10.c</in>
@@ -48,12 +53,26 @@
           <in>kouyakusu2.c</in>
           <in>newton.c</in>
         </df>
+        <df name="malib">
+          <in>malib.c</in>
+          <in>malib.h</in>
+          <in>malib.hpp</in>
+          <in>malib2.cpp</in>
+        </df>
+        <df name="Skiena">
+          <in>bfs-demo.c</in>
+          <in>bfs-dfs.c</in>
+          <in>dfs-demo.c</in>
+          <in>dijkstra.c</in>
+          <in>kruskal.c</in>
+          <in>paths.c</in>
+        </df>
         <df name="tracking">
           <in>parse_msg.c</in>
         </df>
         <in>7bits.c</in>
-        <in>aa_usleep_test.c</in>
         <in>arraypointer.c</in>
+        <in>asciiart_sleep.c</in>
         <in>binary.c</in>
         <in>bit_wise.c</in>
         <in>broadcast.c</in>
@@ -80,9 +99,6 @@
         <in>kruskal.c</in>
         <in>linkedlist.c</in>
         <in>listdir_test.c</in>
-        <in>malib.c</in>
-        <in>malib.h</in>
-        <in>malib2.cpp</in>
         <in>matrices.c</in>
         <in>matrices.h</in>
         <in>options.c</in>
@@ -118,12 +134,30 @@
         <in>zSkeleton.c</in>
       </df>
       <df name="C#">
+        <df name="HelloDotnetCore">
+          <df name=".vscode">
+          </df>
+          <df name="bin">
+            <df name="Debug">
+              <df name="netcoreapp1.0">
+              </df>
+            </df>
+          </df>
+          <df name="obj">
+            <df name="Debug">
+              <df name="netcoreapp1.0">
+              </df>
+            </df>
+          </df>
+        </df>
         <df name="LargeResponseApp">
         </df>
         <df name="SampleApp">
         </df>
       </df>
       <df name="C++">
+        <df name=".vscode">
+        </df>
         <df name="algofxt">
           <df name="data">
           </df>
@@ -1829,7 +1863,30 @@
             <in>test.h</in>
           </df>
         </df>
+        <df name="bin">
+        </df>
+        <df name="bits">
+          <df name=".vscode">
+          </df>
+          <in>binary.cpp</in>
+          <in>binpowers.cpp</in>
+          <in>bitwiser.cpp</in>
+          <in>compl.cpp</in>
+          <in>twoscompl.cpp</in>
+        </df>
+        <df name="cforces">
+          <in>parentheses_ops.cpp</in>
+        </df>
         <df name="Codejam">
+          <df name="2013">
+            <df name="qualif">
+              <df name="B-lawnmower">
+                <in>lawnmower.cpp</in>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="codejam">
           <df name="2008">
           </df>
           <df name="2013">
@@ -1855,6 +1912,10 @@
               <in>sol.cpp</in>
             </df>
           </df>
+          <df name="2016">
+            <df name="round1C">
+            </df>
+          </df>
           <df name="2016univ">
             <df name="roundA">
               <in>A-dtyfc.cpp</in>
@@ -1871,181 +1932,385 @@
             </df>
           </df>
         </df>
-        <df name="Competprog">
-          <df name="ch1">
-            <in>ch1_02_scanf.cpp</in>
+        <df name="graph">
+          <df name="Skiena">
+            <in>bfs-demo.c</in>
+            <in>bfs-dfs.c</in>
+            <in>dfs-demo.c</in>
+            <in>dijkstra.c</in>
+            <in>kruskal.c</in>
+            <in>paths.c</in>
           </df>
-          <df name="ch2">
-            <in>ch2_01_array_vector.cpp</in>
-            <in>ch2_02_algorithm_collections.cpp</in>
-            <in>ch2_03_bit_manipulation.cpp</in>
-            <in>ch2_04_stack_queue.cpp</in>
-            <in>ch2_05_map_set.cpp</in>
-            <in>ch2_06_priority_queue.cpp</in>
-            <in>ch2_07_graph_ds.cpp</in>
-            <in>ch2_08_unionfind_ds.cpp</in>
-            <in>ch2_09_segmenttree_ds.cpp</in>
-            <in>ch2_10_fenwicktree_ds.cpp</in>
-          </df>
-          <df name="ch3">
-            <in>01_queens_uva11195.cpp</in>
-            <in>ch3_01_UVa750.cpp</in>
-            <in>ch3_02_UVa11450_td.cpp</in>
-            <in>ch3_03_UVa11450_bu.cpp</in>
-            <in>ch3_04_Max1DRangeSum.cpp</in>
-            <in>ch3_05_UVa108.cpp</in>
-            <in>ch3_06_LIS.cpp</in>
-            <in>ch3_07_UVa10130.cpp</in>
-            <in>ch3_08_UVa674.cpp</in>
-            <in>ch3_09_UVa10496.cpp</in>
-            <in>ch3_10_UVa10943.cpp</in>
-            <in>ch3_11_UVa10003.cpp</in>
-          </df>
-          <df name="ch4">
-            <in>ch4_01_dfs.cpp</in>
-            <in>ch4_02_UVa469.cpp</in>
-            <in>ch4_03_kruskal_prim.cpp</in>
-            <in>ch4_04_bfs.cpp</in>
-            <in>ch4_05_dijkstra.cpp</in>
-            <in>ch4_06_bellman_ford.cpp</in>
-            <in>ch4_07_floyd_warshall.cpp</in>
-            <in>ch4_08_edmonds_karp.cpp</in>
-            <in>ch4_09_mcbm.cpp</in>
-          </df>
-          <df name="ch6">
-            <in>ch6_01_basic_string.cpp</in>
-            <in>ch6_02_kmp.cpp</in>
-            <in>ch6_03_str_align.cpp</in>
-            <in>ch6_04_sa.cpp</in>
-          </df>
+          <in>digraph.cpp</in>
+          <in>graph.cpp</in>
+          <in>undirected.cpp</in>
         </df>
-        <df name="Google20160301">
-          <df name="Task1">
-            <in>task1.cpp</in>
-          </df>
-          <df name="Task2">
-            <in>task2.cpp</in>
-          </df>
-          <df name="Task3">
-            <in>task3.cpp</in>
-          </df>
-          <df name="Template">
-            <in>a.cpp</in>
-          </df>
+        <df name="hrank">
+          <in>2numsum.cpp</in>
+          <in>countshapes.cpp</in>
+          <in>hanoi.cpp</in>
+          <in>jumpclouds.cpp</in>
+          <in>lovtriplets.cpp</in>
+          <in>triplets.cpp</in>
         </df>
-        <df name="ruscup2016w">
-          <df name="airplane">
-            <df name="files">
-              <in>testlib.h</in>
-            </df>
-            <df name="solutions">
-              <in>airplane_dp.cpp</in>
-              <in>airplane_dp2.cpp</in>
-              <in>airplane_dp_tl.cpp</in>
-            </df>
-            <df name="tests">
-            </df>
-          </df>
-          <df name="chaos">
-            <df name="files">
-              <df name="tests">
-                <df name="validator-tests">
-                </df>
+        <df name="malib">
+          <in>malib.c</in>
+          <in>malib.h</in>
+          <in>malib.hpp</in>
+          <in>malib2.cpp</in>
+        </df>
+        <df name="ruscup">
+          <df name="201604warm">
+            <df name="airplane">
+              <df name="files">
+                <in>testlib.h</in>
               </df>
-              <in>gen.cpp</in>
-              <in>testlib.h</in>
+              <df name="solutions">
+                <in>airplane_dp.cpp</in>
+                <in>airplane_dp2.cpp</in>
+                <in>airplane_dp_tl.cpp</in>
+              </df>
+              <df name="tests">
+              </df>
             </df>
-            <df name="solutions">
-              <in>chaos_gs.cpp</in>
-              <in>chaos_gs_brute.cpp</in>
-              <in>chaos_gs_fast.cpp</in>
-              <in>chaos_gs_wa.cpp</in>
-              <in>chaos_gs_wa1.cpp</in>
+            <df name="chaos">
+              <df name="files">
+                <df name="tests">
+                  <df name="validator-tests">
+                  </df>
+                </df>
+                <in>gen.cpp</in>
+                <in>testlib.h</in>
+              </df>
+              <df name="solutions">
+                <in>chaos_gs.cpp</in>
+                <in>chaos_gs_brute.cpp</in>
+                <in>chaos_gs_fast.cpp</in>
+                <in>chaos_gs_wa.cpp</in>
+                <in>chaos_gs_wa1.cpp</in>
+              </df>
+              <df name="tests">
+              </df>
             </df>
-            <df name="tests">
-            </df>
-          </df>
-          <df name="cow">
-            <df name="files">
+            <df name="cow">
+              <df name="files">
+                <in>check.cpp</in>
+                <in>generator.cpp</in>
+                <in>testlib.h</in>
+                <in>validator.cpp</in>
+              </df>
+              <df name="solutions">
+                <in>enot.cpp</in>
+                <in>main_solution_DY.cpp</in>
+              </df>
+              <df name="tests">
+              </df>
               <in>check.cpp</in>
-              <in>generator.cpp</in>
-              <in>testlib.h</in>
-              <in>validator.cpp</in>
             </df>
-            <df name="solutions">
-              <in>enot.cpp</in>
-              <in>main_solution_DY.cpp</in>
-            </df>
-            <df name="tests">
-            </df>
-            <in>check.cpp</in>
-          </df>
-          <df name="k-set-partition">
-            <df name="files">
+            <df name="k-set-partition">
+              <df name="files">
+                <in>check.cpp</in>
+                <in>gen.cpp</in>
+                <in>testlib.h</in>
+                <in>validator.cpp</in>
+              </df>
+              <df name="solutions">
+                <in>k-set-partition_iz.cpp</in>
+                <in>k-set-partition_iz_tl.cpp</in>
+              </df>
+              <df name="tests">
+              </df>
               <in>check.cpp</in>
-              <in>gen.cpp</in>
-              <in>testlib.h</in>
-              <in>validator.cpp</in>
             </df>
-            <df name="solutions">
-              <in>k-set-partition_iz.cpp</in>
-              <in>k-set-partition_iz_tl.cpp</in>
-            </df>
-            <df name="tests">
-            </df>
-            <in>check.cpp</in>
-          </df>
-          <df name="maxsum">
-            <df name="files">
+            <df name="maxsum">
+              <df name="files">
+                <in>check.cpp</in>
+                <in>testlib.h</in>
+              </df>
+              <df name="solutions">
+                <in>enot.cpp</in>
+                <in>maxsum_ip.cpp</in>
+                <in>maxsum_ip_n2.cpp</in>
+              </df>
+              <df name="tests">
+              </df>
               <in>check.cpp</in>
-              <in>testlib.h</in>
             </df>
-            <df name="solutions">
-              <in>enot.cpp</in>
-              <in>maxsum_ip.cpp</in>
-              <in>maxsum_ip_n2.cpp</in>
-            </df>
-            <df name="tests">
-            </df>
-            <in>check.cpp</in>
           </df>
+        </df>
+        <df name="sorts">
+          <df name="malib">
+            <in>malib.c</in>
+            <in>malib.h</in>
+            <in>malib.hpp</in>
+            <in>malib2.cpp</in>
+          </df>
+          <in>quicksort.cpp</in>
+          <in>radixsort.cpp</in>
+          <in>selecsort.cpp</in>
+          <in>shellsort.cpp</in>
+          <in>toposort.cpp</in>
+        </df>
+        <df name="strings">
+          <df name="bin">
+          </df>
+          <df name="malib">
+            <in>malib.c</in>
+            <in>malib.h</in>
+            <in>malib.hpp</in>
+            <in>malib2.cpp</in>
+          </df>
+          <in>anagram.cpp</in>
+          <in>palindrome.cpp</in>
+          <in>pangram.cpp</in>
+          <in>parseints.cpp</in>
+          <in>rmduplicates.cpp</in>
+          <in>streverse.cpp</in>
+          <in>strevwords.cpp</in>
+          <in>strevwords2.cpp</in>
+          <in>strings.cpp</in>
+          <in>strmdups.cpp</in>
+          <in>suffixarrays.cpp</in>
+          <in>uniqchars.cpp</in>
+        </df>
+        <df name="sums">
+          <df name="bin">
+          </df>
+          <df name="malib">
+            <in>malib.c</in>
+            <in>malib.h</in>
+            <in>malib.hpp</in>
+            <in>malib2.cpp</in>
+          </df>
+          <in>A-storecreditAly.cpp</in>
+          <in>allsubsets.cpp</in>
+          <in>coinschange.cpp</in>
+          <in>diagsum.cpp</in>
+          <in>matrixsum.cpp</in>
+          <in>maxdiff.cpp</in>
+          <in>maxsum.cpp</in>
+          <in>orderednums.cpp</in>
+          <in>partialsum.cpp</in>
+          <in>storecredit.cpp</in>
+          <in>wedshopping_uva.cpp</in>
+        </df>
+        <df name="trees">
+          <df name="bin">
+          </df>
+          <df name="malib">
+            <in>malib.c</in>
+            <in>malib.h</in>
+            <in>malib.hpp</in>
+            <in>malib2.cpp</in>
+          </df>
+          <in>btree-depth.cpp</in>
+          <in>segment_tree.cpp</in>
+          <in>segtree.h</in>
+          <in>tree.cpp</in>
         </df>
         <in>Vector.cpp</in>
         <in>assertit.cpp</in>
-        <in>bitwiser.cpp</in>
         <in>bools.cpp</in>
         <in>boost01.cpp</in>
         <in>char_code.cpp</in>
         <in>convbase.cpp</in>
         <in>cpfile.cpp</in>
+        <in>dice.cpp</in>
         <in>digits_pairs725.cpp</in>
-        <in>digraph.cpp</in>
         <in>divisors.cpp</in>
+        <in>enumclass.cpp</in>
+        <in>equilibrium.cpp</in>
+        <in>fibo.cpp</in>
         <in>fltkpipe.cpp</in>
         <in>grep.cpp</in>
         <in>hellofltk.cpp</in>
+        <in>intersareas.cpp</in>
+        <in>intersect.cpp</in>
         <in>lists.cpp</in>
-        <in>malib.h</in>
-        <in>malib2.cpp</in>
-        <in>maxsum.cpp</in>
         <in>nth_perm941.cpp</in>
         <in>palindrome.cpp</in>
         <in>parentheses.cpp</in>
         <in>parse_asn1.cpp</in>
-        <in>segment_tree.cpp</in>
-        <in>selecsort.cpp</in>
-        <in>shellsort.cpp</in>
-        <in>storecredit.cpp</in>
+        <in>rotateimg.cpp</in>
+        <in>searchbin.cpp</in>
+        <in>stlup.cpp</in>
         <in>streamits.cpp</in>
-        <in>streverse.cpp</in>
-        <in>strevwords.cpp</in>
-        <in>strings.cpp</in>
-        <in>strmdups.cpp</in>
-        <in>tree.cpp</in>
+        <in>template.cpp</in>
         <in>tuples.cpp</in>
         <in>unistruct.cpp</in>
         <in>vargs.cpp</in>
+        <in>varrays.cpp</in>
         <in>vectors.cpp</in>
+      </df>
+      <df name="c2go">
+        <df name="doesnotworkyet">
+          <in>array.c</in>
+          <in>binary.c</in>
+          <in>bubble.c</in>
+          <in>calculator.c</in>
+          <in>clean.c</in>
+          <in>counts.c</in>
+          <in>cpfile.c</in>
+          <in>cpintarray.c</in>
+          <in>dui.c</in>
+          <in>enum1.c</in>
+          <in>enum2.c</in>
+          <in>getline.c</in>
+          <in>hmw10.c</in>
+          <in>makebinfile.c</in>
+          <in>merge.c</in>
+          <in>misc.c</in>
+          <in>number.c</in>
+          <in>random.c</in>
+          <in>randompermute.c</in>
+          <in>readbinfile.c</in>
+          <in>selection.c</in>
+          <in>sortmerge.c</in>
+          <in>string2.c</in>
+          <in>stringmerge.c</in>
+          <in>struct.c</in>
+          <in>studentarray.c</in>
+          <in>studentlist.c</in>
+        </df>
+        <df name="wiptxt">
+        </df>
+        <df name="works">
+          <in>add.c</in>
+          <in>add2.c</in>
+          <in>addn.c</in>
+          <in>addresses.c</in>
+          <in>array1.c</in>
+          <in>array2.c</in>
+          <in>codes.c</in>
+          <in>coins.c</in>
+          <in>factorial.c</in>
+          <in>factors1.c</in>
+          <in>fibo.c</in>
+          <in>funcs.c</in>
+          <in>funcs2.c</in>
+          <in>hello.c</in>
+          <in>homework1.c</in>
+          <in>line.c</in>
+          <in>linear.c</in>
+          <in>power2.c</in>
+          <in>prime1.c</in>
+          <in>scope1.c</in>
+          <in>scope2.c</in>
+          <in>shift.c</in>
+          <in>sieve.c</in>
+          <in>string1.c</in>
+          <in>true.c</in>
+        </df>
+        <in>strindex.c</in>
+      </df>
+      <df name="competprog">
+        <df name="ch1">
+          <in>ch1_02_scanf.cpp</in>
+        </df>
+        <df name="ch2">
+          <in>ch2_01_array_vector.cpp</in>
+          <in>ch2_02_algorithm_collections.cpp</in>
+          <in>ch2_03_bit_manipulation.cpp</in>
+          <in>ch2_04_stack_queue.cpp</in>
+          <in>ch2_05_map_set.cpp</in>
+          <in>ch2_06_priority_queue.cpp</in>
+          <in>ch2_07_graph_ds.cpp</in>
+          <in>ch2_08_unionfind_ds.cpp</in>
+          <in>ch2_09_segmenttree_ds.cpp</in>
+          <in>ch2_10_fenwicktree_ds.cpp</in>
+        </df>
+        <df name="ch3">
+          <in>01_queens_uva11195.cpp</in>
+          <in>ch3_01_UVa750.cpp</in>
+          <in>ch3_02_UVa11450_td.cpp</in>
+          <in>ch3_03_UVa11450_bu.cpp</in>
+          <in>ch3_04_Max1DRangeSum.cpp</in>
+          <in>ch3_05_UVa108.cpp</in>
+          <in>ch3_06_LIS.cpp</in>
+          <in>ch3_07_UVa10130.cpp</in>
+          <in>ch3_08_UVa674.cpp</in>
+          <in>ch3_09_UVa10496.cpp</in>
+          <in>ch3_10_UVa10943.cpp</in>
+          <in>ch3_11_UVa10003.cpp</in>
+        </df>
+        <df name="ch4">
+          <in>ch4_01_dfs.cpp</in>
+          <in>ch4_02_UVa469.cpp</in>
+          <in>ch4_03_kruskal_prim.cpp</in>
+          <in>ch4_04_bfs.cpp</in>
+          <in>ch4_05_dijkstra.cpp</in>
+          <in>ch4_06_bellman_ford.cpp</in>
+          <in>ch4_07_floyd_warshall.cpp</in>
+          <in>ch4_08_edmonds_karp.cpp</in>
+          <in>ch4_09_mcbm.cpp</in>
+        </df>
+        <df name="ch6">
+          <in>ch6_01_basic_string.cpp</in>
+          <in>ch6_02_kmp.cpp</in>
+          <in>ch6_03_str_align.cpp</in>
+          <in>ch6_04_sa.cpp</in>
+        </df>
+        <df name="libcompetprog">
+          <df name="codes">
+            <df name="combinatorics">
+              <in>counting_permutations_under_constraints.cpp</in>
+            </df>
+            <df name="computational-geometry">
+              <df name="2-d">
+                <in>areas_of_a_circle_set.cpp</in>
+                <in>circle.cpp</in>
+                <in>convex_hull.cpp</in>
+                <in>diameter_of_a_point_set.cpp</in>
+                <in>dynamic_convex_hull.cpp</in>
+                <in>half_plane_intersection_fast.cpp</in>
+                <in>half_plane_intersection_slow.cpp</in>
+                <in>point.cpp</in>
+                <in>relationship_between_line_and_convex_polygon.cpp</in>
+                <in>relationship_between_line_segments.cpp</in>
+                <in>relationship_between_point_and_convex_polygon.cpp</in>
+                <in>relationship_between_point_and_line.cpp</in>
+                <in>relationship_between_point_and_line_segment.cpp</in>
+                <in>relationship_between_point_and_polygon.cpp</in>
+              </df>
+              <df name="3-d">
+                <in>convex_hull.cpp</in>
+                <in>point.cpp</in>
+                <in>relationship_between_line_segment_and_plane.cpp</in>
+                <in>relationship_between_lines.cpp</in>
+                <in>relationship_between_point_and_line.cpp</in>
+                <in>relationship_between_point_and_line_segment.cpp</in>
+                <in>relationship_between_point_and_plane.cpp</in>
+              </df>
+              <in>common.cpp</in>
+            </df>
+            <df name="data_structures">
+              <in>binary_indexed_tree.cpp</in>
+              <in>disjoint_set.cpp</in>
+              <in>inversion_number.cpp</in>
+              <in>kd_tree.cpp</in>
+              <in>link_cut_tree.cpp</in>
+            </df>
+            <df name="number_theory">
+              <in>finding_primes.cpp</in>
+              <in>greatest_common_divisor_least_common_multiple.cpp</in>
+              <in>modular_exponentiation.cpp</in>
+              <in>modular_multiplicative_inverse.cpp</in>
+            </df>
+            <df name="string_processing">
+              <in>longest_palindromic_substring.cpp</in>
+            </df>
+          </df>
+          <df name="combinatorics">
+          </df>
+          <df name="computational-geometry">
+          </df>
+          <df name="data_structures">
+          </df>
+          <df name="number_theory">
+          </df>
+          <df name="string_processing">
+          </df>
+        </df>
       </df>
       <df name="eDimExch">
         <df name="docs">
@@ -2118,7 +2383,121 @@
           </df>
         </df>
       </df>
-      <in>malib.h</in>
+      <df name="Go">
+        <df name=".vscode">
+        </df>
+        <df name="bin">
+        </df>
+        <df name="goweb">
+          <df name="data">
+          </df>
+          <df name="views">
+          </df>
+        </df>
+        <df name="pkg">
+          <df name="linux_amd64">
+            <df name="github.com">
+              <df name="makhtardiouf">
+              </df>
+            </df>
+            <df name="golang.org">
+              <df name="x">
+                <df name="tour">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="github.com">
+            <df name="makhtardiouf">
+              <df name="hello">
+              </df>
+              <df name="mutils">
+              </df>
+            </df>
+          </df>
+          <df name="golang.org">
+            <df name="x">
+              <df name="tour">
+                <df name="content">
+                  <df name="basics">
+                  </df>
+                  <df name="concurrency">
+                  </df>
+                  <df name="flowcontrol">
+                  </df>
+                  <df name="img">
+                  </df>
+                  <df name="methods">
+                  </df>
+                  <df name="moretypes">
+                  </df>
+                  <df name="welcome">
+                  </df>
+                </df>
+                <df name="gotour">
+                </df>
+                <df name="pic">
+                </df>
+                <df name="reader">
+                </df>
+                <df name="solutions">
+                </df>
+                <df name="static">
+                  <df name="css">
+                  </df>
+                  <df name="img">
+                  </df>
+                  <df name="js">
+                  </df>
+                  <df name="lib">
+                    <df name="codemirror">
+                      <df name="lib">
+                      </df>
+                      <df name="mode">
+                        <df name="go">
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="partials">
+                  </df>
+                </df>
+                <df name="template">
+                </df>
+                <df name="tools">
+                </df>
+                <df name="tree">
+                </df>
+                <df name="wc">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="Google20160301">
+        <df name="Task1">
+          <in>task1.cpp</in>
+        </df>
+        <df name="Task2">
+          <in>task2.cpp</in>
+        </df>
+        <df name="Task3">
+          <in>task3.cpp</in>
+        </df>
+        <df name="Template">
+          <in>a.cpp</in>
+        </df>
+      </df>
+      <df name="malib">
+        <in>malib.c</in>
+        <in>malib.h</in>
+        <in>malib.hpp</in>
+        <in>malib2.cpp</in>
+      </df>
+      <in>rbtree01.c</in>
     </df>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

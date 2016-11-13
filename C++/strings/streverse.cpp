@@ -1,6 +1,6 @@
 /*
  * Author: makhtar
- * Reverse a string in place
+ * Reverse C-style strings in place
  * Created on February 7, 2016, 1:15 PM
  * $Id$
  */

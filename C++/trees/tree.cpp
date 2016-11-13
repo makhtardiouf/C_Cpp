@@ -1,5 +1,5 @@
 /**
- Algo design manual, classic Tree data structure
+ Algo design manual, classic Tree value structure
  Makhtar Diouf
  $Id$
  Build: make tree
@@ -12,56 +12,56 @@ using namespace std;
 
 template <typename T> class Tree {
   // A Tree of trees/nodes
-  
+
 private:
   typedef struct node {
-    T value; // data
+    T value; // value
     struct node *parent;
     struct node *left;
     struct node *right;
-  } node;  
+  } node;
 
 public:
-  node *root;
-  
+  node *root = new node;
+
   Tree(T a) {
     node n;
     n.value = a;
   };
-  
+
   Tree(vector<T> v) {
-    // insert root
-    insert(nullptr, v[0], nullptr);
-    
     for (int i = 1; i < v.size(); i++)
-      insert(&root, v[i], root);
-    
-    // traverse(&root);    
+      insert(v[i]);
     cout << endl;
   }
 
-  void insert(node **l, T x, node *parent) {
-    node *p;
-    if ((root == nullptr) || (*l == nullptr)) {
-      p = new node; /* allocate new node */
-      p->value = x;
-      p->left = p->right = nullptr;
-      p->parent = parent;
+  void insert(int d) {
+    node *t = new node;
+    t->value = d;
+    t->left = t->right = nullptr;
+    node *parent = nullptr;
 
-      // 1st node to be added to the node
-      if (root == nullptr) {
-        root = p;
-      } else
-        // link into parent’s record
-        *l = p;
+    // is this a new tree?
+    if (root == nullptr)
+      root = t;
+    else {
+      // Note: ALL insertions are as leaf nodes
+      node *curr;
+      curr = root;
+      // Find the Node's parent
+      while (curr) {
+        parent = curr;
+        if (t->value > curr->value)
+          curr = curr->right;
+        else
+          curr = curr->left;
+      }
 
-      return;
+      if (t->value < parent->value)
+        parent->left = t;
+      else
+        parent->right = t;
     }
-
-    if (x < (*l)->value)
-      insert(&((*l)->left), x, *l);
-    else
-      insert(&((*l)->right), x, *l);
   }
 
   node *search(node *l, T x) {
@@ -80,12 +80,13 @@ public:
     node *min;
     // pointer to minimum
     if (t == nullptr)
-      return (nullptr);
+      return nullptr;
+
     min = t;
     // Keep going to the left till the last leaf
     while (min->left != nullptr)
       min = min->left;
-    return (min);
+    return min;
   }
 
   void traverse(node **l) {
@@ -99,25 +100,22 @@ public:
   }
 
   // Pretty-printing
-  void printPostorder(node *p, int indent = 0) {
-    if (p == nullptr) {
-      cout << "No nodes detected at this position\n";
-      return;
-    }
-    std::cout << p->value << "\n ";
-    if (p->right) {
-      std::cout << " \\\n" << ' ';
-      printPostorder(p->right, indent + 4);
-    }
-    if (indent) {
-      ; // std::cout << std::setw(indent) << ' ';
-    }
-    // if (p->right) std::cout<<" /\n" << std::setw(indent) << ' ';
-    // std::cout<< p->value << "\n ";
+  // http://stackoverflow.com/questions/13484943/print-a-binary-tree-in-a-pretty-way
+  void printPorder(node *p = nullptr, int indent = 4) {
+    if (p == nullptr)
+      p = root;
+    if (p->right)
+      printPorder(p->right, indent + 4);
 
+    if (indent)
+      std::cout << std::setw(indent) << ' ';
+    if (p->right)
+      std::cout << " /\n" << std::setw(indent) << ' ';
+
+    std::cout << p->value << "\n ";
     if (p->left) {
-      std::cout << " /\n";
-      printPostorder(p->left, indent + 4);
+      std::cout << std::setw(indent) << ' ' << " \\\n";
+      printPorder(p->left, indent + 4);
     }
   }
 };
@@ -125,8 +123,8 @@ public:
 int main() {
   vector<int> v{4, 40, 2, 5, 3, 1, 10};
   printV(v);
-  
+
   auto t = new Tree<int>(v);
-  t->printPostorder(t->root);
+  t->printPorder();
   return 0;
 }

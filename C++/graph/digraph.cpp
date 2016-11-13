@@ -1,5 +1,5 @@
 /**
-   Complete Direct graphes demo using the FXT lib
+   Complete Directed graphes demo using the FXT lib
    Makhtar Diouf
    $Id$
    c++ digraph.cpp -o digraph -I../malib/ -I/usr/local/include/fxt/ -lfxt

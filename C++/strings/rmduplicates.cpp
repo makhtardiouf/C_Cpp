@@ -15,7 +15,7 @@ string rmDuplicates(string s) {
   uint32_t sz = s.size();
   std::unordered_map<char, int> m(sz);
 
-  for (int i = 0; i < sz; i++) {
+  for (uint32_t i = 0; i < sz; i++) {
     ch = s[i];
     m[ch]++;
     if (m[ch] > 1) {
@@ -24,7 +24,6 @@ string rmDuplicates(string s) {
       --i;
     }
   }
-
   return s;
 }
 
