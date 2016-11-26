@@ -39,12 +39,26 @@ int main(int argc, char **argv)
         if ((i % k == 0))
             i = 0;
     }
-    inp.close();
 
-    for (i = 0; i < lines.size(); i++)
+    int start = (i == 0 ? i : i - 1);
+    int num = 0;
+
+    for (i = start; i < lines.size(); i++)
     {
-        printf("\n%d: %s", i + 1, lines[i].c_str());
+        printf("\n%d: %s", num, lines[i].c_str());
+        num++;
+    }
+
+    // When input ended before i reached k
+    if (start != 0)
+    {
+        for (i = 0; i < start; i++)
+        {
+            printf("\n%d: %s", num, lines[i].c_str());
+            num++;
+        }
     }
     cout << endl;
+    inp.close();
     return 0;
 }
