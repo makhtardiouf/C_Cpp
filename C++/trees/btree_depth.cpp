@@ -1,5 +1,9 @@
+/**
+  Link nodes of the tree that are at the same depth
+  Using queues. Can also use linked lists
+*/
 #include <cstdio>
-//#include <iostream>
+#include <iostream>
 #include <queue>
 
 using namespace std;
