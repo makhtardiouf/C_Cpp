@@ -5,12 +5,10 @@
  Build: make bstree
 */
 #include "malib.hpp"
-#include <algorithm>
-#include <initializer_list>
-#include <iomanip>
-#include <iostream>
 #include <cstdlib>
 #include <ctype.h>
+#include <initializer_list>
+#include <iomanip>
 using namespace std;
 
 template <typename ValT> class BsTree {
@@ -23,11 +21,11 @@ private:
     could be an index assigned when building the tree
     */
     KeyT key;
-    ValT value;
+    ValT data;
     Node *parent, *left, *right;
 
     Node(ValT val) {
-      value = val;
+      data = val;
       parent = left = right = nullptr;
     };
   } Node;
@@ -40,13 +38,29 @@ public:
   BsTree(KeyT k, ValT v) {
     Node nd;
     nd.key = k;
-    nd.value = v;
+    nd.data = v;
   };
 
   template <typename T> BsTree(T v) {
     std::sort(v.begin(), v.end());
     for (auto el : v)
       insert(el);
+  }
+
+  //@Todo complete
+  Node *insert(Node *cur, ValT val) {
+    if (!cur)
+      return cur;
+
+    int cmp = val - cur->data;
+    if (cmp > 0) {
+      cur->right = insert(cur->right, val);
+    } else if (cmp < 0) {
+      cur->left = insert(cur->left, val);
+    } else
+      cur->data = val; // update
+
+    return cur;
   }
 
   void insert(ValT val) {
@@ -65,28 +79,28 @@ public:
     // Find the Node's parent; @Todo check for duplicates using the key
     while (cur) {
       parent = cur;
-      if (newNode->value > cur->value)
+      if (newNode->data > cur->data)
         cur = cur->right;
       else
         cur = cur->left;
     }
 
-    if (newNode->value < parent->value)
+    if (val < parent->data)
       parent->left = newNode;
     else
       parent->right = newNode;
 
-    cout << "Inserted " << val << " after " << parent->value << endl;
+    cout << "Inserted " << val << " after " << parent->data << endl;
   }
 
   // O(log N) complexity
   Node *search(Node *nd, ValT x) {
     if (nd == nullptr)
       return nd;
-    if (nd->value == x)
+    if (nd->data == x)
       return nd;
 
-    if (x < nd->value)
+    if (x < nd->data)
       return search(nd->left, x);
     else
       return search(nd->right, x);
@@ -99,7 +113,7 @@ public:
     // Traverse towards the left till the last leaf
     while (min->left)
       min = min->left;
-    return min->value;
+    return min->data;
   }
 
   ValT getMax(Node *max = nullptr) {
@@ -109,14 +123,14 @@ public:
     // Traverse towards the right, till last leaf
     while (max->right)
       max = max->right;
-    return max->value;
+    return max->data;
   }
 
   // Pre-order traversal - should indent depending on the level
   void traverse(Node *nd) {
     if (!nd)
       return;
-    cout << "\t  " << nd->value << "\n\t / ";
+    cout << "\t  " << nd->data << "\n\t / ";
     traverse(nd->left);
 
     cout << "\t \\ ";
@@ -133,12 +147,12 @@ int main() {
   // tree->traverse(tree->root);
   printf("Tree min: %d, max: %d\n", tree->getMin(), tree->getMax());
 
-  printf("\nTree of chars:\n");
+  printf("\nTree of alpha chars:\n");
   auto ctree = new BsTree<char>();
   for (int i = 0; i < 40; i++) {
     char c = (char)(rand() % 120);
-    if(isalpha(c))
-    ctree->insert(c);
+    if (isalpha(c))
+      ctree->insert(c);
   }
   printf("Tree min: %c, max: %c\n", ctree->getMin(), ctree->getMax());
 

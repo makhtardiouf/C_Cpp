@@ -21,7 +21,6 @@ Makhtar Diouf
 #include <cstdio>
 #include <cstdlib>
 #include <functional> // std::hash
-#include <iostream>
 #include <limits>
 #include <list>
 #include <sstream>

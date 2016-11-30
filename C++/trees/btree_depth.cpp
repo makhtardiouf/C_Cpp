@@ -55,24 +55,24 @@ public:
     if (root == nullptr)
       return;
 
-    int nnodes = 0;
+    int count = 0;
     queue<node *> q;
     q.push(root);
 
     for (;;) {
-      nnodes = q.size();
-      if (nnodes == 0)
+      count = q.size();
+      if (count == 0)
         break;
 
       node *prev = q.front();
-      int n = nnodes;
-      while (nnodes > 0) {
+      int n = count;
+      while (count > 0) {
         node *next = q.front();
         q.pop();
 
-        if (nnodes != n)
+        if (count != n)
           prev->nRight = next;
-        else if (nnodes == 1)
+        else if (count == 1)
           next->nRight = nullptr;
 
         if (next->left)
@@ -81,7 +81,7 @@ public:
           q.push(next->right);
 
         prev = next;
-        nnodes--;
+        count--;
       }
     }
   }
