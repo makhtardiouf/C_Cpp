@@ -4,21 +4,24 @@ Select nearest elevator to user's floor
 Makhtar Diouf
 */
 #include <bits/stdc++.h>
+#include <functional>
 using namespace std;
+
+static char elevIdx = 'A';
+int numFloors = 13;
 
 class Elevator {
 private:
   int floor = 1;
-  int numFloors = 10;
   string id = "Elevator";
+  std::hash<string> hashFunc;
 
 public:
   Elevator() {
-    static char  elevIdx = 'A';
     floor = rand() % numFloors;
     id = id + " " + elevIdx;
     elevIdx++;
-    printf("Set %s @floor %d\n", id.c_str(), floor);
+    printf("\tSet %s @%dF\n", id.c_str(), floor);
   }
 
   int getFloor() { return floor; }
@@ -29,17 +32,19 @@ public:
     int idx = floor - _floor;
     if (idx == 0)
       return true;
-    else if (idx > 0) {
-      while (floor != _floor)
-        floor--;
-      printf("%s moved to floor %d\n", id.c_str(), floor);
-      return true;
-    }
 
-    while (floor != _floor) {
-      floor++;
-      printf("%s moved to floor %d\n", id.c_str(), floor);
+    else if (idx > 0) {
+      while (floor != _floor) {
+        floor--;
+        printf("\t\t...%s moved to %dF\n", id.c_str(), floor);
+      }
+    } else {
+      while (floor != _floor) {
+        floor++;
+        printf("\t\t...%s moved to %dF\n", id.c_str(), floor);
+      }
     }
+    printf("\t\t...arrived\n");
     return true;
   }
 };
@@ -48,58 +53,53 @@ class Building {
 private:
   int numElevators = 5;
   // Multimap in case several elevators are at the same floor
-  map<int, Elevator> elMap;
+  multimap<int, Elevator> elMap;
 
 public:
   Building() {
     for (int i = 0; i < numElevators; i++) {
       Elevator el;
-      elMap[el.getFloor()] = el;
+      elMap.insert(std::make_pair(el.getFloor(), el));
     }
-    printf("Created Building\n");
+    printf("\nCreated Building\n");
   };
 
   // Call nearest elevator
-  bool callElevatorTo(int floor = 1) {
+  bool sendElevatorTo(int floor = 1) {
     try {
       auto el = elMap.find(floor);
       if (el != elMap.end()) {
-        printf("Selecting %s already @floor %d\n", el->second.getId().c_str(), floor);
+        printf("Selecting %s already @ %dF\n", el->second.getId().c_str(),
+               floor);
         return true;
       }
 
-      /**
-      equal_range returns a pair of iterators defining the wanted range: the
-      first
-      pointing to the first element that is not less(?) than key (lower_bound) and the second
-      pointing to the first element greater than key (upper_bound).
-      */
-      auto nearest = elMap.equal_range(floor);
-      auto it = nearest.first;
+      // Find the first element that is not less(?) than key (lower_bound)
+      auto nearest = elMap.lower_bound(floor);
       Elevator elv;
-      if ((it!= elMap.end()) && (abs(it->second.getFloor() - floor) <= 1))
-        elv = it->second;
-      else if (nearest.second != elMap.end())
-        elv = nearest.second->second;
-      else {
-        printf("Critical error: No matching elevator found near floor %d!\n",
-               floor);
-        return false;
-      }
-      printf("Sending %s from floor %d -> to floor %d\n", elv.getId().c_str(), elv.getFloor(), floor);
+      if ((nearest != elMap.end()) &&
+          (abs(nearest->second.getFloor() - floor) <= 1))
+        elv = nearest->second;
+      else
+        elv = (--nearest)->second;
+
+      printf("\tSending %s from %dF -> to %dF\n", elv.getId().c_str(),
+             elv.getFloor(), floor);
       elv.moveTo(floor);
       return true;
 
     } catch (exception e) {
-      fprintf(stderr, "Error while calling elevator to floor %d\n", floor);
+      fprintf(stderr, "Error while calling elevator to %dF\n", floor);
       return false;
     }
   }
 };
 
 int main() {
-    Building b;
-    b.callElevatorTo(3);
-    return 0;
-
-    }
+  Building b;
+  for (int i = 0; i < 3; i++) {
+    printf("\n*** Test No. %d\n", i);
+    b.sendElevatorTo(rand() % numFloors + i);
+  }
+  return 0;
+}
