@@ -15,11 +15,13 @@ template <typename ValT> class BsTree {
 
 private:
   typedef int KeyT; // tmp
+
+  /**
+  Tree Node
+  @todo: Check the role and data type of the key
+  could be an index assigned when building the tree
+  */
   typedef struct Node {
-    /**
-    @todo: Check the role and data type of the key
-    could be an index assigned when building the tree
-    */
     KeyT key;
     ValT data;
     Node *parent, *left, *right;
@@ -33,6 +35,7 @@ private:
 public:
   Node *root = new Node((ValT)0);
 
+  // Constructors
   BsTree(){};
 
   BsTree(KeyT k, ValT v) {
@@ -43,24 +46,33 @@ public:
 
   template <typename T> BsTree(T v) {
     std::sort(v.begin(), v.end());
+    printV(v);
+
+    // Use mid element as root, to balance the tree
+    root = new Node((ValT)v[v.size() / 2]);
+    v.erase(v.begin() + v.size() / 2);
+
     for (auto el : v)
       insert(el);
   }
 
-  //@Todo complete
-  Node *insert(Node *cur, ValT val) {
-    if (!cur)
-      return cur;
+  /**
+  Insert vis-a-vis node x, downward
+  @Todo complete
+  */
+  Node *insert(Node *x, ValT val) {
+    if (!x)
+      return x;
 
-    int cmp = val - cur->data;
+    int cmp = val - x->data;
     if (cmp > 0) {
-      cur->right = insert(cur->right, val);
+      x->right = insert(x->right, val);
     } else if (cmp < 0) {
-      cur->left = insert(cur->left, val);
+      x->left = insert(x->left, val);
     } else
-      cur->data = val; // update
+      x->data = val; // update
 
-    return cur;
+    return x;
   }
 
   void insert(ValT val) {
@@ -110,7 +122,7 @@ public:
     if (!min)
       min = root;
 
-    // Traverse towards the left till the last leaf
+    // traversePreOrder towards the left till the last leaf
     while (min->left)
       min = min->left;
     return min->data;
@@ -120,35 +132,37 @@ public:
     if (!max)
       max = root;
 
-    // Traverse towards the right, till last leaf
+    // traversePreOrder towards the right, till last leaf
     while (max->right)
       max = max->right;
     return max->data;
   }
 
   // Pre-order traversal - should indent depending on the level
-  void traverse(Node *nd) {
+  void traversePreOrder(Node *nd) {
     if (!nd)
       return;
     cout << "\t  " << nd->data << "\n\t / ";
-    traverse(nd->left);
+    traversePreOrder(nd->left);
 
     cout << "\t \\ ";
-    traverse(nd->right);
+    traversePreOrder(nd->right);
     cout << endl;
   }
 };
 
 int main() {
-  vector<int> v{-1, 40, 22, 5, 9, 1, 10};
+  vector<int> v{-1, 40, 22, 5, 9, 1, 10, 30, -18};
   printV(v);
 
   auto tree = new BsTree<int>(v);
-  // tree->traverse(tree->root);
+  // tree->traversePreOrder(tree->root);
   printf("Tree min: %d, max: %d\n", tree->getMin(), tree->getMax());
 
   printf("\nTree of alpha chars:\n");
   auto ctree = new BsTree<char>();
+  ctree->root->data = 'L';
+
   for (int i = 0; i < 40; i++) {
     char c = (char)(rand() % 120);
     if (isalpha(c))

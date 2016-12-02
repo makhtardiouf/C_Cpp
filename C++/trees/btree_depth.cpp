@@ -51,6 +51,7 @@ public:
     }
   }
 
+// BFS ?
   void Linknodes() {
     if (root == nullptr)
       return;

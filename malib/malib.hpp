@@ -1,6 +1,6 @@
 /** $Id$
   Collection of C++ routines for libmalib
-  (C) Mahtar Diouf 2016
+  (C) Makhtar Diouf 2016
 */
 #ifndef MALIB_HPP
 #define MALIB_HPP
