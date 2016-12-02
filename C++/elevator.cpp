@@ -28,6 +28,7 @@ public:
 
   string getId() { return id; }
 
+  // Move the elevator to the indicated floor
   bool moveTo(int _floor = 1) {
     int idx = floor - _floor;
     if (idx == 0)
@@ -85,7 +86,12 @@ public:
 
       printf("\tSending %s from %dF -> to %dF\n", elv.getId().c_str(),
              elv.getFloor(), floor);
+
+      // Move and update the key to the new location
       elv.moveTo(floor);
+      if (nearest != elMap.end())
+        elMap.erase(nearest);
+      elMap.insert(std::make_pair(floor, elv));
       return true;
 
     } catch (exception e) {
@@ -97,7 +103,7 @@ public:
 
 int main() {
   Building b;
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 4; i++) {
     printf("\n*** Test No. %d\n", i);
     b.sendElevatorTo(rand() % numFloors + i);
   }
