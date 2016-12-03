@@ -16,8 +16,7 @@
 
 using namespace std;
 
-template <typename ValT>
-class BsTree {
+template <typename ValT> class BsTree {
 
 private:
   typedef int KeyT; // tmp
@@ -31,12 +30,25 @@ private:
     KeyT key;
     ValT data;
     Node *parent, *left, *right;
+    int N = 0; // Nodes in subtree
 
     Node(ValT val) {
       data = val;
       parent = left = right = nullptr;
     };
   } Node;
+
+  int size(Node x) {
+    if (x == null)
+      return 0;
+    return x.N;
+  }
+
+  void insert(ValT val);
+
+  inline int rank(KeyT key) { return rank(key, root); }
+
+    inline void delete(Key key){ root = delete(root, key); }
 
 public:
   Node *root = new Node((ValT)0);
@@ -46,24 +58,23 @@ public:
   BsTree(KeyT k, ValT v);
   template <typename T> BsTree(T v);
 
-    // Operations
+  // Operations
   Node *insert(Node *x, ValT val);
-  void insert(ValT val);
-
   Node *search(Node *nd, ValT x);
+  int rank(KeyT key, Node x);
+  Node delete(Node x, Key key) ;
 
   ValT getMin(Node *min = nullptr);
   ValT getMax(Node *max = nullptr);
 
   void traversePreOrder(Node *nd);
 
-  inle int rank(KeyT key) { return rank(key, root); }
+  inline int size() { return size(root); }
 
-int rank(KeyT key, Node x);
+  queue<KeyT> keys();
 
-queue<KeyT> keys();
-
-void inOrderTraversal(Node x, queue<KeyT> q);
+// == One type of DFS without looking for a particular element
+  void inOrderTraversal(Node x, queue<KeyT> q);
 
 };
 

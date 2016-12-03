@@ -8,6 +8,7 @@ Makhtar
 */
 #include <algorithm>
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
@@ -23,23 +24,23 @@ public:
   };
 };
 
-int chkDepth(Node *T) {
+int chkDepth(Node *x) {
   static int depth = 0;
-  if (!T)
+  if (!x)
     return 0;
   depth++;
 
-  printf("\t\nCHK depth: %d -> %c", depth, T->data);
-  return 1 + std::max(chkDepth(T->left), chkDepth(T->right));
+  printf("\t\nCHK depth: %d -> %c", depth, x->data);
+  return 1 + std::max(chkDepth(x->left), chkDepth(x->right));
 }
 
 // In one go
-bool isBalanced(Node *T) {
-  auto depth = std::minmax(chkDepth(T->left), chkDepth(T->right));
+bool isBalanced(Node *x) {
+  auto depth = std::minmax(chkDepth(x->left), chkDepth(x->right));
 
   printf("\t\nminDepth: %d, maxDepth: %d", depth.first, depth.second);
 
-  return (depth.second - depth.first) <= 1;
+  return abs(depth.second - depth.first) <= 1;
 }
 
 int main() {

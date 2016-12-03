@@ -2,17 +2,17 @@
 # For C++ folder
 
 FLAGS=-Imalib/ -Lmalib/ -lmalib
-CXX=clang++-4.0 -std=c++11 -g -Wall -fPIC $(FLAGS) -o $@ 
+CXX=clang++-4.0 -std=c++11 -g -Wall -fPIC $(FLAGS) -o $@
 
 OBJS=malib.o malib2.o socket.o
-LINK=ld -o $@ $@.o $(FLAGS) malib/libmalib.a 
+LINK=ld -o $@ $@.o $(FLAGS) malib/libmalib.a
 #LINKPP=c++ -o $@ $@.o $(FLAGS)
 
-all: bin 
+all: bin
 	make malib/libmalib.a
 
 bin :
-	@mkdir -p bin        
+	@mkdir -p bin
 
 malib/libmalib.a:
 	cd malib; make; cd ..
@@ -20,7 +20,7 @@ malib/libmalib.a:
 
 strings:
 	$(CXX) $< strings.cpp  malib/libmalib.a -lasprintf
-	
+
 divisors:
 	$(CXX) $< divisors.cpp -I/usr/local/include/fxt -lfxt
 	mv $@ bin/
@@ -34,10 +34,14 @@ hellofltk:
 lists:
 	echo # pass
 
+elevator:
+	$(CXX) $< elevator.cpp -lpthread
+	@mv $@ bin/
+
 .cpp: malib/libmalib.a
 	if [ ! -d "bin" ]; then \
 		make all; fi
 
-	$(CXX) $<  malib/libmalib.a 
+	$(CXX) $<  malib/libmalib.a
 	@mv $@ bin/
 	@echo bin/$@ ":\t\tOK"

@@ -1,9 +1,11 @@
-
 /**
 Algo design manual P165
-
 Graph using Adjacency Lists
 Directed edge (x, y) is represented by a node-y in node-x’s adjacency list
+
+Graph = Set of vertices connected pairwise by edges.
+Vertice = Node
+Edge = Link, Path
 */
 #include <cstdio>
 #include <cstdlib>
@@ -86,7 +88,7 @@ void printGraph(graph *g) {
   for (i = 1; i <= g->nvertices; i++) {
     printf("%d: ", i);
     p = g->edges[i];
-    
+
     while (p != nullptr) {
       printf(" %d", p->y);
       p = p->next;

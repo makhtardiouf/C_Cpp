@@ -7,7 +7,7 @@ Makhtar Diouf
 #include <functional>
 using namespace std;
 
-static char elevIdx = 'A';
+char elevIdx = 'A';
 int numFloors = 13;
 
 class Elevator {
