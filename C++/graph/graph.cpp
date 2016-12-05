@@ -65,7 +65,7 @@ void insertEdge(graph *g, int x, int y, bool directed) {
 }
 
 
-// Building the graph for a file's content
+// Building the graph from a file's content
 void readGraph(graph *g, bool directed) {
   int i;    // counter
   int m;    // number of edges

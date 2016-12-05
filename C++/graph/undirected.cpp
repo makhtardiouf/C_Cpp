@@ -47,7 +47,7 @@ public:
     }
   }
 
-  // 2 Vertices are connected
+  // 2 connected Vertices
   bool isEdge(int i, int j) {
     if (i >= 0 && i < nV && j > 0 && j < nV)
       return adjM[i][j];
