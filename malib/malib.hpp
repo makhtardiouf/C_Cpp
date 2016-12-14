@@ -21,9 +21,15 @@ typedef std::vector<ii> vii;
 typedef std::vector< std::vector<int> > vvi;
 typedef unsigned long long ull;
 
+// Maximum sum of 1D vector
+int maxSum(std::vector<int> &v);
+
 // Maximum sum of 2D vector subsets
-int maxSum(vvi &v);
+template <typename T> T maxSum2D(std::vector< std::vector<T> > &v);
+
 enum Range { SUM = 0, MIN, MAX };
+
+// Maximum sum of ranges of size M
 extern ull rangeMaxSum(std::vector<ull> &a, ull M);
 
 // Binary search

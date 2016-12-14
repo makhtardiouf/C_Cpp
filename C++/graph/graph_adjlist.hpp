@@ -16,7 +16,7 @@ Ref: http://stackoverflow.com/questions/5493474/graph-implementation-c
 
 using namespace std;
 
-struct vertex {
+template <typename T> struct vertex {
   // Cost of edge to destination vertex
   typedef pair<int, vertex *> ve;
 
@@ -24,37 +24,41 @@ struct vertex {
   set<ve> adj;
 
   // Payload
-  string name;
-  vertex(string s) : name(s) {}
+  T name;
+  vertex(T s) : name(s) {}
 };
 
-class Graph {
+template <typename T> class Graph {
 private:
   bool isDirected = false;
-  map<string, vertex *> vertices;
+  map<T, vertex<T> *> vertices;
 
 public:
-  void addVertex(string);
-  void addEdge(string from, string to, int cost);
-  bool isEdge(string from, string to);
+  void addVertex(T);
+  vertex<T> getVertex(T);
+  void addEdge(T from, T to, int cost);
+  bool isEdge(T from, T to);
 
   Graph(bool directed) { isDirected = directed; }
 };
 
-void Graph::addVertex(string name) {
-  // Check existing in O(n log n)
-  if (vertices.find(name) != vertices.end()) {
-    printf("\nVertex %s already exists!", name.c_str());
-    return;
-  }
-  vertex *v = new vertex(name);
-  vertices[name] = v;
+template <typename T>
+void Graph<T>::addVertex(T name) {
+  // map will skip over duplicates
+  // Complexity:  O(log(vertices.size()))
+  vertices[name] = new vertex<T>(name);
 }
 
-void Graph::addEdge(string from, string to, int cost) {
-  vertex *f = vertices.find(from)->second;
-  vertex *t = vertices.find(to)->second;
-  pair<int, vertex *> edge = make_pair(cost, t);
+template <typename T>
+vertex<T> Graph<T>::getVertex(T v) {
+  return vertices.find(v)->second;
+}
+
+template <typename T>
+void Graph<T>::addEdge(T from, T to, int cost) {
+  auto f = vertices.find(from)->second;
+  auto t = vertices.find(to)->second;
+  auto edge = make_pair(cost, t);
   f->adj.insert(edge);
 
   if (!isDirected) {
@@ -63,17 +67,20 @@ void Graph::addEdge(string from, string to, int cost) {
   }
 }
 
-bool Graph::isEdge(string from, string to) {
-  vertex *f = vertices.find(from)->second;
-  vertex *t = vertices.find(to)->second;
+template <typename T>
+bool Graph<T>::isEdge(T from, T to) {
+  auto f = vertices.find(from)->second;
+  auto t = vertices.find(to)->second;
 
   for(auto el : f->adj) {
     if (el.second == t)
       return true;
   }
+  if(!isDirected) {
   for (auto el : t->adj) {
     if (el.second == f)
       return true;
+  }
   }
   return false;
 }

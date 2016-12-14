@@ -40,17 +40,20 @@ std::ostream &operator<<(std::ostream &ostr,
   return ostr;
 }
 
+// Maximum sum of ranges of size M
 ull rangeMaxSum(std::vector<ull> &a, ull M) {
+  // -INF
   ull ans = std::numeric_limits<ull>::min();
 
-  ull mn = 0, s = 0;
+  ull mn = 0, sum = 0;
   for (ull i = 0; i < a.size(); ++i) {
-    s += a[i];
+    sum += a[i];
+    // Only 2 items
     if (a[i] <= 2)
-      mn = s % M;
+      mn = sum % M;
     else {
-      ans = std::max(ans, (s - mn) % M);
-      mn = std::min(mn, s) % M;
+      ans = std::max(ans, (sum - mn) % M);
+      mn = std::min(mn, sum) % M;
     }
   }
 
@@ -60,14 +63,27 @@ ull rangeMaxSum(std::vector<ull> &a, ull M) {
     return ans;
 }
 
+// Maximum sum of 1D vector
+int maxSum(std::vector<int> &v) {
+  int msum = std::numeric_limits<int>::min();
+  int tmp = 0;
+
+  for (int i = 0; i < v.size(); i++) {
+    tmp += v[i];
+    // Reset if negatif
+    tmp = std::max(0, tmp);
+    msum = std::max(msum, tmp);
+  }
+
+  return msum;
+}
+
 // Maximum sum of subsets of a 2D vector
-int maxSum(vvi &v) {
-  // typedef long long T;
-  typedef int T;
+template <typename T> T maxSum2D(std::vector<std::vector<T>> &v) {
   T n = v.size();
 
   // lowest possible value
-  T maxSubRect = -1; // numeric_limits<T>::min();
+  T maxSubRect = std::numeric_limits<T>::min();
 
   for (T l = 0; l < n; l++)
     for (T r = l; r < n; r++) {
