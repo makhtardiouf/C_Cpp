@@ -1,5 +1,5 @@
 /**
- Algo design manual, classic Tree value structure
+ Algo design manual, classic Binary Tree value structure
  Makhtar Diouf
  $Id$
  Build: make tree

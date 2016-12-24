@@ -56,6 +56,7 @@ struct Dsu {
             return;
         if (rank[x] < rank[y])
             swap(x, y);
+
         p[y] = x;
         rank[x] += rank[x] == rank[y];
         left[x] = min(left[x], left[y]);
@@ -146,6 +147,7 @@ int main() {
             if (curAns != NEG_INF)
                 ans[a[i].pos] = curAns;
         }
+
     for (int i = 0; i < m; ++i)
         if (i + 1 != m)
             printf(lld" ", ans[i]);

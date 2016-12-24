@@ -1,9 +1,11 @@
-
 /**
 Algo design manual P165
-
 Graph using Adjacency Lists
 Directed edge (x, y) is represented by a node-y in node-x’s adjacency list
+
+Graph = Set of vertices connected pairwise by edges.
+Vertice = Node
+Edge = Link, Path
 */
 #include <cstdio>
 #include <cstdlib>
@@ -63,7 +65,7 @@ void insertEdge(graph *g, int x, int y, bool directed) {
 }
 
 
-// Building the graph for a file's content
+// Building the graph from a file's content
 void readGraph(graph *g, bool directed) {
   int i;    // counter
   int m;    // number of edges
@@ -86,7 +88,7 @@ void printGraph(graph *g) {
   for (i = 1; i <= g->nvertices; i++) {
     printf("%d: ", i);
     p = g->edges[i];
-    
+
     while (p != nullptr) {
       printf(" %d", p->y);
       p = p->next;

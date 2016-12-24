@@ -70,12 +70,12 @@ int main(int argc, char **argv) {
   printf("\nRow sums: \n");
   calcSum(a);
 
-  a[3][2] = 100;
+  a[3][2] = -100;
   //a[4][1] = 120;
   printf("Updated vector's a[3]: ");
   printV(a[3]);
 
-  printf("\nMaximum sum of the vector: %d", maxSum(a));
+  printf("\nMaximum sum of 1D vector v (unique elements): %d", maxSum(a[3]));
 
   clock_t t1 = clock();
   printf("\nRuntime = %.4f s\n", (t1 - t0) / (double)CLOCKS_PER_SEC);

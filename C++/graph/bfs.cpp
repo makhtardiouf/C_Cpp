@@ -1,5 +1,6 @@
 /**
- Graph Breadth First Search
+ Graph Breadth First Search,  Put unvisited vertices on a queue.
+
  print Bfs traversal from a given source vertex.
  Bfs(int s) traverses vertices reachable from s.
 http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
@@ -20,8 +21,8 @@ class Graph
 
   public:
     Graph(int V);
-    void addEdge(int v, int w); // add an edge to graph
-    void Bfs(int s);            // prints Bfs traversal from a given source s
+    void addEdge(int v, int w);
+    void Bfs(int s);            // Traversal from a given source s
 };
 
 Graph::Graph(int V)
@@ -52,9 +53,9 @@ void Graph::Bfs(int s)
 
     while (!q.empty())
     {
-        // Dequeue a vertex from queue and print it
+        // Dequeue a vertex and print it
         s = q.front();
-        cout << s << " ";
+        cout << s << " -> ";
         q.pop();
 
         // Get all adjacent vertices of the dequeued vertex s

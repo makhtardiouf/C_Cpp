@@ -2,29 +2,33 @@
 // No separation of interface vs implementation
 #include "malib.h"
 using namespace std;
-  
-template<typename T>
-class SegmentTree {
-  
+
+template <typename T>
+class SegmentTree
+{
+
 private:
   vector<T> segTree;
   vector<T> A;
   bool dbg = false;
-  
+
   // Range operation
   T opt = 1; //, p = 1; //, parent node
   T b, e = 0;
 
   bool isInited = false;
-  inline T left(T p) {
+  inline T left(T p)
+  {
     return p << 1; // = 2*p
   }
-  inline T right(T p) {
+  inline T right(T p)
+  {
     return (p << 1) + 1; // = 2*p +1
   }
 
 public:
-  SegmentTree(vector<T> &A) {
+  SegmentTree(vector<T> &A)
+  {
     T N = A.size();
     this->A = A;
 
@@ -40,16 +44,19 @@ public:
      @param e: end
      * Complexity  O(n * log n)
      */
-  void build(T opt, T p, T b, T e) {
+  void build(T opt, T p, T b, T e)
+  {
     this->opt = opt;
-    if (!isInited) {
+    if (!isInited)
+    {
       this->b = b;
       this->e = e;
       isInited = true;
     }
 
-    // Leaf
-    if (b == e) {
+    // Leaf: begin == end
+    if (b == e)
+    {
       if (opt == Range::SUM)
         this->segTree[p] = this->A[b]; // store value
       else
@@ -67,7 +74,8 @@ public:
     T rVal = this->segTree[right(p)];
     // if(dbg) clog << "lVal, rVal: " << lVal << ", " << rVal << endl;
 
-    switch (opt) {
+    switch (opt)
+    {
     case Range::SUM:
       this->segTree[p] = lVal + rVal;
       break;
@@ -82,7 +90,9 @@ public:
     }
   }
 
-  T rmq(T opt, T i, T j) {
+  // Range Min/Max Query
+  T rmq(T opt, T i, T j)
+  {
     if (dbg)
       clog << "RMQ: " << i << ", " << j << ": \n";
     return query(opt, 1, i, j);
@@ -94,15 +104,16 @@ private:
    *  Complexity  O(log n)
    *
    */
-  T query(T opt, T p, T i, T j, T b = 0, T e = 6) {
+  T query(T opt, T p, T i, T j, T b = 0, T e = 6)
+  {
     if (dbg)
       clog << "b, e " << b << ", " << e << endl;
     // Early sanity checks
     if (i > e || j < b)
       return -1;
-    // inside query Terval, return root node
+    // inside query interval, return root node
     else if (b >= i && e <= j)
-      return this->segTree[p]; //!!! issue poT here
+      return this->segTree[p]; //!!! issue here
 
     // minimum position on the Left/Right
     T p1 = query(opt, left(p), i, j, b, (b + e) / 2);
@@ -126,4 +137,3 @@ private:
       return (A[p1] >= A[p2]) ? p1 : p2;
   }
 };
-
