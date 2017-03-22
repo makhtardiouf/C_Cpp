@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     if (!isalnum(ch))
       continue;
 
-    // Discard the new line char if using printf above 
+    // Discard the new line char if using printf above
     // getchar ();
     printf("\tAscii code of \'%c\' ", ch);
     fflush(stdout);
@@ -31,11 +31,11 @@ int main(int argc, char *argv[]) {
   printf("\nCharacter corresponding to %d: '%c' \n", c, c);
 
   // C++11 initializations for implicit conversions warnings
-  double x{2.7};    // OK
-  //int y{x};       // error: double -> int might narrow
-  int a{1000};      // OK
-  //char b{a};     // error: int -> char might narrow
-  std::cout << x << " " << a ;
+  double x{2.7}; // OK
+  // int y{x};       // error: double -> int might narrow
+  int a{1000}; // OK
+  // char b{a};     // error: int -> char might narrow
+  printf("%.3f %d\n", x, a);
   pausethis(1);
   return EXIT_SUCCESS;
 }
