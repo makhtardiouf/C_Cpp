@@ -1,3 +1,4 @@
+// Copy input file to output file
 #include <fstream>
 
 int main(void) {
