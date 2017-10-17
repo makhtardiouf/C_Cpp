@@ -1,5 +1,5 @@
 // Go trivia: io with cmd line or file
-// Makhtar Diouf
+// Makhtar
 
 package main
 
