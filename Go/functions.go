@@ -15,9 +15,6 @@ func main() {
 
 }
 
-// var statement declares a list of variables
-var c, python, java bool
-
 func add(x, y int) int {
 	return x + y
 }
