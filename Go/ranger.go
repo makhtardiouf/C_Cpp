@@ -13,13 +13,10 @@ func main() {
 	fmt.Println("\n*** 1st sum", sum)
 
 	// mimicing while; empty ';' are unneeded here
-	for sum < 1000 {
+	for sum < 100 {
 		sum += sum
 	}
 	fmt.Println("\n*** 2nd sum", sum)
-
-	// Infinite loop =
-	// for {}
 
 	println("\n*** Powers range:")
 	pow := make([]int, 10)
@@ -29,4 +26,8 @@ func main() {
 	for _, val := range pow {
 		fmt.Printf("%d\n", val)
 	}
+
+	// Infinite loop =
+	// for {}
+
 }

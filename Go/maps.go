@@ -25,12 +25,15 @@ type Vertex struct {
 type mvertex map[string]Vertex
 
 func main() {
+	mapVertexes()
+}
+
+func mapVertexes() {
+	// make allocates and initializes a hash map data structure
+	// and returns a map value that points to it.
 	m := make(mvertex) //  new([]mvertex)
 
-	m["Bell Labs"] = Vertex{
-		i: 0, Lat: 40.68433, Long: -74.39967,
-	}
-
+	m["Bell Labs"] = Vertex{i: 0, Lat: 40.68433, Long: -74.39967}
 	m["Dakar"] = Vertex{1, 113.09, -45.900}
 	m["test"] = Vertex{}
 
@@ -43,7 +46,7 @@ func main() {
 	sort.Sort(m)
 
 	// Details printing of a struct, json style
-	fmt.Printf("%+v\n", m["Dakar"])
+	fmt.Printf("DK %+v\n", m["Dakar"])
 
 	// Iterations over maps aren’t ordered
 	for i, el := range m {

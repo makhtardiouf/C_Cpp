@@ -1,12 +1,11 @@
 // Go 2D vectors
+// slices: dynamically-sized, flexible view into the elements of an array
 // Makhtar Diouf
 
 package main
 
-import (
-	"fmt" //"sort";
-	"math/rand"
-)
+import "fmt"
+import "math/rand"
 
 func main() {
 	// row, cols sizes

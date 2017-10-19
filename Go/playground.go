@@ -52,7 +52,12 @@ func salut() {
 		print("Good evening.")
 	}
 
-	fmt.Printf(" It's the %dth\n", t.Day())
+	fmt.Printf(" It's the %dth\nSeconds before launch: ", t.Day())
+	for i := 10; i > 0; i-- {
+		fmt.Printf("%ds ", i)
+		time.Sleep(1 * time.Second)
+	}
+	println()
 }
 
 func checkOs() {
@@ -65,7 +70,7 @@ func checkOs() {
 		fmt.Println("OS X.")
 	case "linux":
 		fmt.Println("Linux.")
-		fallthrough
+		//fallthrough
 
 	default:
 		// freebsd, openbsd,
