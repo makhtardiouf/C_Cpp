@@ -5,6 +5,7 @@
 package main
 
 import "fmt"
+import "math"
 import "math/rand"
 
 func main() {
@@ -12,6 +13,8 @@ func main() {
 
 	s1, s2 := swap("Hello", "World")
 	println(s1, s2)
+
+	fmt.Println(sqrt(2), sqrt(-4))
 
 }
 
@@ -23,6 +26,13 @@ func add(x, y int) int {
 func swap(a, b string) (string, string) {
 	fmt.Printf("Swapping '%s %s' => ", a, b)
 	return b, a
+}
+
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
 }
 
 // func reverse(str string) string {

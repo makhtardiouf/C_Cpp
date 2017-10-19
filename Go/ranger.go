@@ -5,11 +5,28 @@ package main
 import "fmt"
 
 func main() {
+	// Only looping construct in Golang is 'for'
+	sum := 0
+	for i := 0; i < 10; i++ {
+		sum += i
+	}
+	fmt.Println("\n*** 1st sum", sum)
+
+	// mimicing while; empty ';' are unneeded here
+	for sum < 1000 {
+		sum += sum
+	}
+	fmt.Println("\n*** 2nd sum", sum)
+
+	// Infinite loop =
+	// for {}
+
+	println("\n*** Powers range:")
 	pow := make([]int, 10)
 	for i := range pow {
 		pow[i] = 1 << uint(i) // == 2**i
 	}
-	for _, value := range pow {
-		fmt.Printf("%d\n", value)
+	for _, val := range pow {
+		fmt.Printf("%d\n", val)
 	}
 }

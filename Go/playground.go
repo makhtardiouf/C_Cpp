@@ -6,6 +6,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"runtime"
 	"time"
 )
@@ -13,10 +14,15 @@ import (
 // var statement declares a list of variables
 var c, python, java bool
 
-// include initializers
+// initializers
 var j, k int = 1, 2
 
 func main() {
+	salut()
+
+	// run this after the surrounding block
+	defer checkOs()
+
 	var i int
 	fmt.Println("Default vars values:", i, j, k, c, python, java)
 
@@ -24,8 +30,12 @@ func main() {
 	var c, python, java = true, false, "no!"
 	fmt.Println("Default vars values:", j, k, c, python, java)
 
-	salut()
-	checkOs()
+	// type casting
+	f := math.Sqrt(5 + 7)
+	println("Casting", f, "to int =", uint(f))
+
+	const world = "世界"
+	fmt.Printf("Hello %s (%T)\n", world, world)
 
 }
 
@@ -41,17 +51,22 @@ func salut() {
 	default:
 		print("Good evening.")
 	}
-	println(" It's", t.String())
+
+	fmt.Printf(" It's the %dth\n", t.Day())
 }
 
 func checkOs() {
-	fmt.Print("We're running on ")
+	fmt.Print("This program ran on ")
+
+	// case body breaks automatically, unless it ends with a fallthrough statement
 
 	switch os := runtime.GOOS; os {
 	case "darwin":
 		fmt.Println("OS X.")
 	case "linux":
 		fmt.Println("Linux.")
+		fallthrough
+
 	default:
 		// freebsd, openbsd,
 		// plan9, windows...

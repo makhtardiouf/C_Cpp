@@ -3,11 +3,9 @@
 
 package main
 
-import (
-	"bufio"
-	"log"
-	"os"
-)
+import "bufio"
+import "log"
+import "os"
 
 func main() {
 	var in = bufio.NewScanner(os.Stdin)
