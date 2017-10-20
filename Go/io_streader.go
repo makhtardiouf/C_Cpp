@@ -1,4 +1,5 @@
 // +build OMIT
+// io with string reader
 
 package main
 
