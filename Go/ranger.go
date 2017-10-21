@@ -23,8 +23,10 @@ func main() {
 	for i := range pow {
 		pow[i] = 1 << uint(i) // == 2**i
 	}
-	for _, val := range pow {
-		fmt.Printf("%d\n", val)
+
+	// idx and val
+	for i, v := range pow {
+		fmt.Printf("2^%d: \t%d\n", i, v)
 	}
 
 	// Infinite loop =

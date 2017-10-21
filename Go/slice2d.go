@@ -20,12 +20,11 @@ func main() {
 		v[i] = make([]int, xSz)
 
 		// Set random values
-		var el *int
+
 		fmt.Printf("%2d:", i)
 		for j := range v[i] {
-			el = &v[i][j]
-			*el = rand.Intn(200)
-			fmt.Printf("%4d ", *el)
+			v[i][j] = rand.Intn(60)
+			fmt.Printf("%4d ", v[i][j])
 		}
 		println()
 	}

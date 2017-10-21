@@ -9,11 +9,11 @@ package main
 import "fmt"
 import "log"
 
-var dbg = true
+var dbg = false
 
 func main() {
-	var inp = "abacabad"
-	inp = "abcdefghijklmnopqrstuvwxyziflskecznslkjfabe"
+	// inp := "abacabad"
+	inp := "abcdefghijklmnopqrstuvwxyziflskecznslkjfabe"
 
 	fmt.Printf("1st non-repeating char of %s: %s\n", inp, firstUniqChar(inp))
 }
@@ -27,21 +27,31 @@ func firstUniqChar(s string) string {
 	m := make(map[byte]int)
 	chs := []byte(s)
 
+	// Store keys separately for final ordered iteration
+	var keys []byte
+
 	for i := 0; i < len(chs); i++ {
-		m[chs[i]]++
+		k := chs[i]
+
+		// this can be less efficient as it scans the map every time
+		_, exists := m[k]
+		if !exists {
+			keys = append(keys, k)
+		}
+
+		m[k]++
 
 		if dbg {
-			log.Printf("%s => %d", string(chs[i]), m[chs[i]])
+			log.Printf("%s => %d", string(k), m[k])
 		}
 	}
 
-	fmt.Printf("%v\n", m)
+	fmt.Printf("Hashtable %v, len: %d\nKeys: %v, len: %d\n", m, len(m), keys, len(keys))
 
 	// Cannot use 'range m' as it would be un-ordered
-	// but this can be less efficient for large input of s
-	for i := 0; i < len(chs); i++ {
-		if m[chs[i]] == 1 {
-			return string(chs[i])
+	for _, k := range keys {
+		if m[k] == 1 {
+			return string(k)
 		}
 	}
 	return "_"

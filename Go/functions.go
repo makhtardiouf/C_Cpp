@@ -12,7 +12,7 @@ func main() {
 	fmt.Println("Add", add(rand.Intn(10), rand.Intn(69)))
 
 	s1, s2 := swap("Hello", "World")
-	println(s1, s2, reverse(s1))
+	println(s1, s2, "\nReverse: ", reverse(s2+" "+s1))
 
 	fmt.Println(sqrt(2), sqrt(-4))
 
@@ -24,10 +24,11 @@ func add(x, y int) int {
 
 // Any number of args can be returned
 func swap(a, b string) (string, string) {
-	fmt.Printf("Swapping '%s %s' => ", a, b)
+	fmt.Printf("Swapped '%s %s' => ", a, b)
 	return b, a
 }
 
+// Classic string reversal
 func reverse(str string) string {
 	a := []byte(str)
 	b := make([]byte, len(str))
@@ -35,7 +36,7 @@ func reverse(str string) string {
 	for i, j := len(a)-1, 0; i >= 0; i, j = i-1, j+1 {
 		b[j] = a[i]
 	}
-	println(b)
+
 	return string(b)
 }
 
