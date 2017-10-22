@@ -21,7 +21,11 @@ func main() {
 
 	p := &v
 	p.Scale(2)
-	fmt.Println("%v", v)
+
+	var r = MakInt(10)
+	r = r.Scale(2)
+
+	fmt.Println("%v", v, r)
 
 	fmt.Println(Abs(v))
 }
@@ -31,11 +35,18 @@ func Abs(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
-// Methods can be defined for any named type
-// (except a pointer or an interface); the receiver does not have to be a struct.
+// Methods can be defined for any named type (not builtin)
+// (except a pointer, interface or builtin types); the receiver does not have to be a struct.
 
-// Member method binded to the Vertex type
+// Member function binded to the Vertex type
 func (v *Vertex) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
+}
+
+// Workaround for builtin types
+type MakInt int
+
+func (m MakInt) Scale(x int) MakInt {
+	return m * MakInt(x)
 }

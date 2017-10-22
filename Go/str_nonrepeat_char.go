@@ -25,17 +25,14 @@ func firstUniqChar(s string) string {
 
 	// Chars counter hashtable
 	m := make(map[byte]int)
-	chs := []byte(s)
-
 	// Store keys separately for final ordered iteration
 	var keys []byte
+	chs := []byte(s)
 
-	for i := 0; i < len(chs); i++ {
-		k := chs[i]
+	for _, k := range chs {
 
 		// this can be less efficient as it scans the map every time
-		_, exists := m[k]
-		if !exists {
+		if _, in := m[k]; !in {
 			keys = append(keys, k)
 		}
 
