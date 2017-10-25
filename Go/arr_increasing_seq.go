@@ -19,7 +19,7 @@ func almostIncreasingSequence(seq []int) bool {
 	var hitCnt int
 
 	for i := 0; i < len(seq)-1; i++ {
-		if (seq)[i] >= (seq)[i+1] {
+		if seq[i] >= seq[i+1] {
 			hitCnt++
 
 			// Remove the hit for the sequence

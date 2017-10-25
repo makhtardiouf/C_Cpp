@@ -2,15 +2,54 @@
     "configurations": [
         {
             "name": "Mac",
-            "includePath": ["/usr/include"]
+            "includePath": [
+                "/usr/include",
+                "${workspaceRoot}"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "${workspaceRoot}"
+                ]
+            },
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ]
         },
         {
             "name": "Linux",
-            "includePath": ["/usr/include", "/usr/include/c++/5", "/home/makhtar/Documents/Code/C_Cpp/C++/malib"]
+            "includePath": [
+                "/usr/include",
+                "/usr/include/c++/5",
+                "/home/makhtar/Documents/Code/C_Cpp/C++/malib",
+                "${workspaceRoot}"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/include/c++/5",
+                    "/home/makhtar/Documents/Code/C_Cpp/C++/malib",
+                    "${workspaceRoot}"
+                ]
+            }
         },
         {
             "name": "Win32",
-            "includePath": ["c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include"]
+            "includePath": [
+                "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+                "${workspaceRoot}"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+                    "${workspaceRoot}"
+                ]
+            }
         }
-    ]
+    ],
+    "version": 3
 }

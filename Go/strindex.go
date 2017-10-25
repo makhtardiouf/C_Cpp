@@ -1,6 +1,6 @@
 package main
 
-import ()
+import "sort"
 
 func strindex(s string, t string) int {
 	var i, j, k int
@@ -27,5 +27,7 @@ func strindex(s string, t string) int {
 
 func main() {
 	println(strindex("Hello", "o"))
-
+    var s = "Hello"
+    sort.Sort(s)
+    println(s)
 }

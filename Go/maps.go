@@ -59,7 +59,7 @@ func mapVertexes() {
 }
 
 // Methods for sort.Interface
-// a type implements the iface just by implementing the iface's methods
+// A type implements the iface just by implementing the iface's methods
 
 func (m mvertex) Len() int {
 	// Could populate the indexes(i) here
